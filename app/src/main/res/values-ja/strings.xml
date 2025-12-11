@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Fade Sleep Timer</string>
+    <string name="accessibility_service_description">非アクティブな状態が続いた場合に画面を自動的にオフにしてバッテリーを節約します。このサービスは画面ロック機能のみを使用し、画面の内容を監視することはありません。</string>
+    
+    <!-- Settings Screen -->
+    <string name="settings_title">設定</string>
+    <string name="settings_back_content_description">戻る</string>
+    
+    <!-- Support Button -->
+    <string name="support_development_title">開発を支援</string>
+    <string name="support_development_subtitle">機能のアンロック &amp; 広告の削除</string>
+    
+    <!-- Premium Features Button -->
+    <string name="premium_features_title">プレミアム機能</string>
+    <string name="premium_features_subtitle">特典の管理</string>
+
+    <!-- Audio Settings -->
+    <string name="fade_out_duration_title">フェードアウト時間</string>
+    <string name="fade_out_duration_desc">音量をゼロにするまでの時間</string>
+    <string name="unit_minutes_value">%1$d分</string>
+    <string name="volume_safety_cap_title">音量安全制限</string>
+    <string name="volume_safety_cap_desc">耳の保護のため40%に制限</string>
+    <string name="play_on_start_title">開始時に再生</string>
+    <string name="play_on_start_desc">タイマー開始時に再生を再開</string>
+    <string name="play_on_start_toast">有効。タイマー開始時に再生を再開します。</string>
+    <string name="smart_wait_title">スマート待機</string>
+    <string name="smart_wait_desc">曲が終わるまで停止を待機</string>
+    <string name="smart_wait_toast">有効。曲が終わるまで待機します。</string>
+
+    <!-- Visuals Settings -->
+    <string name="wedge_clock_title">ウェッジ時計</string>
+    <string name="wedge_clock_desc">時間を縮小するくさびとして表示</string>
+    <string name="super_dim_title">超低輝度オーバーレイ</string>
+    <string name="super_dim_desc">夜間用の非常に暗いフィルター</string>
+    <string name="super_dim_toast">有効。開始時に画面を暗くします。</string>
+    <string name="grayscale_mode_title">グレースケールモード</string>
+    <string name="grayscale_mode_desc">画面をモノクロにする（退屈モード）</string>
+    <string name="red_night_light_toast">開始時に赤色ナイトライトが有効になります</string>
+    <string name="grayscale_options_title">グレースケール設定</string>
+    <string name="grayscale_mode_timer">タイマーのみ</string>
+    <string name="grayscale_desc_timer">タイマー稼働中のみグレー</string>
+    <string name="grayscale_mode_always">常時オン</string>
+    <string name="grayscale_desc_always">常にグレースケール</string>
+    <string name="grayscale_mode_night">赤色ナイトライト</string>
+    <string name="grayscale_desc_night">ブルーライトをカットする赤色フィルター</string>
+    <string name="change_icon_title">アイコンを変更？</string>
+    <string name="change_icon_message">アイコンを \'%1$s\' に変更しますか？ アプリが再起動する可能性があります。</string>
+    <string name="change_icon_button">変更する</string>
+    <string name="premium_icons_title">プレミアムアイコン</string>
+    <string name="premium_icons_subtitle">(サポーター向け)</string>
+    <string name="overlay_permission_desc">赤色ライトを使用するには、Fadeが他のアプリの上に表示する権限が必要です。</string>
+    <string name="overlay_step_1">1. 下の「設定を開く」をタップ。</string>
+    <string name="overlay_step_2">2. 「Fade Sleep Timer」を見つける。</string>
+    <string name="overlay_step_3">3. 「他のアプリの上に重ねて表示」をオンにする。</string>
+    <string name="open_settings_button">設定を開く</string>
+    
+    <!-- Open On Charge Dialog -->
+    <string name="open_on_charge_dialog_title">時間帯を選択</string>
+    <string name="open_on_charge_dialog_desc">いつ充電時に自動起動しますか？</string>
+    <string name="open_on_charge_always">常に</string>
+    <string name="open_on_charge_always_desc">接続時は毎回</string>
+    <string name="open_on_charge_strict">20:00 - 04:00</string>
+    <string name="open_on_charge_strict_desc">夜間 (20:00 - 04:00)</string>
+    <string name="open_on_charge_late">01:00 - 05:00</string>
+    <string name="open_on_charge_late_desc">深夜 (01:00 - 05:00)</string>
+    <string name="open_on_charge_morning">05:00 - 10:00</string>
+    <string name="open_on_charge_morning_desc">朝 (05:00 - 10:00)</string>
+
+    <!-- Personalization Settings -->
+    <string name="airplane_mode_reminder_title">機内モードリマインダー</string>
+    <string name="airplane_mode_reminder_desc">開始時に機内モード設定を通知</string>
+    <string name="adjust_default_timer_title">デフォルトタイマー調整</string>
+    <string name="adjust_default_timer_desc">初期時間と朝のチェックを調整</string>
+    <string name="default_duration_label_format">デフォルト時間: %1$s</string>
+    <string name="timer_check_in_title">タイマーチェックイン</string>
+    <string name="timer_check_in_desc">延長が多い場合に調整を促す</string>
+    <string name="smart_extend_title">スマート延長</string>
+    <string name="smart_extend_desc">動きを検知したら10分追加</string>
+    <string name="sensitivity_header">感度</string>
+    <string name="sensitivity_low">低</string>
+    <string name="sensitivity_med">中</string>
+    <string name="sensitivity_high">高</string>
+    <string name="sensitivity_low_desc">大きな動きが必要（寝返りなど）</string>
+    <string name="sensitivity_med_desc">バランス型（推奨）</string>
+    <string name="sensitivity_high_desc">微細な動きも検知</string>
+    <string name="configure_buttons_title">メディアボタン設定</string>
+    <string name="configure_buttons_desc">表示するアプリを選択</string>
+    <string name="smart_extend_help_title">スマート延長の使い方</string>
+    <string name="smart_extend_help_text">枕元のマットレスの上にスマートフォンを置いてください。\n\n加速度センサーがマットレスの振動を検知して、起きているか判定します。</string>
+    <string name="got_it_button">OK</string>
+
+    <!-- Support Screen -->
+    <string name="beta_unlock_toast">ベータ版では購入できません。プレゼントアイコンを3回タップしてください。</string>
+    <string name="beta_unlock_click_2">あと2回...</string>
+    <string name="beta_unlock_click_1">あと1回...</string>
+    <string name="beta_unlock_success_toast">プレミアムモードをアンロック！</string>
+    <string name="support_title">開発者を支援</string>
+    <string name="support_subtitle_unlocked">すべての設定機能がアンロックされました</string>
+    <string name="support_subtitle_locked">プレゼントをタップしてサプライズ</string>
+    <string name="support_close_button">閉じる</string>
+    <string name="support_rate_title">アプリを評価</string>
+    <string name="support_rate_subtitle_locked">「サポーター」バッジをアンロック</string>
+    <string name="support_rate_subtitle_unlocked">あなたは公式サポーターです！</string>
+    <string name="price_free">無料</string>
+    <string name="support_rate_active_text">サポーター</string>
+    <string name="support_share_title">アプリをシェア</string>
+    <string name="support_share_subtitle">友達に教える</string>
+    <string name="support_share_active_text">シェア済み</string>
+    <string name="support_other_apps_title">他のアプリを見る</string>
+    <string name="support_other_apps_subtitle">自信作です！</string>
+    <string name="support_other_apps_active_text">確認済み</string>
+    <string name="support_other_apps_error">開発者ページを開けませんでした</string>
+    <string name="support_visuals_title">ビジュアルパック</string>
+    <string name="support_visuals_desc">ネオンやOLEDなど30以上のテーマ</string>
+    <string name="support_visuals_desc_unlocked">30以上のテーマ ($0.99 - 任意)</string>
+    <string name="support_visuals_select_cd">テーマを選択</string>
+    <string name="status_unlocked">アンロック済み</string>
+    <string name="support_hof_title">殿堂入り &amp; アイコン</string>
+    <string name="support_hof_view_cd">殿堂入りを見る</string>
+
+    <!-- System Settings -->
+    <string name="dnd_title">サイレントモード</string>
+    <string name="dnd_desc">タイマー中の通知をミュート</string>
+    <string name="dnd_mode_priority">標準 (優先のみ)</string>
+    <string name="dnd_mode_alarms">厳格 (アラームのみ)</string>
+    <string name="battery_guard_title">バッテリーガード</string>
+    <string name="battery_guard_desc_format">バッテリー残量 &lt; %1$d%% で停止</string>
+    <string name="stop_threshold_label">停止しきい値</string>
+    <string name="go_home_title">開始時にホームへ</string>
+    <string name="go_home_desc">開始時にアプリを最小化</string>
+    <string name="open_on_charge_title">充電時に起動</string>
+    <string name="open_on_charge_desc">充電開始時に自動起動</string>
+
+    <!-- Controls Settings -->
+    <string name="face_down_title">伏せてスタート</string>
+    <string name="face_down_desc">自動開始 &amp; 画面オフ (5秒)</string>
+    <string name="face_down_toast">有効。伏せると開始します。</string>
+    <string name="shake_extend_title">シェイクして延長</string>
+    <string name="shake_extend_desc">振って15分追加</string>
+    <string name="shake_extend_toast">有効。シェイクで+15分。</string>
+    <string name="pocket_mode_title">ポケットモード</string>
+    <string name="pocket_mode_desc">誤操作を防止</string>
+    <string name="pocket_mode_toast">有効。操作がブロックされました。</string>
+    <string name="widgets_title">ホーム画面ウィジェット</string>
+    <string name="widgets_desc">ホーム画面を長押ししてウィジェットを追加。</string>
+
+    <!-- Info Settings -->
+    <string name="sleep_journey_title">睡眠の旅</string>
+    <string name="sleep_journey_desc">バッジ、連続記録、統計</string>
+    <string name="hall_of_fame_title">殿堂入り</string>
+    <string name="hall_of_fame_desc">伝説的なサポーターの皆様</string>
+    <string name="battery_data_saved_title">節約したバッテリー &amp; データ</string>
+    <string name="battery_data_saved_desc">平均に基づく推定値</string>
+    <string name="saved_minutes_format">%1$d分</string>
+    <string name="saved_hours_format">%.1f時間</string>
+
+    <!-- Settings Titles -->
+    <string name="settings_category_system">高度な設定 &amp; システム</string>
+    <string name="settings_category_controls">操作 &amp; インタラクション</string>
+    <string name="settings_category_info">情報</string>
+    <string name="settings_category_audio">オーディオ &amp; 再生</string>
+    <string name="settings_category_visuals">表示 &amp; ディスプレイ</string>
+    <string name="settings_category_wellness">ウェルネス &amp; 個人設定</string>
+    <string name="settings_category_control">操作 &amp; インタラクション</string>
+    <string name="settings_category_advanced">高度な設定 &amp; システム</string>
+    <string name="settings_category_awesome">すごい機能</string>
+    <string name="settings_category_personalization">パーソナライズ</string>
+
+    <!-- Settings Components -->
+    <string name="unit_minutes_short">%1$d分</string>
+    <string name="unit_hours_short">%1$d時間</string>
+    <string name="unit_hours_decimal_short">%1$s時間</string>
+    <string name="add_timer_preset_title">プリセット追加</string>
+    <string name="minutes_label_caps">分</string>
+    <string name="add_button_caps">追加</string>
+    <string name="remove_cd">削除</string>
+    <string name="topic_header">トピック</string>
+    <string name="change_timer_buttons_title">ボタンを変更</string>
+    <string name="change_timer_buttons_subtitle">時間をカスタマイズ</string>
+    <string name="reset_default_button_text">デフォルトに戻す</string>
+    <string name="new_badge">NEW</string>
+    <string name="expand_cd">展開</string>
+    <string name="collapse_cd">折りたたむ</string>
+
+    <!-- Awesome Features Settings -->
+    <string name="bedtime_reminder_title">就寝リマインダー</string>
+    <string name="bedtime_reminder_desc">寝る時間にお知らせ</string>
+    <string name="reminder_time_label">通知時間</string>
+    <string name="prayer_reminder_title">お祈りリマインダー</string>
+    <string name="prayer_reminder_desc">寝る前にお祈りの時間を</string>
+    <string name="brain_dump_title">ブレインダンプ</string>
+    <string name="brain_dump_desc">寝る前に思考を書き出す</string>
+    <string name="scripture_mode_title">聖句モード</string>
+    <string name="scripture_mode_desc">心安らぐ言葉を表示</string>
+    <string name="scripture_topic_random">おまかせ (ランダム)</string>
+    <string name="wisdom_quotes_title">知恵の引用</string>
+    <string name="wisdom_quotes_desc">深い神学的な知恵を表示</string>
+    <string name="wisdom_category_peace">平和と慰め</string>
+    <string name="wisdom_desc_peace">不安、休息、信頼</string>
+    <string name="wisdom_category_glory">神の栄光と主権</string>
+    <string name="wisdom_desc_glory">神とは何か、その支配</string>
+    <string name="wisdom_category_gospel">福音と恵み</string>
+    <string name="wisdom_desc_gospel">許しと救済</string>
+    <string name="wisdom_category_living">知恵と生活</string>
+    <string name="wisdom_desc_living">祈りと実践的な信仰</string>
+    <string name="sleep_calc_title">睡眠サイクル計算機</string>
+    <string name="sleep_calc_desc">最適な起床時間を表示</string>
+    <string name="alarm_button_setting_title">アラームボタン</string>
+    <string name="alarm_button_setting_desc">「アラーム設定」を表示</string>
+    <string name="breathing_guide_title">ハプティック呼吸ガイド</string>
+    <string name="breathing_guide_desc">振動による呼吸ガイド</string>
+    <string name="haptic_vibration_title">ハプティック振動</string>
+    <string name="haptic_vibration_desc">触覚フィードバックを有効化</string>
+    <string name="breathing_auto_start_title">自動開始</string>
+    <string name="breathing_auto_start_desc">ガイドを自動で開始</string>
+    <string name="breathing_duration_label">長さ: %1$d分</string>
+    <string name="doomscroll_title">依存防止ロック</string>
+    <string name="doomscroll_desc">中毒性のあるアプリをブロック</string>
+    <string name="grace_period_label">猶予時間: %1$d分</string>
+    <string name="grace_period_desc">ロックまでの短い使用時間</string>
+    <string name="blocked_apps_label">ブロック中のアプリ (%1$d)</string>
+    <string name="add_app_to_block_button">ブロックするアプリを追加</string>
+    <string name="permission_required_title">権限が必要です</string>
+    <string name="accessibility_explanation_doomscroll">ブロック機能には「ユーザー補助」の権限が必要です。</string>
+    <string name="instructions_label">手順:</string>
+    <string name="accessibility_step_2_doomscroll">2. 「Fade Sleep Timer」を見つける。</string>
+    <string name="accessibility_step_3_doomscroll">3. オンにする。</string>
+    <string name="accessibility_step_4_doomscroll">4. 「許可」をタップ。</string>
+    
+    <!-- Timer Capsule -->
+    <string name="stop_timer_content_description">タイマー停止</string>
+    
+    <!-- Presets Editor -->
+    <string name="timer_presets_title">プリセット</string>
+    <string name="timer_presets_subtitle">ボタンをカスタマイズ</string>
+    <string name="add_button">追加</string>
+    <string name="reset_default_button">リセット</string>
+    <string name="add_preset_dialog_title">プリセット追加</string>
+    <string name="minutes_label">分</string>
+    <string name="cancel_button">キャンセル</string>
+    
+    <!-- Settings Section -->
+    <string name="expand_content_description">展開</string>
+    <string name="collapse_content_description">折りたたむ</string>
+    
+    <!-- General -->
+    <string name="new_label">NEW</string>
+    
+    <!-- Main Screen -->
+    <string name="app_title">スリープタイマー</string>
+    <string name="supporter_badge">サポーター</string>
+    <string name="pocket_mode_active">ポケットモード中</string>
+    <string name="pocket_mode_unlock_instruction">ダブルタップで解除</string>
+    <string name="pocket_mode_unlocked_toast">ポケットモード解除</string>
+    <string name="timer_started_minimizing_toast">タイマー開始。最小化します...</string>
+    
+    <!-- Dialogs -->
+    <string name="shake_dialog_title">シェイクして延長</string>
+    <string name="shake_dialog_message">シェイクしましたね！この機能をオンのままにしますか？</string>
+    <string name="keep_on_button">維持する</string>
+    <string name="turn_off_button">オフにする</string>
+    <string name="shake_disabled_toast">シェイク延長を無効にしました。</string>
+    
+    <!-- Spotlight Tour -->
+    <string name="spotlight_presets_title">時間を選択 ⏱️</string>
+    <string name="spotlight_presets_desc">無音になるまでの時間は？音楽はゆっくりと小さくなります。</string>
+    <string name="spotlight_media_title">メディアに素早くアクセス 🎵</string>
+    <string name="spotlight_media_desc">「設定」から好きなアプリ(Spotify, YouTubeなど)を追加できます。</string>
+    <string name="spotlight_settings_title">もっと発見 ⚙️</string>
+    <string name="spotlight_settings_desc">設定には呼吸法、お祈りなど便利な機能があります。</string>
+    
+    <!-- Morning Check -->
+    <string name="morning_check_yes_toast">ヒント: 今夜は少し長めに設定してみましょう。</string>
+    <string name="morning_check_no_toast">素晴らしい！今の設定を維持します。</string>
+    
+    <!-- Content Descriptions -->
+    <string name="breathing_guide_cd">呼吸ガイド</string>
+    <string name="view_note_cd">メモを見る</string>
+
+    <!-- Pre-Timer Screen -->
+    <string name="optimal_wake_time_label">最適な起床時間</string>
+    <string name="sleep_cycles_suffix"> (5サイクル)</string>
+    <string name="set_alarm_button">アラーム設定</string>
+    <string name="pre_timer_settings_hint">ヒント: 設定 > すごい機能 でカスタマイズ可能</string>
+    <string name="ready_to_sleep_title">寝る準備はOK？</string>
+    <string name="pre_timer_instruction">開始前に確認してください。</string>
+    <string name="fade_wake_up_alarm_message">Fade 目覚まし</string>
+    <string name="alarm_set_toast">アラーム設定: %s</string>
+    <string name="alarm_error_toast">アラーム設定エラー: %s</string>
+    <string name="airplane_mode_title">機内モード</string>
+    <string name="airplane_mode_desc">通知オフ &amp; 電波オフ</string>
+    <string name="settings_button_caps">設定</string>
+    <string name="start_timer_button">スタート</string>
+    <string name="cancel_cd">キャンセル</string>
+    <string name="illuminating_wisdom_loading">ロード中...</string>
+    <string name="understanding_quote_title">引用の解説</string>
+    <string name="close_button">閉じる</string>
+    <string name="explanation_error_title">解説を表示できません</string>
+
+    <!-- Permissions Screen -->
+    <string name="permissions_needed_title">権限が必要です</string>
+    <string name="permissions_needed_desc">バックグラウンドでの実行と音量の調整に必要です。</string>
+    <string name="privacy_promise_cd">プライバシー</string>
+    <string name="privacy_promise_title">プライバシー - データ収集なし</string>
+    <string name="privacy_promise_body">あなたのデータはあなたのもの。私はアクセスせず、クラウドにも送信しません。</string>
+    <string name="open_source_cd">オープンソース</string>
+    <string name="open_source_title">信頼の証</string>
+    <string name="open_source_body">Fadeはオープンソースです。誰でもコードを確認できます。</string>
+    <string name="view_source_code_button">ソースコードを見る</string>
+    <string name="notifications_permission_title">通知</string>
+    <string name="notifications_enabled_desc">有効 - タイマー状態を表示</string>
+    <string name="notifications_required_desc">通知の表示に必要です。</string>
+    <string name="allowed_button">許可済み</string>
+    <string name="allow_button">許可</string>
+    <string name="enabled_button">有効</string>
+    <string name="fix_button">修正</string>
+    <string name="unrestricted_battery_title">バッテリー制限なし</string>
+    <string name="battery_enabled_desc">有効 - 安定して動作中</string>
+    <string name="battery_critical_desc">重要: 画面オフ時にタイマーが止まるのを防ぎます。</string>
+    <string name="accessibility_dialog_title">画面自動オフを有効化</string>
+    <string name="accessibility_step_intro">手動で有効にしてください:</string>
+    <string name="accessibility_step_1">1. 「設定へ移動」をタップ。</string>
+    <string name="accessibility_step_2">2. 「インストール済みのアプリ」を探す。</string>
+    <string name="accessibility_step_3">3. 「Fade Sleep Timer」を選択。</string>
+    <string name="accessibility_step_4">4. スイッチをオンにする。</string>
+    <string name="go_to_settings_button">設定へ移動</string>
+
+    <string name="auto_screen_off_title">画面自動オフ</string>
+    <string name="auto_screen_off_enabled_desc">有効 - 3分後にオフ</string>
+    <string name="auto_screen_off_optional_desc">オプション - 操作がないとロック</string>
+    <string name="enable_button">有効にする</string>
+    <string name="continue_button">次へ</string>
+
+    <!-- Support Prompts (Arrays) -->
+    <string-array name="review_prompts">
+        <item>静寂を楽しんでる？ 5つ星をお願い！</item>
+        <item>早く眠れた？ 世界に教えて（小声で）。</item>
+        <item>役立ってたら、レビューを書いてね。</item>
+        <item>起こしたくないけど、レビューしてくれたら最高。</item>
+        <item>まだ起きてる？ レビュー書いちゃう？</item>
+        <item>Fadeが好き？ 評価もFadeさせないで。</item>
+        <item>レビュー書くのってリラックスできるよ。</item>
+        <item>悪夢を追い払うために5つ星を。</item>
+        <item>広告なし、無料。頼みはひとつ、レビューだけ。</item>
+        <item>ヒーローになろう。開発者を不眠から救って。</item>
+        <item>これ読んだらレビュー書く義務が...冗談です。</item>
+        <item>レビューしたらエアハイタッチしよう。</item>
+    </string-array>
+    
+    <string-array name="support_prompts">
+        <item>子供が大食いなんです。支援しませんか？</item>
+        <item>コード猿がバナナを欲しがってます。チップを！</item>
+        <item>パジャマで開発してるけど、立派な仕事です。コーヒー奢って？</item>
+        <item>静寂が好き？ 僕が無視してる騒がしい子供たちに感謝。</item>
+        <item>家賃を「感謝」で払おうとしたけど無理でした。</item>
+        <item>これが本当の仕事だと妻に証明させて。</item>
+        <item>医者の9割が個人開発者の支援を推奨（当社調べ）。</item>
+        <item>ロボット執事のために貯金中。協力して。</item>
+        <item>支援すると睡眠の質が10%上がるとか（噂）。</item>
+        <item>有意義に使います（たぶんコーヒー）。</item>
+        <item>コーディングはカフェインを大量消費します。</item>
+        <item>開発者を笑顔に。徳が積めます。</item>
+    </string-array>
+
+    <!-- Notifications & Dialogs -->
+    <string name="bedtime_reminder_title_notif">就寝時間</string>
+    <string name="bedtime_reminder_desc_notif">寝る時間のお知らせ</string>
+    <string name="bedtime_reminder_text">そろそろ寝る時間です。</string>
+    <string name="extend_15m_button">15分延長</string>
+    <string name="dismiss_button">閉じる</string>
+    
+    <string name="brain_dump_channel_name">アイデア通知</string>
+    <string name="brain_dump_channel_desc">メモ消去前の警告</string>
+    <string name="brain_dump_title_notif">メモが消えます</string>
+    <string name="brain_dump_text_format">あと%sで削除されます。タップして表示。</string>
+    
+    <string name="support_prompt_title">開発者からのメッセージ</string>
+    <string name="support_prompt_nah">いいえ</string>
+    <string name="support_prompt_check_it_out">見る</string>
+    
+    <string name="support_banner_text">クリックして開発者を支援！</string>
+    <string name="support_banner_button">支援する</string>
+    
+    <string name="spotlight_got_it">OK!</string>
+    <string name="spotlight_next">次へ</string>
+
+    <!-- Setup Screen -->
+    <string name="setup_source_system">システム音声</string>
+    <string name="setup_source_info">睡眠情報</string>
+    <string name="setup_resume_music">音楽を再開</string>
+    <string name="setup_configure">設定</string>
+    <string name="setup_configure_toast">ヒント: 設定 -> ウェルネス でボタンを変更</string>
+    <string name="setup_facts">雑学</string>
+    <string name="setup_bios">バイオ</string>
+    <string name="setup_history">履歴</string>
+    <string name="setup_volume_header">音量</string>
+    <string name="setup_volume_limit">制限中</string>
+    <string name="setup_volume_capped_cd">制限あり</string>
+    <string name="setup_safety_cap_toast">安全制限: スライダーは40%の範囲です。</string>
+    <string name="setup_duration_header">時間を選択</string>
+    <string name="setup_default_label">(標準)</string>
+    <string name="setup_voice_female_cd">女性の声</string>
+    <string name="setup_voice_male_cd">男性の声</string>
+    <string name="play_cd">再生</string>
+    <string name="pause_cd">一時停止</string>
+    <string name="stop_cd">停止</string>
+</resources>

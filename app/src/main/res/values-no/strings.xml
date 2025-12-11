@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Fade Sleep Timer</string>
+    <string name="accessibility_service_description">Lar appen slå av skjermen automatisk etter en periode med inaktivitet for å spare batteri. Denne tjenesten bruker bare skjermlåsfunksjonen og spionerer ikke på innhold.</string>
+    
+    <!-- Settings Screen -->
+    <string name="settings_title">Innstillinger</string>
+    <string name="settings_back_content_description">Tilbake</string>
+    
+    <!-- Support Button -->
+    <string name="support_development_title">Støtt Utvikleren</string>
+    <string name="support_development_subtitle">Lås opp funksjoner og fjern reklame</string>
+    
+    <!-- Premium Features Button -->
+    <string name="premium_features_title">Premium Funksjoner</string>
+    <string name="premium_features_subtitle">Administrer Belønninger</string>
+
+    <!-- Audio Settings -->
+    <string name="fade_out_duration_title">Uttoningsvarighet</string>
+    <string name="fade_out_duration_desc">Hvor lenge lyden skal senkes</string>
+    <string name="unit_minutes_value">%1$d min</string>
+    <string name="volume_safety_cap_title">Volumsikkerhetsgrense</string>
+    <string name="volume_safety_cap_desc">Begrens til 40%% for hørselvern</string>
+    <string name="play_on_start_title">Spill ved Start</string>
+    <string name="play_on_start_desc">Gjenoppta media når timeren starter</string>
+    <string name="play_on_start_toast">Aktiv. Media vil gjenopptas ved start.</string>
+    <string name="smart_wait_title">Smart Venting</string>
+    <string name="smart_wait_desc">Vent til sangen er ferdig</string>
+    <string name="smart_wait_toast">Aktiv. Timeren venter til sangen er ferdig.</string>
+
+    <!-- Visuals Settings -->
+    <string name="wedge_clock_title">Kileklokke</string>
+    <string name="wedge_clock_desc">Vis tid som en krympende kile</string>
+    <string name="super_dim_title">Super Dim Overlegg</string>
+    <string name="super_dim_desc">Ekstra mørkt filter for natten</string>
+    <string name="super_dim_toast">Aktiv. Skjermen dimmes ved start.</string>
+    <string name="grayscale_mode_title">Gråtonemodus</string>
+    <string name="grayscale_mode_desc">Gjør skjermen grå (kjedelig modus)</string>
+    <string name="red_night_light_toast">Rødt Nattlys vil være aktivt ved start</string>
+    <string name="grayscale_options_title">Gråtonealternativer</string>
+    <string name="grayscale_mode_timer">Kun Timer</string>
+    <string name="grayscale_desc_timer">Grå kun mens timeren går</string>
+    <string name="grayscale_mode_always">Alltid På</string>
+    <string name="grayscale_desc_always">Appen er alltid i gråtoner</string>
+    <string name="grayscale_mode_night">Rødt Nattlys</string>
+    <string name="grayscale_desc_night">Rødt filter for å blokkere blått lys</string>
+    <string name="change_icon_title">Endre Ikon?</string>
+    <string name="change_icon_message">Endre ikon til \'%1$s\'? Appen kan starte på nytt.</string>
+    <string name="change_icon_button">Endre Ikon</string>
+    <string name="premium_icons_title">Premium Ikoner</string>
+    <string name="premium_icons_subtitle">(for støttespillere)</string>
+    <string name="overlay_permission_desc">For å bruke Rødt Lys, må Fade vises over andre apper.</string>
+    <string name="overlay_step_1">1. Trykk \'Åpne Innstillinger\' nedenfor.</string>
+    <string name="overlay_step_2">2. Finn \'Fade Sleep Timer\'.</string>
+    <string name="overlay_step_3">3. Slå på \'Tillat visning over andre apper\'.</string>
+    <string name="open_settings_button">Åpne Innstillinger</string>
+    
+    <!-- Open On Charge Dialog -->
+    <string name="open_on_charge_dialog_title">Velg Tid</string>
+    <string name="open_on_charge_dialog_desc">Når skal den starte automatisk ved lading?</string>
+    <string name="open_on_charge_always">Alltid</string>
+    <string name="open_on_charge_always_desc">Hver gang den kobles til</string>
+    <string name="open_on_charge_strict">20:00 - 04:00</string>
+    <string name="open_on_charge_strict_desc">Kveld (20:00 - 04:00)</string>
+    <string name="open_on_charge_late">01:00 - 05:00</string>
+    <string name="open_on_charge_late_desc">Sent på natten (01:00 - 05:00)</string>
+    <string name="open_on_charge_morning">05:00 - 10:00</string>
+    <string name="open_on_charge_morning_desc">Morgen (05:00 - 10:00)</string>
+
+    <!-- Personalization Settings -->
+    <string name="airplane_mode_reminder_title">Flymodus Påminnelse</string>
+    <string name="airplane_mode_reminder_desc">Minn på å slå på Flymodus</string>
+    <string name="adjust_default_timer_title">Juster Standard Timer</string>
+    <string name="adjust_default_timer_desc">Starttid og sjekk</string>
+    <string name="default_duration_label_format">Standard Varighet: %1$s</string>
+    <string name="timer_check_in_title">Timer Sjekk</string>
+    <string name="timer_check_in_desc">Foreslå justering når den utvides ofte</string>
+    <string name="smart_extend_title">Smart Utvidelse</string>
+    <string name="smart_extend_desc">Legg til 10 min ved bevegelse</string>
+    <string name="sensitivity_header">FØLSOMHET</string>
+    <string name="sensitivity_low">Lav</string>
+    <string name="sensitivity_med">Middels</string>
+    <string name="sensitivity_high">Høy</string>
+    <string name="sensitivity_low_desc">Krever sterk bevegelse</string>
+    <string name="sensitivity_med_desc">Balansert (Anbefalt)</string>
+    <string name="sensitivity_high_desc">Oppdager små bevegelser</string>
+    <string name="configure_buttons_title">Mediaknapper</string>
+    <string name="configure_buttons_desc">Velg apper som skal vises</string>
+    <string name="smart_extend_help_title">Bruke Smart Utvidelse</string>
+    <string name="smart_extend_help_text">Legg telefonen på madrassen ved siden av puten.\n\nAkselerometeret vil oppdage vibrasjoner fra madrassen for å sjekke om du er våken.</string>
+    <string name="got_it_button">Den er grei</string>
+
+    <!-- Support Screen -->
+    <string name="beta_unlock_toast">Ingen kjøp i Beta. Trykk på gaveikonet 3 ganger.</string>
+    <string name="beta_unlock_click_2">2 til...</string>
+    <string name="beta_unlock_click_1">1 til...</string>
+    <string name="beta_unlock_success_toast">Premium Modus Låst Opp!</string>
+    <string name="support_title">Støtt Utvikleren</string>
+    <string name="support_subtitle_unlocked">Alle funksjoner i innstillinger låst opp</string>
+    <string name="support_subtitle_locked">Trykk på gave for en overraskelse</string>
+    <string name="support_close_button">Lukk</string>
+    <string name="support_rate_title">Vurder Appen</string>
+    <string name="support_rate_subtitle_locked">Lås opp \'Støttespiller\' merke</string>
+    <string name="support_rate_subtitle_unlocked">Du er en offisiell Støttespiller!</string>
+    <string name="price_free">Gratis</string>
+    <string name="support_rate_active_text">Støttespiller</string>
+    <string name="support_share_title">Del Appen</string>
+    <string name="support_share_subtitle">Fortell venner</string>
+    <string name="support_share_active_text">Delt</string>
+    <string name="support_other_apps_title">Mine Andre Apper</string>
+    <string name="support_other_apps_subtitle">Jeg synes de er KULE!</string>
+    <string name="support_other_apps_active_text">Sett</string>
+    <string name="support_other_apps_error">Kunne ikke åpne utviklersiden</string>
+    <string name="support_visuals_title">Visuell Pakke</string>
+    <string name="support_visuals_desc">30+ Temaer inkludert Neon, OLED</string>
+    <string name="support_visuals_desc_unlocked">30+ Temaer ($0.99 - Valgfritt)</string>
+    <string name="support_visuals_select_cd">Velg Tema</string>
+    <string name="status_unlocked">Låst opp</string>
+    <string name="support_hof_title">Hall of Fame og Ikoner</string>
+    <string name="support_hof_view_cd">Se Hall of Fame</string>
+
+    <!-- System Settings -->
+    <string name="dnd_title">Ikke Forstyrr (DND)</string>
+    <string name="dnd_desc">Demp varsler mens timeren går</string>
+    <string name="dnd_mode_priority">Standard (Prioritet)</string>
+    <string name="dnd_mode_alarms">Streng (Kun Alarmer)</string>
+    <string name="battery_guard_title">Batterivakt</string>
+    <string name="battery_guard_desc_format">Stopp når batteri &lt; %1$d%%</string>
+    <string name="stop_threshold_label">Stoppterskel</string>
+    <string name="go_home_title">Hjem ved Start</string>
+    <string name="go_home_desc">Minimer appen ved start</string>
+    <string name="open_on_charge_title">Åpne ved Lading</string>
+    <string name="open_on_charge_desc">Auto-start når plugget inn</string>
+
+    <!-- Controls Settings -->
+    <string name="face_down_title">Snu for å Starte</string>
+    <string name="face_down_desc">Start og slå av skjerm (5s)</string>
+    <string name="face_down_toast">Aktiv. Snu enheten for å starte.</string>
+    <string name="shake_extend_title">Rist for å Utvide</string>
+    <string name="shake_extend_desc">Rist for å legge til 15 min</string>
+    <string name="shake_extend_toast">Aktiv. Rist for +15 min.</string>
+    <string name="pocket_mode_title">Lommemodus</string>
+    <string name="pocket_mode_desc">Forhindre utilsiktede trykk</string>
+    <string name="pocket_mode_toast">Aktiv. Trykk blokkert.</string>
+    <string name="widgets_title">Hjemskjerm Widgeter</string>
+    <string name="widgets_desc">Hold på hjemskjermen for å legge til en widget.</string>
+
+    <!-- Info Settings -->
+    <string name="sleep_journey_title">Søvnreise</string>
+    <string name="sleep_journey_desc">Merker, Serier og Statistikk</string>
+    <string name="hall_of_fame_title">Hall of Fame</string>
+    <string name="hall_of_fame_desc">Våre legendariske støttespillere</string>
+    <string name="battery_data_saved_title">BATTERI OG DATA SPART</string>
+    <string name="battery_data_saved_desc">Estimert basert på gjennomsnitt</string>
+    <string name="saved_minutes_format">%1$d min</string>
+    <string name="saved_hours_format">%.1f t</string>
+
+    <!-- Settings Titles -->
+    <string name="settings_category_system">Avansert og System</string>
+    <string name="settings_category_controls">Kontroll og Interaksjon</string>
+    <string name="settings_category_info">Informasjon</string>
+    <string name="settings_category_audio">Lyd og Avspilling</string>
+    <string name="settings_category_visuals">Visuelt og Skjerm</string>
+    <string name="settings_category_wellness">Velvære og Personlig</string>
+    <string name="settings_category_control">Kontroll og Interaksjon</string>
+    <string name="settings_category_advanced">Avansert og System</string>
+    <string name="settings_category_awesome">Kule Funksjoner</string>
+    <string name="settings_category_personalization">Personliggjøring</string>
+
+    <!-- Settings Components -->
+    <string name="unit_minutes_short">%1$d min</string>
+    <string name="unit_hours_short">%1$d t</string>
+    <string name="unit_hours_decimal_short">%1$s t</string>
+    <string name="add_timer_preset_title">Legg til Forhåndsinnstilling</string>
+    <string name="minutes_label_caps">MINUTTER</string>
+    <string name="add_button_caps">LEGG TIL</string>
+    <string name="remove_cd">Fjern</string>
+    <string name="topic_header">EMNE</string>
+    <string name="change_timer_buttons_title">Endre Knapper</string>
+    <string name="change_timer_buttons_subtitle">Tilpass tider</string>
+    <string name="reset_default_button_text">Tilbakestill Standard</string>
+    <string name="new_badge">NY</string>
+    <string name="expand_cd">Utvid</string>
+    <string name="collapse_cd">Kollaps</string>
+
+    <!-- Awesome Features Settings -->
+    <string name="bedtime_reminder_title">Leggetid Påminnelse</string>
+    <string name="bedtime_reminder_desc">Varsel for søvntid</string>
+    <string name="reminder_time_label">Tid</string>
+    <string name="prayer_reminder_title">Bønnepåminnelse</string>
+    <string name="prayer_reminder_desc">Ta en pause og be før søvn</string>
+    <string name="brain_dump_title">Tøm Hodet</string>
+    <string name="brain_dump_desc">Skriv ned tanker før søvn</string>
+    <string name="scripture_mode_title">Skriftmodus</string>
+    <string name="scripture_mode_desc">Vis et beroligende vers</string>
+    <string name="scripture_topic_random">Overrask meg! (Tilfeldig)</string>
+    <string name="wisdom_quotes_title">Visdomssitater</string>
+    <string name="wisdom_quotes_desc">Dyp teologisk visdom</string>
+    <string name="wisdom_category_peace">Fred og Trøst</string>
+    <string name="wisdom_desc_peace">Angst, hvile og tillit</string>
+    <string name="wisdom_category_glory">Guds Herlighet</string>
+    <string name="wisdom_desc_glory">Hvem Gud er og Hans suverenitet</string>
+    <string name="wisdom_category_gospel">Evangelium og Nåde</string>
+    <string name="wisdom_desc_gospel">Tilgivelse og frelse</string>
+    <string name="wisdom_category_living">Liv og Visdom</string>
+    <string name="wisdom_desc_living">Bønn og praktisk tro</string>
+    <string name="sleep_calc_title">Søvnkalkulator</string>
+    <string name="sleep_calc_desc">Beste tid å våkne</string>
+    <string name="alarm_button_setting_title">Alarmknapp</string>
+    <string name="alarm_button_setting_desc">Vis "Sett Alarm"</string>
+    <string name="breathing_guide_title">Haptisk Pusteguide</string>
+    <string name="breathing_guide_desc">Pust med vibrasjon</string>
+    <string name="haptic_vibration_title">Haptisk Vibrasjon</string>
+    <string name="haptic_vibration_desc">Slå på følbar tilbakemelding</string>
+    <string name="breathing_auto_start_title">Auto-Start</string>
+    <string name="breathing_auto_start_desc">Start guide automatisk</string>
+    <string name="breathing_duration_label">Varighet: %1$d min</string>
+    <string name="doomscroll_title">Avhengighetslås</string>
+    <string name="doomscroll_desc">Blokker avhengighetsskapende apper</string>
+    <string name="grace_period_label">Nådeperiode: %1$d min</string>
+    <string name="grace_period_desc">Kort bruk før blokkering</string>
+    <string name="blocked_apps_label">Blokkert (%1$d)</string>
+    <string name="add_app_to_block_button">Blokker App</string>
+    <string name="permission_required_title">Tillatelse Påkrevd</string>
+    <string name="accessibility_explanation_doomscroll">For å blokkere trenger Fade \'Tilgjengelighet\' tillatelse.</string>
+    <string name="instructions_label">Instruksjoner:</string>
+    <string name="accessibility_step_2_doomscroll">2. Finn \'Fade Sleep Timer\'.</string>
+    <string name="accessibility_step_3_doomscroll">3. Slå den på.</string>
+    <string name="accessibility_step_4_doomscroll">4. Trykk \'Tillat\'.</string>
+    
+    <!-- Timer Capsule -->
+    <string name="stop_timer_content_description">Stopp Timer</string>
+    
+    <!-- Presets Editor -->
+    <string name="timer_presets_title">Forhåndsinnstillinger</string>
+    <string name="timer_presets_subtitle">Tilpass knapper</string>
+    <string name="add_button">Legg til</string>
+    <string name="reset_default_button">Tilbakestill</string>
+    <string name="add_preset_dialog_title">Legg til Forhåndsinnstilling</string>
+    <string name="minutes_label">Minutter</string>
+    <string name="cancel_button">Avbryt</string>
+    
+    <!-- Settings Section -->
+    <string name="expand_content_description">Utvid</string>
+    <string name="collapse_content_description">Kollaps</string>
+    
+    <!-- General -->
+    <string name="new_label">NY</string>
+    
+    <!-- Main Screen -->
+    <string name="app_title">Søvntimer</string>
+    <string name="supporter_badge">Støttespiller</string>
+    <string name="pocket_mode_active">Lommemodus Aktiv</string>
+    <string name="pocket_mode_unlock_instruction">Dobbelttrykk for å låse opp</string>
+    <string name="pocket_mode_unlocked_toast">Lommemodus Låst Opp</string>
+    <string name="timer_started_minimizing_toast">Timer startet. Minimerer...</string>
+    
+    <!-- Dialogs -->
+    <string name="shake_dialog_title">Rist for å Utvide</string>
+    <string name="shake_dialog_message">Du ristet! Skal vi la dette være på?</string>
+    <string name="keep_on_button">La være på</string>
+    <string name="turn_off_button">Slå av</string>
+    <string name="shake_disabled_toast">Rist for å Utvide er slått av.</string>
+    
+    <!-- Spotlight Tour -->
+    <string name="spotlight_presets_title">Velg en Tid ⏱️</string>
+    <string name="spotlight_presets_desc">Når stille? Musikk vil sakte tone ut.</string>
+    <string name="spotlight_media_title">Rask Media Tilgang 🎵</string>
+    <string name="spotlight_media_desc">Trykk \'Konfigurer\' for å legge til dine apper (Spotify, YouTube osv).</string>
+    <string name="spotlight_settings_title">Oppdag Mer ⚙️</string>
+    <string name="spotlight_settings_desc">Innstillinger har pusteøvelser, bønner og mer.</string>
+    
+    <!-- Morning Check -->
+    <string name="morning_check_yes_toast">Tips: Prøv en lengre tid i natt.</string>
+    <string name="morning_check_no_toast">Flott! Vi beholder dine preferanser.</string>
+    
+    <!-- Content Descriptions -->
+    <string name="breathing_guide_cd">Pusteguide</string>
+    <string name="view_note_cd">Vis Notat</string>
+
+    <!-- Pre-Timer Screen -->
+    <string name="optimal_wake_time_label">Beste Tid å Våkne</string>
+    <string name="sleep_cycles_suffix"> (5 Sykluser)</string>
+    <string name="set_alarm_button">SETT ALARM</string>
+    <string name="pre_timer_settings_hint">Tips: Tilpass i Innstillinger > Kule Funksjoner</string>
+    <string name="ready_to_sleep_title">Klar for å sove?</string>
+    <string name="pre_timer_instruction">Sjekk før du starter.</string>
+    <string name="fade_wake_up_alarm_message">Fade Oppvåkning</string>
+    <string name="alarm_set_toast">Alarm satt til %s</string>
+    <string name="alarm_error_toast">Alarm feil: %s</string>
+    <string name="airplane_mode_title">Flymodus</string>
+    <string name="airplane_mode_desc">Ingen distraksjoner og ingen stråling</string>
+    <string name="settings_button_caps">INNSTILLINGER</string>
+    <string name="start_timer_button">START</string>
+    <string name="cancel_cd">Avbryt</string>
+    <string name="illuminating_wisdom_loading">Opplyser...</string>
+    <string name="understanding_quote_title">Forstå Sitatet</string>
+    <string name="close_button">Lukk</string>
+    <string name="explanation_error_title">Kan ikke forklare nå</string>
+
+    <!-- Permissions Screen -->
+    <string name="permissions_needed_title">Tillatelser Påkrevd</string>
+    <string name="permissions_needed_desc">For å kjøre i bakgrunnen og tone ned lyd.</string>
+    <string name="privacy_promise_cd">Personvern</string>
+    <string name="privacy_promise_title">Personvern - Null Data</string>
+    <string name="privacy_promise_body">Dine data er dine. Jeg har ikke tilgang til dem, og ingenting sendes til skyen.</string>
+    <string name="open_source_cd">Open Source</string>
+    <string name="open_source_title">Tillit må fortjenes</string>
+    <string name="open_source_body">Fade er Open Source. Alle kan sjekke koden.</string>
+    <string name="view_source_code_button">Se Kildekode</string>
+    <string name="notifications_permission_title">Varsler</string>
+    <string name="notifications_enabled_desc">Aktivert - vis status</string>
+    <string name="notifications_required_desc">Påkrevd for varsler.</string>
+    <string name="allowed_button">Tillatt</string>
+    <string name="allow_button">Tillat</string>
+    <string name="enabled_button">Aktivert</string>
+    <string name="fix_button">Fiks</string>
+    <string name="unrestricted_battery_title">Ubegrenset Batteri</string>
+    <string name="battery_enabled_desc">Aktivert - kjører pålitelig</string>
+    <string name="battery_critical_desc">Kritisk: Forhindrer at timeren stopper når skjermen er av.</string>
+    <string name="accessibility_dialog_title">Aktiver Auto Skjerm Av</string>
+    <string name="accessibility_step_intro">Aktiver tilgjengelighetstjeneste manuelt:</string>
+    <string name="accessibility_step_1">1. Trykk \'Gå til Innstillinger\'.</string>
+    <string name="accessibility_step_2">2. Finn \'Installerte apper\'.</string>
+    <string name="accessibility_step_3">3. Trykk \'Fade Sleep Timer\'.</string>
+    <string name="accessibility_step_4">4. Slå på bryteren.</string>
+    <string name="go_to_settings_button">Gå til Innstillinger</string>
+
+    <string name="auto_screen_off_title">Auto Skjerm Av</string>
+    <string name="auto_screen_off_enabled_desc">Aktivert - av etter 3 min</string>
+    <string name="auto_screen_off_optional_desc">Valgfritt - lås ved inaktivitet</string>
+    <string name="enable_button">Aktiver</string>
+    <string name="continue_button">Fortsett</string>
+
+    <!-- Support Prompts (Arrays) -->
+    <string-array name="review_prompts">
+        <item>Nyter du stillheten? 5 stjerner hjelper.</item>
+        <item>Sovner du raskere? Fortell verden (hviskende).</item>
+        <item>Hvis appen fungerer, fungerer en anmeldelse for oss.</item>
+        <item>Vil ikke vekke deg, men vurder oss.</item>
+        <item>Fortsatt våken? Kanskje skrive en anmeldelse.</item>
+        <item>Liker du Fade? Ikke la stjernene våre blekne.</item>
+        <item>Å skrive en anmeldelse er avslappende, visste du det?</item>
+        <item>Hjelp oss å bekjempe mareritt. Gi oss 5 stjerner.</item>
+        <item>Null reklame, null kostnad. En liten anmeldelse?</item>
+        <item>Vær en helt. Redd en utvikler fra søvnløshet.</item>
+        <item>Hvis du leser dette, skylder du oss en anmeldelse. Tuller...?</item>
+        <item>Siste tilbud: Anmeldelse og få en virtuell high-five.</item>
+    </string-array>
+    
+    <string-array name="support_prompts">
+        <item>Jeg har barn. De spiser mye. Støtte utvikleren?</item>
+        <item>Mine kodeaper vil ha bananer. Et tips?</item>
+        <item>Jeg koder i pysjamas, men det er en jobb. Kaffe?</item>
+        <item>Liker du stillhet? Sett pris på mine bråkete barn som jeg ignorerer.</item>
+        <item>Prøvde å betale leie med "gode vibber", funket ikke.</item>
+        <item>Hjelp meg å bevise for kona at dette er en ekte jobb.</item>
+        <item>9 av 10 leger anbefaler å støtte indie-utviklere.</item>
+        <item>Sparer til en robotbutler. Hver krone teller.</item>
+        <item>Ryktet sier at støtte forbedrer søvnkvaliteten med 10%%.</item>
+        <item>Jeg lover å bruke det fornuftig (Kaffe).</item>
+        <item>Koding bruker 500%% mer koffein.</item>
+        <item>Få en utvikler til å smile. Bra for karma.</item>
+    </string-array>
+
+    <!-- Notifications & Dialogs -->
+    <string name="bedtime_reminder_title_notif">Leggetid</string>
+    <string name="bedtime_reminder_desc_notif">Påminnelse for søvntid</string>
+    <string name="bedtime_reminder_text">Det er tid for å sove.</string>
+    <string name="extend_15m_button">Utvid 15 min</string>
+    <string name="dismiss_button">Lukk</string>
+    
+    <string name="brain_dump_channel_name">Idé Påminnelse</string>
+    <string name="brain_dump_channel_desc">Advarsel før notat slettes</string>
+    <string name="brain_dump_title_notif">Notat forsvinner snart</string>
+    <string name="brain_dump_text_format">Notat slettes om %s. Trykk for å se.</string>
+    
+    <string name="support_prompt_title">Melding fra Utvikler</string>
+    <string name="support_prompt_nah">Nei</string>
+    <string name="support_prompt_check_it_out">Sjekk det ut</string>
+    
+    <string name="support_banner_text">Klikk her for å støtte utvikleren!</string>
+    <string name="support_banner_button">Støtt</string>
+    
+    <string name="spotlight_got_it">Skjønner!</string>
+    <string name="spotlight_next">Neste</string>
+
+    <!-- Setup Screen -->
+    <string name="setup_source_system">System Lyd</string>
+    <string name="setup_source_info">Søvnhjelp Info</string>
+    <string name="setup_resume_music">Gjenoppta Musikk</string>
+    <string name="setup_configure">KONFIGURER</string>
+    <string name="setup_configure_toast">Tips: Konfigurer knapper i Innstillinger -> Velvære</string>
+    <string name="setup_facts">Fakta</string>
+    <string name="setup_bios">Bios</string>
+    <string name="setup_history">Historikk</string>
+    <string name="setup_volume_header">VOLUM</string>
+    <string name="setup_volume_limit">Grense På</string>
+    <string name="setup_volume_capped_cd">Volum Begrenset</string>
+    <string name="setup_safety_cap_toast">Sikkerhetsgrense: Skalert til 40%% område.</string>
+    <string name="setup_duration_header">VELG TID</string>
+    <string name="setup_default_label">(standard)</string>
+    <string name="setup_voice_female_cd">Kvinnestemme</string>
+    <string name="setup_voice_male_cd">Mannsstemme</string>
+    <string name="play_cd">Spill</string>
+    <string name="pause_cd">Pause</string>
+    <string name="stop_cd">Stopp</string>
+</resources>

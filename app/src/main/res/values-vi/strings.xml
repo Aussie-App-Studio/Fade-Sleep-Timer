@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Fade Sleep Timer</string>
+    <string name="accessibility_service_description">Cho phép ứng dụng tự động tắt màn hình sau một khoảng thời gian không hoạt động để tiết kiệm pin. Dịch vụ này chỉ sử dụng tính năng khóa màn hình và không theo dõi bất kỳ nội dung nào.</string>
+    
+    <!-- Settings Screen -->
+    <string name="settings_title">Cài đặt</string>
+    <string name="settings_back_content_description">Quay lại</string>
+    
+    <!-- Support Button -->
+    <string name="support_development_title">Ủng hộ Nhà phát triển</string>
+    <string name="support_development_subtitle">Mở khóa Tính năng &amp; Xóa Quảng cáo</string>
+    
+    <!-- Premium Features Button -->
+    <string name="premium_features_title">Tính năng Cao cấp</string>
+    <string name="premium_features_subtitle">Quản lý Phần thưởng</string>
+
+    <!-- Audio Settings -->
+    <string name="fade_out_duration_title">Thời lượng Làm mờ</string>
+    <string name="fade_out_duration_desc">Thời gian giảm âm lượng</string>
+    <string name="unit_minutes_value">%1$d phút</string>
+    <string name="volume_safety_cap_title">Giới hạn An toàn Âm lượng</string>
+    <string name="volume_safety_cap_desc">Giới hạn ở 40% để bảo vệ thính giác</string>
+    <string name="play_on_start_title">Phát khi Bắt đầu</string>
+    <string name="play_on_start_desc">Tiếp tục phát nhạc khi bộ hẹn giờ bắt đầu</string>
+    <string name="play_on_start_toast">Đã bật. Nhạc sẽ tiếp tục khi bắt đầu.</string>
+    <string name="smart_wait_title">Chờ Thông minh</string>
+    <string name="smart_wait_desc">Chờ bài hát kết thúc</string>
+    <string name="smart_wait_toast">Đã bật. Bộ hẹn giờ sẽ chờ bài hát kết thúc.</string>
+
+    <!-- Visuals Settings -->
+    <string name="wedge_clock_title">Đồng hồ Dạng nêm</string>
+    <string name="wedge_clock_desc">Hiển thị thời gian dưới dạng nêm thu nhỏ</string>
+    <string name="super_dim_title">Lớp phủ Siêu Tối</string>
+    <string name="super_dim_desc">Bộ lọc cực tối cho ban đêm</string>
+    <string name="super_dim_toast">Đã bật. Màn hình sẽ tối đi khi bắt đầu.</string>
+    <string name="grayscale_mode_title">Chế độ Xám</string>
+    <string name="grayscale_mode_desc">Làm màn hình xám (chế độ nhàm chán)</string>
+    <string name="red_night_light_toast">Đèn Đêm Đỏ sẽ hoạt động khi bắt đầu</string>
+    <string name="grayscale_options_title">Tùy chọn Xám</string>
+    <string name="grayscale_mode_timer">Chỉ Bộ hẹn giờ</string>
+    <string name="grayscale_desc_timer">Chỉ xám khi bộ hẹn giờ chạy</string>
+    <string name="grayscale_mode_always">Luôn Bật</string>
+    <string name="grayscale_desc_always">Ứng dụng luôn ở chế độ xám</string>
+    <string name="grayscale_mode_night">Đèn Đêm Đỏ</string>
+    <string name="grayscale_desc_night">Bộ lọc đỏ chặn ánh sáng xanh</string>
+    <string name="change_icon_title">Đổi Biểu tượng?</string>
+    <string name="change_icon_message">Đổi biểu tượng thành \'%1$s\'? Ứng dụng có thể khởi động lại.</string>
+    <string name="change_icon_button">Đổi Biểu tượng</string>
+    <string name="premium_icons_title">Biểu tượng Cao cấp</string>
+    <string name="premium_icons_subtitle">(dành cho người ủng hộ)</string>
+    <string name="overlay_permission_desc">Để sử dụng Đèn Đỏ, Fade cần hiển thị trên các ứng dụng khác.</string>
+    <string name="overlay_step_1">1. Nhấn \'Mở Cài đặt\' bên dưới.</string>
+    <string name="overlay_step_2">2. Tìm \'Fade Sleep Timer\'.</string>
+    <string name="overlay_step_3">3. Bật \'Cho phép hiển thị trên các ứng dụng khác\'.</string>
+    <string name="open_settings_button">Mở Cài đặt</string>
+    
+    <!-- Open On Charge Dialog -->
+    <string name="open_on_charge_dialog_title">Chọn Thời gian</string>
+    <string name="open_on_charge_dialog_desc">Tự động bắt đầu khi sạc vào lúc nào?</string>
+    <string name="open_on_charge_always">Luôn luôn</string>
+    <string name="open_on_charge_always_desc">Mỗi khi cắm sạc</string>
+    <string name="open_on_charge_strict">20:00 - 04:00</string>
+    <string name="open_on_charge_strict_desc">Buổi tối (20:00 - 04:00)</string>
+    <string name="open_on_charge_late">01:00 - 05:00</string>
+    <string name="open_on_charge_late_desc">Đêm khuya (01:00 - 05:00)</string>
+    <string name="open_on_charge_morning">05:00 - 10:00</string>
+    <string name="open_on_charge_morning_desc">Buổi sáng (05:00 - 10:00)</string>
+
+    <!-- Personalization Settings -->
+    <string name="airplane_mode_reminder_title">Nhắc nhở Chế độ Máy bay</string>
+    <string name="airplane_mode_reminder_desc">Nhắc bật Chế độ Máy bay</string>
+    <string name="adjust_default_timer_title">Điều chỉnh Bộ hẹn giờ Mặc định</string>
+    <string name="adjust_default_timer_desc">Thời gian ban đầu và kiểm tra</string>
+    <string name="default_duration_label_format">Thời lượng Mặc định: %1$s</string>
+    <string name="timer_check_in_title">Kiểm tra Bộ hẹn giờ</string>
+    <string name="timer_check_in_desc">Gợi ý điều chỉnh nếu gia hạn thường xuyên</string>
+    <string name="smart_extend_title">Gia hạn Thông minh</string>
+    <string name="smart_extend_desc">Thêm 10 phút khi phát hiện chuyển động</string>
+    <string name="sensitivity_header">ĐỘ NHẠY</string>
+    <string name="sensitivity_low">Thấp</string>
+    <string name="sensitivity_med">Trung bình</string>
+    <string name="sensitivity_high">Cao</string>
+    <string name="sensitivity_low_desc">Cần chuyển động mạnh</string>
+    <string name="sensitivity_med_desc">Cân bằng (Khuyên dùng)</string>
+    <string name="sensitivity_high_desc">Phát hiện chuyển động nhỏ</string>
+    <string name="configure_buttons_title">Nút Phương tiện</string>
+    <string name="configure_buttons_desc">Chọn ứng dụng để hiển thị</string>
+    <string name="smart_extend_help_title">Sử dụng Gia hạn Thông minh</string>
+    <string name="smart_extend_help_text">Đặt điện thoại trên nệm cạnh gối.\n\nCảm biến gia tốc sẽ phát hiện rung động của nệm để kiểm tra xem bạn có thức không.</string>
+    <string name="got_it_button">Đã hiểu</string>
+
+    <!-- Support Screen -->
+    <string name="beta_unlock_toast">Không mua hàng trong bản Beta. Nhấn biểu tượng quà tặng 3 lần.</string>
+    <string name="beta_unlock_click_2">2 lần nữa...</string>
+    <string name="beta_unlock_click_1">1 lần nữa...</string>
+    <string name="beta_unlock_success_toast">Đã mở khóa Chế độ Cao cấp!</string>
+    <string name="support_title">Ủng hộ Nhà phát triển</string>
+    <string name="support_subtitle_unlocked">Đã mở khóa tất cả tính năng trong Cài đặt</string>
+    <string name="support_subtitle_locked">Nhấn vào quà tặng để xem bất ngờ</string>
+    <string name="support_close_button">Đóng</string>
+    <string name="support_rate_title">Đánh giá Ứng dụng</string>
+    <string name="support_rate_subtitle_locked">Mở khóa huy hiệu \'Người ủng hộ\'</string>
+    <string name="support_rate_subtitle_unlocked">Bạn là Người ủng hộ chính thức!</string>
+    <string name="price_free">Miễn phí</string>
+    <string name="support_rate_active_text">Người ủng hộ</string>
+    <string name="support_share_title">Chia sẻ Ứng dụng</string>
+    <string name="support_share_subtitle">Kể cho bạn bè</string>
+    <string name="support_share_active_text">Đã chia sẻ</string>
+    <string name="support_other_apps_title">Ứng dụng khác của tôi</string>
+    <string name="support_other_apps_subtitle">Tôi nghĩ chúng RẤT TUYỆT!</string>
+    <string name="support_other_apps_active_text">Đã xem</string>
+    <string name="support_other_apps_error">Không thể mở trang nhà phát triển</string>
+    <string name="support_visuals_title">Gói Hình ảnh</string>
+    <string name="support_visuals_desc">30+ Chủ đề bao gồm Neon, OLED</string>
+    <string name="support_visuals_desc_unlocked">30+ Chủ đề ($0.99 - Tùy chọn)</string>
+    <string name="support_visuals_select_cd">Chọn Chủ đề</string>
+    <string name="status_unlocked">Đã mở khóa</string>
+    <string name="support_hof_title">Đại sảnh Danh vọng &amp; Biểu tượng</string>
+    <string name="support_hof_view_cd">Xem Đại sảnh Danh vọng</string>
+
+    <!-- System Settings -->
+    <string name="dnd_title">Không Làm Phiền (DND)</string>
+    <string name="dnd_desc">Tắt thông báo khi hẹn giờ</string>
+    <string name="dnd_mode_priority">Tiêu chuẩn (Ưu tiên)</string>
+    <string name="dnd_mode_alarms">Nghiêm ngặt (Chỉ Báo thức)</string>
+    <string name="battery_guard_title">Bảo vệ Pin</string>
+    <string name="battery_guard_desc_format">Dừng khi pin &lt; %1$d%%</string>
+    <string name="stop_threshold_label">Ngưỡng Dừng</string>
+    <string name="go_home_title">Về Màn hình chính khi Bắt đầu</string>
+    <string name="go_home_desc">Thu nhỏ ứng dụng khi bắt đầu</string>
+    <string name="open_on_charge_title">Mở khi Sạc</string>
+    <string name="open_on_charge_desc">Tự động khởi động khi cắm sạc</string>
+
+    <!-- Controls Settings -->
+    <string name="face_down_title">Lật để Bắt đầu</string>
+    <string name="face_down_desc">Bắt đầu &amp; tắt màn hình (5 giây)</string>
+    <string name="face_down_toast">Đã bật. Lật thiết bị để bắt đầu.</string>
+    <string name="shake_extend_title">Lắc để Gia hạn</string>
+    <string name="shake_extend_desc">Lắc để thêm 15 phút</string>
+    <string name="shake_extend_toast">Đã bật. Lắc để +15 phút.</string>
+    <string name="pocket_mode_title">Chế độ Bỏ túi</string>
+    <string name="pocket_mode_desc">Ngăn chạm nhầm</string>
+    <string name="pocket_mode_toast">Đã bật. Cảm ứng bị chặn.</string>
+    <string name="widgets_title">Tiện ích Màn hình chính</string>
+    <string name="widgets_desc">Nhấn giữ màn hình chính để thêm tiện ích.</string>
+
+    <!-- Info Settings -->
+    <string name="sleep_journey_title">Hành trình Giấc ngủ</string>
+    <string name="sleep_journey_desc">Huy hiệu, Chuỗi &amp; Thống kê</string>
+    <string name="hall_of_fame_title">Đại sảnh Danh vọng</string>
+    <string name="hall_of_fame_desc">Những người ủng hộ huyền thoại</string>
+    <string name="battery_data_saved_title">TIẾT KIỆM PIN &amp; DỮ LIỆU</string>
+    <string name="battery_data_saved_desc">Ước tính dựa trên trung bình</string>
+    <string name="saved_minutes_format">%1$d phút</string>
+    <string name="saved_hours_format">%.1f giờ</string>
+
+    <!-- Settings Titles -->
+    <string name="settings_category_system">Nâng cao &amp; Hệ thống</string>
+    <string name="settings_category_controls">Điều khiển &amp; Tương tác</string>
+    <string name="settings_category_info">Thông tin</string>
+    <string name="settings_category_audio">Âm thanh &amp; Phát lại</string>
+    <string name="settings_category_visuals">Hình ảnh &amp; Hiển thị</string>
+    <string name="settings_category_wellness">Sức khỏe &amp; Cá nhân</string>
+    <string name="settings_category_control">Điều khiển &amp; Tương tác</string>
+    <string name="settings_category_advanced">Nâng cao &amp; Hệ thống</string>
+    <string name="settings_category_awesome">Tính năng Tuyệt vời</string>
+    <string name="settings_category_personalization">Cá nhân hóa</string>
+
+    <!-- Settings Components -->
+    <string name="unit_minutes_short">%1$d phút</string>
+    <string name="unit_hours_short">%1$d giờ</string>
+    <string name="unit_hours_decimal_short">%1$s giờ</string>
+    <string name="add_timer_preset_title">Thêm Cài đặt trước</string>
+    <string name="minutes_label_caps">PHÚT</string>
+    <string name="add_button_caps">THÊM</string>
+    <string name="remove_cd">Xóa</string>
+    <string name="topic_header">CHỦ ĐỀ</string>
+    <string name="change_timer_buttons_title">Đổi Nút</string>
+    <string name="change_timer_buttons_subtitle">Tùy chỉnh thời gian</string>
+    <string name="reset_default_button_text">Khôi phục Mặc định</string>
+    <string name="new_badge">MỚI</string>
+    <string name="expand_cd">Mở rộng</string>
+    <string name="collapse_cd">Thu gọn</string>
+
+    <!-- Awesome Features Settings -->
+    <string name="bedtime_reminder_title">Nhắc nhở Giờ ngủ</string>
+    <string name="bedtime_reminder_desc">Thông báo giờ đi ngủ</string>
+    <string name="reminder_time_label">Thời gian</string>
+    <string name="prayer_reminder_title">Nhắc nhở Cầu nguyện</string>
+    <string name="prayer_reminder_desc">Dừng lại và cầu nguyện trước khi ngủ</string>
+    <string name="brain_dump_title">Xả Stress</string>
+    <string name="brain_dump_desc">Viết ra suy nghĩ trước khi ngủ</string>
+    <string name="scripture_mode_title">Chế độ Kinh thánh</string>
+    <string name="scripture_mode_desc">Hiển thị câu kinh thánh êm dịu</string>
+    <string name="scripture_topic_random">Làm tôi ngạc nhiên! (Ngẫu nhiên)</string>
+    <string name="wisdom_quotes_title">Trích dẫn Khôn ngoan</string>
+    <string name="wisdom_quotes_desc">Sự khôn ngoan thần học sâu sắc</string>
+    <string name="wisdom_category_peace">Bình an &amp; An ủi</string>
+    <string name="wisdom_desc_peace">Lo âu, nghỉ ngơi và tin cậy</string>
+    <string name="wisdom_category_glory">Vinh hiển của Chúa</string>
+    <string name="wisdom_desc_glory">Chúa là ai và chủ quyền của Ngài</string>
+    <string name="wisdom_category_gospel">Tin lành &amp; Ân điển</string>
+    <string name="wisdom_desc_gospel">Sự tha thứ và cứu rỗi</string>
+    <string name="wisdom_category_living">Cuộc sống &amp; Sự khôn ngoan</string>
+    <string name="wisdom_desc_living">Cầu nguyện và đức tin thực hành</string>
+    <string name="sleep_calc_title">Máy tính Giấc ngủ</string>
+    <string name="sleep_calc_desc">Thời gian thức dậy tốt nhất</string>
+    <string name="alarm_button_setting_title">Nút Báo thức</string>
+    <string name="alarm_button_setting_desc">Hiển thị "Đặt Báo thức"</string>
+    <string name="breathing_guide_title">Hướng dẫn Thở Haptic</string>
+    <string name="breathing_guide_desc">Thở theo độ rung</string>
+    <string name="haptic_vibration_title">Rung Haptic</string>
+    <string name="haptic_vibration_desc">Bật phản hồi xúc giác</string>
+    <string name="breathing_auto_start_title">Tự động Bắt đầu</string>
+    <string name="breathing_auto_start_desc">Tự động bắt đầu hướng dẫn</string>
+    <string name="breathing_duration_label">Thời lượng: %1$d phút</string>
+    <string name="doomscroll_title">Khóa Nghiện</string>
+    <string name="doomscroll_desc">Chặn ứng dụng gây nghiện</string>
+    <string name="grace_period_label">Thời gian ân hạn: %1$d phút</string>
+    <string name="grace_period_desc">Sử dụng ngắn trước khi chặn</string>
+    <string name="blocked_apps_label">Đã chặn (%1$d)</string>
+    <string name="add_app_to_block_button">Chặn Ứng dụng</string>
+    <string name="permission_required_title">Cần Quyền</string>
+    <string name="accessibility_explanation_doomscroll">Để chặn, Fade cần quyền \'Trợ năng\'.</string>
+    <string name="instructions_label">Hướng dẫn:</string>
+    <string name="accessibility_step_2_doomscroll">2. Tìm \'Fade Sleep Timer\'.</string>
+    <string name="accessibility_step_3_doomscroll">3. Bật nó lên.</string>
+    <string name="accessibility_step_4_doomscroll">4. Nhấn \'Cho phép\'.</string>
+    
+    <!-- Timer Capsule -->
+    <string name="stop_timer_content_description">Dừng Bộ hẹn giờ</string>
+    
+    <!-- Presets Editor -->
+    <string name="timer_presets_title">Cài đặt trước</string>
+    <string name="timer_presets_subtitle">Tùy chỉnh nút</string>
+    <string name="add_button">Thêm</string>
+    <string name="reset_default_button">Đặt lại</string>
+    <string name="add_preset_dialog_title">Thêm Cài đặt trước</string>
+    <string name="minutes_label">Phút</string>
+    <string name="cancel_button">Hủy</string>
+    
+    <!-- Settings Section -->
+    <string name="expand_content_description">Mở rộng</string>
+    <string name="collapse_content_description">Thu gọn</string>
+    
+    <!-- General -->
+    <string name="new_label">MỚI</string>
+    
+    <!-- Main Screen -->
+    <string name="app_title">Hẹn giờ Ngủ</string>
+    <string name="supporter_badge">Người ủng hộ</string>
+    <string name="pocket_mode_active">Chế độ Bỏ túi Hoạt động</string>
+    <string name="pocket_mode_unlock_instruction">Nhấn đúp để mở khóa</string>
+    <string name="pocket_mode_unlocked_toast">Đã mở khóa Chế độ Bỏ túi</string>
+    <string name="timer_started_minimizing_toast">Bộ hẹn giờ bắt đầu. Đang thu nhỏ...</string>
+    
+    <!-- Dialogs -->
+    <string name="shake_dialog_title">Lắc để Gia hạn</string>
+    <string name="shake_dialog_message">Bạn vừa lắc! Có muốn giữ tính năng này bật không?</string>
+    <string name="keep_on_button">Giữ Bật</string>
+    <string name="turn_off_button">Tắt</string>
+    <string name="shake_disabled_toast">Lắc để Gia hạn đã tắt.</string>
+    
+    <!-- Spotlight Tour -->
+    <string name="spotlight_presets_title">Chọn Thời gian ⏱️</string>
+    <string name="spotlight_presets_desc">Khi nào im lặng? Nhạc sẽ từ từ nhỏ dần.</string>
+    <string name="spotlight_media_title">Truy cập Nhanh Phương tiện 🎵</string>
+    <string name="spotlight_media_desc">Nhấn \'Cấu hình\' để thêm ứng dụng của bạn (Spotify, YouTube, v.v.).</string>
+    <string name="spotlight_settings_title">Khám phá Thêm ⚙️</string>
+    <string name="spotlight_settings_desc">Cài đặt có bài tập thở, cầu nguyện và hơn thế nữa.</string>
+    
+    <!-- Morning Check -->
+    <string name="morning_check_yes_toast">Mẹo: Thử thời gian dài hơn tối nay.</string>
+    <string name="morning_check_no_toast">Tuyệt vời! Chúng tôi sẽ giữ tùy chọn của bạn.</string>
+    
+    <!-- Content Descriptions -->
+    <string name="breathing_guide_cd">Hướng dẫn Thở</string>
+    <string name="view_note_cd">Xem Ghi chú</string>
+
+    <!-- Pre-Timer Screen -->
+    <string name="optimal_wake_time_label">Thời gian Thức dậy Tốt nhất</string>
+    <string name="sleep_cycles_suffix"> (5 Chu kỳ)</string>
+    <string name="set_alarm_button">ĐẶT BÁO THỨC</string>
+    <string name="pre_timer_settings_hint">Mẹo: Tùy chỉnh trong Cài đặt > Tính năng Tuyệt vời</string>
+    <string name="ready_to_sleep_title">Sẵn sàng ngủ?</string>
+    <string name="pre_timer_instruction">Kiểm tra trước khi bắt đầu.</string>
+    <string name="fade_wake_up_alarm_message">Fade Đánh thức</string>
+    <string name="alarm_set_toast">Báo thức đặt lúc %s</string>
+    <string name="alarm_error_toast">Lỗi báo thức: %s</string>
+    <string name="airplane_mode_title">Chế độ Máy bay</string>
+    <string name="airplane_mode_desc">Không xao lãng &amp; không bức xạ</string>
+    <string name="settings_button_caps">CÀI ĐẶT</string>
+    <string name="start_timer_button">BẮT ĐẦU</string>
+    <string name="cancel_cd">Hủy</string>
+    <string name="illuminating_wisdom_loading">Đang chiếu sáng...</string>
+    <string name="understanding_quote_title">Hiểu Trích dẫn</string>
+    <string name="close_button">Đóng</string>
+    <string name="explanation_error_title">Không thể giải thích lúc này</string>
+
+    <!-- Permissions Screen -->
+    <string name="permissions_needed_title">Cần Quyền</string>
+    <string name="permissions_needed_desc">Để chạy nền và làm mờ âm thanh.</string>
+    <string name="privacy_promise_cd">Quyền riêng tư</string>
+    <string name="privacy_promise_title">Quyền riêng tư - Không Dữ liệu</string>
+    <string name="privacy_promise_body">Dữ liệu của bạn là của bạn. Tôi không thể truy cập và không có gì được gửi lên đám mây.</string>
+    <string name="open_source_cd">Mã nguồn mở</string>
+    <string name="open_source_title">Niềm tin cần được xây dựng</string>
+    <string name="open_source_body">Fade là Mã nguồn mở. Bất kỳ ai cũng có thể kiểm tra mã.</string>
+    <string name="view_source_code_button">Xem Mã nguồn</string>
+    <string name="notifications_permission_title">Thông báo</string>
+    <string name="notifications_enabled_desc">Đã bật - Hiển thị trạng thái</string>
+    <string name="notifications_required_desc">Cần thiết cho thông báo.</string>
+    <string name="allowed_button">Đã cho phép</string>
+    <string name="allow_button">Cho phép</string>
+    <string name="enabled_button">Đã bật</string>
+    <string name="fix_button">Sửa</string>
+    <string name="unrestricted_battery_title">Pin Không hạn chế</string>
+    <string name="battery_enabled_desc">Đã bật - Chạy ổn định</string>
+    <string name="battery_critical_desc">Quan trọng: Ngăn bộ hẹn giờ dừng khi tắt màn hình.</string>
+    <string name="accessibility_dialog_title">Bật Tự động Tắt Màn hình</string>
+    <string name="accessibility_step_intro">Bật dịch vụ trợ năng thủ công:</string>
+    <string name="accessibility_step_1">1. Nhấn \'Đến Cài đặt\'.</string>
+    <string name="accessibility_step_2">2. Tìm \'Ứng dụng đã cài đặt\'.</string>
+    <string name="accessibility_step_3">3. Nhấn \'Fade Sleep Timer\'.</string>
+    <string name="accessibility_step_4">4. Bật công tắc.</string>
+    <string name="go_to_settings_button">Đến Cài đặt</string>
+
+    <string name="auto_screen_off_title">Tự động Tắt Màn hình</string>
+    <string name="auto_screen_off_enabled_desc">Đã bật - Tắt sau 3 phút</string>
+    <string name="auto_screen_off_optional_desc">Tùy chọn - Khóa khi không hoạt động</string>
+    <string name="enable_button">Bật</string>
+    <string name="continue_button">Tiếp tục</string>
+
+    <!-- Support Prompts (Arrays) -->
+    <string-array name="review_prompts">
+        <item>Tận hưởng sự im lặng? 5 sao sẽ giúp ích.</item>
+        <item>Ngủ nhanh hơn? Hãy nói với thế giới (khẽ khàng).</item>
+        <item>Nếu ứng dụng hoạt động, một đánh giá sẽ giúp chúng tôi.</item>
+        <item>Không muốn đánh thức bạn, nhưng hãy đánh giá chúng tôi.</item>
+        <item>Vẫn chưa ngủ? Có thể viết một đánh giá.</item>
+        <item>Yêu thích Fade? Đừng để các ngôi sao của chúng tôi mờ đi.</item>
+        <item>Viết đánh giá rất thư giãn, bạn có biết không?</item>
+        <item>Giúp chúng tôi chiến đấu với ác mộng. Cho 5 sao.</item>
+        <item>Không quảng cáo, không chi phí. Một đánh giá nhỏ?</item>
+        <item>Hãy là người hùng. Cứu một nhà phát triển khỏi mất ngủ.</item>
+        <item>Nếu bạn đang đọc cái này, bạn nợ chúng tôi một đánh giá. Đùa thôi...?</item>
+        <item>Ưu đãi cuối: Đánh giá và nhận một cái đập tay ảo.</item>
+    </string-array>
+    
+    <string-array name="support_prompts">
+        <item>Tôi có con. Chúng ăn rất nhiều. Ủng hộ nhà phát triển?</item>
+        <item>Những chú khỉ lập trình của tôi muốn chuối. Tiền boa?</item>
+        <item>Tôi lập trình trong bộ đồ ngủ, nhưng đó là một công việc. Một ly cà phê?</item>
+        <item>Thích sự im lặng? Hãy cảm ơn những đứa con ồn ào mà tôi đang lờ đi.</item>
+        <item>Đã thử trả tiền thuê nhà bằng "năng lượng tích cực", không hiệu quả.</item>
+        <item>Giúp tôi chứng minh với vợ rằng đây là một công việc thực sự.</item>
+        <item>9/10 bác sĩ khuyên nên ủng hộ các nhà phát triển độc lập.</item>
+        <item>Đang tiết kiệm để mua quản gia robot. Mỗi xu đều có giá trị.</item>
+        <item>Có tin đồn rằng sự ủng hộ cải thiện chất lượng giấc ngủ thêm 10%.</item>
+        <item>Tôi hứa sẽ chi tiêu khôn ngoan (Cà phê).</item>
+        <item>Lập trình tiêu tốn nhiều hơn 500% caffeine.</item>
+        <item>Làm cho một nhà phát triển mỉm cười. Tốt cho nghiệp quả.</item>
+    </string-array>
+
+    <!-- Notifications & Dialogs -->
+    <string name="bedtime_reminder_title_notif">Giờ Ngủ</string>
+    <string name="bedtime_reminder_desc_notif">Nhắc nhở giờ đi ngủ</string>
+    <string name="bedtime_reminder_text">Đã đến giờ ngủ.</string>
+    <string name="extend_15m_button">Gia hạn 15 phút</string>
+    <string name="dismiss_button">Bỏ qua</string>
+    
+    <string name="brain_dump_channel_name">Nhắc nhở Ý tưởng</string>
+    <string name="brain_dump_channel_desc">Cảnh báo trước khi xóa ghi chú</string>
+    <string name="brain_dump_title_notif">Ghi chú sắp biến mất</string>
+    <string name="brain_dump_text_format">Ghi chú sẽ bị xóa trong %s. Nhấn để xem.</string>
+    
+    <string name="support_prompt_title">Tin nhắn từ Nhà phát triển</string>
+    <string name="support_prompt_nah">Không</string>
+    <string name="support_prompt_check_it_out">Xem thử</string>
+    
+    <string name="support_banner_text">Nhấn vào đây để ủng hộ nhà phát triển!</string>
+    <string name="support_banner_button">Ủng hộ</string>
+    
+    <string name="spotlight_got_it">Đã hiểu!</string>
+    <string name="spotlight_next">Tiếp</string>
+
+    <!-- Setup Screen -->
+    <string name="setup_source_system">Âm thanh Hệ thống</string>
+    <string name="setup_source_info">Thông tin Giấc ngủ</string>
+    <string name="setup_resume_music">Tiếp tục Nhạc</string>
+    <string name="setup_configure">CẤU HÌNH</string>
+    <string name="setup_configure_toast">Mẹo: Cấu hình nút trong Cài đặt -> Sức khỏe</string>
+    <string name="setup_facts">Sự thật</string>
+    <string name="setup_bios">Tiểu sử</string>
+    <string name="setup_history">Lịch sử</string>
+    <string name="setup_volume_header">ÂM LƯỢNG</string>
+    <string name="setup_volume_limit">Giới hạn Bật</string>
+    <string name="setup_volume_capped_cd">Âm lượng Bị giới hạn</string>
+    <string name="setup_safety_cap_toast">Giới hạn An toàn: Đã chia theo dải 40%.</string>
+    <string name="setup_duration_header">CHỌN THỜI GIAN</string>
+    <string name="setup_default_label">(mặc định)</string>
+    <string name="setup_voice_female_cd">Giọng Nữ</string>
+    <string name="setup_voice_male_cd">Giọng Nam</string>
+    <string name="play_cd">Phát</string>
+    <string name="pause_cd">Tạm dừng</string>
+    <string name="stop_cd">Dừng</string>
+</resources>

@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Fade Sleep Timer</string>
+    <string name="accessibility_service_description">배터리 절약을 위해 일정 시간 동안 활동이 없으면 화면을 자동으로 끕니다. 이 서비스는 화면 잠금 기능만 사용하며 화면의 콘텐츠를 훔쳐보지 않습니다.</string>
+    
+    <!-- Settings Screen -->
+    <string name="settings_title">설정</string>
+    <string name="settings_back_content_description">뒤로</string>
+    
+    <!-- Support Button -->
+    <string name="support_development_title">개발자 후원</string>
+    <string name="support_development_subtitle">모든 기능 잠금 해제 &amp; 광고 제거</string>
+    
+    <!-- Premium Features Button -->
+    <string name="premium_features_title">프리미엄 기능</string>
+    <string name="premium_features_subtitle">보상 관리</string>
+
+    <!-- Audio Settings -->
+    <string name="fade_out_duration_title">페이드 아웃 시간</string>
+    <string name="fade_out_duration_desc">오디오를 줄이는 시간</string>
+    <string name="unit_minutes_value">%1$d분</string>
+    <string name="volume_safety_cap_title">볼륨 안전 제한</string>
+    <string name="volume_safety_cap_desc">청력 보호를 위해 40%로 제한</string>
+    <string name="play_on_start_title">시작 시 재생</string>
+    <string name="play_on_start_desc">타이머 시작 시 미디어 재생</string>
+    <string name="play_on_start_toast">활성화됨. 타이머 시작 시 미디어가 재생됩니다.</string>
+    <string name="smart_wait_title">스마트 대기</string>
+    <string name="smart_wait_desc">곡이 끝날 때까지 타이머 대기</string>
+    <string name="smart_wait_toast">활성화됨. 타이머가 곡이 끝날 때까지 기다립니다.</string>
+
+    <!-- Visuals Settings -->
+    <string name="wedge_clock_title">웨지 시계</string>
+    <string name="wedge_clock_desc">시간을 줄어드는 쐐기 모양으로 표시</string>
+    <string name="super_dim_title">슈퍼 딤(Super Dim) 오버레이</string>
+    <string name="super_dim_desc">밤을 위한 매우 어두운 필터</string>
+    <string name="super_dim_toast">활성화됨. 시작 시 화면이 어두워집니다.</string>
+    <string name="grayscale_mode_title">흑백 모드</string>
+    <string name="grayscale_mode_desc">화면을 회색으로 만듦 (지루한 모드)</string>
+    <string name="red_night_light_toast">시작 시 붉은 야간 조명이 켜집니다</string>
+    <string name="grayscale_options_title">흑백 옵션</string>
+    <string name="grayscale_mode_timer">타이머만</string>
+    <string name="grayscale_desc_timer">타이머 실행 중에만 흑백</string>
+    <string name="grayscale_mode_always">항상 켜기</string>
+    <string name="grayscale_desc_always">앱을 항상 흑백으로 표시</string>
+    <string name="grayscale_mode_night">붉은 야간 조명</string>
+    <string name="grayscale_desc_night">블루라이트를 차단하는 붉은 필터</string>
+    <string name="change_icon_title">아이콘 변경?</string>
+    <string name="change_icon_message">아이콘을 \'%1$s\'(으)로 변경하시겠습니까? 앱이 종료될 수 있습니다.</string>
+    <string name="change_icon_button">아이콘 변경</string>
+    <string name="premium_icons_title">프리미엄 아이콘</string>
+    <string name="premium_icons_subtitle">(후원자용)</string>
+    <string name="overlay_permission_desc">붉은 조명을 사용하려면, Fade가 다른 앱 위에 표시될 수 있어야 합니다.</string>
+    <string name="overlay_step_1">1. 아래 \'설정 열기\'를 누르세요.</string>
+    <string name="overlay_step_2">2. \'Fade Sleep Timer\'를 찾으세요.</string>
+    <string name="overlay_step_3">3. \'다른 앱 위에 표시 허용\'을 켜세요.</string>
+    <string name="open_settings_button">설정 열기</string>
+    
+    <!-- Open On Charge Dialog -->
+    <string name="open_on_charge_dialog_title">시간 선택</string>
+    <string name="open_on_charge_dialog_desc">충전 시 언제 자동 실행할까요?</string>
+    <string name="open_on_charge_always">항상</string>
+    <string name="open_on_charge_always_desc">연결할 때마다</string>
+    <string name="open_on_charge_strict">20:00 - 04:00</string>
+    <string name="open_on_charge_strict_desc">저녁 (20:00 - 04:00)</string>
+    <string name="open_on_charge_late">01:00 - 05:00</string>
+    <string name="open_on_charge_late_desc">새벽 (01:00 - 05:00)</string>
+    <string name="open_on_charge_morning">05:00 - 10:00</string>
+    <string name="open_on_charge_morning_desc">아침 (05:00 - 10:00)</string>
+
+    <!-- Personalization Settings -->
+    <string name="airplane_mode_reminder_title">비행기 모드 알림</string>
+    <string name="airplane_mode_reminder_desc">비행기 모드 활성화 알림</string>
+    <string name="adjust_default_timer_title">기본 타이머 조정</string>
+    <string name="adjust_default_timer_desc">초기 시간 및 체크인</string>
+    <string name="default_duration_label_format">기본 시간: %1$s</string>
+    <string name="timer_check_in_title">타이머 체크인</string>
+    <string name="timer_check_in_desc">자주 연장하면 조정 제안</string>
+    <string name="smart_extend_title">스마트 연장</string>
+    <string name="smart_extend_desc">움직임 감지 시 10분 추가</string>
+    <string name="sensitivity_header">감도</string>
+    <string name="sensitivity_low">낮음</string>
+    <string name="sensitivity_med">중간</string>
+    <string name="sensitivity_high">높음</string>
+    <string name="sensitivity_low_desc">큰 움직임 필요</string>
+    <string name="sensitivity_med_desc">균형 (권장)</string>
+    <string name="sensitivity_high_desc">작은 움직임도 감지</string>
+    <string name="configure_buttons_title">미디어 버튼 설정</string>
+    <string name="configure_buttons_desc">표시할 앱 선택</string>
+    <string name="smart_extend_help_title">스마트 연장 사용법</string>
+    <string name="smart_extend_help_text">휴대폰을 베개 근처 매트리스 위에 두세요.\n\n가속도 센서가 매트리스의 진동을 감지하여 깨어 있는지 확인합니다.</string>
+    <string name="got_it_button">알겠습니다</string>
+
+    <!-- Support Screen -->
+    <string name="beta_unlock_toast">베타에서는 구매 불가. 선물 아이콘을 3번 누르세요.</string>
+    <string name="beta_unlock_click_2">2번 더...</string>
+    <string name="beta_unlock_click_1">1번 더...</string>
+    <string name="beta_unlock_success_toast">프리미엄 모드 해제!</string>
+    <string name="support_title">개발자 후원</string>
+    <string name="support_subtitle_unlocked">설정의 모든 기능이 잠금 해제됨</string>
+    <string name="support_subtitle_locked">선물을 눌러 깜짝 선물을 확인하세요</string>
+    <string name="support_close_button">닫기</string>
+    <string name="support_rate_title">앱 평가하기</string>
+    <string name="support_rate_subtitle_locked">\'후원자\' 배지 잠금 해제</string>
+    <string name="support_rate_subtitle_unlocked">공식 후원자입니다!</string>
+    <string name="price_free">무료</string>
+    <string name="support_rate_active_text">후원자</string>
+    <string name="support_share_title">앱 공유하기</string>
+    <string name="support_share_subtitle">친구들에게 알리기</string>
+    <string name="support_share_active_text">공유됨</string>
+    <string name="support_other_apps_title">다른 앱 보기</string>
+    <string name="support_other_apps_subtitle">정말 좋아요!</string>
+    <string name="support_other_apps_active_text">확인함</string>
+    <string name="support_other_apps_error">개발자 페이지를 열 수 없습니다</string>
+    <string name="support_visuals_title">비주얼 팩</string>
+    <string name="support_visuals_desc">네온, OLED 등 30+ 테마</string>
+    <string name="support_visuals_desc_unlocked">30+ 테마 ($0.99 - 선택)</string>
+    <string name="support_visuals_select_cd">테마 선택</string>
+    <string name="status_unlocked">잠금 해제됨</string>
+    <string name="support_hof_title">명예의 전당 &amp; 아이콘</string>
+    <string name="support_hof_view_cd">명예의 전당 보기</string>
+
+    <!-- System Settings -->
+    <string name="dnd_title">방해 금지</string>
+    <string name="dnd_desc">타이머 실행 중 알림 음소거</string>
+    <string name="dnd_mode_priority">표준 (우선순위)</string>
+    <string name="dnd_mode_alarms">엄격 (알람만 허용)</string>
+    <string name="battery_guard_title">배터리 가드</string>
+    <string name="battery_guard_desc_format">배터리 &lt; %1$d%% 시 중지</string>
+    <string name="stop_threshold_label">중지 기준</string>
+    <string name="go_home_title">시작 시 홈으로</string>
+    <string name="go_home_desc">시작 시 앱 최소화</string>
+    <string name="open_on_charge_title">충전 시 실행</string>
+    <string name="open_on_charge_desc">플러그 연결 시 자동 시작</string>
+
+    <!-- Controls Settings -->
+    <string name="face_down_title">뒤집어서 시작</string>
+    <string name="face_down_desc">시작 &amp; 화면 끄기 (5초)</string>
+    <string name="face_down_toast">활성화됨. 기기를 뒤집으면 시작됩니다.</string>
+    <string name="shake_extend_title">흔들어서 연장</string>
+    <string name="shake_extend_desc">흔들면 15분 추가</string>
+    <string name="shake_extend_toast">활성화됨. 흔들면 +15분.</string>
+    <string name="pocket_mode_title">주머니 모드</string>
+    <string name="pocket_mode_desc">실수 터치 방지</string>
+    <string name="pocket_mode_toast">활성화됨. 터치가 차단되었습니다.</string>
+    <string name="widgets_title">홈 화면 위젯</string>
+    <string name="widgets_desc">홈 화면을 길게 눌러 위젯을 추가하세요.</string>
+
+    <!-- Info Settings -->
+    <string name="sleep_journey_title">수면 여정</string>
+    <string name="sleep_journey_desc">배지, 연속 기록 &amp; 통계</string>
+    <string name="hall_of_fame_title">명예의 전당</string>
+    <string name="hall_of_fame_desc">전설적인 후원자분들</string>
+    <string name="battery_data_saved_title">절약된 배터리 &amp; 데이터</string>
+    <string name="battery_data_saved_desc">평균 기준 추정치</string>
+    <string name="saved_minutes_format">%1$d분</string>
+    <string name="saved_hours_format">%.1f시간</string>
+
+    <!-- Settings Titles -->
+    <string name="settings_category_system">고급 &amp; 시스템</string>
+    <string name="settings_category_controls">제어 &amp; 상호작용</string>
+    <string name="settings_category_info">정보</string>
+    <string name="settings_category_audio">오디오 &amp; 재생</string>
+    <string name="settings_category_visuals">화면 &amp; 디스플레이</string>
+    <string name="settings_category_wellness">웰빙 &amp; 개인</string>
+    <string name="settings_category_control">제어 &amp; 상호작용</string>
+    <string name="settings_category_advanced">고급 &amp; 시스템</string>
+    <string name="settings_category_awesome">멋진 기능들</string>
+    <string name="settings_category_personalization">개인화</string>
+
+    <!-- Settings Components -->
+    <string name="unit_minutes_short">%1$d분</string>
+    <string name="unit_hours_short">%1$d시간</string>
+    <string name="unit_hours_decimal_short">%1$s시간</string>
+    <string name="add_timer_preset_title">프리셋 추가</string>
+    <string name="minutes_label_caps">분</string>
+    <string name="add_button_caps">추가</string>
+    <string name="remove_cd">삭제</string>
+    <string name="topic_header">주제</string>
+    <string name="change_timer_buttons_title">버튼 변경</string>
+    <string name="change_timer_buttons_subtitle">시간 커스터마이징</string>
+    <string name="reset_default_button_text">기본값 복원</string>
+    <string name="new_badge">NEW</string>
+    <string name="expand_cd">펼치기</string>
+    <string name="collapse_cd">접기</string>
+
+    <!-- Awesome Features Settings -->
+    <string name="bedtime_reminder_title">취침 리마인더</string>
+    <string name="bedtime_reminder_desc">잘 시간 알림</string>
+    <string name="reminder_time_label">알림 시간</string>
+    <string name="prayer_reminder_title">기도 리마인더</string>
+    <string name="prayer_reminder_desc">자기 전 잠시 기도하기</string>
+    <string name="brain_dump_title">브레인 덤프</string>
+    <string name="brain_dump_desc">자기 전 생각 정리하기</string>
+    <string name="scripture_mode_title">성경 모드</string>
+    <string name="scripture_mode_desc">마음이 편해지는 구절 표시</string>
+    <string name="scripture_topic_random">랜덤 (놀라게 해줘)</string>
+    <string name="wisdom_quotes_title">지혜의 명언</string>
+    <string name="wisdom_quotes_desc">깊은 지혜의 말씀</string>
+    <string name="wisdom_category_peace">평화 &amp; 위로</string>
+    <string name="wisdom_desc_peace">불안, 휴식, 신뢰</string>
+    <string name="wisdom_category_glory">신의 영광</string>
+    <string name="wisdom_desc_glory">신의 존재와 그 주권</string>
+    <string name="wisdom_category_gospel">복음 &amp; 은혜</string>
+    <string name="wisdom_desc_gospel">용서와 구원</string>
+    <string name="wisdom_category_living">삶 &amp; 지혜</string>
+    <string name="wisdom_desc_living">기도와 실천하는 믿음</string>
+    <string name="sleep_calc_title">수면 계산기</string>
+    <string name="sleep_calc_desc">최적의 기상 시간</string>
+    <string name="alarm_button_setting_title">알람 버튼</string>
+    <string name="alarm_button_setting_desc">"알람 설정" 표시</string>
+    <string name="breathing_guide_title">햅틱 호흡 가이드</string>
+    <string name="breathing_guide_desc">진동에 맞춘 호흡 훈련</string>
+    <string name="haptic_vibration_title">햅틱 진동</string>
+    <string name="haptic_vibration_desc">촉각 피드백 활성화</string>
+    <string name="breathing_auto_start_title">자동 시작</string>
+    <string name="breathing_auto_start_desc">가이드 자동 시작</string>
+    <string name="breathing_duration_label">시간: %1$d분</string>
+    <string name="doomscroll_title">중독 방지 잠금</string>
+    <string name="doomscroll_desc">중독성 앱 차단</string>
+    <string name="grace_period_label">유예 시간: %1$d분</string>
+    <string name="grace_period_desc">차단 전 짧은 사용 시간</string>
+    <string name="blocked_apps_label">차단된 앱 (%1$d)</string>
+    <string name="add_app_to_block_button">앱 차단하기</string>
+    <string name="permission_required_title">권한 필요</string>
+    <string name="accessibility_explanation_doomscroll">차단 기능을 위해 Fade는 \'접근성\' 권한이 필요합니다.</string>
+    <string name="instructions_label">방법:</string>
+    <string name="accessibility_step_2_doomscroll">2. \'Fade Sleep Timer\'를 찾으세요.</string>
+    <string name="accessibility_step_3_doomscroll">3. 활성화하세요.</string>
+    <string name="accessibility_step_4_doomscroll">4. \'허용\'을 누르세요.</string>
+    
+    <!-- Timer Capsule -->
+    <string name="stop_timer_content_description">타이머 정지</string>
+    
+    <!-- Presets Editor -->
+    <string name="timer_presets_title">프리셋</string>
+    <string name="timer_presets_subtitle">버튼 커스터마이징</string>
+    <string name="add_button">추가</string>
+    <string name="reset_default_button">초기화</string>
+    <string name="add_preset_dialog_title">프리셋 추가</string>
+    <string name="minutes_label">분</string>
+    <string name="cancel_button">취소</string>
+    
+    <!-- Settings Section -->
+    <string name="expand_content_description">펼치기</string>
+    <string name="collapse_content_description">접기</string>
+    
+    <!-- General -->
+    <string name="new_label">NEW</string>
+    
+    <!-- Main Screen -->
+    <string name="app_title">슬립 타이머</string>
+    <string name="supporter_badge">후원자</string>
+    <string name="pocket_mode_active">주머니 모드 활성</string>
+    <string name="pocket_mode_unlock_instruction">두 번 탭하여 해제</string>
+    <string name="pocket_mode_unlocked_toast">주머니 모드 해제됨</string>
+    <string name="timer_started_minimizing_toast">타이머 시작. 최소화 중...</string>
+    
+    <!-- Dialogs -->
+    <string name="shake_dialog_title">흔들어서 연장</string>
+    <string name="shake_dialog_message">흔드셨군요! 이 기능을 계속 켜둘까요?</string>
+    <string name="keep_on_button">계속 켜기</string>
+    <string name="turn_off_button">끄기</string>
+    <string name="shake_disabled_toast">흔들어서 연장 기능이 꺼졌습니다.</string>
+    
+    <!-- Spotlight Tour -->
+    <string name="spotlight_presets_title">시간 선택 ⏱️</string>
+    <string name="spotlight_presets_desc">언제 소리를 끌까요? 음악이 서서히 줄어듭니다.</string>
+    <string name="spotlight_media_title">빠른 미디어 접속 🎵</string>
+    <string name="spotlight_media_desc">\'설정\'을 눌러 자주 쓰는 앱(Spotify, YouTube 등)을 추가하세요.</string>
+    <string name="spotlight_settings_title">더 많은 기능 ⚙️</string>
+    <string name="spotlight_settings_desc">설정에 호흡 훈련, 기도 등 다양한 기능이 있습니다.</string>
+    
+    <!-- Morning Check -->
+    <string name="morning_check_yes_toast">팁: 오늘 밤은 시간을 조금 늘려보세요.</string>
+    <string name="morning_check_no_toast">좋습니다! 현재 설정을 유지합니다.</string>
+    
+    <!-- Content Descriptions -->
+    <string name="breathing_guide_cd">호흡 가이드</string>
+    <string name="view_note_cd">메모 보기</string>
+
+    <!-- Pre-Timer Screen -->
+    <string name="optimal_wake_time_label">최적 기상 시간</string>
+    <string name="sleep_cycles_suffix"> (5 사이클)</string>
+    <string name="set_alarm_button">알람 설정</string>
+    <string name="pre_timer_settings_hint">팁: 설정 > 멋진 기능들에서 수정 가능</string>
+    <string name="ready_to_sleep_title">잘 준비 되셨나요?</string>
+    <string name="pre_timer_instruction">시작 전에 확인하세요.</string>
+    <string name="fade_wake_up_alarm_message">Fade 기상</string>
+    <string name="alarm_set_toast">%s 알람 설정됨</string>
+    <string name="alarm_error_toast">알람 오류: %s</string>
+    <string name="airplane_mode_title">비행기 모드</string>
+    <string name="airplane_mode_desc">방해 금지 &amp; 전자파 차단</string>
+    <string name="settings_button_caps">설정</string>
+    <string name="start_timer_button">시작</string>
+    <string name="cancel_cd">취소</string>
+    <string name="illuminating_wisdom_loading">불을 밝히는 중...</string>
+    <string name="understanding_quote_title">말씀 이해하기</string>
+    <string name="close_button">닫기</string>
+    <string name="explanation_error_title">지금은 설명할 수 없습니다</string>
+
+    <!-- Permissions Screen -->
+    <string name="permissions_needed_title">권한 필요</string>
+    <string name="permissions_needed_desc">백그라운드 실행 및 오디오 페이드를 위해 필요합니다.</string>
+    <string name="privacy_promise_cd">개인정보 보호</string>
+    <string name="privacy_promise_title">프라이버시 - 수집 없음</string>
+    <string name="privacy_promise_body">당신의 데이터는 당신의 것. 저는 접근하지 않으며 클라우드로 전송되지 않습니다.</string>
+    <string name="open_source_cd">오픈 소스</string>
+    <string name="open_source_title">신뢰는 얻는 것</string>
+    <string name="open_source_body">Fade는 오픈 소스입니다. 누구나 코드를 확인할 수 있습니다.</string>
+    <string name="view_source_code_button">소스 코드 보기</string>
+    <string name="notifications_permission_title">알림</string>
+    <string name="notifications_enabled_desc">활성 - 타이머 상태 표시</string>
+    <string name="notifications_required_desc">알림 표시에 필요합니다.</string>
+    <string name="allowed_button">허용됨</string>
+    <string name="allow_button">허용</string>
+    <string name="enabled_button">활성화</string>
+    <string name="fix_button">수정</string>
+    <string name="unrestricted_battery_title">배터리 제한 없음</string>
+    <string name="battery_enabled_desc">활성 - 안정적 실행</string>
+    <string name="battery_critical_desc">중요: 화면이 꺼져도 타이머가 멈추지 않게 합니다.</string>
+    <string name="accessibility_dialog_title">화면 자동 끄기 활성화</string>
+    <string name="accessibility_step_intro">접근성 서비스 수동 활성화:</string>
+    <string name="accessibility_step_1">1. \'설정으로 이동\'을 누르세요.</string>
+    <string name="accessibility_step_2">2. \'설치된 앱\'을 찾으세요.</string>
+    <string name="accessibility_step_3">3. \'Fade Sleep Timer\'를 누르세요.</string>
+    <string name="accessibility_step_4">4. 스위치를 켜세요.</string>
+    <string name="go_to_settings_button">설정으로 이동</string>
+
+    <string name="auto_screen_off_title">화면 자동 끄기</string>
+    <string name="auto_screen_off_enabled_desc">활성 - 3분 후 끄기</string>
+    <string name="auto_screen_off_optional_desc">선택 - 비활성 시 잠금</string>
+    <string name="enable_button">켜기</string>
+    <string name="continue_button">계속</string>
+
+    <!-- Support Prompts (Arrays) -->
+    <string-array name="review_prompts">
+        <item>조용한 시간이 좋나요? 별 5개가 큰 힘이 됩니다.</item>
+        <item>잠이 더 빨리 오나요? 세상에 (조용히) 알려주세요.</item>
+        <item>앱이 도움이 된다면, 리뷰가 저희에게 도움이 됩니다.</item>
+        <item>깨우고 싶진 않지만, 평가해 주시면 감사하겠습니다.</item>
+        <item>아직 안 주무세요? 리뷰 하나 어떠세요?</item>
+        <item>Fade가 마음에 드나요? 별점도 희미해지지 않게 해주세요.</item>
+        <item>리뷰를 쓰면 마음이 편안해집니다.</item>
+        <item>악몽 퇴치를 도와주세요. 별 5개면 충분합니다.</item>
+        <item>광고 0, 비용 0. 리뷰 하나만 부탁드려도 될까요?</item>
+        <item>영웅이 되어주세요. 개발자를 불면증에서 구해주세요.</item>
+        <item>이걸 읽으셨다면 리뷰를 쓰셔야 합니다. 농담입니다...?</item>
+        <item>마지막 제안: 리뷰 쓰시고 가상 하이파이브 받으세요.</item>
+    </string-array>
+    
+    <string-array name="support_prompts">
+        <item>아이들이 있어요. 많이 먹어요. 개발자 후원?</item>
+        <item>제 코딩 원숭이들이 바나나를 원해요. 팁 좀 주세요.</item>
+        <item>잠옷 입고 코딩하지만, 이것도 직업입니다. 커피 한 잔?</item>
+        <item>조용함을 즐기시나요? 제가 무시하고 있는 시끄러운 아이들 덕분입니다.</item>
+        <item>월세를 "긍정의 힘"으로 내려했는데 안 된대요.</item>
+        <item>이게 진짜 직업이라는 걸 아내에게 증명하게 도와주세요.</item>
+        <item>의사 10명 중 9명이 인디 개발자 후원을 추천합니다.</item>
+        <item>로봇 집사를 사려고 돈을 모으고 있습니다. 도와주세요.</item>
+        <item>후원하면 수면 질이 10% 좋아진다는 소문이 있습니다.</item>
+        <item>현명하게 쓰겠습니다 (커피).</item>
+        <item>코딩은 500% 더 많은 카페인을 소모합니다.</item>
+        <item>개발자를 웃게 해주세요. 업보 청산에 좋습니다.</item>
+    </string-array>
+
+    <!-- Notifications & Dialogs -->
+    <string name="bedtime_reminder_title_notif">취침 시간</string>
+    <string name="bedtime_reminder_desc_notif">잠잘 시간 알림</string>
+    <string name="bedtime_reminder_text">이제 잘 시간입니다.</string>
+    <string name="extend_15m_button">15분 연장</string>
+    <string name="dismiss_button">무시</string>
+    
+    <string name="brain_dump_channel_name">아이디어 알림</string>
+    <string name="brain_dump_channel_desc">메모 삭제 전 경고</string>
+    <string name="brain_dump_title_notif">메모가 곧 사라집니다</string>
+    <string name="brain_dump_text_format">%s 후에 메모가 삭제됩니다. 보려면 탭하세요.</string>
+    
+    <string name="support_prompt_title">개발자의 메시지</string>
+    <string name="support_prompt_nah">아니요</string>
+    <string name="support_prompt_check_it_out">보기</string>
+    
+    <string name="support_banner_text">여기를 눌러 개발자를 후원하세요!</string>
+    <string name="support_banner_button">후원하기</string>
+    
+    <string name="spotlight_got_it">알겠습니다!</string>
+    <string name="spotlight_next">다음</string>
+
+    <!-- Setup Screen -->
+    <string name="setup_source_system">시스템 오디오</string>
+    <string name="setup_source_info">수면 정보</string>
+    <string name="setup_resume_music">음악 재개</string>
+    <string name="setup_configure">설정</string>
+    <string name="setup_configure_toast">팁: 설정 -> 웰빙에서 버튼 구성</string>
+    <string name="setup_facts">상식</string>
+    <string name="setup_bios">바이오</string>
+    <string name="setup_history">기록</string>
+    <string name="setup_volume_header">볼륨</string>
+    <string name="setup_volume_limit">제한 활성</string>
+    <string name="setup_volume_capped_cd">볼륨 제한됨</string>
+    <string name="setup_safety_cap_toast">안전 제한: 40% 범위로 확대.</string>
+    <string name="setup_duration_header">시간 선택</string>
+    <string name="setup_default_label">(기본)</string>
+    <string name="setup_voice_female_cd">여성 목소리</string>
+    <string name="setup_voice_male_cd">남성 목소리</string>
+    <string name="play_cd">재생</string>
+    <string name="pause_cd">일시정지</string>
+    <string name="stop_cd">정지</string>
+</resources>

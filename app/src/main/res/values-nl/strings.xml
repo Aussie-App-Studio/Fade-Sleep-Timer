@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Fade Sleep Timer</string>
+    <string name="accessibility_service_description">Hiermee kan de app het scherm automatisch uitschakelen na een periode van inactiviteit om de batterij te sparen. Deze service gebruikt alleen de schermvergrendelingsfunctie en bespioneert geen inhoud.</string>
+    
+    <!-- Settings Screen -->
+    <string name="settings_title">Instellingen</string>
+    <string name="settings_back_content_description">Terug</string>
+    
+    <!-- Support Button -->
+    <string name="support_development_title">Steun de Ontwikkelaar</string>
+    <string name="support_development_subtitle">Ontgrendel Functies &amp; Verwijder Advertenties</string>
+    
+    <!-- Premium Features Button -->
+    <string name="premium_features_title">Premium Functies</string>
+    <string name="premium_features_subtitle">Beheer Beloningen</string>
+
+    <!-- Audio Settings -->
+    <string name="fade_out_duration_title">Fade Out Duur</string>
+    <string name="fade_out_duration_desc">Hoe lang om audio te verlagen</string>
+    <string name="unit_minutes_value">%1$d min</string>
+    <string name="volume_safety_cap_title">Volume Veiligheidslimiet</string>
+    <string name="volume_safety_cap_desc">Beperk tot 40% voor gehoorbescherming</string>
+    <string name="play_on_start_title">Afspelen bij Start</string>
+    <string name="play_on_start_desc">Hervat media wanneer timer start</string>
+    <string name="play_on_start_toast">Geactiveerd. Media wordt hervat bij start.</string>
+    <string name="smart_wait_title">Slim Wachten</string>
+    <string name="smart_wait_desc">Wacht tot nummer is afgelopen</string>
+    <string name="smart_wait_toast">Geactiveerd. Timer wacht tot nummer eindigt.</string>
+
+    <!-- Visuals Settings -->
+    <string name="wedge_clock_title">Wig Klok</string>
+    <string name="wedge_clock_desc">Toon tijd als een krimpende wig</string>
+    <string name="super_dim_title">Super Dim Overlay</string>
+    <string name="super_dim_desc">Extra donker filter voor \'s nachts</string>
+    <string name="super_dim_toast">Geactiveerd. Scherm wordt gedimd bij start.</string>
+    <string name="grayscale_mode_title">Grijswaarden Modus</string>
+    <string name="grayscale_mode_desc">Maak scherm grijs (saaie modus)</string>
+    <string name="red_night_light_toast">Rood Nachtlicht wordt actief bij start</string>
+    <string name="grayscale_options_title">Grijswaarden Opties</string>
+    <string name="grayscale_mode_timer">Alleen Timer</string>
+    <string name="grayscale_desc_timer">Alleen grijs terwijl timer loopt</string>
+    <string name="grayscale_mode_always">Altijd Aan</string>
+    <string name="grayscale_desc_always">App is altijd in grijswaarden</string>
+    <string name="grayscale_mode_night">Rood Nachtlicht</string>
+    <string name="grayscale_desc_night">Rood filter om blauw licht te blokkeren</string>
+    <string name="change_icon_title">Icoon Wijzigen?</string>
+    <string name="change_icon_message">Wijzig icoon naar \'%1$s\'? App kan opnieuw opstarten.</string>
+    <string name="change_icon_button">Icoon Wijzigen</string>
+    <string name="premium_icons_title">Premium Iconen</string>
+    <string name="premium_icons_subtitle">(voor supporters)</string>
+    <string name="overlay_permission_desc">Om Rood Licht te gebruiken, moet Fade over andere apps worden weergegeven.</string>
+    <string name="overlay_step_1">1. Tik hieronder op \'Instellingen Openen\'.</string>
+    <string name="overlay_step_2">2. Zoek \'Fade Sleep Timer\'.</string>
+    <string name="overlay_step_3">3. Zet \'Toestaan over andere apps weer te geven\' aan.</string>
+    <string name="open_settings_button">Instellingen Openen</string>
+    
+    <!-- Open On Charge Dialog -->
+    <string name="open_on_charge_dialog_title">Kies Tijd</string>
+    <string name="open_on_charge_dialog_desc">Wanneer automatisch starten bij opladen?</string>
+    <string name="open_on_charge_always">Altijd</string>
+    <string name="open_on_charge_always_desc">Elke keer bij inpluggen</string>
+    <string name="open_on_charge_strict">20:00 - 04:00</string>
+    <string name="open_on_charge_strict_desc">Avond (20:00 - 04:00)</string>
+    <string name="open_on_charge_late">01:00 - 05:00</string>
+    <string name="open_on_charge_late_desc">Laat in de nacht (01:00 - 05:00)</string>
+    <string name="open_on_charge_morning">05:00 - 10:00</string>
+    <string name="open_on_charge_morning_desc">Ochtend (05:00 - 10:00)</string>
+
+    <!-- Personalization Settings -->
+    <string name="airplane_mode_reminder_title">Vliegtuigmodus Herinnering</string>
+    <string name="airplane_mode_reminder_desc">Herinner om Vliegtuigmodus in te schakelen</string>
+    <string name="adjust_default_timer_title">Standaard Timer Aanpassen</string>
+    <string name="adjust_default_timer_desc">Starttijd en check-in</string>
+    <string name="default_duration_label_format">Standaard Duur: %1$s</string>
+    <string name="timer_check_in_title">Timer Check-In</string>
+    <string name="timer_check_in_desc">Stel aanpassing voor bij vaak verlengen</string>
+    <string name="smart_extend_title">Slim Verlengen</string>
+    <string name="smart_extend_desc">Voeg 10 min toe bij beweging</string>
+    <string name="sensitivity_header">GEVOELIGHEID</string>
+    <string name="sensitivity_low">Laag</string>
+    <string name="sensitivity_med">Gemiddeld</string>
+    <string name="sensitivity_high">Hoog</string>
+    <string name="sensitivity_low_desc">Vereist sterke beweging</string>
+    <string name="sensitivity_med_desc">Gebalanceerd (Aanbevolen)</string>
+    <string name="sensitivity_high_desc">Detecteert kleine bewegingen</string>
+    <string name="configure_buttons_title">Mediatoetsen</string>
+    <string name="configure_buttons_desc">Kies apps om te tonen</string>
+    <string name="smart_extend_help_title">Slim Verlengen Gebruiken</string>
+    <string name="smart_extend_help_text">Leg je telefoon op het matras naast je kussen.\n\nDe versnellingsmeter detecteert trillingen van het matras om te controleren of je wakker bent.</string>
+    <string name="got_it_button">Begrepen</string>
+
+    <!-- Support Screen -->
+    <string name="beta_unlock_toast">Geen aankopen in Beta. Tik 3 keer op het cadeau-icoon.</string>
+    <string name="beta_unlock_click_2">Nog 2...</string>
+    <string name="beta_unlock_click_1">Nog 1...</string>
+    <string name="beta_unlock_success_toast">Premium Modus Ontgrendeld!</string>
+    <string name="support_title">Steun de Ontwikkelaar</string>
+    <string name="support_subtitle_unlocked">Alle functies in Instellingen ontgrendeld</string>
+    <string name="support_subtitle_locked">Tik op cadeau voor een verrassing</string>
+    <string name="support_close_button">Sluiten</string>
+    <string name="support_rate_title">Beoordeel de App</string>
+    <string name="support_rate_subtitle_locked">Ontgrendel \'Supporter\' badge</string>
+    <string name="support_rate_subtitle_unlocked">Je bent een officiële Supporter!</string>
+    <string name="price_free">Gratis</string>
+    <string name="support_rate_active_text">Supporter</string>
+    <string name="support_share_title">Deel de App</string>
+    <string name="support_share_subtitle">Vertel het vrienden</string>
+    <string name="support_share_active_text">Gedeeld</string>
+    <string name="support_other_apps_title">Mijn Andere Apps</string>
+    <string name="support_other_apps_subtitle">Ik denk dat ze GEWELDIG zijn!</string>
+    <string name="support_other_apps_active_text">Bekeken</string>
+    <string name="support_other_apps_error">Kon ontwikkelaarspagina niet openen</string>
+    <string name="support_visuals_title">Visueel Pakket</string>
+    <string name="support_visuals_desc">30+ Thema\'s inclusief Neon, OLED</string>
+    <string name="support_visuals_desc_unlocked">30+ Thema\'s ($0.99 - Optioneel)</string>
+    <string name="support_visuals_select_cd">Selecteer Thema</string>
+    <string name="status_unlocked">Ontgrendeld</string>
+    <string name="support_hof_title">Hall of Fame &amp; Iconen</string>
+    <string name="support_hof_view_cd">Bekijk Hall of Fame</string>
+
+    <!-- System Settings -->
+    <string name="dnd_title">Niet Storen (DND)</string>
+    <string name="dnd_desc">Demp meldingen tijdens timer</string>
+    <string name="dnd_mode_priority">Standaard (Prioriteit)</string>
+    <string name="dnd_mode_alarms">Strikt (Alleen Alarmen)</string>
+    <string name="battery_guard_title">Batterijbewaker</string>
+    <string name="battery_guard_desc_format">Stop wanneer batterij &lt; %1$d%%</string>
+    <string name="stop_threshold_label">Stopdrempel</string>
+    <string name="go_home_title">Ga naar Startscherm bij Start</string>
+    <string name="go_home_desc">Minimaliseer app bij start</string>
+    <string name="open_on_charge_title">Open bij Opladen</string>
+    <string name="open_on_charge_desc">Auto-start bij inpluggen</string>
+
+    <!-- Controls Settings -->
+    <string name="face_down_title">Draai om te Starten</string>
+    <string name="face_down_desc">Start &amp; schakel scherm uit (5s)</string>
+    <string name="face_down_toast">Geactiveerd. Draai apparaat om te starten.</string>
+    <string name="shake_extend_title">Schudden om te Verlengen</string>
+    <string name="shake_extend_desc">Schudden om 15 min toe te voegen</string>
+    <string name="shake_extend_toast">Geactiveerd. Schud voor +15 min.</string>
+    <string name="pocket_mode_title">Zakmodus</string>
+    <string name="pocket_mode_desc">Voorkom onbedoelde aanrakingen</string>
+    <string name="pocket_mode_toast">Geactiveerd. Aanraking geblokkeerd.</string>
+    <string name="widgets_title">Widgets op Startscherm</string>
+    <string name="widgets_desc">Houd startscherm ingedrukt om widget toe te voegen.</string>
+
+    <!-- Info Settings -->
+    <string name="sleep_journey_title">Slaapreis</string>
+    <string name="sleep_journey_desc">Badges, Reeksen &amp; Statistieken</string>
+    <string name="hall_of_fame_title">Hall of Fame</string>
+    <string name="hall_of_fame_desc">Onze legendarische supporters</string>
+    <string name="battery_data_saved_title">BATTERIJ &amp; DATA BESPAARD</string>
+    <string name="battery_data_saved_desc">Geschat op basis van gemiddelde</string>
+    <string name="saved_minutes_format">%1$d min</string>
+    <string name="saved_hours_format">%.1f uur</string>
+
+    <!-- Settings Titles -->
+    <string name="settings_category_system">Geavanceerd &amp; Systeem</string>
+    <string name="settings_category_controls">Besturing &amp; Interactie</string>
+    <string name="settings_category_info">Informatie</string>
+    <string name="settings_category_audio">Audio &amp; Afspelen</string>
+    <string name="settings_category_visuals">Visueel &amp; Weergave</string>
+    <string name="settings_category_wellness">Welzijn &amp; Persoonlijk</string>
+    <string name="settings_category_control">Besturing &amp; Interactie</string>
+    <string name="settings_category_advanced">Geavanceerd &amp; Systeem</string>
+    <string name="settings_category_awesome">Geweldige Functies</string>
+    <string name="settings_category_personalization">Personalisatie</string>
+
+    <!-- Settings Components -->
+    <string name="unit_minutes_short">%1$d min</string>
+    <string name="unit_hours_short">%1$d uur</string>
+    <string name="unit_hours_decimal_short">%1$s uur</string>
+    <string name="add_timer_preset_title">Voorinstelling Toevoegen</string>
+    <string name="minutes_label_caps">MINUTEN</string>
+    <string name="add_button_caps">TOEVOEGEN</string>
+    <string name="remove_cd">Verwijderen</string>
+    <string name="topic_header">ONDERWERP</string>
+    <string name="change_timer_buttons_title">Knoppen Wijzigen</string>
+    <string name="change_timer_buttons_subtitle">Tijden aanpassen</string>
+    <string name="reset_default_button_text">Herstel Standaard</string>
+    <string name="new_badge">NIEUW</string>
+    <string name="expand_cd">Uitvouwen</string>
+    <string name="collapse_cd">Inklappen</string>
+
+    <!-- Awesome Features Settings -->
+    <string name="bedtime_reminder_title">Bedtijd Herinnering</string>
+    <string name="bedtime_reminder_desc">Melding voor bedtijd</string>
+    <string name="reminder_time_label">Tijd</string>
+    <string name="prayer_reminder_title">Gebedsherinnering</string>
+    <string name="prayer_reminder_desc">Pauzeer en bid voor het slapengaan</string>
+    <string name="brain_dump_title">Brain Dump</string>
+    <string name="brain_dump_desc">Schrijf gedachten op voor het slapengaan</string>
+    <string name="scripture_mode_title">Schriftmodus</string>
+    <string name="scripture_mode_desc">Toon rustgevend vers</string>
+    <string name="scripture_topic_random">Verras me! (Willekeurig)</string>
+    <string name="wisdom_quotes_title">Wijsheid Citaten</string>
+    <string name="wisdom_quotes_desc">Diepe theologische wijsheid</string>
+    <string name="wisdom_category_peace">Vrede &amp; Troost</string>
+    <string name="wisdom_desc_peace">Angst, rust en vertrouwen</string>
+    <string name="wisdom_category_glory">Gods Glorie</string>
+    <string name="wisdom_desc_glory">Wie God is en Zijn soevereiniteit</string>
+    <string name="wisdom_category_gospel">Evangelie &amp; Genade</string>
+    <string name="wisdom_desc_gospel">Vergeving en redding</string>
+    <string name="wisdom_category_living">Leven &amp; Wijsheid</string>
+    <string name="wisdom_desc_living">Gebed en praktisch geloof</string>
+    <string name="sleep_calc_title">Slaapcalculator</string>
+    <string name="sleep_calc_desc">Beste tijd om wakker te worden</string>
+    <string name="alarm_button_setting_title">Alarmknop</string>
+    <string name="alarm_button_setting_desc">Toon "Zet Wekker"</string>
+    <string name="breathing_guide_title">Haptische Ademgids</string>
+    <string name="breathing_guide_desc">Adem met vibratie</string>
+    <string name="haptic_vibration_title">Haptische Vibratie</string>
+    <string name="haptic_vibration_desc">Schakel tastbare feedback in</string>
+    <string name="breathing_auto_start_title">Auto-Start</string>
+    <string name="breathing_auto_start_desc">Start gids automatisch</string>
+    <string name="breathing_duration_label">Duur: %1$d min</string>
+    <string name="doomscroll_title">Verslavingsslot</string>
+    <string name="doomscroll_desc">Blokkeer verslavende apps</string>
+    <string name="grace_period_label">Gratieperiode: %1$d min</string>
+    <string name="grace_period_desc">Kort gebruik voor blokkering</string>
+    <string name="blocked_apps_label">Geblokkeerd (%1$d)</string>
+    <string name="add_app_to_block_button">Blokkeer App</string>
+    <string name="permission_required_title">Toestemming Vereist</string>
+    <string name="accessibility_explanation_doomscroll">Om te blokkeren heeft Fade \'Toegankelijkheid\' toestemming nodig.</string>
+    <string name="instructions_label">Instructies:</string>
+    <string name="accessibility_step_2_doomscroll">2. Zoek \'Fade Sleep Timer\'.</string>
+    <string name="accessibility_step_3_doomscroll">3. Zet het aan.</string>
+    <string name="accessibility_step_4_doomscroll">4. Tik op \'Toestaan\'.</string>
+    
+    <!-- Timer Capsule -->
+    <string name="stop_timer_content_description">Stop Timer</string>
+    
+    <!-- Presets Editor -->
+    <string name="timer_presets_title">Voorinstellingen</string>
+    <string name="timer_presets_subtitle">Knoppen aanpassen</string>
+    <string name="add_button">Toevoegen</string>
+    <string name="reset_default_button">Reset</string>
+    <string name="add_preset_dialog_title">Voorinstelling Toevoegen</string>
+    <string name="minutes_label">Minuten</string>
+    <string name="cancel_button">Annuleren</string>
+    
+    <!-- Settings Section -->
+    <string name="expand_content_description">Uitvouwen</string>
+    <string name="collapse_content_description">Inklappen</string>
+    
+    <!-- General -->
+    <string name="new_label">NIEUW</string>
+    
+    <!-- Main Screen -->
+    <string name="app_title">Slaap Timer</string>
+    <string name="supporter_badge">Supporter</string>
+    <string name="pocket_mode_active">Zakmodus Actief</string>
+    <string name="pocket_mode_unlock_instruction">Dubbeltik om te ontgrendelen</string>
+    <string name="pocket_mode_unlocked_toast">Zakmodus Ontgrendeld</string>
+    <string name="timer_started_minimizing_toast">Timer gestart. Minimaliseren...</string>
+    
+    <!-- Dialogs -->
+    <string name="shake_dialog_title">Schudden om te Verlengen</string>
+    <string name="shake_dialog_message">Je schudde! Zullen we dit aan laten?</string>
+    <string name="keep_on_button">Aan Houden</string>
+    <string name="turn_off_button">Uitschakelen</string>
+    <string name="shake_disabled_toast">Schudden om te Verlengen is uitgeschakeld.</string>
+    
+    <!-- Spotlight Tour -->
+    <string name="spotlight_presets_title">Kies een Tijd ⏱️</string>
+    <string name="spotlight_presets_desc">Wanneer stilte? Muziek zal langzaam vervagen.</string>
+    <string name="spotlight_media_title">Snelle Media Toegang 🎵</string>
+    <string name="spotlight_media_desc">Tik op \'Configureren\' om je apps toe te voegen (Spotify, YouTube etc).</string>
+    <string name="spotlight_settings_title">Ontdek Meer ⚙️</string>
+    <string name="spotlight_settings_desc">Instellingen bevat ademhalingsoefeningen, gebeden en meer.</string>
+    
+    <!-- Morning Check -->
+    <string name="morning_check_yes_toast">Tip: Probeer vanavond een langere tijd.</string>
+    <string name="morning_check_no_toast">Geweldig! We houden je voorkeuren.</string>
+    
+    <!-- Content Descriptions -->
+    <string name="breathing_guide_cd">Ademgids</string>
+    <string name="view_note_cd">Bekijk Notitie</string>
+
+    <!-- Pre-Timer Screen -->
+    <string name="optimal_wake_time_label">Beste Tijd om Wakker te Worden</string>
+    <string name="sleep_cycles_suffix"> (5 Cycli)</string>
+    <string name="set_alarm_button">ZET WEKKER</string>
+    <string name="pre_timer_settings_hint">Tip: Pas aan in Instellingen > Geweldige Functies</string>
+    <string name="ready_to_sleep_title">Klaar om te slapen?</string>
+    <string name="pre_timer_instruction">Check voordat je start.</string>
+    <string name="fade_wake_up_alarm_message">Fade Opstaan</string>
+    <string name="alarm_set_toast">Wekker gezet voor %s</string>
+    <string name="alarm_error_toast">Wekker fout: %s</string>
+    <string name="airplane_mode_title">Vliegtuigmodus</string>
+    <string name="airplane_mode_desc">Geen afleiding &amp; geen straling</string>
+    <string name="settings_button_caps">INSTELLINGEN</string>
+    <string name="start_timer_button">START</string>
+    <string name="cancel_cd">Annuleren</string>
+    <string name="illuminating_wisdom_loading">Verlichten...</string>
+    <string name="understanding_quote_title">Citaat Begrijpen</string>
+    <string name="close_button">Sluiten</string>
+    <string name="explanation_error_title">Kan nu niet uitleggen</string>
+
+    <!-- Permissions Screen -->
+    <string name="permissions_needed_title">Toestemmingen Nodig</string>
+    <string name="permissions_needed_desc">Voor achtergrondgebruik en audiovervaging.</string>
+    <string name="privacy_promise_cd">Privacy</string>
+    <string name="privacy_promise_title">Privacy - Nul Data</string>
+    <string name="privacy_promise_body">Jouw data is van jou. Ik kan er niet bij en er wordt niets naar de cloud gestuurd.</string>
+    <string name="open_source_cd">Open Source</string>
+    <string name="open_source_title">Vertrouwen wordt verdiend</string>
+    <string name="open_source_body">Fade is Open Source. Iedereen kan de code controleren.</string>
+    <string name="view_source_code_button">Bekijk Broncode</string>
+    <string name="notifications_permission_title">Meldingen</string>
+    <string name="notifications_enabled_desc">Ingeschakeld - toon status</string>
+    <string name="notifications_required_desc">Vereist voor meldingen.</string>
+    <string name="allowed_button">Toegestaan</string>
+    <string name="allow_button">Toestaan</string>
+    <string name="enabled_button">Ingeschakeld</string>
+    <string name="fix_button">Fix</string>
+    <string name="unrestricted_battery_title">Onbeperkte Batterij</string>
+    <string name="battery_enabled_desc">Ingeschakeld - werkt betrouwbaar</string>
+    <string name="battery_critical_desc">Kritiek: Voorkomt dat timer stopt als scherm uit is.</string>
+    <string name="accessibility_dialog_title">Schakel Auto Scherm Uit in</string>
+    <string name="accessibility_step_intro">Schakel toegankelijkheidsservice handmatig in:</string>
+    <string name="accessibility_step_1">1. Tik op \'Ga naar Instellingen\'.</string>
+    <string name="accessibility_step_2">2. Zoek \'Geïnstalleerde apps\'.</string>
+    <string name="accessibility_step_3">3. Tik op \'Fade Sleep Timer\'.</string>
+    <string name="accessibility_step_4">4. Zet de schakelaar aan.</string>
+    <string name="go_to_settings_button">Ga naar Instellingen</string>
+
+    <string name="auto_screen_off_title">Auto Scherm Uit</string>
+    <string name="auto_screen_off_enabled_desc">Ingeschakeld - uit na 3 min</string>
+    <string name="auto_screen_off_optional_desc">Optioneel - vergrendel bij inactiviteit</string>
+    <string name="enable_button">Inschakelen</string>
+    <string name="continue_button">Doorgaan</string>
+
+    <!-- Support Prompts (Arrays) -->
+    <string-array name="review_prompts">
+        <item>Geniet je van de stilte? 5 sterren helpen.</item>
+        <item>Sneller slapen? Vertel het de wereld (zachtjes).</item>
+        <item>Als de app werkt, werkt een review voor ons.</item>
+        <item>Willen je niet wakker maken, maar beoordeel ons.</item>
+        <item>Nog steeds wakker? Misschien een review schrijven.</item>
+        <item>Houd je van Fade? Laat onze sterren niet vervagen.</item>
+        <item>Een review schrijven is ontspannend, wist je dat?</item>
+        <item>Help ons nachtmerries te bestrijden. Geef 5 sterren.</item>
+        <item>Nul advertenties, nul kosten. Een kleine review?</item>
+        <item>Wees een held. Red een ontwikkelaar van slapeloosheid.</item>
+        <item>Als je dit leest, ben je ons een review verschuldigd. Grapje...?</item>
+        <item>Laatste aanbod: Review en krijg een virtuele high-five.</item>
+    </string-array>
+    
+    <string-array name="support_prompts">
+        <item>Ik heb kinderen. Ze eten veel. Ontwikkelaar steunen?</item>
+        <item>Mijn code-aapjes willen bananen. Een fooi?</item>
+        <item>Ik codeer in pyjama, maar het is een baan. Koffie?</item>
+        <item>Houd je van stilte? Waardeer mijn luidruchtige kinderen die ik negeer.</item>
+        <item>Heb geprobeerd huur te betalen met "goede vibes", werkte niet.</item>
+        <item>Help me mijn vrouw te bewijzen dat dit een echte baan is.</item>
+        <item>9 van de 10 dokters raden aan indie-devs te steunen.</item>
+        <item>Aan het sparen voor een robotbutler. Elke cent telt.</item>
+        <item>Gerucht gaat dat steunen de slaapkwaliteit met 10% verbetert.</item>
+        <item>Ik beloof het verstandig uit te geven (Koffie).</item>
+        <item>Coderen verbruikt 500% meer cafeïne.</item>
+        <item>Maak een ontwikkelaar aan het lachen. Goed voor karma.</item>
+    </string-array>
+
+    <!-- Notifications & Dialogs -->
+    <string name="bedtime_reminder_title_notif">Bedtijd</string>
+    <string name="bedtime_reminder_desc_notif">Melding voor bedtijd</string>
+    <string name="bedtime_reminder_text">Het is tijd om te slapen.</string>
+    <string name="extend_15m_button">Verleng 15 min</string>
+    <string name="dismiss_button">Sluiten</string>
+    
+    <string name="brain_dump_channel_name">Idee Herinnering</string>
+    <string name="brain_dump_channel_desc">Waarschuwing voordat notitie wordt verwijderd</string>
+    <string name="brain_dump_title_notif">Notitie verdwijnt binnenkort</string>
+    <string name="brain_dump_text_format">Notitie wordt in %s verwijderd. Tik om te bekijken.</string>
+    
+    <string name="support_prompt_title">Bericht van Ontwikkelaar</string>
+    <string name="support_prompt_nah">Nee</string>
+    <string name="support_prompt_check_it_out">Bekijk het</string>
+    
+    <string name="support_banner_text">Klik hier om de ontwikkelaar te steunen!</string>
+    <string name="support_banner_button">Steun</string>
+    
+    <string name="spotlight_got_it">Begrepen!</string>
+    <string name="spotlight_next">Volgende</string>
+
+    <!-- Setup Screen -->
+    <string name="setup_source_system">Systeem Audio</string>
+    <string name="setup_source_info">Slaaphulp Info</string>
+    <string name="setup_resume_music">Hervat Muziek</string>
+    <string name="setup_configure">CONFIGUREREN</string>
+    <string name="setup_configure_toast">Tip: Configureer knoppen in Instellingen -> Welzijn</string>
+    <string name="setup_facts">Feiten</string>
+    <string name="setup_bios">Bios</string>
+    <string name="setup_history">Geschiedenis</string>
+    <string name="setup_volume_header">VOLUME</string>
+    <string name="setup_volume_limit">Limiet Aan</string>
+    <string name="setup_volume_capped_cd">Volume Beperkt</string>
+    <string name="setup_safety_cap_toast">Veiligheidslimiet: Geschaald naar 40% bereik.</string>
+    <string name="setup_duration_header">KIES TIJD</string>
+    <string name="setup_default_label">(standaard)</string>
+    <string name="setup_voice_female_cd">Vrouwenstem</string>
+    <string name="setup_voice_male_cd">Mannenstem</string>
+    <string name="play_cd">Afspelen</string>
+    <string name="pause_cd">Pauze</string>
+    <string name="stop_cd">Stop</string>
+</resources>

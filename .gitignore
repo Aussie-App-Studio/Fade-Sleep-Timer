@@ -1,0 +1,22 @@
+
+# --- CUSTOM SECURITY RULES ---
+local.properties
+*.jks
+*.keystore
+*.p12
+*.pfk
+*.json
+key.properties
+google-services.json
+**/*.jks
+**/*.keystore
+captures/
+
+build/
+app/build/
+.gradle/
+.idea/
+
+*.hprof
+*.docx
+*.pdf

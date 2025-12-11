@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- App Action 1: Start Sleep Timer -->
+    <!-- Voice: "Hey Google, start sleep timer" or "Start sleep timer for 30 minutes" -->
+    <capability android:name="actions.intent.START_EXERCISE">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.gollan.fadesleeptimer"
+            android:targetClass="com.gollan.fadesleeptimer.MainActivity">
+            <parameter
+                android:name="exercise.duration"
+                android:key="timer_duration" />
+            <extra
+                android:name="app_action_type"
+                android:value="start_timer" />
+        </intent>
+    </capability>
+
+    <!-- App Action 2: Stop Sleep Timer -->
+    <!-- Voice: "Hey Google, stop sleep timer" -->
+    <capability android:name="actions.intent.STOP_EXERCISE">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.gollan.fadesleeptimer"
+            android:targetClass="com.gollan.fadesleeptimer.MainActivity">
+            <extra
+                android:name="app_action_type"
+                android:value="stop_timer" />
+        </intent>
+    </capability>
+
+    <!-- Static shortcut: Quick start timer -->
+    <shortcut
+        android:shortcutId="start_timer"
+        android:enabled="true"
+        android:icon="@mipmap/ic_launcher"
+        android:shortcutShortLabel="@string/app_name"
+        android:shortcutLongLabel="@string/app_name">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.gollan.fadesleeptimer"
+            android:targetClass="com.gollan.fadesleeptimer.MainActivity">
+            <extra android:name="app_action_type" android:value="start_timer" />
+        </intent>
+        <categories android:name="android.shortcut.conversation" />
+        <capability-binding android:key="actions.intent.START_EXERCISE" />
+    </shortcut>
+
+    <!-- Static shortcut: Extend timer (long-press shortcut only) -->
+    <shortcut
+        android:shortcutId="extend_timer"
+        android:enabled="true"
+        android:icon="@mipmap/ic_launcher"
+        android:shortcutShortLabel="@string/extend_15m_button"
+        android:shortcutLongLabel="@string/extend_15m_button">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.gollan.fadesleeptimer"
+            android:targetClass="com.gollan.fadesleeptimer.MainActivity">
+            <extra android:name="app_action_type" android:value="extend_timer" />
+        </intent>
+        <categories android:name="android.shortcut.conversation" />
+    </shortcut>
+
+</shortcuts>

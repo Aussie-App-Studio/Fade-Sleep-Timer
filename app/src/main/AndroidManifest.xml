@@ -1,0 +1,308 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.gollan.fadesleeptimer">
+
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+    <uses-permission android:name="com.android.vending.BILLING" />
+
+    <!-- Query only media/music apps instead of all packages (Play Store compliant) -->
+    <queries>
+        <!-- Music and audio apps -->
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:mimeType="audio/*" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.MUSIC_PLAYER" />
+        </intent>
+        <!-- Video apps (like YouTube) -->
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:mimeType="video/*" />
+        </intent>
+        <!-- All launcher apps (will show most apps) -->
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent>
+    </queries>
+
+    <application
+        android:allowBackup="true"
+        android:enableOnBackInvokedCallback="true"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:label="Fade Sleep Timer"
+        android:supportsRtl="true"
+        android:theme="@android:style/Theme.Material.Light.NoActionBar"
+        tools:targetApi="31">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@android:style/Theme.Material.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <!-- App Actions intent filter -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+            <!-- Shortcuts meta-data for App Actions -->
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts" />
+        </activity>
+
+
+        <!-- Default Icon Alias -->
+        <activity-alias
+            android:name=".MainActivityDefault"
+            android:enabled="true"
+            android:exported="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="Fade Sleep Timer"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <!-- Gold Icon Alias -->
+        <activity-alias
+            android:name=".MainActivityGold"
+            android:enabled="false"
+            android:exported="true"
+            android:icon="@mipmap/icon_gold"
+            android:label="Fade Sleep Timer"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <!-- Eyes Icon Alias -->
+        <activity-alias
+            android:name=".MainActivityEyes"
+            android:enabled="false"
+            android:exported="true"
+            android:icon="@mipmap/icon_eyes"
+            android:label="Fade Sleep Timer"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <!-- Ear Icon Alias -->
+        <activity-alias
+            android:name=".MainActivityEar"
+            android:enabled="false"
+            android:exported="true"
+            android:icon="@mipmap/icon_ear"
+            android:label="Fade Sleep Timer"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <!-- White Icon Alias -->
+        <activity-alias
+            android:name=".MainActivityWhite"
+            android:enabled="false"
+            android:exported="true"
+            android:icon="@mipmap/icon_white"
+            android:label="Fade Sleep Timer"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <!-- Retro Icon Alias -->
+        <activity-alias
+            android:name=".MainActivityRetro"
+            android:enabled="false"
+            android:exported="true"
+            android:icon="@mipmap/icon_retro"
+            android:label="Fade Sleep Timer"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <!-- Disco Icon Alias -->
+        <activity-alias
+            android:name=".MainActivityDisco"
+            android:enabled="false"
+            android:exported="true"
+            android:icon="@mipmap/icon_disco"
+            android:label="Fade Sleep Timer"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <!-- Future Icon Alias -->
+        <activity-alias
+            android:name=".MainActivityFuture"
+            android:enabled="false"
+            android:exported="true"
+            android:icon="@mipmap/icon_future"
+            android:label="Fade Sleep Timer"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <!-- Sheep Icon Alias -->
+        <activity-alias
+            android:name=".MainActivitySheep"
+            android:enabled="false"
+            android:exported="true"
+            android:icon="@mipmap/icon_sheep"
+            android:label="Fade Sleep Timer"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <!-- Lamp Icon Alias -->
+        <activity-alias
+            android:name=".MainActivityLamp"
+            android:enabled="false"
+            android:exported="true"
+            android:icon="@mipmap/icon_lamp"
+            android:label="Fade Sleep Timer"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <!-- Christian Icon Alias -->
+        <activity-alias
+            android:name=".MainActivityChristian"
+            android:enabled="false"
+            android:exported="true"
+            android:icon="@mipmap/icon_christian"
+            android:label="Fade Sleep Timer"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <!-- Bitcoin Icon Alias -->
+        <activity-alias
+            android:name=".MainActivityBitcoin"
+            android:enabled="false"
+            android:exported="true"
+            android:icon="@mipmap/icon_bitcoin"
+            android:label="Fade Sleep Timer"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <!-- Cat Icon Alias -->
+        <activity-alias
+            android:name=".MainActivityCat"
+            android:enabled="false"
+            android:exported="true"
+            android:icon="@mipmap/icon_cat"
+            android:label="Fade Sleep Timer"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <service
+            android:name=".service.ScreenLockService"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/screen_lock_service_config" />
+        </service>
+
+        <service
+            android:name=".service.NightstandJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:exported="true" />
+
+        <service
+            android:name=".service.TimerService"
+            android:foregroundServiceType="mediaPlayback"
+            android:exported="false" />
+
+        <receiver
+            android:name=".widget.FadeWidgetReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/fade_widget_info" />
+        </receiver>
+
+        <receiver
+            android:name=".service.BootReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name=".receiver.BedtimeReceiver"
+            android:enabled="true"
+            android:exported="false" />
+
+        <receiver
+            android:name="com.gollan.fadesleeptimer.receiver.BrainDumpReceiver"
+            android:enabled="true"
+            android:exported="false" />
+
+    </application>
+
+</manifest>

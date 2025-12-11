@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Fade Sleep Timer</string>
+    <string name="accessibility_service_description">Umožňuje aplikaci automaticky vypnout obrazovku po určité době nečinnosti, aby se šetřila baterie. Tato služba využívá pouze funkci uzamčení obrazovky a nesleduje žádný obsah.</string>
+    
+    <!-- Settings Screen -->
+    <string name="settings_title">Nastavení</string>
+    <string name="settings_back_content_description">Zpět</string>
+    
+    <!-- Support Button -->
+    <string name="support_development_title">Podpořit vývojáře</string>
+    <string name="support_development_subtitle">Odemknout funkce a odstranit reklamy</string>
+    
+    <!-- Premium Features Button -->
+    <string name="premium_features_title">Prémiové funkce</string>
+    <string name="premium_features_subtitle">Spravovat odměny</string>
+
+    <!-- Audio Settings -->
+    <string name="fade_out_duration_title">Doba ztlumení</string>
+    <string name="fade_out_duration_desc">Jak dlouho se má snižovat hlasitost</string>
+    <string name="unit_minutes_value">%1$d min</string>
+    <string name="volume_safety_cap_title">Bezpečnostní limit hlasitosti</string>
+    <string name="volume_safety_cap_desc">Omezit na 40 % pro ochranu sluchu</string>
+    <string name="play_on_start_title">Přehrát při spuštění</string>
+    <string name="play_on_start_desc">Obnovit média při spuštění časovače</string>
+    <string name="play_on_start_toast">Aktivní. Média se obnoví při spuštění.</string>
+    <string name="smart_wait_title">Chytré čekání</string>
+    <string name="smart_wait_desc">Počkat na konec písně</string>
+    <string name="smart_wait_toast">Aktivní. Časovač počká na konec písně.</string>
+
+    <!-- Visuals Settings -->
+    <string name="wedge_clock_title">Klín hodiny</string>
+    <string name="wedge_clock_desc">Zobrazit čas jako zmenšující se klín</string>
+    <string name="super_dim_title">Super tmavé překrytí</string>
+    <string name="super_dim_desc">Extra tmavý filtr na noc</string>
+    <string name="super_dim_toast">Aktivní. Obrazovka ztmavne při spuštění.</string>
+    <string name="grayscale_mode_title">Černobílý režim</string>
+    <string name="grayscale_mode_desc">Zšednout obrazovku (nudný režim)</string>
+    <string name="red_night_light_toast">Červené noční světlo se aktivuje při spuštění</string>
+    <string name="grayscale_options_title">Možnosti černobílého režimu</string>
+    <string name="grayscale_mode_timer">Pouze časovač</string>
+    <string name="grayscale_desc_timer">Šedé pouze, když běží časovač</string>
+    <string name="grayscale_mode_always">Vždy zapnuto</string>
+    <string name="grayscale_desc_always">Aplikace je vždy černobílá</string>
+    <string name="grayscale_mode_night">Červené noční světlo</string>
+    <string name="grayscale_desc_night">Červený filtr blokující modré světlo</string>
+    <string name="change_icon_title">Změnit ikonu?</string>
+    <string name="change_icon_message">Změnit ikonu na \'%1$s\'? Aplikace se může restartovat.</string>
+    <string name="change_icon_button">Změnit ikonu</string>
+    <string name="premium_icons_title">Prémiové ikony</string>
+    <string name="premium_icons_subtitle">(pro podporovatele)</string>
+    <string name="overlay_permission_desc">Pro použití červeného světla se Fade musí zobrazovat přes jiné aplikace.</string>
+    <string name="overlay_step_1">1. Klepněte na \'Otevřít nastavení\' níže.</string>
+    <string name="overlay_step_2">2. Najděte \'Fade Sleep Timer\'.</string>
+    <string name="overlay_step_3">3. Zapněte \'Povolit zobrazení přes jiné aplikace\'.</string>
+    <string name="open_settings_button">Otevřít nastavení</string>
+    
+    <!-- Open On Charge Dialog -->
+    <string name="open_on_charge_dialog_title">Vyberte čas</string>
+    <string name="open_on_charge_dialog_desc">Kdy automaticky spustit při nabíjení?</string>
+    <string name="open_on_charge_always">Vždy</string>
+    <string name="open_on_charge_always_desc">Pokaždé při připojení</string>
+    <string name="open_on_charge_strict">20:00 - 04:00</string>
+    <string name="open_on_charge_strict_desc">Večer (20:00 - 04:00)</string>
+    <string name="open_on_charge_late">01:00 - 05:00</string>
+    <string name="open_on_charge_late_desc">Pozdní noc (01:00 - 05:00)</string>
+    <string name="open_on_charge_morning">05:00 - 10:00</string>
+    <string name="open_on_charge_morning_desc">Ráno (05:00 - 10:00)</string>
+
+    <!-- Personalization Settings -->
+    <string name="airplane_mode_reminder_title">Připomenutí režimu letadlo</string>
+    <string name="airplane_mode_reminder_desc">Připomenout zapnutí režimu letadlo</string>
+    <string name="adjust_default_timer_title">Upravit výchozí časovač</string>
+    <string name="adjust_default_timer_desc">Počáteční čas a kontrola</string>
+    <string name="default_duration_label_format">Výchozí doba: %1$s</string>
+    <string name="timer_check_in_title">Kontrola časovače</string>
+    <string name="timer_check_in_desc">Navrhnout úpravu při častém prodlužování</string>
+    <string name="smart_extend_title">Chytré prodloužení</string>
+    <string name="smart_extend_desc">Přidat 10 min při detekci pohybu</string>
+    <string name="sensitivity_header">CITLIVOST</string>
+    <string name="sensitivity_low">Nízká</string>
+    <string name="sensitivity_med">Střední</string>
+    <string name="sensitivity_high">Vysoká</string>
+    <string name="sensitivity_low_desc">Vyžaduje silný pohyb</string>
+    <string name="sensitivity_med_desc">Vyvážená (Doporučeno)</string>
+    <string name="sensitivity_high_desc">Detekuje malé pohyby</string>
+    <string name="configure_buttons_title">Tlačítka médií</string>
+    <string name="configure_buttons_desc">Vyberte aplikace k zobrazení</string>
+    <string name="smart_extend_help_title">Použití chytrého prodloužení</string>
+    <string name="smart_extend_help_text">Položte telefon na matraci vedle polštáře.\n\nAkcelerometr detekuje vibrace matrace a zjistí, zda jste vzhůru.</string>
+    <string name="got_it_button">Rozumím</string>
+
+    <!-- Support Screen -->
+    <string name="beta_unlock_toast">Žádné nákupy v Betě. Klepněte 3x na ikonu dárku.</string>
+    <string name="beta_unlock_click_2">Ještě 2...</string>
+    <string name="beta_unlock_click_1">Ještě 1...</string>
+    <string name="beta_unlock_success_toast">Prémiový režim odemčen!</string>
+    <string name="support_title">Podpořit vývojáře</string>
+    <string name="support_subtitle_unlocked">Všechny funkce v nastavení odemčeny</string>
+    <string name="support_subtitle_locked">Klepněte na dárek pro překvapení</string>
+    <string name="support_close_button">Zavřít</string>
+    <string name="support_rate_title">Ohodnotit aplikaci</string>
+    <string name="support_rate_subtitle_locked">Odemknout odznak \'Podporovatel\'</string>
+    <string name="support_rate_subtitle_unlocked">Jste oficiální Podporovatel!</string>
+    <string name="price_free">Zdarma</string>
+    <string name="support_rate_active_text">Podporovatel</string>
+    <string name="support_share_title">Sdílet aplikaci</string>
+    <string name="support_share_subtitle">Řekněte přátelům</string>
+    <string name="support_share_active_text">Sdíleno</string>
+    <string name="support_other_apps_title">Moje další aplikace</string>
+    <string name="support_other_apps_subtitle">Myslím, že jsou SUPER!</string>
+    <string name="support_other_apps_active_text">Zobrazeno</string>
+    <string name="support_other_apps_error">Nelze otevřít stránku vývojáře</string>
+    <string name="support_visuals_title">Vizuální balíček</string>
+    <string name="support_visuals_desc">30+ témat včetně Neon, OLED</string>
+    <string name="support_visuals_desc_unlocked">30+ témat ($0.99 - Volitelné)</string>
+    <string name="support_visuals_select_cd">Vybrat téma</string>
+    <string name="status_unlocked">Odemčeno</string>
+    <string name="support_hof_title">Síň slávy a ikony</string>
+    <string name="support_hof_view_cd">Zobrazit Síň slávy</string>
+
+    <!-- System Settings -->
+    <string name="dnd_title">Nerušit (DND)</string>
+    <string name="dnd_desc">Ztlumit oznámení během časovače</string>
+    <string name="dnd_mode_priority">Standardní (Priorita)</string>
+    <string name="dnd_mode_alarms">Přísné (Pouze budíky)</string>
+    <string name="battery_guard_title">Strážce baterie</string>
+    <string name="battery_guard_desc_format">Zastavit při baterii &lt; %1$d%%</string>
+    <string name="stop_threshold_label">Práh zastavení</string>
+    <string name="go_home_title">Domů při spuštění</string>
+    <string name="go_home_desc">Minimalizovat aplikaci při spuštění</string>
+    <string name="open_on_charge_title">Otevřít při nabíjení</string>
+    <string name="open_on_charge_desc">Automaticky spustit při připojení</string>
+
+    <!-- Controls Settings -->
+    <string name="face_down_title">Otočit pro spuštění</string>
+    <string name="face_down_desc">Spustit a vypnout obrazovku (5s)</string>
+    <string name="face_down_toast">Aktivní. Otočte zařízení pro spuštění.</string>
+    <string name="shake_extend_title">Zatřást pro prodloužení</string>
+    <string name="shake_extend_desc">Zatřást pro přidání 15 min</string>
+    <string name="shake_extend_toast">Aktivní. Zatřeste pro +15 min.</string>
+    <string name="pocket_mode_title">Režim v kapse</string>
+    <string name="pocket_mode_desc">Zabránit náhodným dotykům</string>
+    <string name="pocket_mode_toast">Aktivní. Dotyk blokován.</string>
+    <string name="widgets_title">Widgety na ploše</string>
+    <string name="widgets_desc">Podržte na ploše pro přidání widgetu.</string>
+
+    <!-- Info Settings -->
+    <string name="sleep_journey_title">Cesta spánku</string>
+    <string name="sleep_journey_desc">Odznaky, série a statistiky</string>
+    <string name="hall_of_fame_title">Síň slávy</string>
+    <string name="hall_of_fame_desc">Naši legendární podporovatelé</string>
+    <string name="battery_data_saved_title">BATERIE A DATA UŠETŘENY</string>
+    <string name="battery_data_saved_desc">Odhadnuto na základě průměru</string>
+    <string name="saved_minutes_format">%1$d min</string>
+    <string name="saved_hours_format">%.1f hod</string>
+
+    <!-- Settings Titles -->
+    <string name="settings_category_system">Pokročilé a systém</string>
+    <string name="settings_category_controls">Ovládání a interakce</string>
+    <string name="settings_category_info">Informace</string>
+    <string name="settings_category_audio">Zvuk a přehrávání</string>
+    <string name="settings_category_visuals">Vizuál a displej</string>
+    <string name="settings_category_wellness">Wellness a osobní</string>
+    <string name="settings_category_control">Ovládání a interakce</string>
+    <string name="settings_category_advanced">Pokročilé a systém</string>
+    <string name="settings_category_awesome">Úžasné funkce</string>
+    <string name="settings_category_personalization">Přizpůsobení</string>
+
+    <!-- Settings Components -->
+    <string name="unit_minutes_short">%1$d min</string>
+    <string name="unit_hours_short">%1$d h</string>
+    <string name="unit_hours_decimal_short">%1$s h</string>
+    <string name="add_timer_preset_title">Přidat předvolbu</string>
+    <string name="minutes_label_caps">MINUTY</string>
+    <string name="add_button_caps">PŘIDAT</string>
+    <string name="remove_cd">Odstranit</string>
+    <string name="topic_header">TÉMA</string>
+    <string name="change_timer_buttons_title">Změnit tlačítka</string>
+    <string name="change_timer_buttons_subtitle">Přizpůsobit časy</string>
+    <string name="reset_default_button_text">Obnovit výchozí</string>
+    <string name="new_badge">NOVÉ</string>
+    <string name="expand_cd">Rozbalit</string>
+    <string name="collapse_cd">Sbalit</string>
+
+    <!-- Awesome Features Settings -->
+    <string name="bedtime_reminder_title">Připomínka večerky</string>
+    <string name="bedtime_reminder_desc">Oznámení času spánku</string>
+    <string name="reminder_time_label">Čas</string>
+    <string name="prayer_reminder_title">Připomínka modlitby</string>
+    <string name="prayer_reminder_desc">Zastavte se a pomodlete před spaním</string>
+    <string name="brain_dump_title">Vypuštění myšlenek</string>
+    <string name="brain_dump_desc">Zapište myšlenky před spaním</string>
+    <string name="scripture_mode_title">Režim Písma</string>
+    <string name="scripture_mode_desc">Zobrazit uklidňující verš</string>
+    <string name="scripture_topic_random">Překvap mě! (Náhodné)</string>
+    <string name="wisdom_quotes_title">Citáty moudrosti</string>
+    <string name="wisdom_quotes_desc">Hluboká teologická moudrost</string>
+    <string name="wisdom_category_peace">Mír a útěcha</string>
+    <string name="wisdom_desc_peace">Úzkost, odpočinek a důvěra</string>
+    <string name="wisdom_category_glory">Boží sláva</string>
+    <string name="wisdom_desc_glory">Kdo je Bůh a jeho svrchovanost</string>
+    <string name="wisdom_category_gospel">Evangelium a milost</string>
+    <string name="wisdom_desc_gospel">Odpuštění a spása</string>
+    <string name="wisdom_category_living">Život a moudrost</string>
+    <string name="wisdom_desc_living">Modlitba a praktická víra</string>
+    <string name="sleep_calc_title">Kalkulačka spánku</string>
+    <string name="sleep_calc_desc">Nejlepší čas probuzení</string>
+    <string name="alarm_button_setting_title">Tlačítko budíku</string>
+    <string name="alarm_button_setting_desc">Zobrazit "Nastavit budík"</string>
+    <string name="breathing_guide_title">Haptický průvodce dýcháním</string>
+    <string name="breathing_guide_desc">Dýchejte s vibracemi</string>
+    <string name="haptic_vibration_title">Haptické vibrace</string>
+    <string name="haptic_vibration_desc">Povolit hmatovou odezvu</string>
+    <string name="breathing_auto_start_title">Automatický start</string>
+    <string name="breathing_auto_start_desc">Spustit průvodce automaticky</string>
+    <string name="breathing_duration_label">Doba: %1$d min</string>
+    <string name="doomscroll_title">Zámek závislosti</string>
+    <string name="doomscroll_desc">Blokovat návykové aplikace</string>
+    <string name="grace_period_label">Ochranná lhůta: %1$d min</string>
+    <string name="grace_period_desc">Krátké použití před blokováním</string>
+    <string name="blocked_apps_label">Blokováno (%1$d)</string>
+    <string name="add_app_to_block_button">Blokovat aplikaci</string>
+    <string name="permission_required_title">Vyžadováno oprávnění</string>
+    <string name="accessibility_explanation_doomscroll">K blokování potřebuje Fade oprávnění \'Přístupnost\'.</string>
+    <string name="instructions_label">Instrukce:</string>
+    <string name="accessibility_step_2_doomscroll">2. Najděte \'Fade Sleep Timer\'.</string>
+    <string name="accessibility_step_3_doomscroll">3. Zapněte to.</string>
+    <string name="accessibility_step_4_doomscroll">4. Klepněte na \'Povolit\'.</string>
+    
+    <!-- Timer Capsule -->
+    <string name="stop_timer_content_description">Zastavit časovač</string>
+    
+    <!-- Presets Editor -->
+    <string name="timer_presets_title">Předvolby</string>
+    <string name="timer_presets_subtitle">Přizpůsobit tlačítka</string>
+    <string name="add_button">Přidat</string>
+    <string name="reset_default_button">Resetovat</string>
+    <string name="add_preset_dialog_title">Přidat předvolbu</string>
+    <string name="minutes_label">Minuty</string>
+    <string name="cancel_button">Zrušit</string>
+    
+    <!-- Settings Section -->
+    <string name="expand_content_description">Rozbalit</string>
+    <string name="collapse_content_description">Sbalit</string>
+    
+    <!-- General -->
+    <string name="new_label">NOVÉ</string>
+    
+    <!-- Main Screen -->
+    <string name="app_title">Časovač spánku</string>
+    <string name="supporter_badge">Podporovatel</string>
+    <string name="pocket_mode_active">Režim v kapse aktivní</string>
+    <string name="pocket_mode_unlock_instruction">Dvakrát klepněte pro odemknutí</string>
+    <string name="pocket_mode_unlocked_toast">Režim v kapse odemčen</string>
+    <string name="timer_started_minimizing_toast">Časovač spuštěn. Minimalizace...</string>
+    
+    <!-- Dialogs -->
+    <string name="shake_dialog_title">Zatřást pro prodloužení</string>
+    <string name="shake_dialog_message">Zatřásli jste! Nechat to zapnuté?</string>
+    <string name="keep_on_button">Nechat zapnuté</string>
+    <string name="turn_off_button">Vypnout</string>
+    <string name="shake_disabled_toast">Zatřást pro prodloužení je vypnuto.</string>
+    
+    <!-- Spotlight Tour -->
+    <string name="spotlight_presets_title">Vyberte čas ⏱️</string>
+    <string name="spotlight_presets_desc">Kdy ticho? Hudba se bude pomalu ztišovat.</string>
+    <string name="spotlight_media_title">Rychlý přístup k médiím 🎵</string>
+    <string name="spotlight_media_desc">Klepněte na \'Konfigurovat\' pro přidání aplikací (Spotify, YouTube atd.).</string>
+    <string name="spotlight_settings_title">Objevte více ⚙️</string>
+    <string name="spotlight_settings_desc">Nastavení obsahuje dechová cvičení, modlitby a další.</string>
+    
+    <!-- Morning Check -->
+    <string name="morning_check_yes_toast">Tip: Zkuste dnes v noci delší čas.</string>
+    <string name="morning_check_no_toast">Skvělé! Vaše preference zachováme.</string>
+    
+    <!-- Content Descriptions -->
+    <string name="breathing_guide_cd">Průvodce dýcháním</string>
+    <string name="view_note_cd">Zobrazit poznámku</string>
+
+    <!-- Pre-Timer Screen -->
+    <string name="optimal_wake_time_label">Nejlepší čas probuzení</string>
+    <string name="sleep_cycles_suffix"> (5 cyklů)</string>
+    <string name="set_alarm_button">NASTAVIT BUDÍK</string>
+    <string name="pre_timer_settings_hint">Tip: Přizpůsobte v Nastavení > Úžasné funkce</string>
+    <string name="ready_to_sleep_title">Připraveni spát?</string>
+    <string name="pre_timer_instruction">Zkontrolujte před spuštěním.</string>
+    <string name="fade_wake_up_alarm_message">Fade Probuzení</string>
+    <string name="alarm_set_toast">Budík nastaven na %s</string>
+    <string name="alarm_error_toast">Chyba budíku: %s</string>
+    <string name="airplane_mode_title">Režim letadlo</string>
+    <string name="airplane_mode_desc">Žádné rozptylování a žádné záření</string>
+    <string name="settings_button_caps">NASTAVENÍ</string>
+    <string name="start_timer_button">START</string>
+    <string name="cancel_cd">Zrušit</string>
+    <string name="illuminating_wisdom_loading">Osvětlování...</string>
+    <string name="understanding_quote_title">Pochopení citátu</string>
+    <string name="close_button">Zavřít</string>
+    <string name="explanation_error_title">Teď to nelze vysvětlit</string>
+
+    <!-- Permissions Screen -->
+    <string name="permissions_needed_title">Potřebná oprávnění</string>
+    <string name="permissions_needed_desc">Pro běh na pozadí a ztlumení zvuku.</string>
+    <string name="privacy_promise_cd">Soukromí</string>
+    <string name="privacy_promise_title">Soukromí - Nula dat</string>
+    <string name="privacy_promise_body">Vaše data jsou vaše. Nemohu k nim přistupovat a nic se neposílá do cloudu.</string>
+    <string name="open_source_cd">Open Source</string>
+    <string name="open_source_title">Důvěra se získává</string>
+    <string name="open_source_body">Fade je Open Source. Kdokoli může kód zkontrolovat.</string>
+    <string name="view_source_code_button">Zobrazit zdrojový kód</string>
+    <string name="notifications_permission_title">Oznámení</string>
+    <string name="notifications_enabled_desc">Povoleno - zobrazit stav</string>
+    <string name="notifications_required_desc">Vyžadováno pro oznámení.</string>
+    <string name="allowed_button">Povoleno</string>
+    <string name="allow_button">Povolit</string>
+    <string name="enabled_button">Zapnuto</string>
+    <string name="fix_button">Opravit</string>
+    <string name="unrestricted_battery_title">Neomezená baterie</string>
+    <string name="battery_enabled_desc">Povoleno - běží spolehlivě</string>
+    <string name="battery_critical_desc">Kritické: Zabrání zastavení časovače při vypnuté obrazovce.</string>
+    <string name="accessibility_dialog_title">Povolit aut. vypnutí obrazovky</string>
+    <string name="accessibility_step_intro">Povolit službu přístupnosti ručně:</string>
+    <string name="accessibility_step_1">1. Klepněte na \'Přejít do nastavení\'.</string>
+    <string name="accessibility_step_2">2. Najděte \'Nainstalované aplikace\'.</string>
+    <string name="accessibility_step_3">3. Klepněte na \'Fade Sleep Timer\'.</string>
+    <string name="accessibility_step_4">4. Zapněte přepínač.</string>
+    <string name="go_to_settings_button">Přejít do nastavení</string>
+
+    <string name="auto_screen_off_title">Aut. vypnutí obrazovky</string>
+    <string name="auto_screen_off_enabled_desc">Povoleno - vypnout po 3 min</string>
+    <string name="auto_screen_off_optional_desc">Volitelné - uzamknout při nečinnosti</string>
+    <string name="enable_button">Povolit</string>
+    <string name="continue_button">Pokračovat</string>
+
+    <!-- Support Prompts (Arrays) -->
+    <string-array name="review_prompts">
+        <item>Užíváte si ticho? 5 hvězdiček pomůže.</item>
+        <item>Usínáte rychleji? Řekněte to světu (potichu).</item>
+        <item>Pokud aplikace funguje, recenze funguje pro nás.</item>
+        <item>Nechceme vás budit, ale ohodnoťte nás.</item>
+        <item>Stále vzhůru? Možná napište recenzi.</item>
+        <item>Líbí se vám Fade? Nenechte naše hvězdy vyblednout.</item>
+        <item>Psaní recenze je uklidňující, věděli jste to?</item>
+        <item>Pomozte nám bojovat s nočními můrami. Dejte nám 5 hvězdiček.</item>
+        <item>Nula reklam, nula nákladů. Jedna malá recenze?</item>
+        <item>Buďte hrdinou. Zachraňte vývojáře před nespavostí.</item>
+        <item>Pokud to čtete, dlužíte nám recenzi. Děláme si srandu...?</item>
+        <item>Poslední nabídka: Recenze a dostanete virtuální high-five.</item>
+    </string-array>
+    
+    <string-array name="support_prompts">
+        <item>Mám děti. Hodně jedí. Podpořit vývojáře?</item>
+        <item>Moje kódovací opice chtějí banány. Spropitné?</item>
+        <item>Kóduji v pyžamu, ale je to práce. Kávu?</item>
+        <item>Máte rádi ticho? Oceňte mé hlučné děti, které ignoruji.</item>
+        <item>Zkoušel jsem platit nájem "dobrými vibracemi", nefungovalo to.</item>
+        <item>Pomozte mi dokázat manželce, že je to skutečná práce.</item>
+        <item>9 z 10 lékařů doporučuje podporovat nezávislé vývojáře.</item>
+        <item>Šetřím na robotického sluhu. Každý cent se počítá.</item>
+        <item>Říká se, že podpora zlepšuje kvalitu spánku o 10 %.</item>
+        <item>Slibuji, že to utratím moudře (Káva).</item>
+        <item>Kódování spotřebovává o 500 % více kofeinu.</item>
+        <item>Rozesmějte vývojáře. Dobré pro karmu.</item>
+    </string-array>
+
+    <!-- Notifications & Dialogs -->
+    <string name="bedtime_reminder_title_notif">Večerka</string>
+    <string name="bedtime_reminder_desc_notif">Připomenutí času spánku</string>
+    <string name="bedtime_reminder_text">Je čas jít spát.</string>
+    <string name="extend_15m_button">Prodloužit 15 min</string>
+    <string name="dismiss_button">Zrušit</string>
+    
+    <string name="brain_dump_channel_name">Připomínka nápadů</string>
+    <string name="brain_dump_channel_desc">Varování před smazáním poznámky</string>
+    <string name="brain_dump_title_notif">Poznámka brzy zmizí</string>
+    <string name="brain_dump_text_format">Poznámka bude smazána za %s. Klepněte pro zobrazení.</string>
+    
+    <string name="support_prompt_title">Zpráva od vývojáře</string>
+    <string name="support_prompt_nah">Ne</string>
+    <string name="support_prompt_check_it_out">Podívat se</string>
+    
+    <string name="support_banner_text">Klikněte zde pro podporu vývojáře!</string>
+    <string name="support_banner_button">Podpora</string>
+    
+    <string name="spotlight_got_it">Chápu!</string>
+    <string name="spotlight_next">Další</string>
+
+    <!-- Setup Screen -->
+    <string name="setup_source_system">Systémový zvuk</string>
+    <string name="setup_source_info">Info o spánku</string>
+    <string name="setup_resume_music">Obnovit hudbu</string>
+    <string name="setup_configure">KONFIGUROVAT</string>
+    <string name="setup_configure_toast">Tip: Konfigurujte tlačítka v Nastavení -> Wellness</string>
+    <string name="setup_facts">Fakta</string>
+    <string name="setup_bios">Bios</string>
+    <string name="setup_history">Historie</string>
+    <string name="setup_volume_header">HLASITOST</string>
+    <string name="setup_volume_limit">Limit zap</string>
+    <string name="setup_volume_capped_cd">Hlasitost omezena</string>
+    <string name="setup_safety_cap_toast">Bezpečnostní limit: Změněno na rozsah 40 %.</string>
+    <string name="setup_duration_header">VYBERTE ČAS</string>
+    <string name="setup_default_label">(výchozí)</string>
+    <string name="setup_voice_female_cd">Ženský hlas</string>
+    <string name="setup_voice_male_cd">Mužský hlas</string>
+    <string name="play_cd">Přehrát</string>
+    <string name="pause_cd">Pauza</string>
+    <string name="stop_cd">Stop</string>
+</resources>

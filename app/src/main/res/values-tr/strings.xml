@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Fade Sleep Timer</string>
+    <string name="accessibility_service_description">Pil tasarrufu için etkinlik olmadığında ekranı otomatik olarak kapatmayı sağlar. Bu hizmet yalnızca ekran kilitleme özelliğini kullanır ve herhangi bir içeriği izlemez.</string>
+    
+    <!-- Settings Screen -->
+    <string name="settings_title">Ayarlar</string>
+    <string name="settings_back_content_description">Geri</string>
+    
+    <!-- Support Button -->
+    <string name="support_development_title">Geliştiriciyi Destekle</string>
+    <string name="support_development_subtitle">Özellikleri Aç &amp; Reklamları Kaldır</string>
+    
+    <!-- Premium Features Button -->
+    <string name="premium_features_title">Premium Özellikler</string>
+    <string name="premium_features_subtitle">Ödülleri Yönet</string>
+
+    <!-- Audio Settings -->
+    <string name="fade_out_duration_title">Fade Out Süresi</string>
+    <string name="fade_out_duration_desc">Sesi kısma süresi</string>
+    <string name="unit_minutes_value">%1$ddk</string>
+    <string name="volume_safety_cap_title">Ses Güvenlik Sınırı</string>
+    <string name="volume_safety_cap_desc">İşitme sağlığı için %40 ile sınırla</string>
+    <string name="play_on_start_title">Başlangıçta Oynat</string>
+    <string name="play_on_start_desc">Zamanlayıcı başladığında medyayı devam ettir</string>
+    <string name="play_on_start_toast">Etkin. Medya başlangıçta devam edecek.</string>
+    <string name="smart_wait_title">Akıllı Bekleme</string>
+    <string name="smart_wait_desc">Şarkı bitene kadar bekle</string>
+    <string name="smart_wait_toast">Etkin. Zamanlayıcı şarkının bitmesini bekleyecek.</string>
+
+    <!-- Visuals Settings -->
+    <string name="wedge_clock_title">Kama Saat</string>
+    <string name="wedge_clock_desc">Zamanı küçülen bir kama olarak göster</string>
+    <string name="super_dim_title">Süper Karartma Katmanı</string>
+    <string name="super_dim_desc">Gece için ekstra karanlık filtre</string>
+    <string name="super_dim_toast">Etkin. Ekran kararacak.</string>
+    <string name="grayscale_mode_title">Gri Tonlama Modu</string>
+    <string name="grayscale_mode_desc">Ekranı gri yap (sıkıcı mod)</string>
+    <string name="red_night_light_toast">Kırmızı Gece Işığı başlangıçta aktif olacak</string>
+    <string name="grayscale_options_title">Gri Tonlama Seçenekleri</string>
+    <string name="grayscale_mode_timer">Sadece Zamanlayıcı</string>
+    <string name="grayscale_desc_timer">Sadece zamanlayıcı çalışırken gri</string>
+    <string name="grayscale_mode_always">Her Zaman Açık</string>
+    <string name="grayscale_desc_always">Uygulama her zaman gri</string>
+    <string name="grayscale_mode_night">Kırmızı Gece Işığı</string>
+    <string name="grayscale_desc_night">Kırmızı filtre mavi ışığı engeller</string>
+    <string name="change_icon_title">Simgeyi Değiştir?</string>
+    <string name="change_icon_message">Simgeyi \'%1$s\' olarak değiştir? Uygulama yeniden başlayabilir.</string>
+    <string name="change_icon_button">Değiştir</string>
+    <string name="premium_icons_title">Premium Simgeler</string>
+    <string name="premium_icons_subtitle">(destekçiler için)</string>
+    <string name="overlay_permission_desc">Kırmızı Işık için, Fade\'in diğer uygulamaların üzerinde görüntülenmesi gerekir.</string>
+    <string name="overlay_step_1">1. Aşağıdaki \'Ayarları Aç\'a dokunun.</string>
+    <string name="overlay_step_2">2. \'Fade Sleep Timer\'ı bulun.</string>
+    <string name="overlay_step_3">3. \'Diğer uygulamaların üzerinde göster\'i açın.</string>
+    <string name="open_settings_button">Ayarları Aç</string>
+    
+    <!-- Open On Charge Dialog -->
+    <string name="open_on_charge_dialog_title">Zaman Seç</string>
+    <string name="open_on_charge_dialog_desc">Şarjda ne zaman başlasın?</string>
+    <string name="open_on_charge_always">Her Zaman</string>
+    <string name="open_on_charge_always_desc">Her takıldığında</string>
+    <string name="open_on_charge_strict">20:00 - 04:00</string>
+    <string name="open_on_charge_strict_desc">Akşam (20:00 - 04:00)</string>
+    <string name="open_on_charge_late">01:00 - 05:00</string>
+    <string name="open_on_charge_late_desc">Gece (01:00 - 05:00)</string>
+    <string name="open_on_charge_morning">05:00 - 10:00</string>
+    <string name="open_on_charge_morning_desc">Sabah (05:00 - 10:00)</string>
+
+    <!-- Personalization Settings -->
+    <string name="airplane_mode_reminder_title">Uçak Modu Hatırlatıcı</string>
+    <string name="airplane_mode_reminder_desc">Uçak Modunu açmayı hatırlat</string>
+    <string name="adjust_default_timer_title">Varsayılan Zamanlayıcı</string>
+    <string name="adjust_default_timer_desc">Başlangıç süresi ve kontroller</string>
+    <string name="default_duration_label_format">Varsayılan Süre: %1$s</string>
+    <string name="timer_check_in_title">Zamanlayıcı Kontrolü</string>
+    <string name="timer_check_in_desc">Çok uzatılırsa ayarlamayı öner</string>
+    <string name="smart_extend_title">Akıllı Uzatma</string>
+    <string name="smart_extend_desc">Hareket algılanırsa 10dk ekle</string>
+    <string name="sensitivity_header">HASSASİYET</string>
+    <string name="sensitivity_low">Düşük</string>
+    <string name="sensitivity_med">Orta</string>
+    <string name="sensitivity_high">Yüksek</string>
+    <string name="sensitivity_low_desc">Güçlü hareket gerekir</string>
+    <string name="sensitivity_med_desc">Dengeli (Önerilen)</string>
+    <string name="sensitivity_high_desc">Küçük hareketleri algılar</string>
+    <string name="configure_buttons_title">Medya Düğmeleri</string>
+    <string name="configure_buttons_desc">Gösterilecek uygulamaları seç</string>
+    <string name="smart_extend_help_title">Akıllı Uzatma Kullanımı</string>
+    <string name="smart_extend_help_text">Telefonu yastığın yanındaki yatağa koyun.\n\nİvmeölçer, uyanık olup olmadığınızı anlamak için titreşimleri algılar.</string>
+    <string name="got_it_button">Anladım</string>
+
+    <!-- Support Screen -->
+    <string name="beta_unlock_toast">Beta\'da satın alma yok. Hediye simgesine 3 kez dokunun.</string>
+    <string name="beta_unlock_click_2">2 tane daha...</string>
+    <string name="beta_unlock_click_1">1 tane daha...</string>
+    <string name="beta_unlock_success_toast">Premium Mod Açıldı!</string>
+    <string name="support_title">Geliştiriciyi Destekle</string>
+    <string name="support_subtitle_unlocked">Tüm ayarlar açıldı</string>
+    <string name="support_subtitle_locked">Sürpriz için hediyeye dokun</string>
+    <string name="support_close_button">Kapat</string>
+    <string name="support_rate_title">Uygulamayı Oyla</string>
+    <string name="support_rate_subtitle_locked">\'Destekçi\' rozetini kazan</string>
+    <string name="support_rate_subtitle_unlocked">Resmi bir Destekçisiniz!</string>
+    <string name="price_free">Ücretsiz</string>
+    <string name="support_rate_active_text">Destekçi</string>
+    <string name="support_share_title">Paylaş</string>
+    <string name="support_share_subtitle">Arkadaşlarına söyle</string>
+    <string name="support_share_active_text">Paylaşıldı</string>
+    <string name="support_other_apps_title">Diğer uygulamalarım</string>
+    <string name="support_other_apps_subtitle">Bence HARİKALAR!</string>
+    <string name="support_other_apps_active_text">Görüntülendi</string>
+    <string name="support_other_apps_error">Geliştirici sayfası açılamadı</string>
+    <string name="support_visuals_title">Görsel Paket</string>
+    <string name="support_visuals_desc">Neon, OLED dahil 30+ Tema</string>
+    <string name="support_visuals_desc_unlocked">30+ Tema ($0.99 - İsteğe Bağlı)</string>
+    <string name="support_visuals_select_cd">Tema Seç</string>
+    <string name="status_unlocked">Açık</string>
+    <string name="support_hof_title">Onur Listesi &amp; Simgeler</string>
+    <string name="support_hof_view_cd">Onur Listesini Gör</string>
+
+    <!-- System Settings -->
+    <string name="dnd_title">Rahatsız Etme</string>
+    <string name="dnd_desc">Zamanlayıcı sırasında bildirimleri sustur</string>
+    <string name="dnd_mode_priority">Standart (Öncelikli)</string>
+    <string name="dnd_mode_alarms">Katı (Sadece Alarmlar)</string>
+    <string name="battery_guard_title">Pil Koruması</string>
+    <string name="battery_guard_desc_format">%1$d%% pilin altına düşünce durdur</string>
+    <string name="stop_threshold_label">Durdurma Eşiği</string>
+    <string name="go_home_title">Başlangıçta Ana Ekran</string>
+    <string name="go_home_desc">Başlayınca uygulamayı küçült</string>
+    <string name="open_on_charge_title">Şarjda Aç</string>
+    <string name="open_on_charge_desc">Takıldığında otomatik başlat</string>
+
+    <!-- Controls Settings -->
+    <string name="face_down_title">Ters Çevir Başlat</string>
+    <string name="face_down_desc">Başlat &amp; ekranı kapat (5sn)</string>
+    <string name="face_down_toast">Etkin. Başlatmak için cihazı ters çevirin.</string>
+    <string name="shake_extend_title">Salla Uzat</string>
+    <string name="shake_extend_desc">Sallayarak 15dk ekle</string>
+    <string name="shake_extend_toast">Etkin. +15dk için salla.</string>
+    <string name="pocket_mode_title">Cep Modu</string>
+    <string name="pocket_mode_desc">Yanlış dokunmaları engelle</string>
+    <string name="pocket_mode_toast">Etkin. Dokunma kilitlendi.</string>
+    <string name="widgets_title">Ana Ekran Widget\'ları</string>
+    <string name="widgets_desc">Widget eklemek için ana ekrana basılı tutun.</string>
+
+    <!-- Info Settings -->
+    <string name="sleep_journey_title">Uyku Yolculuğu</string>
+    <string name="sleep_journey_desc">Rozetler, Seriler &amp; İstatistikler</string>
+    <string name="hall_of_fame_title">Onur Listesi</string>
+    <string name="hall_of_fame_desc">Efsanevi destekçilerimiz</string>
+    <string name="battery_data_saved_title">PİL &amp; VERİ TASARRUFU</string>
+    <string name="battery_data_saved_desc">Ortalamaya göre tahmin</string>
+    <string name="saved_minutes_format">%1$d dk</string>
+    <string name="saved_hours_format">%.1f sa</string>
+
+    <!-- Settings Titles -->
+    <string name="settings_category_system">Gelişmiş &amp; Sistem</string>
+    <string name="settings_category_controls">Kontrol &amp; Etkileşim</string>
+    <string name="settings_category_info">Bilgi</string>
+    <string name="settings_category_audio">Ses &amp; Oynatma</string>
+    <string name="settings_category_visuals">Görsel &amp; Ekran</string>
+    <string name="settings_category_wellness">Sağlık &amp; Kişisel</string>
+    <string name="settings_category_control">Kontrol &amp; Etkileşim</string>
+    <string name="settings_category_advanced">Gelişmiş &amp; Sistem</string>
+    <string name="settings_category_awesome">Harika Özellikler</string>
+    <string name="settings_category_personalization">Kişiselleştirme</string>
+
+    <!-- Settings Components -->
+    <string name="unit_minutes_short">%1$ddk</string>
+    <string name="unit_hours_short">%1$dsa</string>
+    <string name="unit_hours_decimal_short">%1$ssa</string>
+    <string name="add_timer_preset_title">Önayar Ekle</string>
+    <string name="minutes_label_caps">Dakika</string>
+    <string name="add_button_caps">Ekle</string>
+    <string name="remove_cd">Kaldır</string>
+    <string name="topic_header">KONU</string>
+    <string name="change_timer_buttons_title">Düğmeleri Değiştir</string>
+    <string name="change_timer_buttons_subtitle">Süreleri özelleştir</string>
+    <string name="reset_default_button_text">Varsayılana dön</string>
+    <string name="new_badge">YENİ</string>
+    <string name="expand_cd">Genişlet</string>
+    <string name="collapse_cd">Daralt</string>
+
+    <!-- Awesome Features Settings -->
+    <string name="bedtime_reminder_title">Uyku Hatırlatıcı</string>
+    <string name="bedtime_reminder_desc">Uyku zamanı bildirimi</string>
+    <string name="reminder_time_label">Zaman</string>
+    <string name="prayer_reminder_title">Dua Hatırlatıcı</string>
+    <string name="prayer_reminder_desc">Uyumadan önce Dua et</string>
+    <string name="brain_dump_title">Zihin Boşaltma</string>
+    <string name="brain_dump_desc">Uyumadan önce düşünceleri yaz</string>
+    <string name="scripture_mode_title">Ayet Modu</string>
+    <string name="scripture_mode_desc">Rahatlatıcı bir ayet göster</string>
+    <string name="scripture_topic_random">Şaşırt Beni! (Rastgele)</string>
+    <string name="wisdom_quotes_title">Bilgelik Sözleri</string>
+    <string name="wisdom_quotes_desc">Derin teolojik bilgelik</string>
+    <string name="wisdom_category_peace">Huzur &amp; Konfor</string>
+    <string name="wisdom_desc_peace">Kaygı, dinlenme ve güven</string>
+    <string name="wisdom_category_glory">Tanrı\'nın Görkemi</string>
+    <string name="wisdom_desc_glory">Tanrı kimdir ve kontrolü</string>
+    <string name="wisdom_category_gospel">Müjde &amp; Lütuf</string>
+    <string name="wisdom_desc_gospel">Bağışlanma ve kurtuluş</string>
+    <string name="wisdom_category_living">Yaşam &amp; Bilgelik</string>
+    <string name="wisdom_desc_living">Dua ve pratik inanç</string>
+    <string name="sleep_calc_title">Uyku Hesaplayıcı</string>
+    <string name="sleep_calc_desc">En iyi uyanma zamanı</string>
+    <string name="alarm_button_setting_title">Alarm Düğmesi</string>
+    <string name="alarm_button_setting_desc">"Alarm Kur"u göster</string>
+    <string name="breathing_guide_title">Dokunsal Nefes Rehberi</string>
+    <string name="breathing_guide_desc">Titreşimle nefes egzersizi</string>
+    <string name="haptic_vibration_title">Dokunsal Titreşim</string>
+    <string name="haptic_vibration_desc">Dokunsal geri bildirim</string>
+    <string name="breathing_auto_start_title">Otomatik Başlat</string>
+    <string name="breathing_auto_start_desc">Rehberi otomatik başlat</string>
+    <string name="breathing_duration_label">Süre: %1$d dk</string>
+    <string name="doomscroll_title">Bağımlılık Kilidi</string>
+    <string name="doomscroll_desc">Bağımlılık yapan uygulamaları engelle</string>
+    <string name="grace_period_label">Mühlet: %1$d dk</string>
+    <string name="grace_period_desc">Engellemeden önceki kısa kullanım</string>
+    <string name="blocked_apps_label">Engellenenler (%1$d)</string>
+    <string name="add_app_to_block_button">Uygulama Engelle</string>
+    <string name="permission_required_title">İzin Gerekli</string>
+    <string name="accessibility_explanation_doomscroll">Engellemek için Fade\'in \'Erişilebilirlik\' iznine ihtiyacı var.</string>
+    <string name="instructions_label">Talimatlar:</string>
+    <string name="accessibility_step_2_doomscroll">2. \'Fade Sleep Timer\'ı bulun.</string>
+    <string name="accessibility_step_3_doomscroll">3. Açın.</string>
+    <string name="accessibility_step_4_doomscroll">4. \'İzin Ver\'e dokunun.</string>
+    
+    <!-- Timer Capsule -->
+    <string name="stop_timer_content_description">Zamanlayıcıyı Durdur</string>
+    
+    <!-- Presets Editor -->
+    <string name="timer_presets_title">Önayarlar</string>
+    <string name="timer_presets_subtitle">Düğmeleri özelleştir</string>
+    <string name="add_button">Ekle</string>
+    <string name="reset_default_button">Sıfırla</string>
+    <string name="add_preset_dialog_title">Önayar Ekle</string>
+    <string name="minutes_label">Dakika</string>
+    <string name="cancel_button">İptal</string>
+    
+    <!-- Settings Section -->
+    <string name="expand_content_description">Genişlet</string>
+    <string name="collapse_content_description">Daralt</string>
+    
+    <!-- General -->
+    <string name="new_label">YENİ</string>
+    
+    <!-- Main Screen -->
+    <string name="app_title">Uyku Zamanlayıcısı</string>
+    <string name="supporter_badge">Destekçi</string>
+    <string name="pocket_mode_active">Cep Modu Aktif</string>
+    <string name="pocket_mode_unlock_instruction">Açmak için çift dokun</string>
+    <string name="pocket_mode_unlocked_toast">Cep Modu Açıldı</string>
+    <string name="timer_started_minimizing_toast">Zamanlayıcı başladı. Küçültülüyor...</string>
+    
+    <!-- Dialogs -->
+    <string name="shake_dialog_title">Salla Uzat</string>
+    <string name="shake_dialog_message">Salladınız! Bu özelliği açık tutalım mı?</string>
+    <string name="keep_on_button">Açık Tut</string>
+    <string name="turn_off_button">Kapat</string>
+    <string name="shake_disabled_toast">Salla Uzat devre dışı bırakıldı.</string>
+    
+    <!-- Spotlight Tour -->
+    <string name="spotlight_presets_title">Süre Seçin ⏱️</string>
+    <string name="spotlight_presets_desc">Ne zaman sessizlik olsun? Müzik yavaşça kısılacak.</string>
+    <string name="spotlight_media_title">Hızlı Medya Erişimi 🎵</string>
+    <string name="spotlight_media_desc">Uygulamalarınızı (Spotify, YouTube vb.) eklemek için \'Yapılandır\'a dokunun.</string>
+    <string name="spotlight_settings_title">Daha Fazlasını Keşfet ⚙️</string>
+    <string name="spotlight_settings_desc">Ayarlarda nefes egzersizleri, dualar ve daha fazlası var.</string>
+    
+    <!-- Morning Check -->
+    <string name="morning_check_yes_toast">İpucu: Bu gece daha uzun bir süre deneyin.</string>
+    <string name="morning_check_no_toast">Harika! Tercihlerinizi koruyoruz.</string>
+    
+    <!-- Content Descriptions -->
+    <string name="breathing_guide_cd">Nefes Rehberi</string>
+    <string name="view_note_cd">Notu Gör</string>
+
+    <!-- Pre-Timer Screen -->
+    <string name="optimal_wake_time_label">EN İYİ UYANMA ZAMANI</string>
+    <string name="sleep_cycles_suffix"> (5 Döngü)</string>
+    <string name="set_alarm_button">ALARM KUR</string>
+    <string name="pre_timer_settings_hint">İpucu: Ayarlar > Harika Özellikler\'de özelleştir</string>
+    <string name="ready_to_sleep_title">Uyumaya hazır mısın?</string>
+    <string name="pre_timer_instruction">Başlamadan önce kontrol et.</string>
+    <string name="fade_wake_up_alarm_message">Fade Uyanış</string>
+    <string name="alarm_set_toast">Alarm kuruldu: %s</string>
+    <string name="alarm_error_toast">Alarm hatası: %s</string>
+    <string name="airplane_mode_title">Uçak Modu</string>
+    <string name="airplane_mode_desc">Dikkat dağıtıcı yok &amp; radyasyon yok</string>
+    <string name="settings_button_caps">AYARLAR</string>
+    <string name="start_timer_button">BAŞLAT</string>
+    <string name="cancel_cd">İptal</string>
+    <string name="illuminating_wisdom_loading">Aydınlatılıyor...</string>
+    <string name="understanding_quote_title">Alıntıyı Anlamak</string>
+    <string name="close_button">Kapat</string>
+    <string name="explanation_error_title">Şu an açıklanamıyor</string>
+
+    <!-- Permissions Screen -->
+    <string name="permissions_needed_title">İzinler Gerekli</string>
+    <string name="permissions_needed_desc">Arka planda çalışmak ve sesi kısmak için.</string>
+    <string name="privacy_promise_cd">Gizlilik</string>
+    <string name="privacy_promise_title">Gizlilik - Sıfır Veri</string>
+    <string name="privacy_promise_body">Verileriniz sizindir. Erişemem ve buluta hiçbir şey gönderilmez.</string>
+    <string name="open_source_cd">Açık Kaynak</string>
+    <string name="open_source_title">Güven kazanılır</string>
+    <string name="open_source_body">Fade Açık Kaynaktır. Herkes kodu inceleyebilir.</string>
+    <string name="view_source_code_button">Kaynak Kodu Gör</string>
+    <string name="notifications_permission_title">Bildirimler</string>
+    <string name="notifications_enabled_desc">Etkin - Durumu göster</string>
+    <string name="notifications_required_desc">Bildirim için gereklidir.</string>
+    <string name="allowed_button">İzin Verildi</string>
+    <string name="allow_button">İzin Ver</string>
+    <string name="enabled_button">Etkin</string>
+    <string name="fix_button">Düzelt</string>
+    <string name="unrestricted_battery_title">Sınırsız Pil</string>
+    <string name="battery_enabled_desc">Etkin - Güvenilir çalışıyor</string>
+    <string name="battery_critical_desc">Kritik: Ekran kapanınca durmayı engeller.</string>
+    <string name="accessibility_dialog_title">Otomatik Ekran Kapatmayı Aç</string>
+    <string name="accessibility_step_intro">Erişilebilirliği manuel aç:</string>
+    <string name="accessibility_step_1">1. \'Ayarlara Git\'e dokun.</string>
+    <string name="accessibility_step_2">2. \'Yüklü Uygulamalar\'ı bul.</string>
+    <string name="accessibility_step_3">3. \'Fade Sleep Timer\'a dokun.</string>
+    <string name="accessibility_step_4">4. Anahtarı aç.</string>
+    <string name="go_to_settings_button">Ayarlara Git</string>
+
+    <string name="auto_screen_off_title">Otomatik Ekran Kapatma</string>
+    <string name="auto_screen_off_enabled_desc">Etkin - 3dk sonra kapat</string>
+    <string name="auto_screen_off_optional_desc">İsteğe bağlı - Boştaysa kilitle</string>
+    <string name="enable_button">Etkinleştir</string>
+    <string name="continue_button">Devam Et</string>
+
+    <!-- Support Prompts (Arrays) -->
+    <string-array name="review_prompts">
+        <item>Sessizliğin tadını çıkarıyor musun? 5 yıldız yardımcı olur.</item>
+        <item>Daha hızlı mı uyuyorsun? Dünyaya (sessizce) söyle.</item>
+        <item>Uygulama işe yarıyorsa, bir inceleme işimize yarar.</item>
+        <item>Seni uyandırmak istemeyiz ama bizi oyla.</item>
+        <item>Hala uyanık mısın? Belki bir inceleme yazarsın.</item>
+        <item>Fade\'i seviyor musun? Yıldızlarımızın solmasına izin verme.</item>
+        <item>İnceleme yazmak rahatlatıcıdır, biliyor muydun?</item>
+        <item>Kabuslarla savaşmamıza yardım et. 5 yıldız ver.</item>
+        <item>Sıfır reklam, sıfır ücret. Küçük bir inceleme?</item>
+        <item>Kahraman ol. Bir geliştiriciyi uykusuzluktan kurtar.</item>
+        <item>Bunu okuyorsan, bize bir inceleme borçlusun. Şaka...?</item>
+        <item>Son teklif: İncele ve sanal bir "çak bir beşlik" al.</item>
+    </string-array>
+    
+    <string-array name="support_prompts">
+        <item>Çocuklarım var. Çok yiyorlar. Geliştiriciyi destekle?</item>
+        <item>Kod maymunlarım muz istiyor. Bahşiş?</item>
+        <item>Pijamayla kodluyorum ama bu bir iş. Bir kahve?</item>
+        <item>Sessizliği sevdin mi? Görmezden geldiğim gürültülü çocuklarımı takdir et.</item>
+        <item>Kirayı "iyi dileklerle" ödemek işe yaramadı.</item>
+        <item>Bunun gerçek bir iş olduğunu eşime kanıtlamama yardım et.</item>
+        <item>10 doktordan 9\'u bağımsız geliştiricileri desteklemeyi öneriyor.</item>
+        <item>Robot uşak için para biriktiriyorum. Her kuruş önemli.</item>
+        <item>Söylentiye göre desteklemek uykuyu %10 iyileştiriyor.</item>
+        <item>Akıllıca harcayacağıma söz veriyorum (Kahve).</item>
+        <item>Kodlama %500 daha fazla kafein tüketir.</item>
+        <item>Bir geliştiriciyi gülümset. Karma için iyidir.</item>
+    </string-array>
+
+    <!-- Notifications & Dialogs -->
+    <string name="bedtime_reminder_title_notif">Uyku Zamanı</string>
+    <string name="bedtime_reminder_desc_notif">Yatma zamanı hatırlatıcısı</string>
+    <string name="bedtime_reminder_text">Uyku zamanı geldi.</string>
+    <string name="extend_15m_button">15dk Uzat</string>
+    <string name="dismiss_button">Kapat</string>
+    
+    <string name="brain_dump_channel_name">Fikir Hatırlatıcı</string>
+    <string name="brain_dump_channel_desc">Not silinmeden önceki uyarı</string>
+    <string name="brain_dump_title_notif">Not yakında silinecek</string>
+    <string name="brain_dump_text_format">Not %s içinde silinecek. Görmek için dokun.</string>
+    
+    <string name="support_prompt_title">Geliştirici Mesajı</string>
+    <string name="support_prompt_nah">Hayır</string>
+    <string name="support_prompt_check_it_out">Bak</string>
+    
+    <string name="support_banner_text">Geliştiriciyi desteklemek için tıkla!</string>
+    <string name="support_banner_button">Destekle</string>
+    
+    <string name="spotlight_got_it">Anladım!</string>
+    <string name="spotlight_next">İleri</string>
+
+    <!-- Setup Screen -->
+    <string name="setup_source_system">Sistem Sesi</string>
+    <string name="setup_source_info">Uyku Bilgisi</string>
+    <string name="setup_resume_music">Müziği Devam Ettir</string>
+    <string name="setup_configure">YAPILANDIR</string>
+    <string name="setup_configure_toast">İpucu: Ayarlar -> Sağlık\'tan düğmeleri ayarla</string>
+    <string name="setup_facts">Gerçekler</string>
+    <string name="setup_bios">Biyolar</string>
+    <string name="setup_history">Tarih</string>
+    <string name="setup_volume_header">SES</string>
+    <string name="setup_volume_limit">Sınır Aktif</string>
+    <string name="setup_volume_capped_cd">Ses Sınırlandı</string>
+    <string name="setup_safety_cap_toast">Güvenlik Sınırı: %40 aralığına yakınlaştırıldı.</string>
+    <string name="setup_duration_header">SÜRE SEÇ</string>
+    <string name="setup_default_label">(varsayılan)</string>
+    <string name="setup_voice_female_cd">Kadın Sesi</string>
+    <string name="setup_voice_male_cd">Erkek Sesi</string>
+    <string name="play_cd">Oynat</string>
+    <string name="pause_cd">Duraklat</string>
+    <string name="stop_cd">Durdur</string>
+</resources>

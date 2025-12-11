@@ -1,0 +1,1094 @@
+package com.example.fadesleeptimer
+
+import android.content.Context
+import android.content.Intent
+import android.hardware.Sensor
+import android.hardware.SensorEvent
+import android.hardware.SensorEventListener
+import android.hardware.SensorManager
+import android.net.Uri
+import android.os.Build
+import android.os.Bundle
+import android.widget.Toast
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.compose.animation.*
+import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.foundation.interaction.collectIsPressedAsState
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.items
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.*
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.fadesleeptimer.data.TimerRepository
+import com.example.fadesleeptimer.service.TimerService
+import com.example.fadesleeptimer.service.ScreenLockService
+import com.example.fadesleeptimer.ui.AppSettings
+import com.example.fadesleeptimer.ui.PermissionsScreen
+import com.example.fadesleeptimer.ui.SettingsScreen
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlin.math.sqrt
+import android.Manifest
+import android.content.pm.PackageManager
+import androidx.core.content.ContextCompat
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.isActive
+import kotlinx.coroutines.launch
+
+// --- THEME COLORS ---
+val Slate950 = Color(0xFF020617)
+val Slate900 = Color(0xFF0F172A)
+val Slate800 = Color(0xFF1E293B)
+val Slate700 = Color(0xFF334155)
+val Slate400 = Color(0xFF94A3B8)
+val Indigo500 = Color(0xFF6366F1)
+val Indigo400 = Color(0xFF818CF8)
+val Indigo500Alpha = Color(0x336366F1)
+
+class MainActivity : ComponentActivity() {
+    private var lastInteractionTime = 0L
+    private var isInForeground = false
+    private var inactivityJob: Job? = null
+    
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContent {
+            MaterialTheme(
+                colorScheme = darkColorScheme(
+                    background = Slate950,
+                    surface = Slate900,
+                    primary = Indigo500,
+                    onPrimary = Color.White
+                )
+            ) {
+                FadeSleepTimerApp()
+            }
+        }
+    }
+    
+    override fun onUserInteraction() {
+        super.onUserInteraction()
+        lastInteractionTime = System.currentTimeMillis()
+    }
+    
+    override fun onResume() {
+        super.onResume()
+        isInForeground = true
+        lastInteractionTime = System.currentTimeMillis()
+        startInactivityMonitoring()
+    }
+    
+    override fun onPause() {
+        super.onPause()
+        isInForeground = false
+        stopInactivityMonitoring()
+    }
+    
+    override fun onStop() {
+        super.onStop()
+        stopInactivityMonitoring()
+    }
+    
+    private fun startInactivityMonitoring() {
+        stopInactivityMonitoring() // Cancel any existing job
+        
+        inactivityJob = CoroutineScope(Dispatchers.Main).launch {
+            while (isActive) {
+                delay(1000) // Check every second
+                
+                val isTimerRunning = TimerRepository.isRunning.value
+                if (!isTimerRunning || !isInForeground) {
+                    continue // Skip if timer not running or app in background
+                }
+                
+                val inactiveTime = System.currentTimeMillis() - lastInteractionTime
+                val twoMinutes = 2 * 60 * 1000L
+                val threeMinutes = 3 * 60 * 1000L
+                
+                // Show warning at 2 minutes
+                if (inactiveTime >= twoMinutes && inactiveTime < twoMinutes + 1000) {
+                    Toast.makeText(
+                        this@MainActivity,
+                        "No activity detected, screen will turn off in 60 seconds to save battery",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+                
+                // Lock screen at 3 minutes
+                if (inactiveTime >= threeMinutes) {
+                    if (ScreenLockService.lockScreen()) {
+                        // Successfully locked screen
+                        lastInteractionTime = System.currentTimeMillis() // Reset to prevent repeated attempts
+                    } else {
+                        // Service not available - show message once
+                        if (inactiveTime < threeMinutes + 1000) {
+                            Toast.makeText(
+                                this@MainActivity,
+                                "Enable Accessibility permission for auto screen-off",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                        lastInteractionTime = System.currentTimeMillis() // Reset
+                    }
+                }
+            }
+        }
+    }
+    
+    private fun stopInactivityMonitoring() {
+        inactivityJob?.cancel()
+        inactivityJob = null
+    }
+}
+
+class TimerViewModel : ViewModel() {
+    // Use Repository for shared state
+    val isRunning = TimerRepository.isRunning
+    val timeLeft = TimerRepository.timeLeft
+
+    private val _activeSound = MutableStateFlow("system")
+    val activeSound = _activeSound.asStateFlow()
+
+    private val _volume = MutableStateFlow(60f)
+    val volume = _volume.asStateFlow()
+
+    // Settings State
+    private val _settings = MutableStateFlow(AppSettings())
+    val settings = _settings.asStateFlow()
+
+    fun setSound(id: String) { _activeSound.value = id }
+    
+    fun initVolume(context: Context) {
+        val audioManager = context.getSystemService(Context.AUDIO_SERVICE) as android.media.AudioManager
+        val current = audioManager.getStreamVolume(android.media.AudioManager.STREAM_MUSIC)
+        val max = audioManager.getStreamMaxVolume(android.media.AudioManager.STREAM_MUSIC)
+        _volume.value = (current.toFloat() / max.toFloat()) * 150f
+    }
+
+    fun updateVolume(context: Context, v: Float) { 
+        _volume.value = v 
+        val audioManager = context.getSystemService(Context.AUDIO_SERVICE) as android.media.AudioManager
+        val max = audioManager.getStreamMaxVolume(android.media.AudioManager.STREAM_MUSIC)
+        val newVol = (v / 150f * max).toInt()
+        audioManager.setStreamVolume(android.media.AudioManager.STREAM_MUSIC, newVol, 0)
+    }
+    
+    fun updateSettings(newSettings: AppSettings) { _settings.value = newSettings }
+
+    fun startTimer(context: Context, minutes: Long, playOnStart: Boolean, dndEnabled: Boolean) {
+        val intent = Intent(context, TimerService::class.java)
+        intent.putExtra(TimerService.EXTRA_DURATION_MINUTES, minutes)
+        intent.putExtra(TimerService.EXTRA_PLAY_ON_START, playOnStart)
+        intent.putExtra(TimerService.EXTRA_DND_ENABLED, dndEnabled)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            context.startForegroundService(intent)
+        } else {
+            context.startService(intent)
+        }
+    }
+
+    fun stopTimer(context: Context) {
+        val intent = Intent(context, TimerService::class.java)
+        intent.action = TimerService.ACTION_STOP
+        context.startService(intent)
+    }
+
+    fun extendTimer(context: Context) {
+        val intent = Intent(context, TimerService::class.java)
+        intent.action = TimerService.ACTION_EXTEND
+        context.startService(intent)
+    }
+
+    fun openApp(context: Context, packageName: String) {
+        try {
+            val intent = context.packageManager.getLaunchIntentForPackage(packageName)
+            if (intent != null) {
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                context.startActivity(intent)
+            } else {
+                try {
+                    val marketIntent = Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=$packageName"))
+                    marketIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                    context.startActivity(marketIntent)
+                } catch (e: Exception) {
+                    Toast.makeText(context, "App not installed", Toast.LENGTH_SHORT).show()
+                }
+            }
+        } catch (e: Exception) {
+            Toast.makeText(context, "Could not launch app", Toast.LENGTH_SHORT).show()
+        }
+    }
+}
+
+@Composable
+fun FadeSleepTimerApp(viewModel: TimerViewModel = viewModel()) {
+    val context = LocalContext.current
+    
+    // Initialize volume slider with current system volume
+    LaunchedEffect(Unit) {
+        viewModel.initVolume(context)
+    }
+
+    // Listen for system volume changes (e.g. physical buttons)
+    DisposableEffect(context) {
+        val volumeReceiver = object : android.content.BroadcastReceiver() {
+            override fun onReceive(c: Context?, intent: Intent?) {
+                if (intent?.action == "android.media.VOLUME_CHANGED_ACTION") {
+                    viewModel.initVolume(context)
+                }
+            }
+        }
+        val filter = android.content.IntentFilter("android.media.VOLUME_CHANGED_ACTION")
+        context.registerReceiver(volumeReceiver, filter)
+
+        onDispose {
+            context.unregisterReceiver(volumeReceiver)
+        }
+    }
+
+    val isRunning by viewModel.isRunning.collectAsState(initial = false)
+    val timeLeft by viewModel.timeLeft.collectAsState(initial = 0L)
+    val settings by viewModel.settings.collectAsState()
+    
+    var showSettings by remember { mutableStateOf(false) }
+    var hasPermissions by remember {
+        mutableStateOf(
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                ContextCompat.checkSelfPermission(context, Manifest.permission.POST_NOTIFICATIONS) == PackageManager.PERMISSION_GRANTED
+            } else {
+                true
+            }
+        )
+    }
+    var isPocketModeActive by remember { mutableStateOf(false) }
+
+    // --- SENSOR LOGIC ---
+    val faceDownStartTimestamp = remember { mutableStateOf<Long?>(null) }
+    val lastShakeTimestamp = remember { mutableStateOf(0L) }
+
+    DisposableEffect(settings.faceDownStart, settings.shakeToExtend, settings.pocketMode, isRunning) {
+        val sensorManager = context.getSystemService(Context.SENSOR_SERVICE) as SensorManager
+        val accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)
+        val proximity = sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY)
+
+        val listener = object : SensorEventListener {
+            override fun onSensorChanged(event: SensorEvent?) {
+                event?.let {
+                    val currentTime = System.currentTimeMillis()
+
+                    if (it.sensor.type == Sensor.TYPE_ACCELEROMETER) {
+                        val x = it.values[0]
+                        val y = it.values[1]
+                        val z = it.values[2]
+
+                        // Face Down Logic (Wait 10s)
+                        if (settings.faceDownStart && !isRunning) {
+                            val isFaceDown = z < -9.0 && sqrt(x*x + y*y) < 2.0
+                            if (isFaceDown) {
+                                if (faceDownStartTimestamp.value == null) {
+                                    faceDownStartTimestamp.value = currentTime
+                                } else if (currentTime - faceDownStartTimestamp.value!! > 10000) {
+                                    // 10 seconds passed
+                                    viewModel.startTimer(context, 15, true, settings.dndEnabled) // Force playOnStart
+                                    faceDownStartTimestamp.value = null // Reset
+                                }
+                            } else {
+                                faceDownStartTimestamp.value = null
+                            }
+                        } else {
+                            faceDownStartTimestamp.value = null
+                        }
+
+                        // Shake Logic (Debounced)
+                        if (settings.shakeToExtend && isRunning) {
+                            val gForce = sqrt(x*x + y*y + z*z) / SensorManager.GRAVITY_EARTH
+                            if (gForce > 2.5) {
+                                if (currentTime - lastShakeTimestamp.value > 2000) {
+                                    viewModel.extendTimer(context)
+                                    lastShakeTimestamp.value = currentTime
+                                }
+                            }
+                        }
+                    }
+
+                    if (it.sensor.type == Sensor.TYPE_PROXIMITY) {
+                        if (settings.pocketMode) {
+                            isPocketModeActive = it.values[0] < it.sensor.maximumRange
+                        } else {
+                            isPocketModeActive = false
+                        }
+                    }
+                }
+            }
+            override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {}
+        }
+
+        if (settings.faceDownStart || settings.shakeToExtend) {
+            sensorManager.registerListener(listener, accelerometer, SensorManager.SENSOR_DELAY_NORMAL)
+        }
+        if (settings.pocketMode) {
+            sensorManager.registerListener(listener, proximity, SensorManager.SENSOR_DELAY_NORMAL)
+        }
+
+        onDispose {
+            sensorManager.unregisterListener(listener)
+        }
+    }
+
+    // Check permissions initially
+    if (!hasPermissions) {
+        PermissionsScreen(onAllGranted = { hasPermissions = true })
+    } else if (showSettings) {
+        SettingsScreen(
+            settings = settings,
+            onSettingsChanged = { viewModel.updateSettings(it) },
+            onBack = { showSettings = false }
+        )
+    } else {
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(Slate950)
+                .padding(16.dp)
+        ) {
+            Column(modifier = Modifier.fillMaxSize()) {
+                // HEADER
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(vertical = 16.dp),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(12.dp)
+                    ) {
+                        Icon(Icons.Rounded.NightsStay, contentDescription = null, tint = Indigo400)
+                        Text(
+                            "Sleep Timer",
+                            color = Color.White,
+                            fontSize = 20.sp,
+                            fontWeight = FontWeight.Medium
+                        )
+                    }
+                    IconButton(onClick = { showSettings = true }) {
+                        Icon(Icons.Rounded.Settings, contentDescription = null, tint = Slate400)
+                    }
+                }
+
+                Spacer(modifier = Modifier.height(16.dp))
+
+                // MAIN CONTENT SWITCHER
+                Crossfade(targetState = isRunning, label = "MainSwitch") { running ->
+                    if (running) {
+                        ActiveTimerScreen(
+                            timeLeft = timeLeft,
+                            settings = settings,
+                            onStop = { viewModel.stopTimer(context) },
+                            onExtend = { 
+                                viewModel.extendTimer(context)
+                            }
+                        )
+                    } else {
+                        SetupScreen(viewModel)
+                    }
+                }
+            }
+            
+            // Super Dim Overlay
+            if (isRunning && settings.superDim) {
+                Box(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .background(Color.Black.copy(alpha = 0.7f))
+                        // Pass through clicks so user can still interact (e.g. stop timer)
+                        // But wait, if it's "Super Dim", maybe it should block? 
+                        // React app said "pointer-events-none", so we allow clicks through.
+                )
+            }
+
+            // Pocket Mode Overlay (Blocks touches)
+            if (isPocketModeActive) {
+                Box(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .background(Color.Black.copy(alpha = 0.9f))
+                        .clickable(enabled = true, onClick = {}) // Consume clicks
+                ) {
+                    Column(
+                        modifier = Modifier.align(Alignment.Center),
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Icon(Icons.Rounded.DoNotTouch, contentDescription = null, tint = Color.White, modifier = Modifier.size(48.dp))
+                        Spacer(modifier = Modifier.height(16.dp))
+                        Text("Pocket Mode Active", color = Color.White, fontSize = 18.sp)
+                    }
+                }
+            }
+        }
+    }
+}
+
+@Composable
+fun SetupScreen(viewModel: TimerViewModel) {
+    val context = LocalContext.current
+    val activeSound by viewModel.activeSound.collectAsState()
+    val volume by viewModel.volume.collectAsState()
+    val settings by viewModel.settings.collectAsState()
+
+    // Brand Colors
+    val spotifyGreen = Color(0xFF4ADE80)
+    val youtubeRed = Color(0xFFF87171)
+    val audibleOrange = Color(0xFFFB923C)
+
+    Column(verticalArrangement = Arrangement.spacedBy(24.dp)) {
+
+        // 1. SOURCE TOGGLE
+        Card(
+            shape = RoundedCornerShape(16.dp),
+            colors = CardDefaults.cardColors(containerColor = Slate900),
+            border = BorderStroke(1.dp, Slate800)
+        ) {
+            Row(modifier = Modifier.padding(4.dp)) {
+                SourceButton(
+                    text = "System Audio",
+                    isActive = activeSound == "system",
+                    modifier = Modifier.weight(1f),
+                    onClick = { viewModel.setSound("system") }
+                )
+                SourceButton(
+                    text = "Built-in Noise",
+                    isActive = activeSound != "system",
+                    modifier = Modifier.weight(1f),
+                    onClick = { viewModel.setSound("deep") }
+                )
+            }
+        }
+
+        // 2. MIDDLE SECTION
+        if (activeSound == "system") {
+            // --- APP SHORTCUTS GRID ---
+            LazyVerticalGrid(
+                columns = GridCells.Fixed(2),
+                horizontalArrangement = Arrangement.spacedBy(12.dp),
+                verticalArrangement = Arrangement.spacedBy(12.dp)
+            ) {
+                item {
+                    AppShortcutButton(
+                        text = "Spotify",
+                        icon = Icons.Rounded.MusicNote,
+                        brandColor = spotifyGreen,
+                        packageName = "com.spotify.music",
+                        viewModel = viewModel
+                    )
+                }
+                item {
+                    AppShortcutButton(
+                        text = "YT Music",
+                        icon = Icons.Rounded.PlayCircle,
+                        brandColor = youtubeRed,
+                        packageName = "com.google.android.apps.youtube.music",
+                        viewModel = viewModel
+                    )
+                }
+                item {
+                    AppShortcutButton(
+                        text = "Audible",
+                        icon = Icons.Rounded.MenuBook,
+                        brandColor = audibleOrange,
+                        packageName = "com.audible.application",
+                        viewModel = viewModel
+                    )
+                }
+                item {
+                    AppShortcutButton(
+                        text = "YouTube",
+                        icon = Icons.Rounded.SmartDisplay,
+                        brandColor = youtubeRed,
+                        packageName = "com.google.android.youtube",
+                        viewModel = viewModel
+                    )
+                }
+            }
+        } else {
+            // --- NOISE SELECTION GRID ---
+            Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+                NoiseOptionButton(
+                    text = "Deep",
+                    icon = Icons.Rounded.GraphicEq,
+                    isSelected = activeSound == "deep",
+                    modifier = Modifier.weight(1f),
+                    onClick = { viewModel.setSound("deep") }
+                )
+                NoiseOptionButton(
+                    text = "Fan",
+                    icon = Icons.Rounded.Toys,
+                    isSelected = activeSound == "fan",
+                    modifier = Modifier.weight(1f),
+                    onClick = { viewModel.setSound("fan") }
+                )
+                NoiseOptionButton(
+                    text = "Rain",
+                    icon = Icons.Rounded.WaterDrop,
+                    isSelected = activeSound == "rain",
+                    modifier = Modifier.weight(1f),
+                    onClick = { viewModel.setSound("rain") }
+                )
+            }
+        }
+
+        // 3. VOLUME SLIDER
+        Card(
+            shape = RoundedCornerShape(16.dp),
+            colors = CardDefaults.cardColors(containerColor = Slate900),
+            border = BorderStroke(1.dp, Slate800)
+        ) {
+            Column(modifier = Modifier.padding(20.dp)) {
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Text(
+                        "VOLUME",
+                        color = Slate400,
+                        fontSize = 12.sp,
+                        fontWeight = FontWeight.Bold,
+                        letterSpacing = 1.sp
+                    )
+                    Text("${volume.toInt()}%", color = Indigo400, fontSize = 14.sp)
+                }
+                Spacer(modifier = Modifier.height(16.dp))
+                Slider(
+                    value = volume,
+                    onValueChange = { viewModel.updateVolume(context, it) },
+                    valueRange = 0f..150f,
+                    colors = SliderDefaults.colors(
+                        thumbColor = Indigo500,
+                        activeTrackColor = Indigo500,
+                        inactiveTrackColor = Slate700
+                    )
+                )
+            }
+        }
+
+        // 4. DURATION GRID
+        Column {
+            Text(
+                text = "SELECT DURATION",
+                color = Slate700,
+                fontSize = 12.sp,
+                fontWeight = FontWeight.Bold,
+                letterSpacing = 1.5.sp,
+                modifier = Modifier.align(Alignment.CenterHorizontally)
+            )
+            Spacer(modifier = Modifier.height(16.dp))
+            
+            // Use dynamic presets from settings
+            val presets = settings.timerPresets
+            val columns = if (presets.size <= 3) 1 else 2
+            LazyVerticalGrid(
+                columns = GridCells.Fixed(columns),
+                horizontalArrangement = Arrangement.spacedBy(12.dp),
+                verticalArrangement = Arrangement.spacedBy(12.dp)
+            ) {
+                items(presets) { min ->
+                    PresetCard(min) { viewModel.startTimer(context, min.toLong(), settings.playOnStart, settings.dndEnabled) }
+                }
+            }
+        }
+    }
+}
+
+// --- COMPONENTS ---
+
+@Composable
+fun AppShortcutButton(
+    text: String,
+    icon: ImageVector,
+    brandColor: Color,
+    packageName: String,
+    viewModel: TimerViewModel
+) {
+    val context = LocalContext.current
+    val interactionSource = remember { MutableInteractionSource() }
+    val isPressed by interactionSource.collectIsPressedAsState()
+
+    // COLORS: Gray by default. Brand color when pressed.
+    val borderColor = if (isPressed) brandColor else Slate800
+    val containerColor = if (isPressed) brandColor.copy(alpha = 0.15f) else Slate900
+    val contentColor = if (isPressed) brandColor else Slate400
+
+    Card(
+        shape = RoundedCornerShape(16.dp),
+        colors = CardDefaults.cardColors(containerColor = containerColor),
+        border = BorderStroke(1.dp, borderColor),
+        modifier = Modifier
+            .height(80.dp)
+            .clickable(
+                interactionSource = interactionSource,
+                indication = null, // Disable default ripple to allow pure color shift
+                onClick = {
+                    viewModel.openApp(context, packageName)
+                }
+            )
+    ) {
+        Column(
+            modifier = Modifier.fillMaxSize(),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
+        ) {
+            Icon(
+                icon,
+                contentDescription = null,
+                tint = contentColor,
+                modifier = Modifier.size(28.dp)
+            )
+            Spacer(modifier = Modifier.height(8.dp))
+            Text(
+                text = text.uppercase(),
+                color = contentColor,
+                fontSize = 10.sp,
+                fontWeight = FontWeight.Bold,
+                letterSpacing = 1.sp
+            )
+        }
+    }
+}
+
+@Composable
+fun NoiseOptionButton(
+    text: String,
+    icon: ImageVector,
+    isSelected: Boolean,
+    modifier: Modifier = Modifier,
+    onClick: () -> Unit
+) {
+    val borderColor = if (isSelected) Indigo500 else Slate800
+    val containerColor = if (isSelected) Indigo500Alpha else Slate900
+    val contentColor = if (isSelected) Indigo400 else Slate400
+
+    Card(
+        shape = RoundedCornerShape(16.dp),
+        colors = CardDefaults.cardColors(containerColor = containerColor),
+        border = BorderStroke(1.dp, borderColor),
+        modifier = modifier
+            .clickable(onClick = onClick)
+            .height(90.dp)
+    ) {
+        Column(
+            modifier = Modifier.fillMaxSize(),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
+        ) {
+            Icon(icon, contentDescription = null, tint = contentColor, modifier = Modifier.size(28.dp))
+            Spacer(modifier = Modifier.height(8.dp))
+            Text(
+                text = text.uppercase(),
+                color = contentColor,
+                fontSize = 10.sp,
+                fontWeight = FontWeight.Bold,
+                letterSpacing = 1.sp
+            )
+        }
+    }
+}
+
+@Composable
+fun SourceButton(text: String, isActive: Boolean, modifier: Modifier = Modifier, onClick: () -> Unit) {
+    val bgColor = if (isActive) Indigo500 else Color.Transparent
+    val textColor = if (isActive) Color.White else Slate400
+    Box(
+        modifier = modifier
+            .clip(RoundedCornerShape(12.dp))
+            .background(bgColor)
+            .clickable(onClick = onClick)
+            .padding(vertical = 12.dp),
+        contentAlignment = Alignment.Center
+    ) {
+        Text(
+            text = text.uppercase(),
+            color = textColor,
+            fontSize = 11.sp,
+            fontWeight = FontWeight.Bold,
+            letterSpacing = 1.sp
+        )
+    }
+}
+
+@Composable
+fun PresetCard(minutes: Int, onClick: () -> Unit) {
+    val interactionSource = remember { MutableInteractionSource() }
+    val isPressed by interactionSource.collectIsPressedAsState()
+    
+    val containerColor = if (isPressed) Color(0xFF191947) else Slate900
+    val borderColor = if (isPressed) Indigo500 else Slate800
+
+    Card(
+        shape = RoundedCornerShape(16.dp),
+        colors = CardDefaults.cardColors(containerColor = containerColor),
+        border = BorderStroke(1.dp, borderColor),
+        modifier = Modifier
+            .height(60.dp)
+            .clickable(
+                interactionSource = interactionSource,
+                indication = null,
+                onClick = onClick
+            )
+    ) {
+        Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+            Text(
+                text = if (minutes >= 60) "${minutes / 60}h" else "${minutes}m",
+                color = Color.White,
+                fontSize = 18.sp,
+                fontWeight = FontWeight.Medium
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Text(
+                        "VOLUME",
+                        color = Slate400,
+                        fontSize = 12.sp,
+                        fontWeight = FontWeight.Bold,
+                        letterSpacing = 1.sp
+                    )
+                    Text("${volume.toInt()}%", color = Indigo400, fontSize = 14.sp)
+                }
+                Spacer(modifier = Modifier.height(16.dp))
+                Slider(
+                    value = volume,
+                    onValueChange = { viewModel.updateVolume(context, it) },
+                    valueRange = 0f..150f,
+                    colors = SliderDefaults.colors(
+                        thumbColor = Indigo500,
+                        activeTrackColor = Indigo500,
+                        inactiveTrackColor = Slate700
+                    )
+                )
+            }
+        }
+
+        // 4. DURATION GRID
+        Column {
+            Text(
+                text = "SELECT DURATION",
+                color = Slate700,
+                fontSize = 12.sp,
+                fontWeight = FontWeight.Bold,
+                letterSpacing = 1.5.sp,
+                modifier = Modifier.align(Alignment.CenterHorizontally)
+            )
+            Spacer(modifier = Modifier.height(16.dp))
+            
+            // Use dynamic presets from settings
+            val presets = settings.timerPresets
+            val columns = if (presets.size <= 3) 1 else 2
+            LazyVerticalGrid(
+                columns = GridCells.Fixed(columns),
+                horizontalArrangement = Arrangement.spacedBy(12.dp),
+                verticalArrangement = Arrangement.spacedBy(12.dp)
+            ) {
+                items(presets) { min ->
+                    PresetCard(min) { viewModel.startTimer(context, min.toLong(), settings.playOnStart, settings.dndEnabled) }
+                }
+            }
+        }
+    }
+}
+
+// --- COMPONENTS ---
+
+@Composable
+fun AppShortcutButton(
+    text: String,
+    icon: ImageVector,
+    brandColor: Color,
+    packageName: String,
+    viewModel: TimerViewModel
+) {
+    val context = LocalContext.current
+    val interactionSource = remember { MutableInteractionSource() }
+    val isPressed by interactionSource.collectIsPressedAsState()
+
+    // COLORS: Gray by default. Brand color when pressed.
+    val borderColor = if (isPressed) brandColor else Slate800
+    val containerColor = if (isPressed) brandColor.copy(alpha = 0.15f) else Slate900
+    val contentColor = if (isPressed) brandColor else Slate400
+
+    Card(
+        shape = RoundedCornerShape(16.dp),
+        colors = CardDefaults.cardColors(containerColor = containerColor),
+        border = BorderStroke(1.dp, borderColor),
+        modifier = Modifier
+            .height(80.dp)
+            .clickable(
+                interactionSource = interactionSource,
+                indication = null, // Disable default ripple to allow pure color shift
+                onClick = {
+                    viewModel.openApp(context, packageName)
+                }
+            )
+    ) {
+        Column(
+            modifier = Modifier.fillMaxSize(),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
+        ) {
+            Icon(
+                icon,
+                contentDescription = null,
+                tint = contentColor,
+                modifier = Modifier.size(28.dp)
+            )
+            Spacer(modifier = Modifier.height(8.dp))
+            Text(
+                text = text.uppercase(),
+                color = contentColor,
+                fontSize = 10.sp,
+                fontWeight = FontWeight.Bold,
+                letterSpacing = 1.sp
+            )
+        }
+    }
+}
+
+@Composable
+fun NoiseOptionButton(
+    text: String,
+    icon: ImageVector,
+    isSelected: Boolean,
+    modifier: Modifier = Modifier,
+    onClick: () -> Unit
+) {
+    val borderColor = if (isSelected) Indigo500 else Slate800
+    val containerColor = if (isSelected) Indigo500Alpha else Slate900
+    val contentColor = if (isSelected) Indigo400 else Slate400
+
+    Card(
+        shape = RoundedCornerShape(16.dp),
+        colors = CardDefaults.cardColors(containerColor = containerColor),
+        border = BorderStroke(1.dp, borderColor),
+        modifier = modifier
+            .clickable(onClick = onClick)
+            .height(90.dp)
+    ) {
+        Column(
+            modifier = Modifier.fillMaxSize(),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
+        ) {
+            Icon(icon, contentDescription = null, tint = contentColor, modifier = Modifier.size(28.dp))
+            Spacer(modifier = Modifier.height(8.dp))
+            Text(
+                text = text.uppercase(),
+                color = contentColor,
+                fontSize = 10.sp,
+                fontWeight = FontWeight.Bold,
+                letterSpacing = 1.sp
+            )
+        }
+    }
+}
+
+@Composable
+fun SourceButton(text: String, isActive: Boolean, modifier: Modifier = Modifier, onClick: () -> Unit) {
+    val bgColor = if (isActive) Indigo500 else Color.Transparent
+    val textColor = if (isActive) Color.White else Slate400
+    Box(
+        modifier = modifier
+            .clip(RoundedCornerShape(12.dp))
+            .background(bgColor)
+            .clickable(onClick = onClick)
+            .padding(vertical = 12.dp),
+        contentAlignment = Alignment.Center
+    ) {
+        Text(
+            text = text.uppercase(),
+            color = textColor,
+            fontSize = 11.sp,
+            fontWeight = FontWeight.Bold,
+            letterSpacing = 1.sp
+        )
+    }
+}
+
+@Composable
+fun PresetCard(minutes: Int, onClick: () -> Unit) {
+    val interactionSource = remember { MutableInteractionSource() }
+    val isPressed by interactionSource.collectIsPressedAsState()
+    
+    val containerColor = if (isPressed) Color(0xFF191947) else Slate900
+    val borderColor = if (isPressed) Indigo500 else Slate800
+
+    Card(
+        shape = RoundedCornerShape(16.dp),
+        colors = CardDefaults.cardColors(containerColor = containerColor),
+        border = BorderStroke(1.dp, borderColor),
+        modifier = Modifier
+            .height(60.dp)
+            .clickable(
+                interactionSource = interactionSource,
+                indication = null,
+                onClick = onClick
+            )
+    ) {
+        Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+            Text(
+                text = if (minutes >= 60) "${minutes / 60}h" else "${minutes}m",
+                color = Color.White,
+                fontSize = 18.sp,
+                fontWeight = FontWeight.Medium
+            )
+        }
+    }
+}
+
+@Composable
+fun ActiveTimerScreen(
+    timeLeft: Long,
+    settings: AppSettings,
+    onStop: () -> Unit,
+    onExtend: () -> Unit
+) {
+    val totalDuration by TimerRepository.totalDuration.collectAsState()
+    val progress = if (totalDuration > 0) timeLeft.toFloat() / totalDuration.toFloat() else 0f
+
+    // Pulsing animation for ON indicator
+    val infiniteTransition = rememberInfiniteTransition(label = "pulse")
+    val alpha by infiniteTransition.animateFloat(
+        initialValue = 0.4f,
+        targetValue = 1f,
+        animationSpec = infiniteRepeatable(
+            animation = tween(1500, easing = FastOutSlowInEasing),
+            repeatMode = RepeatMode.Reverse
+        ),
+        label = "alpha"
+    )
+
+    Box(modifier = Modifier.fillMaxSize()) {
+        // ON Pill Indicator - Top Right
+        Surface(
+            color = Indigo500.copy(alpha = 0.2f),
+            shape = RoundedCornerShape(20.dp),
+            border = BorderStroke(1.dp, Indigo500.copy(alpha = alpha)),
+            modifier = Modifier
+                .align(Alignment.TopEnd)
+                .padding(top = 8.dp)
+        ) {
+            Row(
+                modifier = Modifier.padding(horizontal = 10.dp, vertical = 6.dp),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(6.dp)
+            ) {
+                Icon(
+                    Icons.Rounded.Bolt,
+                    contentDescription = null,
+                    tint = Indigo400.copy(alpha = alpha),
+                    modifier = Modifier.size(12.dp)
+                )
+                Text(
+                    "ON",
+                    color = Indigo400.copy(alpha = alpha),
+                    fontSize = 11.sp,
+                    fontWeight = FontWeight.Bold,
+                    letterSpacing = 1.sp
+                )
+            }
+        }
+
+        // Main Timer Content
+        Column(
+            modifier = Modifier.fillMaxSize(),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
+        ) {
+            Box(contentAlignment = Alignment.Center, modifier = Modifier.size(300.dp)) {
+                CircularProgressIndicator(
+                    progress = 1f,
+                    modifier = Modifier.fillMaxSize(),
+                    color = Slate800,
+                    strokeWidth = 8.dp
+                )
+                CircularProgressIndicator(
+                    progress = progress,
+                    modifier = Modifier.fillMaxSize(),
+                    color = Indigo500,
+                    strokeWidth = 8.dp,
+                    strokeCap = androidx.compose.ui.graphics.StrokeCap.Round
+                )
+                Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                    Text(
+                        text = "${timeLeft / 60}:${(timeLeft % 60).toString().padStart(2, '0')}",
+                        fontSize = 60.sp,
+                        color = Color.White,
+                        fontWeight = FontWeight.Light,
+                        letterSpacing = (-2).sp
+                    )
+                    Text(
+                        "REMAINING",
+                        color = Slate700,
+                        fontSize = 12.sp,
+                        fontWeight = FontWeight.Bold,
+                        letterSpacing = 2.sp
+                    )
+                }
+            }
+            Spacer(modifier = Modifier.height(60.dp))
+            Row(horizontalArrangement = Arrangement.spacedBy(16.dp)) {
+                Button(
+                    onClick = onExtend,
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = Slate800,
+                        contentColor = Color.White
+                    ),
+                    shape = RoundedCornerShape(16.dp),
+                    modifier = Modifier
+                        .height(56.dp)
+                        .weight(1f)
+                ) {
+                    Icon(Icons.Rounded.Add, contentDescription = null, modifier = Modifier.size(18.dp))
+                    Spacer(modifier = Modifier.width(8.dp))
+                    Text("+15m")
+                }
+                Button(
+                    onClick = onStop,
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = Color(0xFF331520),
+                        contentColor = Color(0xFFFB7185)
+                    ),
+                    shape = RoundedCornerShape(16.dp),
+                    border = BorderStroke(1.dp, Color(0xFF4C0519)),
+                    modifier = Modifier
+                        .height(56.dp)
+                        .weight(1f)
+                ) {
+                    Icon(Icons.Rounded.Stop, contentDescription = null, modifier = Modifier.size(18.dp))
+                    Spacer(modifier = Modifier.width(8.dp))
+                    Text("Stop")
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Fade Sleep Timer</string>
+    <string name="accessibility_service_description">Permite aplicației să oprească automat ecranul după o perioadă de inactivitate pentru a economisi bateria. Acest serviciu folosește doar funcția de blocare a ecranului și nu spionează niciun conținut.</string>
+    
+    <!-- Settings Screen -->
+    <string name="settings_title">Setări</string>
+    <string name="settings_back_content_description">Înapoi</string>
+    
+    <!-- Support Button -->
+    <string name="support_development_title">Susține Dezvoltatorul</string>
+    <string name="support_development_subtitle">Deblochează Funcții și Elimină Reclamele</string>
+    
+    <!-- Premium Features Button -->
+    <string name="premium_features_title">Funcții Premium</string>
+    <string name="premium_features_subtitle">Gestionează Recompensele</string>
+
+    <!-- Audio Settings -->
+    <string name="fade_out_duration_title">Durata Estompării</string>
+    <string name="fade_out_duration_desc">Cât timp să scadă volumul</string>
+    <string name="unit_minutes_value">%1$d min</string>
+    <string name="volume_safety_cap_title">Limită Siguranță Volum</string>
+    <string name="volume_safety_cap_desc">Limitează la 40% pentru protecția auzului</string>
+    <string name="play_on_start_title">Redare la Pornire</string>
+    <string name="play_on_start_desc">Reia media când pornește cronometrul</string>
+    <string name="play_on_start_toast">Activ. Media va fi reluată la pornire.</string>
+    <string name="smart_wait_title">Așteptare Inteligentă</string>
+    <string name="smart_wait_desc">Așteaptă să se termine melodia</string>
+    <string name="smart_wait_toast">Activ. Cronometrul va aștepta terminarea melodiei.</string>
+
+    <!-- Visuals Settings -->
+    <string name="wedge_clock_title">Ceas Pană</string>
+    <string name="wedge_clock_desc">Arată timpul ca o pană care se micșorează</string>
+    <string name="super_dim_title">Suprapunere Super Dim</string>
+    <string name="super_dim_desc">Filtru extra întunecat pentru noapte</string>
+    <string name="super_dim_toast">Activ. Ecranul se va întuneca la pornire.</string>
+    <string name="grayscale_mode_title">Mod Tonuri de Gri</string>
+    <string name="grayscale_mode_desc">Fă ecranul gri (mod plictisitor)</string>
+    <string name="red_night_light_toast">Lumina Roșie de Noapte va fi activă la pornire</string>
+    <string name="grayscale_options_title">Opțiuni Tonuri de Gri</string>
+    <string name="grayscale_mode_timer">Doar Cronometru</string>
+    <string name="grayscale_desc_timer">Gri doar când cronometrul rulează</string>
+    <string name="grayscale_mode_always">Mereu Pornit</string>
+    <string name="grayscale_desc_always">Aplicația este mereu în tonuri de gri</string>
+    <string name="grayscale_mode_night">Lumină Roșie de Noapte</string>
+    <string name="grayscale_desc_night">Filtru roșu pentru blocarea luminii albastre</string>
+    <string name="change_icon_title">Schimbă Pictograma?</string>
+    <string name="change_icon_message">Schimbă pictograma în \'%1$s\'? Aplicația s-ar putea reporni.</string>
+    <string name="change_icon_button">Schimbă Pictograma</string>
+    <string name="premium_icons_title">Pictograme Premium</string>
+    <string name="premium_icons_subtitle">(pentru susținători)</string>
+    <string name="overlay_permission_desc">Pentru a folosi Lumina Roșie, Fade trebuie să se afișeze peste alte aplicații.</string>
+    <string name="overlay_step_1">1. Atinge \'Deschide Setări\' mai jos.</string>
+    <string name="overlay_step_2">2. Caută \'Fade Sleep Timer\'.</string>
+    <string name="overlay_step_3">3. Activează \'Permite afișarea peste alte aplicații\'.</string>
+    <string name="open_settings_button">Deschide Setări</string>
+    
+    <!-- Open On Charge Dialog -->
+    <string name="open_on_charge_dialog_title">Alege Ora</string>
+    <string name="open_on_charge_dialog_desc">Când să pornească automat la încărcare?</string>
+    <string name="open_on_charge_always">Mereu</string>
+    <string name="open_on_charge_always_desc">De fiecare dată când e conectat</string>
+    <string name="open_on_charge_strict">20:00 - 04:00</string>
+    <string name="open_on_charge_strict_desc">Seara (20:00 - 04:00)</string>
+    <string name="open_on_charge_late">01:00 - 05:00</string>
+    <string name="open_on_charge_late_desc">Noaptea târziu (01:00 - 05:00)</string>
+    <string name="open_on_charge_morning">05:00 - 10:00</string>
+    <string name="open_on_charge_morning_desc">Dimineața (05:00 - 10:00)</string>
+
+    <!-- Personalization Settings -->
+    <string name="airplane_mode_reminder_title">Memento Mod Avion</string>
+    <string name="airplane_mode_reminder_desc">Amintește să activezi Modul Avion</string>
+    <string name="adjust_default_timer_title">Ajustează Cronometru Implicit</string>
+    <string name="adjust_default_timer_desc">Timp de pornire și verificare</string>
+    <string name="default_duration_label_format">Durată Implicită: %1$s</string>
+    <string name="timer_check_in_title">Verificare Cronometru</string>
+    <string name="timer_check_in_desc">Sugerează ajustare când e extins des</string>
+    <string name="smart_extend_title">Extindere Inteligentă</string>
+    <string name="smart_extend_desc">Adaugă 10 min când detectează mișcare</string>
+    <string name="sensitivity_header">SENSIBILITATE</string>
+    <string name="sensitivity_low">Scăzută</string>
+    <string name="sensitivity_med">Medie</string>
+    <string name="sensitivity_high">Ridicată</string>
+    <string name="sensitivity_low_desc">Necesită mișcare puternică</string>
+    <string name="sensitivity_med_desc">Echilibrat (Recomandat)</string>
+    <string name="sensitivity_high_desc">Detectează mișcări mici</string>
+    <string name="configure_buttons_title">Butoane Media</string>
+    <string name="configure_buttons_desc">Alege aplicațiile de afișat</string>
+    <string name="smart_extend_help_title">Folosirea Extinderii Inteligente</string>
+    <string name="smart_extend_help_text">Pune telefonul pe saltea lângă pernă.\n\nAccelerometrul va detecta vibrațiile saltelei pentru a verifica dacă ești treaz.</string>
+    <string name="got_it_button">Am înțeles</string>
+
+    <!-- Support Screen -->
+    <string name="beta_unlock_toast">Fără achiziții în Beta. Atinge pictograma cadou de 3 ori.</string>
+    <string name="beta_unlock_click_2">Încă 2...</string>
+    <string name="beta_unlock_click_1">Încă 1...</string>
+    <string name="beta_unlock_success_toast">Mod Premium Deblocat!</string>
+    <string name="support_title">Susține Dezvoltatorul</string>
+    <string name="support_subtitle_unlocked">Toate funcțiile din setări deblocate</string>
+    <string name="support_subtitle_locked">Atinge cadoul pentru o surpriză</string>
+    <string name="support_close_button">Închide</string>
+    <string name="support_rate_title">Evaluează Aplicația</string>
+    <string name="support_rate_subtitle_locked">Deblochează insigna \'Susținător\'</string>
+    <string name="support_rate_subtitle_unlocked">Ești un Susținător oficial!</string>
+    <string name="price_free">Gratuit</string>
+    <string name="support_rate_active_text">Susținător</string>
+    <string name="support_share_title">Partajează Aplicația</string>
+    <string name="support_share_subtitle">Spune prietenilor</string>
+    <string name="support_share_active_text">Partajat</string>
+    <string name="support_other_apps_title">Celelalte Aplicații ale Mele</string>
+    <string name="support_other_apps_subtitle">Eu cred că sunt TARI!</string>
+    <string name="support_other_apps_active_text">Văzut</string>
+    <string name="support_other_apps_error">Nu s-a putut deschide pagina dezvoltatorului</string>
+    <string name="support_visuals_title">Pachet Vizual</string>
+    <string name="support_visuals_desc">30+ Teme inclusiv Neon, OLED</string>
+    <string name="support_visuals_desc_unlocked">30+ Teme ($0.99 - Opțional)</string>
+    <string name="support_visuals_select_cd">Alege Teme</string>
+    <string name="status_unlocked">Deblocat</string>
+    <string name="support_hof_title">Sala Celebrităților și Pictograme</string>
+    <string name="support_hof_view_cd">Vezi Sala Celebrităților</string>
+
+    <!-- System Settings -->
+    <string name="dnd_title">Nu Deranja (DND)</string>
+    <string name="dnd_desc">Oprește notificările în timpul cronometrului</string>
+    <string name="dnd_mode_priority">Standard (Prioritate)</string>
+    <string name="dnd_mode_alarms">Strict (Doar Alarme)</string>
+    <string name="battery_guard_title">Gardian Baterie</string>
+    <string name="battery_guard_desc_format">Oprește când bateria &lt; %1$d%%</string>
+    <string name="stop_threshold_label">Prag Oprire</string>
+    <string name="go_home_title">Acasă la Pornire</string>
+    <string name="go_home_desc">Minimizează aplicația la pornire</string>
+    <string name="open_on_charge_title">Deschide la Încărcare</string>
+    <string name="open_on_charge_desc">Pornire auto la conectare</string>
+
+    <!-- Controls Settings -->
+    <string name="face_down_title">Întoarce pentru Start</string>
+    <string name="face_down_desc">Pornește și oprește ecranul (5s)</string>
+    <string name="face_down_toast">Activ. Întoarce dispozitivul pentru a începe.</string>
+    <string name="shake_extend_title">Scutură pentru Extindere</string>
+    <string name="shake_extend_desc">Scutură pentru a adăuga 15 min</string>
+    <string name="shake_extend_toast">Activ. Scutură pentru +15 min.</string>
+    <string name="pocket_mode_title">Mod Buzunar</string>
+    <string name="pocket_mode_desc">Previne atingerile accidentale</string>
+    <string name="pocket_mode_toast">Activ. Atingere blocată.</string>
+    <string name="widgets_title">Widget-uri Ecran Acasă</string>
+    <string name="widgets_desc">Ține apăsat pe ecranul de acasă pentru a adăuga un widget.</string>
+
+    <!-- Info Settings -->
+    <string name="sleep_journey_title">Călătoria Somnului</string>
+    <string name="sleep_journey_desc">Insigne, Serii și Statistici</string>
+    <string name="hall_of_fame_title">Sala Celebrităților</string>
+    <string name="hall_of_fame_desc">Susținătorii noștri legendari</string>
+    <string name="battery_data_saved_title">BATERIE ȘI DATE SALVATE</string>
+    <string name="battery_data_saved_desc">Estimat bazat pe medie</string>
+    <string name="saved_minutes_format">%1$d min</string>
+    <string name="saved_hours_format">%.1f ore</string>
+
+    <!-- Settings Titles -->
+    <string name="settings_category_system">Avansat și Sistem</string>
+    <string name="settings_category_controls">Control și Interacțiune</string>
+    <string name="settings_category_info">Informații</string>
+    <string name="settings_category_audio">Audio și Redare</string>
+    <string name="settings_category_visuals">Vizual și Afișaj</string>
+    <string name="settings_category_wellness">Wellness și Personal</string>
+    <string name="settings_category_control">Control și Interacțiune</string>
+    <string name="settings_category_advanced">Avansat și Sistem</string>
+    <string name="settings_category_awesome">Funcții Grozave</string>
+    <string name="settings_category_personalization">Personalizare</string>
+
+    <!-- Settings Components -->
+    <string name="unit_minutes_short">%1$d min</string>
+    <string name="unit_hours_short">%1$d ore</string>
+    <string name="unit_hours_decimal_short">%1$s ore</string>
+    <string name="add_timer_preset_title">Adaugă Presetare</string>
+    <string name="minutes_label_caps">MINUTES</string>
+    <string name="add_button_caps">ADAUGĂ</string>
+    <string name="remove_cd">Elimină</string>
+    <string name="topic_header">SUBIECT</string>
+    <string name="change_timer_buttons_title">Schimbă Butoane</string>
+    <string name="change_timer_buttons_subtitle">Personalizează timpii</string>
+    <string name="reset_default_button_text">Resetează la Implicit</string>
+    <string name="new_badge">NOU</string>
+    <string name="expand_cd">Extinde</string>
+    <string name="collapse_cd">Restrânge</string>
+
+    <!-- Awesome Features Settings -->
+    <string name="bedtime_reminder_title">Memento Ora de Culcare</string>
+    <string name="bedtime_reminder_desc">Notificare pentru ora de somn</string>
+    <string name="reminder_time_label">Ora</string>
+    <string name="prayer_reminder_title">Memento Rugăciune</string>
+    <string name="prayer_reminder_desc">Oprește-te și roagă-te înainte de somn</string>
+    <string name="brain_dump_title">Golirea Minții</string>
+    <string name="brain_dump_desc">Notează gândurile înainte de somn</string>
+    <string name="scripture_mode_title">Mod Scriptură</string>
+    <string name="scripture_mode_desc">Afișează un verset liniștitor</string>
+    <string name="scripture_topic_random">Surprinde-mă! (Aleatoriu)</string>
+    <string name="wisdom_quotes_title">Citate de Înțelepciune</string>
+    <string name="wisdom_quotes_desc">Înțelepciune teologică profundă</string>
+    <string name="wisdom_category_peace">Pace și Mângâiere</string>
+    <string name="wisdom_desc_peace">Anxietate, odihnă și încredere</string>
+    <string name="wisdom_category_glory">Slava lui Dumnezeu</string>
+    <string name="wisdom_desc_glory">Cine e Dumnezeu și suveranitatea Sa</string>
+    <string name="wisdom_category_gospel">Evanghelie și Har</string>
+    <string name="wisdom_desc_gospel">Iertare și mântuire</string>
+    <string name="wisdom_category_living">Viață și Înțelepciune</string>
+    <string name="wisdom_desc_living">Rugăciune și credință practică</string>
+    <string name="sleep_calc_title">Calculator Somn</string>
+    <string name="sleep_calc_desc">Cea mai bună oră de trezire</string>
+    <string name="alarm_button_setting_title">Buton Alarmă</string>
+    <string name="alarm_button_setting_desc">Arată "Setează Alarmă"</string>
+    <string name="breathing_guide_title">Ghid Respirație Haptic</string>
+    <string name="breathing_guide_desc">Respiră cu vibrație</string>
+    <string name="haptic_vibration_title">Vibrație Haptică</string>
+    <string name="haptic_vibration_desc">Activează feedback tactil</string>
+    <string name="breathing_auto_start_title">Pornire Automată</string>
+    <string name="breathing_auto_start_desc">Începe ghidul automat</string>
+    <string name="breathing_duration_label">Durată: %1$d min</string>
+    <string name="doomscroll_title">Blocare Dependență</string>
+    <string name="doomscroll_desc">Blochează aplicații care dau dependență</string>
+    <string name="grace_period_label">Perioadă Grație: %1$d min</string>
+    <string name="grace_period_desc">Utilizare scurtă înainte de blocare</string>
+    <string name="blocked_apps_label">Blocate (%1$d)</string>
+    <string name="add_app_to_block_button">Blochează Aplicație</string>
+    <string name="permission_required_title">Permisiune Necesară</string>
+    <string name="accessibility_explanation_doomscroll">Pentru a bloca, Fade are nevoie de permisiunea \'Accesibilitate\'.</string>
+    <string name="instructions_label">Instrucțiuni:</string>
+    <string name="accessibility_step_2_doomscroll">2. Caută \'Fade Sleep Timer\'.</string>
+    <string name="accessibility_step_3_doomscroll">3. Pornește-l.</string>
+    <string name="accessibility_step_4_doomscroll">4. Atinge \'Permite\'.</string>
+    
+    <!-- Timer Capsule -->
+    <string name="stop_timer_content_description">Oprește Cronometrul</string>
+    
+    <!-- Presets Editor -->
+    <string name="timer_presets_title">Presetări</string>
+    <string name="timer_presets_subtitle">Personalizează butoanele</string>
+    <string name="add_button">Adaugă</string>
+    <string name="reset_default_button">Resetează</string>
+    <string name="add_preset_dialog_title">Adaugă Presetare</string>
+    <string name="minutes_label">Minute</string>
+    <string name="cancel_button">Anulează</string>
+    
+    <!-- Settings Section -->
+    <string name="expand_content_description">Extinde</string>
+    <string name="collapse_content_description">Restrânge</string>
+    
+    <!-- General -->
+    <string name="new_label">NOU</string>
+    
+    <!-- Main Screen -->
+    <string name="app_title">Cronometru Somn</string>
+    <string name="supporter_badge">Susținător</string>
+    <string name="pocket_mode_active">Mod Buzunar Activ</string>
+    <string name="pocket_mode_unlock_instruction">Atinge de două ori pentru a debloca</string>
+    <string name="pocket_mode_unlocked_toast">Mod Buzunar Deblocat</string>
+    <string name="timer_started_minimizing_toast">Cronometru pornit. Se minimizează...</string>
+    
+    <!-- Dialogs -->
+    <string name="shake_dialog_title">Scutură pentru Extindere</string>
+    <string name="shake_dialog_message">Ai scuturat! Lăsăm asta pornit?</string>
+    <string name="keep_on_button">Lasă Pornit</string>
+    <string name="turn_off_button">Oprește</string>
+    <string name="shake_disabled_toast">Scutură pentru Extindere este oprit.</string>
+    
+    <!-- Spotlight Tour -->
+    <string name="spotlight_presets_title">Alege Timpul ⏱️</string>
+    <string name="spotlight_presets_desc">Când liniște? Muzica se va estompa încet.</string>
+    <string name="spotlight_media_title">Acces Media Rapid 🎵</string>
+    <string name="spotlight_media_desc">Atinge \'Configurează\' pentru a adăuga aplicațiile tale (Spotify, YouTube etc).</string>
+    <string name="spotlight_settings_title">Descoperă Mai Multe ⚙️</string>
+    <string name="spotlight_settings_desc">Setările au exerciții de respirație, rugăciuni și altele.</string>
+    
+    <!-- Morning Check -->
+    <string name="morning_check_yes_toast">Sfat: Încearcă un timp mai lung diseară.</string>
+    <string name="morning_check_no_toast">Grozav! Îți vom păstra preferințele.</string>
+    
+    <!-- Content Descriptions -->
+    <string name="breathing_guide_cd">Ghid Respirație</string>
+    <string name="view_note_cd">Vezi Notă</string>
+
+    <!-- Pre-Timer Screen -->
+    <string name="optimal_wake_time_label">Cea Mai Bună Oră de Trezire</string>
+    <string name="sleep_cycles_suffix"> (5 Cicluri)</string>
+    <string name="set_alarm_button">SETEAZĂ ALARMĂ</string>
+    <string name="pre_timer_settings_hint">Sfat: Personalizează în Setări > Funcții Grozave</string>
+    <string name="ready_to_sleep_title">Gata de culcare?</string>
+    <string name="pre_timer_instruction">Verifică înainte să începi.</string>
+    <string name="fade_wake_up_alarm_message">Trezire Fade</string>
+    <string name="alarm_set_toast">Alarmă setată pentru %s</string>
+    <string name="alarm_error_toast">Eroare alarmă: %s</string>
+    <string name="airplane_mode_title">Mod Avion</string>
+    <string name="airplane_mode_desc">Fără distrageri și fără radiații</string>
+    <string name="settings_button_caps">SETĂRI</string>
+    <string name="start_timer_button">START</string>
+    <string name="cancel_cd">Anulează</string>
+    <string name="illuminating_wisdom_loading">Iluminare...</string>
+    <string name="understanding_quote_title">Înțelegerea Citatului</string>
+    <string name="close_button">Închide</string>
+    <string name="explanation_error_title">Nu pot explica acum</string>
+
+    <!-- Permissions Screen -->
+    <string name="permissions_needed_title">Permisiuni Necesare</string>
+    <string name="permissions_needed_desc">Pentru a rula în fundal și a estompa sunetul.</string>
+    <string name="privacy_promise_cd">Confidențialitate</string>
+    <string name="privacy_promise_title">Confidențialitate - Zero Date</string>
+    <string name="privacy_promise_body">Datele tale sunt ale tale. Eu nu le pot accesa și nimic nu e trimis în cloud.</string>
+    <string name="open_source_cd">Open Source</string>
+    <string name="open_source_title">Încrederea se câștigă</string>
+    <string name="open_source_body">Fade este Open Source. Oricine poate verifica codul.</string>
+    <string name="view_source_code_button">Vezi Cod Sursă</string>
+    <string name="notifications_permission_title">Notificări</string>
+    <string name="notifications_enabled_desc">Activat - arată starea</string>
+    <string name="notifications_required_desc">Necesar pentru notificări.</string>
+    <string name="allowed_button">Permis</string>
+    <string name="allow_button">Permite</string>
+    <string name="enabled_button">Activat</string>
+    <string name="fix_button">Repară</string>
+    <string name="unrestricted_battery_title">Baterie Nerestricționată</string>
+    <string name="battery_enabled_desc">Activat - rulează fiabil</string>
+    <string name="battery_critical_desc">Critic: Previne oprirea cronometrului când ecranul e stins.</string>
+    <string name="accessibility_dialog_title">Activează Stingere Auto Ecran</string>
+    <string name="accessibility_step_intro">Activează serviciul de accesibilitate manual:</string>
+    <string name="accessibility_step_1">1. Atinge \'Mergi la Setări\'.</string>
+    <string name="accessibility_step_2">2. Caută \'Aplicații instalate\'.</string>
+    <string name="accessibility_step_3">3. Atinge \'Fade Sleep Timer\'.</string>
+    <string name="accessibility_step_4">4. Pornește comutatorul.</string>
+    <string name="go_to_settings_button">Mergi la Setări</string>
+
+    <string name="auto_screen_off_title">Stingere Auto Ecran</string>
+    <string name="auto_screen_off_enabled_desc">Activat - stinge după 3 min</string>
+    <string name="auto_screen_off_optional_desc">Opțional - blochează la inactivitate</string>
+    <string name="enable_button">Activează</string>
+    <string name="continue_button">Continuă</string>
+
+    <!-- Support Prompts (Arrays) -->
+    <string-array name="review_prompts">
+        <item>Te bucuri de liniște? 5 stele ajută.</item>
+        <item>Adormi mai repede? Spune lumii (în șoaptă).</item>
+        <item>Dacă aplicația funcționează, o recenzie funcționează pentru noi.</item>
+        <item>Nu vrem să te trezim, dar evaluează-ne.</item>
+        <item>Încă treaz? Poate scrii o recenzie.</item>
+        <item>Îți place Fade? Nu lăsa stelele noastre să pălească.</item>
+        <item>Scrierea unei recenzii relaxează, știai?</item>
+        <item>Ajută-ne să luptăm cu coșmarurile. Dă-ne 5 stele.</item>
+        <item>Zero reclame, zero costuri. O mică recenzie?</item>
+        <item>Fii un erou. Salvează un dezvoltator de insomnie.</item>
+        <item>Dacă citești asta, ne datorezi o recenzie. Glumim...?</item>
+        <item>Ofertă finală: Recenzie și primești o bătaie de palmă virtuală.</item>
+    </string-array>
+    
+    <string-array name="support_prompts">
+        <item>Am copii. Mănâncă mult. Susții dezvoltatorul?</item>
+        <item>Maimuțele mele programatoare vor banane. Un bacșiș?</item>
+        <item>Programez în pijamale, dar e o muncă. O cafea?</item>
+        <item>Îți place liniștea? Apreciază-mi copiii gălăgioși pe care îi ignor.</item>
+        <item>Am încercat să plătesc chiria cu "energie pozitivă", nu a mers.</item>
+        <item>Ajută-mă să-i dovedesc soției că asta e o muncă reală.</item>
+        <item>9 din 10 medici recomandă susținerea dezvoltatorilor independenți.</item>
+        <item>Strâng bani pentru un majordom robot. Fiecare bănuț contează.</item>
+        <item>Se zvonește că susținerea îmbunătățește somnul cu 10%.</item>
+        <item>Promit să cheltui cu înțelepciune (Cafea).</item>
+        <item>Programarea consumă cu 500% mai multă cofeină.</item>
+        <item>Fă un dezvoltator să zâmbească. Bun pentru karma.</item>
+    </string-array>
+
+    <!-- Notifications & Dialogs -->
+    <string name="bedtime_reminder_title_notif">Ora de Culcare</string>
+    <string name="bedtime_reminder_desc_notif">Memento pentru ora de somn</string>
+    <string name="bedtime_reminder_text">Este timpul să dormi.</string>
+    <string name="extend_15m_button">Extinde 15 min</string>
+    <string name="dismiss_button">Închide</string>
+    
+    <string name="brain_dump_channel_name">Memento Idei</string>
+    <string name="brain_dump_channel_desc">Avertisment înainte ca nota să fie ștearsă</string>
+    <string name="brain_dump_title_notif">Nota dispare în curând</string>
+    <string name="brain_dump_text_format">Nota va fi ștearsă în %s. Atinge pentru vizualizare.</string>
+    
+    <string name="support_prompt_title">Mesaj de la Dezvoltator</string>
+    <string name="support_prompt_nah">Nu</string>
+    <string name="support_prompt_check_it_out">Verifică</string>
+    
+    <string name="support_banner_text">Click aici pentru a susține dezvoltatorul!</string>
+    <string name="support_banner_button">Susține</string>
+    
+    <string name="spotlight_got_it">Am înțeles!</string>
+    <string name="spotlight_next">Următorul</string>
+
+    <!-- Setup Screen -->
+    <string name="setup_source_system">Audio Sistem</string>
+    <string name="setup_source_info">Info Somn</string>
+    <string name="setup_resume_music">Reia Muzica</string>
+    <string name="setup_configure">CONFIGUREAZĂ</string>
+    <string name="setup_configure_toast">Sfat: Configurează butoanele în Setări -> Wellness</string>
+    <string name="setup_facts">Fapte</string>
+    <string name="setup_bios">Bios</string>
+    <string name="setup_history">Istoric</string>
+    <string name="setup_volume_header">VOLUM</string>
+    <string name="setup_volume_limit">Limită Pornită</string>
+    <string name="setup_volume_capped_cd">Volum Limitat</string>
+    <string name="setup_safety_cap_toast">Limită Siguranță: Scalat la 40%.</string>
+    <string name="setup_duration_header">ALEGE ORA</string>
+    <string name="setup_default_label">(implicit)</string>
+    <string name="setup_voice_female_cd">Voce Feminină</string>
+    <string name="setup_voice_male_cd">Voce Masculină</string>
+    <string name="play_cd">Redare</string>
+    <string name="pause_cd">Pauză</string>
+    <string name="stop_cd">Stop</string>
+</resources>

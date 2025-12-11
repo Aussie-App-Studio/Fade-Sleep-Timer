@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Fade Sleep Timer</string>
+    <string name="accessibility_service_description">允許應用程式在閒置一段時間後自動關閉螢幕以節省電力。此服務僅使用螢幕鎖定功能，不會監控任何內容。</string>
+    
+    <!-- Settings Screen -->
+    <string name="settings_title">設定</string>
+    <string name="settings_back_content_description">返回</string>
+    
+    <!-- Support Button -->
+    <string name="support_development_title">支持開發者</string>
+    <string name="support_development_subtitle">解鎖所有功能 &amp; 移除廣告</string>
+    
+    <!-- Premium Features Button -->
+    <string name="premium_features_title">高級功能</string>
+    <string name="premium_features_subtitle">管理獎勵</string>
+
+    <!-- Audio Settings -->
+    <string name="fade_out_duration_title">淡出時間</string>
+    <string name="fade_out_duration_desc">音量逐漸降低的時間</string>
+    <string name="unit_minutes_value">%1$d分鐘</string>
+    <string name="volume_safety_cap_title">音量安全上限</string>
+    <string name="volume_safety_cap_desc">限制在40%以保護聽力</string>
+    <string name="play_on_start_title">開始時播放</string>
+    <string name="play_on_start_desc">計時器開始時恢復媒體播放</string>
+    <string name="play_on_start_toast">已啟用。開始時將恢復媒體播放。</string>
+    <string name="smart_wait_title">智慧等待</string>
+    <string name="smart_wait_desc">等待曲目結束再停止</string>
+    <string name="smart_wait_toast">已啟用。計時器將等待曲目結束。</string>
+
+    <!-- Visuals Settings -->
+    <string name="wedge_clock_title">楔形時鐘</string>
+    <string name="wedge_clock_desc">以縮小的楔形顯示時間</string>
+    <string name="super_dim_title">極暗遮罩</string>
+    <string name="super_dim_desc">夜間專用的極暗濾鏡</string>
+    <string name="super_dim_toast">已啟用。開始時螢幕會變暗。</string>
+    <string name="grayscale_mode_title">灰階模式</string>
+    <string name="grayscale_mode_desc">螢幕變灰（無聊模式）</string>
+    <string name="red_night_light_toast">紅色夜燈將在開始時啟動</string>
+    <string name="grayscale_options_title">灰階選項</string>
+    <string name="grayscale_mode_timer">僅計時器</string>
+    <string name="grayscale_desc_timer">僅在計時器執行時變灰</string>
+    <string name="grayscale_mode_always">始終開啟</string>
+    <string name="grayscale_desc_always">應用程式始終為灰階</string>
+    <string name="grayscale_mode_night">紅色夜燈</string>
+    <string name="grayscale_desc_night">紅色濾鏡阻擋藍光</string>
+    <string name="change_icon_title">更換圖示？</string>
+    <string name="change_icon_message">將圖示更換為 \'%1$s\'？應用程式可能會重新啟動。</string>
+    <string name="change_icon_button">更換圖示</string>
+    <string name="premium_icons_title">高級圖示</string>
+    <string name="premium_icons_subtitle">(給支持者)</string>
+    <string name="overlay_permission_desc">為了使用紅光模式，Fade 需要顯示在其他應用程式上層的權限。</string>
+    <string name="overlay_step_1">1. 點擊下方的「開啟設定」。</string>
+    <string name="overlay_step_2">2. 找到「Fade Sleep Timer」。</string>
+    <string name="overlay_step_3">3. 啟用「允許顯示在其他應用程式上層」。</string>
+    <string name="open_settings_button">開啟設定</string>
+    
+    <!-- Open On Charge Dialog -->
+    <string name="open_on_charge_dialog_title">選擇時段</string>
+    <string name="open_on_charge_dialog_desc">充電時何時自動啟動？</string>
+    <string name="open_on_charge_always">總是</string>
+    <string name="open_on_charge_always_desc">每次插入電源時</string>
+    <string name="open_on_charge_strict">20:00 - 04:00</string>
+    <string name="open_on_charge_strict_desc">晚上 (20:00 - 04:00)</string>
+    <string name="open_on_charge_late">01:00 - 05:00</string>
+    <string name="open_on_charge_late_desc">深夜 (01:00 - 05:00)</string>
+    <string name="open_on_charge_morning">05:00 - 10:00</string>
+    <string name="open_on_charge_morning_desc">早晨 (05:00 - 10:00)</string>
+
+    <!-- Personalization Settings -->
+    <string name="airplane_mode_reminder_title">飛航模式提醒</string>
+    <string name="airplane_mode_reminder_desc">提醒開啟飛航模式</string>
+    <string name="adjust_default_timer_title">調整預設計時器</string>
+    <string name="adjust_default_timer_desc">初始時間與檢查</string>
+    <string name="default_duration_label_format">預設時間: %1$s</string>
+    <string name="timer_check_in_title">計時器檢查</string>
+    <string name="timer_check_in_desc">若經常延長，詢問是否調整</string>
+    <string name="smart_extend_title">智慧延長</string>
+    <string name="smart_extend_desc">偵測到動作時增加10分鐘</string>
+    <string name="sensitivity_header">靈敏度</string>
+    <string name="sensitivity_low">低</string>
+    <string name="sensitivity_med">中</string>
+    <string name="sensitivity_high">高</string>
+    <string name="sensitivity_low_desc">需要較大動作</string>
+    <string name="sensitivity_med_desc">平衡 (推薦)</string>
+    <string name="sensitivity_high_desc">偵測細微動作</string>
+    <string name="configure_buttons_title">媒體按鈕設定</string>
+    <string name="configure_buttons_desc">選擇要顯示的應用程式</string>
+    <string name="smart_extend_help_title">使用智慧延長</string>
+    <string name="smart_extend_help_text">將手機放在枕頭旁的床墊上。\n\n加速傳感器會偵測床墊震動來判斷您是否醒著。</string>
+    <string name="got_it_button">知道了</string>
+
+    <!-- Support Screen -->
+    <string name="beta_unlock_toast">Beta版無法購買。請點擊禮物圖示3次。</string>
+    <string name="beta_unlock_click_2">再2次...</string>
+    <string name="beta_unlock_click_1">再1次...</string>
+    <string name="beta_unlock_success_toast">高級模式已解鎖！</string>
+    <string name="support_title">支持開發者</string>
+    <string name="support_subtitle_unlocked">設定中的所有功能已解鎖</string>
+    <string name="support_subtitle_locked">點擊禮物有驚喜</string>
+    <string name="support_close_button">關閉</string>
+    <string name="support_rate_title">為應用程式評分</string>
+    <string name="support_rate_subtitle_locked">解鎖「支持者」徽章</string>
+    <string name="support_rate_subtitle_unlocked">您是官方支持者！</string>
+    <string name="price_free">免費</string>
+    <string name="support_rate_active_text">支持者</string>
+    <string name="support_share_title">分享應用程式</string>
+    <string name="support_share_subtitle">告訴朋友們</string>
+    <string name="support_share_active_text">已分享</string>
+    <string name="support_other_apps_title">查看我的其他應用</string>
+    <string name="support_other_apps_subtitle">我覺得它們很棒！</string>
+    <string name="support_other_apps_active_text">已查看</string>
+    <string name="support_other_apps_error">無法開啟開發者頁面</string>
+    <string name="support_visuals_title">視覺包</string>
+    <string name="support_visuals_desc">霓虹、OLED等30+主題</string>
+    <string name="support_visuals_desc_unlocked">30+主題 ($0.99 - 選購)</string>
+    <string name="support_visuals_select_cd">選擇主題</string>
+    <string name="status_unlocked">已解鎖</string>
+    <string name="support_hof_title">名人堂 &amp; 圖示</string>
+    <string name="support_hof_view_cd">查看名人堂</string>
+
+    <!-- System Settings -->
+    <string name="dnd_title">勿擾模式</string>
+    <string name="dnd_desc">計時器執行時將通知靜音</string>
+    <string name="dnd_mode_priority">標準 (優先)</string>
+    <string name="dnd_mode_alarms">嚴格 (僅鬧鐘)</string>
+    <string name="battery_guard_title">電池保護</string>
+    <string name="battery_guard_desc_format">電池 &lt; %1$d%% 時停止</string>
+    <string name="stop_threshold_label">停止門檻</string>
+    <string name="go_home_title">啟動時回首頁</string>
+    <string name="go_home_desc">啟動時計時器最小化</string>
+    <string name="open_on_charge_title">充電時開啟</string>
+    <string name="open_on_charge_desc">插入電源時自動啟動</string>
+
+    <!-- Controls Settings -->
+    <string name="face_down_title">翻轉啟動</string>
+    <string name="face_down_desc">啟動並關閉螢幕 (5秒)</string>
+    <string name="face_down_toast">已啟用。翻轉裝置以啟動。</string>
+    <string name="shake_extend_title">搖晃延長</string>
+    <string name="shake_extend_desc">搖晃手機增加15分鐘</string>
+    <string name="shake_extend_toast">已啟用。搖晃增加15分鐘。</string>
+    <string name="pocket_mode_title">口袋模式</string>
+    <string name="pocket_mode_desc">防止誤觸</string>
+    <string name="pocket_mode_toast">已啟用。觸控已鎖定。</string>
+    <string name="widgets_title">主畫面小工具</string>
+    <string name="widgets_desc">長按主畫面以新增小工具。</string>
+
+    <!-- Info Settings -->
+    <string name="sleep_journey_title">睡眠旅程</string>
+    <string name="sleep_journey_desc">徽章、連續紀錄 &amp; 統計</string>
+    <string name="hall_of_fame_title">名人堂</string>
+    <string name="hall_of_fame_desc">我們的傳奇支持者</string>
+    <string name="battery_data_saved_title">節省的電池 &amp; 數據</string>
+    <string name="battery_data_saved_desc">基於平均值的估算</string>
+    <string name="saved_minutes_format">%1$d分</string>
+    <string name="saved_hours_format">%.1f小時</string>
+
+    <!-- Settings Titles -->
+    <string name="settings_category_system">進階 &amp; 系統</string>
+    <string name="settings_category_controls">控制 &amp; 互動</string>
+    <string name="settings_category_info">資訊</string>
+    <string name="settings_category_audio">音訊 &amp; 播放</string>
+    <string name="settings_category_visuals">視覺 &amp; 顯示</string>
+    <string name="settings_category_wellness">健康 &amp; 個人</string>
+    <string name="settings_category_control">控制 &amp; 互動</string>
+    <string name="settings_category_advanced">進階 &amp; 系統</string>
+    <string name="settings_category_awesome">精彩功能</string>
+    <string name="settings_category_personalization">個人化</string>
+
+    <!-- Settings Components -->
+    <string name="unit_minutes_short">%1$d分</string>
+    <string name="unit_hours_short">%1$d時</string>
+    <string name="unit_hours_decimal_short">%1$s時</string>
+    <string name="add_timer_preset_title">新增預設</string>
+    <string name="minutes_label_caps">分鐘</string>
+    <string name="add_button_caps">新增</string>
+    <string name="remove_cd">移除</string>
+    <string name="topic_header">主題</string>
+    <string name="change_timer_buttons_title">更改按鈕</string>
+    <string name="change_timer_buttons_subtitle">自訂時間</string>
+    <string name="reset_default_button_text">恢復預設</string>
+    <string name="new_badge">新</string>
+    <string name="expand_cd">展開</string>
+    <string name="collapse_cd">收起</string>
+
+    <!-- Awesome Features Settings -->
+    <string name="bedtime_reminder_title">就寢提醒</string>
+    <string name="bedtime_reminder_desc">睡覺時間通知</string>
+    <string name="reminder_time_label">提醒時間</string>
+    <string name="prayer_reminder_title">禱告提醒</string>
+    <string name="prayer_reminder_desc">睡前暫停 &amp; 禱告</string>
+    <string name="brain_dump_title">大腦傾倒</string>
+    <string name="brain_dump_desc">睡前寫下思緒</string>
+    <string name="scripture_mode_title">經文模式</string>
+    <string name="scripture_mode_desc">顯示舒緩人心的經文</string>
+    <string name="scripture_topic_random">給我驚喜！(隨機)</string>
+    <string name="wisdom_quotes_title">智慧語錄</string>
+    <string name="wisdom_quotes_desc">深刻的神學智慧</string>
+    <string name="wisdom_category_peace">平安 &amp; 安慰</string>
+    <string name="wisdom_desc_peace">焦慮、休息與信靠</string>
+    <string name="wisdom_category_glory">神的榮耀</string>
+    <string name="wisdom_desc_glory">神是誰及其掌權</string>
+    <string name="wisdom_category_gospel">福音 &amp; 恩典</string>
+    <string name="wisdom_desc_gospel">寬恕與救贖</string>
+    <string name="wisdom_category_living">生活 &amp; 智慧</string>
+    <string name="wisdom_desc_living">禱告與實踐信心</string>
+    <string name="sleep_calc_title">睡眠計算機</string>
+    <string name="sleep_calc_desc">最佳起床時間</string>
+    <string name="alarm_button_setting_title">鬧鐘按鈕</string>
+    <string name="alarm_button_setting_desc">顯示「設定鬧鐘」</string>
+    <string name="breathing_guide_title">觸覺呼吸引導</string>
+    <string name="breathing_guide_desc">透過震動引導呼吸</string>
+    <string name="haptic_vibration_title">觸覺震動</string>
+    <string name="haptic_vibration_desc">啟用觸覺回饋</string>
+    <string name="breathing_auto_start_title">自動開始</string>
+    <string name="breathing_auto_start_desc">自動開始引導</string>
+    <string name="breathing_duration_label">時長: %1$d分</string>
+    <string name="doomscroll_title">防成癮鎖</string>
+    <string name="doomscroll_desc">封鎖成癮應用程式</string>
+    <string name="grace_period_label">寬限期: %1$d分鐘</string>
+    <string name="grace_period_desc">封鎖前的短暫使用時間</string>
+    <string name="blocked_apps_label">已封鎖 App (%1$d)</string>
+    <string name="add_app_to_block_button">封鎖應用程式</string>
+    <string name="permission_required_title">需要權限</string>
+    <string name="accessibility_explanation_doomscroll">為了封鎖應用，Fade 需要「無障礙設定」權限。</string>
+    <string name="instructions_label">說明:</string>
+    <string name="accessibility_step_2_doomscroll">2. 找到「Fade Sleep Timer」。</string>
+    <string name="accessibility_step_3_doomscroll">3. 開啟它。</string>
+    <string name="accessibility_step_4_doomscroll">4. 點擊「允許」。</string>
+    
+    <!-- Timer Capsule -->
+    <string name="stop_timer_content_description">停止計時</string>
+    
+    <!-- Presets Editor -->
+    <string name="timer_presets_title">預設</string>
+    <string name="timer_presets_subtitle">自訂按鈕</string>
+    <string name="add_button">新增</string>
+    <string name="reset_default_button">重設</string>
+    <string name="add_preset_dialog_title">新增預設</string>
+    <string name="minutes_label">分鐘</string>
+    <string name="cancel_button">取消</string>
+    
+    <!-- Settings Section -->
+    <string name="expand_content_description">展開</string>
+    <string name="collapse_content_description">收起</string>
+    
+    <!-- General -->
+    <string name="new_label">新</string>
+    
+    <!-- Main Screen -->
+    <string name="app_title">睡眠定時器</string>
+    <string name="supporter_badge">支持者</string>
+    <string name="pocket_mode_active">口袋模式啟用</string>
+    <string name="pocket_mode_unlock_instruction">雙擊以解鎖</string>
+    <string name="pocket_mode_unlocked_toast">口袋模式已解鎖</string>
+    <string name="timer_started_minimizing_toast">計時開始。最小化中...</string>
+    
+    <!-- Dialogs -->
+    <string name="shake_dialog_title">搖晃延長</string>
+    <string name="shake_dialog_message">您搖晃了手機！要保持這個功能開啟嗎？</string>
+    <string name="keep_on_button">保持開啟</string>
+    <string name="turn_off_button">關閉</string>
+    <string name="shake_disabled_toast">搖晃延長已停用。</string>
+    
+    <!-- Spotlight Tour -->
+    <string name="spotlight_presets_title">選擇時間 ⏱️</string>
+    <string name="spotlight_presets_desc">多久後靜音？音樂將會慢慢淡出。</string>
+    <string name="spotlight_media_title">快速媒體存取 🎵</string>
+    <string name="spotlight_media_desc">點擊「設定」以新增您的應用程式(Spotify, YouTube等)。</string>
+    <string name="spotlight_settings_title">發現更多 ⚙️</string>
+    <string name="spotlight_settings_desc">設定中包含呼吸練習、禱告等功能。</string>
+    
+    <!-- Morning Check -->
+    <string name="morning_check_yes_toast">提示：今晚試試更長的時間。</string>
+    <string name="morning_check_no_toast">太棒了！我們將保持您的偏好。</string>
+    
+    <!-- Content Descriptions -->
+    <string name="breathing_guide_cd">呼吸引導</string>
+    <string name="view_note_cd">查看筆記</string>
+
+    <!-- Pre-Timer Screen -->
+    <string name="optimal_wake_time_label">最佳起床時間</string>
+    <string name="sleep_cycles_suffix"> (5 個週期)</string>
+    <string name="set_alarm_button">設定鬧鐘</string>
+    <string name="pre_timer_settings_hint">提示：在設定 > 精彩功能中自訂</string>
+    <string name="ready_to_sleep_title">準備睡覺了？</string>
+    <string name="pre_timer_instruction">開始前請確認。</string>
+    <string name="fade_wake_up_alarm_message">Fade 喚醒</string>
+    <string name="alarm_set_toast">鬧鐘設定於 %s</string>
+    <string name="alarm_error_toast">鬧鐘錯誤: %s</string>
+    <string name="airplane_mode_title">飛航模式</string>
+    <string name="airplane_mode_desc">無干擾 &amp; 無輻射</string>
+    <string name="settings_button_caps">設定</string>
+    <string name="start_timer_button">開始</string>
+    <string name="cancel_cd">取消</string>
+    <string name="illuminating_wisdom_loading">照亮中...</string>
+    <string name="understanding_quote_title">理解這段引文</string>
+    <string name="close_button">關閉</string>
+    <string name="explanation_error_title">現在無法解釋</string>
+
+    <!-- Permissions Screen -->
+    <string name="permissions_needed_title">需要權限</string>
+    <string name="permissions_needed_desc">為了在背景執行並淡出音量。</string>
+    <string name="privacy_promise_cd">隱私</string>
+    <string name="privacy_promise_title">隱私 - 零收集</string>
+    <string name="privacy_promise_body">您的資料屬於您。我無法存取，也不會上傳雲端。</string>
+    <string name="open_source_cd">開源</string>
+    <string name="open_source_title">信任是贏來的</string>
+    <string name="open_source_body">Fade 是開源軟體。任何人都可以檢查程式碼。</string>
+    <string name="view_source_code_button">查看原始碼</string>
+    <string name="notifications_permission_title">通知</string>
+    <string name="notifications_enabled_desc">已啟用 - 顯示計時狀態</string>
+    <string name="notifications_required_desc">通知需要此權限。</string>
+    <string name="allowed_button">已允許</string>
+    <string name="allow_button">允許</string>
+    <string name="enabled_button">已啟用</string>
+    <string name="fix_button">修復</string>
+    <string name="unrestricted_battery_title">無限制電池</string>
+    <string name="battery_enabled_desc">已啟用 - 穩定運作</string>
+    <string name="battery_critical_desc">嚴重：防止計時器在螢幕關閉時停止。</string>
+    <string name="accessibility_dialog_title">啟用自動關閉螢幕</string>
+    <string name="accessibility_step_intro">手動啟用無障礙服務：</string>
+    <string name="accessibility_step_1">1. 點擊「前往設定」。</string>
+    <string name="accessibility_step_2">2. 找到「已安裝的應用程式」。</string>
+    <string name="accessibility_step_3">3. 點擊「Fade Sleep Timer」。</string>
+    <string name="accessibility_step_4">4. 開啟開關。</string>
+    <string name="go_to_settings_button">前往設定</string>
+
+    <string name="auto_screen_off_title">自動關閉螢幕</string>
+    <string name="auto_screen_off_enabled_desc">已啟用 - 3分鐘後關閉</string>
+    <string name="auto_screen_off_optional_desc">選用 - 閒置時鎖定</string>
+    <string name="enable_button">啟用</string>
+    <string name="continue_button">繼續</string>
+
+    <!-- Support Prompts (Arrays) -->
+    <string-array name="review_prompts">
+        <item>享受寧靜嗎？5顆星很有幫助。</item>
+        <item>睡得更好了？小聲地告訴全世界。</item>
+        <item>如果應用程式有幫助，您的評論對我們也有幫助。</item>
+        <item>不想吵醒你，但給個好評吧。</item>
+        <item>還沒睡？留個言吧。</item>
+        <item>喜歡 Fade 嗎？別讓星星淡出。</item>
+        <item>寫評論很舒壓，你知道嗎？</item>
+        <item>幫我們對抗惡夢。給個5星吧。</item>
+        <item>零廣告，零費用。給個好評？</item>
+        <item>當個英雄。救救失眠的開發者。</item>
+        <item>如果你讀到這，你欠我們一個好評。開玩笑的...？</item>
+        <item>最後優惠：評論就送虛擬擊掌。</item>
+    </string-array>
+    
+    <string-array name="support_prompts">
+        <item>我有小孩，他們食量很大。支持開發者？</item>
+        <item>我的程式碼猴子想要香蕉。給點小費？</item>
+        <item>我穿著睡衣寫程式，但這也是工作。請杯咖啡？</item>
+        <item>享受寧靜嗎？感謝我正在忽略的吵鬧小孩們。</item>
+        <item>試過用「正能量」付房租，但失敗了。</item>
+        <item>幫我向老婆證明這是份正經工作。</item>
+        <item>10位醫生中有9位建議支持獨立開發者。</item>
+        <item>正在存錢買機器人管家。每一分錢都重要。</item>
+        <item>傳說支持開發者能提升10%睡眠品質。</item>
+        <item>我保證會明智地花費（買咖啡）。</item>
+        <item>寫程式需要多消耗500%的咖啡因。</item>
+        <item>讓開發者微笑。對業力有好處。</item>
+    </string-array>
+
+    <!-- Notifications & Dialogs -->
+    <string name="bedtime_reminder_title_notif">就寢時間</string>
+    <string name="bedtime_reminder_desc_notif">提醒您該睡覺了</string>
+    <string name="bedtime_reminder_text">是時候睡覺了。</string>
+    <string name="extend_15m_button">延長15分</string>
+    <string name="dismiss_button">關閉</string>
+    
+    <string name="brain_dump_channel_name">靈感提醒</string>
+    <string name="brain_dump_channel_desc">筆記刪除前警告</string>
+    <string name="brain_dump_title_notif">筆記即將消失</string>
+    <string name="brain_dump_text_format">筆記將在 %s 後刪除。點擊查看。</string>
+    
+    <string name="support_prompt_title">開發者訊息</string>
+    <string name="support_prompt_nah">不了</string>
+    <string name="support_prompt_check_it_out">查看</string>
+    
+    <string name="support_banner_text">點擊這裡支持開發者！</string>
+    <string name="support_banner_button">支持</string>
+    
+    <string name="spotlight_got_it">知道了！</string>
+    <string name="spotlight_next">下一步</string>
+
+    <!-- Setup Screen -->
+    <string name="setup_source_system">系統音訊</string>
+    <string name="setup_source_info">睡眠資訊</string>
+    <string name="setup_resume_music">恢復音樂</string>
+    <string name="setup_configure">設定</string>
+    <string name="setup_configure_toast">提示：在設定 -> 健康中配置按鈕</string>
+    <string name="setup_facts">冷知識</string>
+    <string name="setup_bios">簡介</string>
+    <string name="setup_history">歷史</string>
+    <string name="setup_volume_header">音量</string>
+    <string name="setup_volume_limit">限制已啟用</string>
+    <string name="setup_volume_capped_cd">音量受限</string>
+    <string name="setup_safety_cap_toast">安全限制：範圍縮放至40%。</string>
+    <string name="setup_duration_header">選擇時間</string>
+    <string name="setup_default_label">(預設)</string>
+    <string name="setup_voice_female_cd">女聲</string>
+    <string name="setup_voice_male_cd">男聲</string>
+    <string name="play_cd">播放</string>
+    <string name="pause_cd">暫停</string>
+    <string name="stop_cd">停止</string>
+</resources>

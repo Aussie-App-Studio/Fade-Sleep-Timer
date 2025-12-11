@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Fade Sleep Timer</string>
+    <string name="accessibility_service_description">تسمح للتطبيق بإيقاف تشغيل الشاشة تلقائيًا بعد فترة من عدم النشاط لتوفير البطارية. تستخدم هذه الخدمة فقط ميزة قفل الشاشة ولا تتجسس على أي محتوى.</string>
+    
+    <!-- Settings Screen -->
+    <string name="settings_title">الإعدادات</string>
+    <string name="settings_back_content_description">عودة</string>
+    
+    <!-- Support Button -->
+    <string name="support_development_title">دعم المطور</string>
+    <string name="support_development_subtitle">فتح الميزات وإزالة الإعلانات</string>
+    
+    <!-- Premium Features Button -->
+    <string name="premium_features_title">ميزات مميزة</string>
+    <string name="premium_features_subtitle">إدارة المكافآت</string>
+
+    <!-- Audio Settings -->
+    <string name="fade_out_duration_title">مدة التلاشي</string>
+    <string name="fade_out_duration_desc">كم من الوقت لخفض الصوت</string>
+    <string name="unit_minutes_value">%1$d دقيقة</string>
+    <string name="volume_safety_cap_title">حد أمان الصوت</string>
+    <string name="volume_safety_cap_desc">الحد إلى 40٪ لحماية السمع</string>
+    <string name="play_on_start_title">تشغيل عند البدء</string>
+    <string name="play_on_start_desc">استئناف الوسائط عند بدء المؤقت</string>
+    <string name="play_on_start_toast">مفعل. ستستأنف الوسائط عند البدء.</string>
+    <string name="smart_wait_title">الانتظار الذكي</string>
+    <string name="smart_wait_desc">انتظر حتى تنتهي الأغنية</string>
+    <string name="smart_wait_toast">مفعل. سينتظر المؤقت حتى تنتهي الأغنية.</string>
+
+    <!-- Visuals Settings -->
+    <string name="wedge_clock_title">ساعة الوتد</string>
+    <string name="wedge_clock_desc">عرض الوقت كوتد يتقلص</string>
+    <string name="super_dim_title">تعتيم فائق</string>
+    <string name="super_dim_desc">فلتر داكن إضافي لليل</string>
+    <string name="super_dim_toast">مفعل. ستصبح الشاشة معتمة عند البدء.</string>
+    <string name="grayscale_mode_title">وضع التدرج الرمادي</string>
+    <string name="grayscale_mode_desc">جعل الشاشة رمادية (وضع ممل)</string>
+    <string name="red_night_light_toast">الضوء الليلي الأحمر سيكون نشطًا عند البدء</string>
+    <string name="grayscale_options_title">خيارات التدرج الرمادي</string>
+    <string name="grayscale_mode_timer">المؤقت فقط</string>
+    <string name="grayscale_desc_timer">رمادي فقط أثناء تشغيل المؤقت</string>
+    <string name="grayscale_mode_always">دائمًا قيد التشغيل</string>
+    <string name="grayscale_desc_always">التطبيق دائمًا بتدرج رمادي</string>
+    <string name="grayscale_mode_night">ضوء ليلي أحمر</string>
+    <string name="grayscale_desc_night">فلتر أحمر لحجب الضوء الأزرق</string>
+    <string name="change_icon_title">تغيير الأيقونة؟</string>
+    <string name="change_icon_message">تغيير الأيقونة إلى \'%1$s\'؟ قد يعيد التطبيق التشغيل.</string>
+    <string name="change_icon_button">تغيير الأيقونة</string>
+    <string name="premium_icons_title">أيقونات مميزة</string>
+    <string name="premium_icons_subtitle">(للداعمين)</string>
+    <string name="overlay_permission_desc">لاستخدام الضوء الأحمر، يحتاج Fade إلى العرض فوق التطبيقات الأخرى.</string>
+    <string name="overlay_step_1">1. انقر فوق "فتح الإعدادات" أدناه.</string>
+    <string name="overlay_step_2">2. ابحث عن "Fade Sleep Timer".</string>
+    <string name="overlay_step_3">3. قم بتشغيل "السماح بالظهور فوق التطبيقات الأخرى".</string>
+    <string name="open_settings_button">فتح الإعدادات</string>
+    
+    <!-- Open On Charge Dialog -->
+    <string name="open_on_charge_dialog_title">اختر الوقت</string>
+    <string name="open_on_charge_dialog_desc">متى يبدأ تلقائيًا عند الشحن؟</string>
+    <string name="open_on_charge_always">دائمًا</string>
+    <string name="open_on_charge_always_desc">كل مرة يتم توصيله</string>
+    <string name="open_on_charge_strict">20:00 - 04:00</string>
+    <string name="open_on_charge_strict_desc">المساء (20:00 - 04:00)</string>
+    <string name="open_on_charge_late">01:00 - 05:00</string>
+    <string name="open_on_charge_late_desc">وقت متأخر من الليل (01:00 - 05:00)</string>
+    <string name="open_on_charge_morning">05:00 - 10:00</string>
+    <string name="open_on_charge_morning_desc">الصباح (05:00 - 10:00)</string>
+
+    <!-- Personalization Settings -->
+    <string name="airplane_mode_reminder_title">تذكير وضع الطائرة</string>
+    <string name="airplane_mode_reminder_desc">تذكير بتمكين وضع الطائرة</string>
+    <string name="adjust_default_timer_title">ضبط المؤقت الافتراضي</string>
+    <string name="adjust_default_timer_desc">الوقت الأولي والتحقق</string>
+    <string name="default_duration_label_format">المدة الافتراضية: %1$s</string>
+    <string name="timer_check_in_title">التحقق من المؤقت</string>
+    <string name="timer_check_in_desc">اقتراح تعديل عند التمديد كثيرًا</string>
+    <string name="smart_extend_title">التمديد الذكي</string>
+    <string name="smart_extend_desc">إضافة 10 دقائق عند اكتشاف حركة</string>
+    <string name="sensitivity_header">الحساسية</string>
+    <string name="sensitivity_low">منخفضة</string>
+    <string name="sensitivity_med">متوسطة</string>
+    <string name="sensitivity_high">عالية</string>
+    <string name="sensitivity_low_desc">يتطلب حركة قوية</string>
+    <string name="sensitivity_med_desc">متوازن (موصى به)</string>
+    <string name="sensitivity_high_desc">يكتشف الحركات الصغيرة</string>
+    <string name="configure_buttons_title">أزرار الوسائط</string>
+    <string name="configure_buttons_desc">اختر التطبيقات للعرض</string>
+    <string name="smart_extend_help_title">استخدام التمديد الذكي</string>
+    <string name="smart_extend_help_text">ضع هاتفك على المرتبة بجوار وسادتك.\n\nسيكتشف مقياس التسارع اهتزازات المرتبة لمعرفة ما إذا كنت مستيقظًا.</string>
+    <string name="got_it_button">فهمت</string>
+
+    <!-- Support Screen -->
+    <string name="beta_unlock_toast">لا توجد عمليات شراء في الإصدار التجريبي. انقر فوق أيقونة الهدية 3 مرات.</string>
+    <string name="beta_unlock_click_2">2 إضافية...</string>
+    <string name="beta_unlock_click_1">1 إضافية...</string>
+    <string name="beta_unlock_success_toast">تم فتح الوضع المميز!</string>
+    <string name="support_title">دعم المطور</string>
+    <string name="support_subtitle_unlocked">تم فتح جميع الميزات في الإعدادات</string>
+    <string name="support_subtitle_locked">اضغط على الهدية للحصول على مفاجأة</string>
+    <string name="support_close_button">إغلاق</string>
+    <string name="support_rate_title">تقييم التطبيق</string>
+    <string name="support_rate_subtitle_locked">فتح شارة "الداعم"</string>
+    <string name="support_rate_subtitle_unlocked">أنت داعم رسمي!</string>
+    <string name="price_free">مجاني</string>
+    <string name="support_rate_active_text">داعم</string>
+    <string name="support_share_title">مشاركة التطبيق</string>
+    <string name="support_share_subtitle">أخبر الأصدقاء</string>
+    <string name="support_share_active_text">تمت المشاركة</string>
+    <string name="support_other_apps_title">تطبيقاتي الأخرى</string>
+    <string name="support_other_apps_subtitle">أعتقد أنها رائعة!</string>
+    <string name="support_other_apps_active_text">تم العرض</string>
+    <string name="support_other_apps_error">تعذر فتح صفحة المطور</string>
+    <string name="support_visuals_title">الحزمة المرئية</string>
+    <string name="support_visuals_desc">أكثر من 30 سمة بما في ذلك نيون وOLED</string>
+    <string name="support_visuals_desc_unlocked">أكثر من 30 سمة (0.99 دولار - اختياري)</string>
+    <string name="support_visuals_select_cd">تحديد السمة</string>
+    <string name="status_unlocked">مفتوح</string>
+    <string name="support_hof_title">قاعة المشاهير والأيقونات</string>
+    <string name="support_hof_view_cd">عرض قاعة المشاهير</string>
+
+    <!-- System Settings -->
+    <string name="dnd_title">عدم الإزعاج</string>
+    <string name="dnd_desc">كتم الإشعارات أثناء المؤقت</string>
+    <string name="dnd_mode_priority">قياسي (الأولوية)</string>
+    <string name="dnd_mode_alarms">صارم (التنبيهات فقط)</string>
+    <string name="battery_guard_title">حارس البطارية</string>
+    <string name="battery_guard_desc_format">إيقاف عندما تكون البطارية أقل من %1$d%%</string>
+    <string name="stop_threshold_label">حد الإيقاف</string>
+    <string name="go_home_title">العودة إلى الصفحة الرئيسية عند البدء</string>
+    <string name="go_home_desc">تطبييق الحد الأدنى من التطبيق عند البدء</string>
+    <string name="open_on_charge_title">فتح عند الشحن</string>
+    <string name="open_on_charge_desc">بدء تلقائي عند التوصيل</string>
+
+    <!-- Controls Settings -->
+    <string name="face_down_title">اقلب للبدء</string>
+    <string name="face_down_desc">بدء وإيقاف تشغيل الشاشة (5 ثوانٍ)</string>
+    <string name="face_down_toast">مفعل. اقلب الجهاز للبدء.</string>
+    <string name="shake_extend_title">هز للتمديد</string>
+    <string name="shake_extend_desc">هز لإضافة 15 دقيقة</string>
+    <string name="shake_extend_toast">مفعل. هز لمدة +15 دقيقة.</string>
+    <string name="pocket_mode_title">وضع الجيب</string>
+    <string name="pocket_mode_desc">منع اللمسات العرضية</string>
+    <string name="pocket_mode_toast">مفعل. اللمس محظور.</string>
+    <string name="widgets_title">أدوات الشاشة الرئيسية</string>
+    <string name="widgets_desc">اضغط لفترة طويلة على الشاشة الرئيسية لإضافة أداة.</string>
+
+    <!-- Info Settings -->
+    <string name="sleep_journey_title">رحلة النوم</string>
+    <string name="sleep_journey_desc">شارات، سلاسل وإحصائيات</string>
+    <string name="hall_of_fame_title">قاعة المشاهير</string>
+    <string name="hall_of_fame_desc">دعمنا الأسطوري</string>
+    <string name="battery_data_saved_title">البطارية والبيانات المحفوظة</string>
+    <string name="battery_data_saved_desc">مقدر بناءً على المتوسط</string>
+    <string name="saved_minutes_format">%1$d دقيقة</string>
+    <string name="saved_hours_format">%.1f ساعة</string>
+
+    <!-- Settings Titles -->
+    <string name="settings_category_system">متقدم والنظام</string>
+    <string name="settings_category_controls">التحكم والتفاعل</string>
+    <string name="settings_category_info">معلومات</string>
+    <string name="settings_category_audio">الصوت والتشغيل</string>
+    <string name="settings_category_visuals">المرئيات والعرض</string>
+    <string name="settings_category_wellness">العافية والشخصية</string>
+    <string name="settings_category_control">التحكم والتفاعل</string>
+    <string name="settings_category_advanced">متقدم والنظام</string>
+    <string name="settings_category_awesome">ميزات رائعة</string>
+    <string name="settings_category_personalization">التخصيص</string>
+
+    <!-- Settings Components -->
+    <string name="unit_minutes_short">%1$d دقيقة</string>
+    <string name="unit_hours_short">%1$d ساعة</string>
+    <string name="unit_hours_decimal_short">%1$s ساعة</string>
+    <string name="add_timer_preset_title">إضافة إعداد مسبق</string>
+    <string name="minutes_label_caps">دقائق</string>
+    <string name="add_button_caps">إضافة</string>
+    <string name="remove_cd">إزالة</string>
+    <string name="topic_header">الموضوع</string>
+    <string name="change_timer_buttons_title">تغيير الأزرار</string>
+    <string name="change_timer_buttons_subtitle">تخصيص الأوقات</string>
+    <string name="reset_default_button_text">استعادة الافتراضي</string>
+    <string name="new_badge">جديد</string>
+    <string name="expand_cd">توسيع</string>
+    <string name="collapse_cd">طي</string>
+
+    <!-- Awesome Features Settings -->
+    <string name="bedtime_reminder_title">تذكير وقت النوم</string>
+    <string name="bedtime_reminder_desc">إشعار بوقت النوم</string>
+    <string name="reminder_time_label">الوقت</string>
+    <string name="prayer_reminder_title">تذكير الصلاة</string>
+    <string name="prayer_reminder_desc">توقف وصلي قبل النوم</string>
+    <string name="brain_dump_title">تفريغ الدماغ</string>
+    <string name="brain_dump_desc">اكتب الأفكار قبل النوم</string>
+    <string name="scripture_mode_title">وضع الكتاب المقدس</string>
+    <string name="scripture_mode_desc">عرض آية مهدئة</string>
+    <string name="scripture_topic_random">فاجئني! (عشوائي)</string>
+    <string name="wisdom_quotes_title">اقتباسات الحكمة</string>
+    <string name="wisdom_quotes_desc">حكمة لاهوتية عميقة</string>
+    <string name="wisdom_category_peace">السلام والراحة</string>
+    <string name="wisdom_desc_peace">القلق، الراحة والثقة</string>
+    <string name="wisdom_category_glory">مجد الله</string>
+    <string name="wisdom_desc_glory">من هو الله وسيادته</string>
+    <string name="wisdom_category_gospel">الإنجيل والنعمة</string>
+    <string name="wisdom_desc_gospel">الغفران والخلاص</string>
+    <string name="wisdom_category_living">الحياة والحكمة</string>
+    <string name="wisdom_desc_living">الصلاة والإيمان العملي</string>
+    <string name="sleep_calc_title">حاسبة النوم</string>
+    <string name="sleep_calc_desc">أفضل وقت للاستيقاظ</string>
+    <string name="alarm_button_setting_title">زر التنبيه</string>
+    <string name="alarm_button_setting_desc">إظهار "ضبط المنبه"</string>
+    <string name="breathing_guide_title">دليل التنفس باللمس</string>
+    <string name="breathing_guide_desc">تنفس مع الاهتزاز</string>
+    <string name="haptic_vibration_title">اهتزاز باللمس</string>
+    <string name="haptic_vibration_desc">تمكين ردود الفعل اللمسية</string>
+    <string name="breathing_auto_start_title">بدء تلقائي</string>
+    <string name="breathing_auto_start_desc">بدء الدليل تلقائيًا</string>
+    <string name="breathing_duration_label">المدة: %1$d دقيقة</string>
+    <string name="doomscroll_title">قفل الإدمان</string>
+    <string name="doomscroll_desc">حظر التطبيقات المسببة للإدمان</string>
+    <string name="grace_period_label">فترة السماح: %1$d دقيقة</string>
+    <string name="grace_period_desc">استخدام قصير قبل الحظر</string>
+    <string name="blocked_apps_label">محظور (%1$d)</string>
+    <string name="add_app_to_block_button">حظر التطبيق</string>
+    <string name="permission_required_title">الإذن مطلوب</string>
+    <string name="accessibility_explanation_doomscroll">للحظر، يحتاج Fade إلى إذن "إمكانية الوصول".</string>
+    <string name="instructions_label">التعليمات:</string>
+    <string name="accessibility_step_2_doomscroll">2. ابحث عن "Fade Sleep Timer".</string>
+    <string name="accessibility_step_3_doomscroll">3. قم بتشغيله.</string>
+    <string name="accessibility_step_4_doomscroll">4. اضغط على "سماح".</string>
+    
+    <!-- Timer Capsule -->
+    <string name="stop_timer_content_description">إيقاف المؤقت</string>
+    
+    <!-- Presets Editor -->
+    <string name="timer_presets_title">الإعدادات المسبقة</string>
+    <string name="timer_presets_subtitle">تخصيص الأزرار</string>
+    <string name="add_button">إضافة</string>
+    <string name="reset_default_button">إعادة تعيين</string>
+    <string name="add_preset_dialog_title">إضافة إعداد مسبق</string>
+    <string name="minutes_label">دقائق</string>
+    <string name="cancel_button">إلغاء</string>
+    
+    <!-- Settings Section -->
+    <string name="expand_content_description">توسيع</string>
+    <string name="collapse_content_description">طي</string>
+    
+    <!-- General -->
+    <string name="new_label">جديد</string>
+    
+    <!-- Main Screen -->
+    <string name="app_title">مؤقت النوم</string>
+    <string name="supporter_badge">داعم</string>
+    <string name="pocket_mode_active">وضع الجيب نشط</string>
+    <string name="pocket_mode_unlock_instruction">انقر مرتين لإلغاء القفل</string>
+    <string name="pocket_mode_unlocked_toast">تم فتح وضع الجيب</string>
+    <string name="timer_started_minimizing_toast">بدأ المؤقت. جارٍ التصغير...</string>
+    
+    <!-- Dialogs -->
+    <string name="shake_dialog_title">هز للتمديد</string>
+    <string name="shake_dialog_message">لقد قمت بالهز! هل نبقي هذا قيد التشغيل؟</string>
+    <string name="keep_on_button">تفعيل دائم</string>
+    <string name="turn_off_button">إيقاف</string>
+    <string name="shake_disabled_toast">تم تعطيل الهز للتمديد.</string>
+    
+    <!-- Spotlight Tour -->
+    <string name="spotlight_presets_title">اختر وقتًا ⏱️</string>
+    <string name="spotlight_presets_desc">متى الصمت؟ ستتلاشى الموسيقى ببطء.</string>
+    <string name="spotlight_media_title">الوصول السريع للوسائط 🎵</string>
+    <string name="spotlight_media_desc">انقر فوق "تهيئة" لإضافة تطبيقاتك (Spotify، YouTube، إلخ).</string>
+    <string name="spotlight_settings_title">اكتشف المزيد ⚙️</string>
+    <string name="spotlight_settings_desc">تحتوي الإعدادات على تمارين التنفس، والصلاة، والمزيد.</string>
+    
+    <!-- Morning Check -->
+    <string name="morning_check_yes_toast">نصيحة: جرب وقتًا أطول الليلة.</string>
+    <string name="morning_check_no_toast">رائع! سنحتفظ بتفضيلاتك.</string>
+    
+    <!-- Content Descriptions -->
+    <string name="breathing_guide_cd">دليل التنفس</string>
+    <string name="view_note_cd">عرض الملاحظة</string>
+
+    <!-- Pre-Timer Screen -->
+    <string name="optimal_wake_time_label">أفضل وقت للاستيقاظ</string>
+    <string name="sleep_cycles_suffix"> (5 دورات)</string>
+    <string name="set_alarm_button">ضبط المنبه</string>
+    <string name="pre_timer_settings_hint">نصيحة: خصص في الإعدادات > ميزات رائعة</string>
+    <string name="ready_to_sleep_title">جاهز للنوم؟</string>
+    <string name="pre_timer_instruction">تحقق قبل البدء.</string>
+    <string name="fade_wake_up_alarm_message">Fade استيقاظ</string>
+    <string name="alarm_set_toast">تم ضبط المنبه لـ %s</string>
+    <string name="alarm_error_toast">خطأ في المنبه: %s</string>
+    <string name="airplane_mode_title">وضع الطائرة</string>
+    <string name="airplane_mode_desc">لا تشتيت ولا إشعاع</string>
+    <string name="settings_button_caps">الإعدادات</string>
+    <string name="start_timer_button">بدء</string>
+    <string name="cancel_cd">إلغاء</string>
+    <string name="illuminating_wisdom_loading">إضاءة...</string>
+    <string name="understanding_quote_title">فهم الاقتباس</string>
+    <string name="close_button">إغلاق</string>
+    <string name="explanation_error_title">لا يمكن الشرح الآن</string>
+
+    <!-- Permissions Screen -->
+    <string name="permissions_needed_title">الأذونات مطلوبة</string>
+    <string name="permissions_needed_desc">للتشغيل في الخلفية وتلاشي الصوت.</string>
+    <string name="privacy_promise_cd">الخصوصية</string>
+    <string name="privacy_promise_title">الخصوصية - صفر بيانات</string>
+    <string name="privacy_promise_body">بياناتك ملكك. لا يمكنني الوصول إليها ولا يتم إرسال أي شيء إلى السحابة.</string>
+    <string name="open_source_cd">مفتوح المصدر</string>
+    <string name="open_source_title">الثقة تكتسب</string>
+    <string name="open_source_body">Fade مفتوح المصدر. يمكن لأي شخص التحقق من الكود.</string>
+    <string name="view_source_code_button">عرض كود المصدر</string>
+    <string name="notifications_permission_title">الإشعارات</string>
+    <string name="notifications_enabled_desc">مفعل - عرض الحالة</string>
+    <string name="notifications_required_desc">مطلوب للإشعارات.</string>
+    <string name="allowed_button">مسموح</string>
+    <string name="allow_button">سماح</string>
+    <string name="enabled_button">مفعل</string>
+    <string name="fix_button">إصلاح</string>
+    <string name="unrestricted_battery_title">بطارية غير مقيدة</string>
+    <string name="battery_enabled_desc">مفعل - يعمل بشكل موثوق</string>
+    <string name="battery_critical_desc">حاسم: يمنع توقف المؤقت عند إيقاف الشاشة.</string>
+    <string name="accessibility_dialog_title">تمكين إيقاف الشاشة التلقائي</string>
+    <string name="accessibility_step_intro">تمكين خدمة إمكانية الوصول يدويًا:</string>
+    <string name="accessibility_step_1">1. انقر فوق "الانتقال إلى الإعدادات".</string>
+    <string name="accessibility_step_2">2. ابحث عن "التطبيقات المثبتة".</string>
+    <string name="accessibility_step_3">3. انقر فوق "Fade Sleep Timer".</string>
+    <string name="accessibility_step_4">4. قم بتشغيل المفتاح.</string>
+    <string name="go_to_settings_button">الانتقال إلى الإعدادات</string>
+
+    <string name="auto_screen_off_title">إيقاف الشاشة التلقائي</string>
+    <string name="auto_screen_off_enabled_desc">مفعل - إيقاف بعد 3 دقائق</string>
+    <string name="auto_screen_off_optional_desc">اختياري - قفل عند الخمول</string>
+    <string name="enable_button">تمكين</string>
+    <string name="continue_button">متابعة</string>
+
+    <!-- Support Prompts (Arrays) -->
+    <string-array name="review_prompts">
+        <item>تستمتع بالصمت؟ 5 نجوم تساعد.</item>
+        <item>تنام أسرع؟ أخبر العالم (بهدوء).</item>
+        <item>إذا كان التطبيق يعمل، فالمراجعة تعمل لنا.</item>
+        <item>لا نريد إيقاظك، لكن قيمنا.</item>
+        <item>ما زلت مستيقظًا؟ ربما تكتب مراجعة.</item>
+        <item>تحب Fade؟ لا تدع نجومنا تتلاشى.</item>
+        <item>كتابة المراجعة مريحة، هل تعلم؟</item>
+        <item>ساعدنا في محاربة الكوابيس. تعطينا 5 نجوم.</item>
+        <item>صفر إعلانات، صفر تكلفة. مراجعة صغيرة؟</item>
+        <item>كن بطلاً. أنقذ مطورًا من الأرق.</item>
+        <item>إذا كنت تقرأ هذا، فأنت تدين لنا بمراجعة. أمزح معك...؟</item>
+        <item>العرض النهائي: راجع واحصل على مصافحة افتراضية.</item>
+    </string-array>
+    
+    <string-array name="support_prompts">
+        <item>لدي أطفال. يأكلون كثيرًا. دعم المطور؟</item>
+        <item>قرودي البرمجية تريد الموز. إكرامية؟</item>
+        <item>أكتب الكود بالبيجامة، لكنها وظيفة. قهوة؟</item>
+        <item>تحب الصمت؟ قدر أطفالي الصاخبين الذين أتجاهلهم.</item>
+        <item>حاولت دفع الإيجار بـ "المشاعر الإيجابية"، لم تنجح.</item>
+        <item>ساعدني في إثبات لزوجتي أن هذه وظيفة حقيقية.</item>
+        <item>9 من أصل 10 أطباء يوصون بدعم المطورين المستقلين.</item>
+        <item>أدخر لخادم آلي. كل قرش مهم.</item>
+        <item>يُشاع أن الدعم يحسن جودة النوم بنسبة 10٪.</item>
+        <item>أعدك بإنفاقها بحكمة (قهوة).</item>
+        <item>البرمجة تستهلك 500٪ كافيين أكثر.</item>
+        <item>اجعل مطورًا يبتسم. جيد للكارما.</item>
+    </string-array>
+
+    <!-- Notifications & Dialogs -->
+    <string name="bedtime_reminder_title_notif">وقت النوم</string>
+    <string name="bedtime_reminder_desc_notif">تذكير بوقت النوم</string>
+    <string name="bedtime_reminder_text">حان وقت النوم.</string>
+    <string name="extend_15m_button">تمديد 15 دقيقة</string>
+    <string name="dismiss_button">تجاهل</string>
+    
+    <string name="brain_dump_channel_name">تذكير الأفكار</string>
+    <string name="brain_dump_channel_desc">تحذير قبل حذف الملاحظة</string>
+    <string name="brain_dump_title_notif">ستختفي الملاحظة قريبًا</string>
+    <string name="brain_dump_text_format">سيتم حذف الملاحظة في %s. انقر للعرض.</string>
+    
+    <string name="support_prompt_title">رسالة المطور</string>
+    <string name="support_prompt_nah">لا</string>
+    <string name="support_prompt_check_it_out">تحقق منه</string>
+    
+    <string name="support_banner_text">انقر هنا لدعم المطور!</string>
+    <string name="support_banner_button">دعم</string>
+    
+    <string name="spotlight_got_it">فهمت!</string>
+    <string name="spotlight_next">التالي</string>
+
+    <!-- Setup Screen -->
+    <string name="setup_source_system">صوت النظام</string>
+    <string name="setup_source_info">معلومات النوم</string>
+    <string name="setup_resume_music">استئناف الموسيقى</string>
+    <string name="setup_configure">تهيئة</string>
+    <string name="setup_configure_toast">نصيحة: تكوين الأزرار في الإعدادات -> العافية</string>
+    <string name="setup_facts">حقائق</string>
+    <string name="setup_bios">سير ذاتية.</string>
+    <string name="setup_history">تاريخ</string>
+    <string name="setup_volume_header">الصوت</string>
+    <string name="setup_volume_limit">الحد نشط</string>
+    <string name="setup_volume_capped_cd">تم تحديد الصوت</string>
+    <string name="setup_safety_cap_toast">حد الأمان: تم التحجيم إلى نطاق 40٪.</string>
+    <string name="setup_duration_header">اختر الوقت</string>
+    <string name="setup_default_label">(افتراضي)</string>
+    <string name="setup_voice_female_cd">صوت أنثى</string>
+    <string name="setup_voice_male_cd">صوت ذكر</string>
+    <string name="play_cd">تشغيل</string>
+    <string name="pause_cd">إيقاف مؤقت</string>
+    <string name="stop_cd">إيقاف</string>
+</resources>

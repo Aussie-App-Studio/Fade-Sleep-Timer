@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Fade Sleep Timer</string>
+    <string name="accessibility_service_description">Позволяет приложению автоматически отключать экран после периода бездействия для экономии заряда батареи. Эта служба использует только функцию блокировки экрана и не отслеживает содержимое.</string>
+    
+    <!-- Settings Screen -->
+    <string name="settings_title">Настройки</string>
+    <string name="settings_back_content_description">Назад</string>
+    
+    <!-- Support Button -->
+    <string name="support_development_title">Поддержать разработчика</string>
+    <string name="support_development_subtitle">Разблокировать функции и убрать рекламу</string>
+    
+    <!-- Premium Features Button -->
+    <string name="premium_features_title">Премиум функции</string>
+    <string name="premium_features_subtitle">Управление наградами</string>
+
+    <!-- Audio Settings -->
+    <string name="fade_out_duration_title">Длительность затухания</string>
+    <string name="fade_out_duration_desc">Как долго снижать громкость</string>
+    <string name="unit_minutes_value">%1$d мин</string>
+    <string name="volume_safety_cap_title">Безопасный предел громкости</string>
+    <string name="volume_safety_cap_desc">Ограничить до 40% для защиты слуха</string>
+    <string name="play_on_start_title">Играть при запуске</string>
+    <string name="play_on_start_desc">Возобновить медиа при запуске таймера</string>
+    <string name="play_on_start_toast">Включено. Медиа возобновится при запуске.</string>
+    <string name="smart_wait_title">Умное ожидание</string>
+    <string name="smart_wait_desc">Ждать окончания песни</string>
+    <string name="smart_wait_toast">Включено. Таймер подождет окончания песни.</string>
+
+    <!-- Visuals Settings -->
+    <string name="wedge_clock_title">Клиновидные часы</string>
+    <string name="wedge_clock_desc">Показывать время как уменьшающийся клин</string>
+    <string name="super_dim_title">Супер затемнение</string>
+    <string name="super_dim_desc">Дополнительный темный фильтр для ночи</string>
+    <string name="super_dim_toast">Включено. Экран станет тусклым при запуске.</string>
+    <string name="grayscale_mode_title">Черно-белый режим</string>
+    <string name="grayscale_mode_desc">Сделать экран серым (скучный режим)</string>
+    <string name="red_night_light_toast">Красный ночной свет будет активен при запуске</string>
+    <string name="grayscale_options_title">Опции черно-белого</string>
+    <string name="grayscale_mode_timer">Только таймер</string>
+    <string name="grayscale_desc_timer">Серый только во время работы таймера</string>
+    <string name="grayscale_mode_always">Всегда включено</string>
+    <string name="grayscale_desc_always">Приложение всегда черно-белое</string>
+    <string name="grayscale_mode_night">Красный ночной свет</string>
+    <string name="grayscale_desc_night">Красный фильтр для блокировки синего света</string>
+    <string name="change_icon_title">Сменить значок?</string>
+    <string name="change_icon_message">Сменить значок на \'%1$s\'? Приложение может перезапуститься.</string>
+    <string name="change_icon_button">Сменить значок</string>
+    <string name="premium_icons_title">Премиум значки</string>
+    <string name="premium_icons_subtitle">(для поддержавших)</string>
+    <string name="overlay_permission_desc">Для использования красного света, Fade нужно отображаться поверх других приложений.</string>
+    <string name="overlay_step_1">1. Нажмите «Открыть настройки» ниже.</string>
+    <string name="overlay_step_2">2. Найдите «Fade Sleep Timer».</string>
+    <string name="overlay_step_3">3. Включите «Показывать поверх других приложений».</string>
+    <string name="open_settings_button">Открыть настройки</string>
+    
+    <!-- Open On Charge Dialog -->
+    <string name="open_on_charge_dialog_title">Выберите время</string>
+    <string name="open_on_charge_dialog_desc">Когда авто-запускать при зарядке?</string>
+    <string name="open_on_charge_always">Всегда</string>
+    <string name="open_on_charge_always_desc">Каждый раз при подключении</string>
+    <string name="open_on_charge_strict">20:00 - 04:00</string>
+    <string name="open_on_charge_strict_desc">Вечер (20:00 - 04:00)</string>
+    <string name="open_on_charge_late">01:00 - 05:00</string>
+    <string name="open_on_charge_late_desc">Поздняя ночь (01:00 - 05:00)</string>
+    <string name="open_on_charge_morning">05:00 - 10:00</string>
+    <string name="open_on_charge_morning_desc">Утро (05:00 - 10:00)</string>
+
+    <!-- Personalization Settings -->
+    <string name="airplane_mode_reminder_title">Напоминание режима полета</string>
+    <string name="airplane_mode_reminder_desc">Напоминать включить режим полета</string>
+    <string name="adjust_default_timer_title">Настроить таймер по умолчанию</string>
+    <string name="adjust_default_timer_desc">Начальное время и проверка</string>
+    <string name="default_duration_label_format">Длительность по умолчанию: %1$s</string>
+    <string name="timer_check_in_title">Проверка таймера</string>
+    <string name="timer_check_in_desc">Предлагать изменить при частом продлении</string>
+    <string name="smart_extend_title">Умное продление</string>
+    <string name="smart_extend_desc">Добавить 10 мин при обнаружении движения</string>
+    <string name="sensitivity_header">Чувствительность</string>
+    <string name="sensitivity_low">Низкая</string>
+    <string name="sensitivity_med">Средняя</string>
+    <string name="sensitivity_high">Высокая</string>
+    <string name="sensitivity_low_desc">Требуется сильное движение</string>
+    <string name="sensitivity_med_desc">Сбалансированная (Реком.)</string>
+    <string name="sensitivity_high_desc">Определяет малые движения</string>
+    <string name="configure_buttons_title">Кнопки медиа</string>
+    <string name="configure_buttons_desc">Выберите приложения для показа</string>
+    <string name="smart_extend_help_title">Использование умного продления</string>
+    <string name="smart_extend_help_text">Положите телефон на матрас рядом с подушкой.\n\nАкселерометр обнаружит вибрации матраса, чтобы проверить, не спите ли вы.</string>
+    <string name="got_it_button">Понятно</string>
+
+    <!-- Support Screen -->
+    <string name="beta_unlock_toast">Нет покупок в бета-версии. Нажмите значок подарка 3 раза.</string>
+    <string name="beta_unlock_click_2">Еще 2...</string>
+    <string name="beta_unlock_click_1">Еще 1...</string>
+    <string name="beta_unlock_success_toast">Премиум режим разблокирован!</string>
+    <string name="support_title">Поддержать разработчика</string>
+    <string name="support_subtitle_unlocked">Все функции в настройках разблокированы</string>
+    <string name="support_subtitle_locked">Нажмите подарок для сюрприза</string>
+    <string name="support_close_button">Закрыть</string>
+    <string name="support_rate_title">Оценить приложение</string>
+    <string name="support_rate_subtitle_locked">Разблокировать значок «Поддержавший»</string>
+    <string name="support_rate_subtitle_unlocked">Вы официальный поддержавший!</string>
+    <string name="price_free">Бесплатно</string>
+    <string name="support_rate_active_text">Поддержавший</string>
+    <string name="support_share_title">Поделиться приложением</string>
+    <string name="support_share_subtitle">Рассказать друзьям</string>
+    <string name="support_share_active_text">Поделено</string>
+    <string name="support_other_apps_title">Мои другие приложения</string>
+    <string name="support_other_apps_subtitle">Я думаю, они КЛАССНЫЕ!</string>
+    <string name="support_other_apps_active_text">Просмотрено</string>
+    <string name="support_other_apps_error">Не удалось открыть страницу разработчика</string>
+    <string name="support_visuals_title">Визуальный пакет</string>
+    <string name="support_visuals_desc">30+ тем, включая Неон, OLED</string>
+    <string name="support_visuals_desc_unlocked">30+ тем ($0.99 - Необязательно)</string>
+    <string name="support_visuals_select_cd">Выбрать тему</string>
+    <string name="status_unlocked">Разблок.</string>
+    <string name="support_hof_title">Зал славы и иконки</string>
+    <string name="support_hof_view_cd">Посмотреть Зал славы</string>
+
+    <!-- System Settings -->
+    <string name="dnd_title">Не беспокоить (DND)</string>
+    <string name="dnd_desc">Отключить уведомления во время таймера</string>
+    <string name="dnd_mode_priority">Стандарт (Приоритет)</string>
+    <string name="dnd_mode_alarms">Строгий (Только будильники)</string>
+    <string name="battery_guard_title">Защита батареи</string>
+    <string name="battery_guard_desc_format">Стоп при заряде &lt; %1$d%%</string>
+    <string name="stop_threshold_label">Порог остановки</string>
+    <string name="go_home_title">Домой при старте</string>
+    <string name="go_home_desc">Свернуть приложение при старте</string>
+    <string name="open_on_charge_title">Открыть при зарядке</string>
+    <string name="open_on_charge_desc">Авто-старт при подключении</string>
+
+    <!-- Controls Settings -->
+    <string name="face_down_title">Перевернуть для старта</string>
+    <string name="face_down_desc">Запуск и откл. экрана (5 сек)</string>
+    <string name="face_down_toast">Включено. Переверните устройство для старта.</string>
+    <string name="shake_extend_title">Встряхнуть для продления</string>
+    <string name="shake_extend_desc">Встряхнуть, чтобы добавить 15 мин</string>
+    <string name="shake_extend_toast">Включено. Встряхните для +15 мин.</string>
+    <string name="pocket_mode_title">Режим в кармане</string>
+    <string name="pocket_mode_desc">Предотвратить случайные касания</string>
+    <string name="pocket_mode_toast">Включено. Касания заблокированы.</string>
+    <string name="widgets_title">Виджеты на главном экране</string>
+    <string name="widgets_desc">Удерживайте главный экран, чтобы добавить виджет.</string>
+
+    <!-- Info Settings -->
+    <string name="sleep_journey_title">Путешествие сна</string>
+    <string name="sleep_journey_desc">Значки, серии и статистика</string>
+    <string name="hall_of_fame_title">Зал славы</string>
+    <string name="hall_of_fame_desc">Наши легендарные сторонники</string>
+    <string name="battery_data_saved_title">СОХРАНЕНО БАТАРЕИ И ДАННЫХ</string>
+    <string name="battery_data_saved_desc">Оценка на основе среднего</string>
+    <string name="saved_minutes_format">%1$d мин</string>
+    <string name="saved_hours_format">%.1f ч</string>
+
+    <!-- Settings Titles -->
+    <string name="settings_category_system">Продвинутые и Система</string>
+    <string name="settings_category_controls">Управление и Взаимодействие</string>
+    <string name="settings_category_info">Информация</string>
+    <string name="settings_category_audio">Аудио и Воспроизведение</string>
+    <string name="settings_category_visuals">Визуал и Дисплей</string>
+    <string name="settings_category_wellness">Здоровье и Личное</string>
+    <string name="settings_category_control">Управление и Взаимодействие</string>
+    <string name="settings_category_advanced">Продвинутые и Система</string>
+    <string name="settings_category_awesome">Классные функции</string>
+    <string name="settings_category_personalization">Персонализация</string>
+
+    <!-- Settings Components -->
+    <string name="unit_minutes_short">%1$d мин</string>
+    <string name="unit_hours_short">%1$d ч</string>
+    <string name="unit_hours_decimal_short">%1$s ч</string>
+    <string name="add_timer_preset_title">Добавить пресет</string>
+    <string name="minutes_label_caps">МИН</string>
+    <string name="add_button_caps">ДОБАВИТЬ</string>
+    <string name="remove_cd">Удалить</string>
+    <string name="topic_header">ТЕМА</string>
+    <string name="change_timer_buttons_title">Изменить кнопки</string>
+    <string name="change_timer_buttons_subtitle">Настроить время</string>
+    <string name="reset_default_button_text">Восстановить по умолчанию</string>
+    <string name="new_badge">НОВОЕ</string>
+    <string name="expand_cd">Развернуть</string>
+    <string name="collapse_cd">Свернуть</string>
+
+    <!-- Awesome Features Settings -->
+    <string name="bedtime_reminder_title">Напоминание о сне</string>
+    <string name="bedtime_reminder_desc">Уведомление о времени сна</string>
+    <string name="reminder_time_label">Время</string>
+    <string name="prayer_reminder_title">Напоминание о молитве</string>
+    <string name="prayer_reminder_desc">Остановись и помолись перед сном</string>
+    <string name="brain_dump_title">Выгрузка мыслей</string>
+    <string name="brain_dump_desc">Записать мысли перед сном</string>
+    <string name="scripture_mode_title">Режим Писания</string>
+    <string name="scripture_mode_desc">Показывать успокаивающий стих</string>
+    <string name="scripture_topic_random">Удиви меня! (Случайно)</string>
+    <string name="wisdom_quotes_title">Цитаты мудрости</string>
+    <string name="wisdom_quotes_desc">Глубокая богословская мудрость</string>
+    <string name="wisdom_category_peace">Мир и Утешение</string>
+    <string name="wisdom_desc_peace">Тревога, отдых и доверие</string>
+    <string name="wisdom_category_glory">Слава Бога</string>
+    <string name="wisdom_desc_glory">Кто такой Бог и Его суверенность</string>
+    <string name="wisdom_category_gospel">Евангелие и Благодать</string>
+    <string name="wisdom_desc_gospel">Прощение и спасение</string>
+    <string name="wisdom_category_living">Жизнь и Мудрость</string>
+    <string name="wisdom_desc_living">Молитва и практическая вера</string>
+    <string name="sleep_calc_title">Калькулятор сна</string>
+    <string name="sleep_calc_desc">Лучшее время для пробуждения</string>
+    <string name="alarm_button_setting_title">Кнопка будильника</string>
+    <string name="alarm_button_setting_desc">Показать «Установить будильник»</string>
+    <string name="breathing_guide_title">Тактильный гид по дыханию</string>
+    <string name="breathing_guide_desc">Дышите с вибрацией</string>
+    <string name="haptic_vibration_title">Тактильная вибрация</string>
+    <string name="haptic_vibration_desc">Включить тактильный отклик</string>
+    <string name="breathing_auto_start_title">Авто-старт</string>
+    <string name="breathing_auto_start_desc">Начинать гид автоматически</string>
+    <string name="breathing_duration_label">Длительность: %1$d мин</string>
+    <string name="doomscroll_title">Блокировка зависимости</string>
+    <string name="doomscroll_desc">Блокировать аддиктивные приложения</string>
+    <string name="grace_period_label">Льготный период: %1$d мин</string>
+    <string name="grace_period_desc">Короткое использование перед блок.</string>
+    <string name="blocked_apps_label">Заблокировано (%1$d)</string>
+    <string name="add_app_to_block_button">Блок. приложение</string>
+    <string name="permission_required_title">Требуется разрешение</string>
+    <string name="accessibility_explanation_doomscroll">Для блокировки Fade нужно разрешение «Спец. возможности».</string>
+    <string name="instructions_label">Инструкции:</string>
+    <string name="accessibility_step_2_doomscroll">2. Найдите «Fade Sleep Timer».</string>
+    <string name="accessibility_step_3_doomscroll">3. Включите его.</string>
+    <string name="accessibility_step_4_doomscroll">4. Нажмите «Разрешить».</string>
+    
+    <!-- Timer Capsule -->
+    <string name="stop_timer_content_description">Остановить таймер</string>
+    
+    <!-- Presets Editor -->
+    <string name="timer_presets_title">Пресеты</string>
+    <string name="timer_presets_subtitle">Настроить кнопки</string>
+    <string name="add_button">Добавить</string>
+    <string name="reset_default_button">Сброс</string>
+    <string name="add_preset_dialog_title">Добавить пресет</string>
+    <string name="minutes_label">Минуты</string>
+    <string name="cancel_button">Отмена</string>
+    
+    <!-- Settings Section -->
+    <string name="expand_content_description">Развернуть</string>
+    <string name="collapse_content_description">Свернуть</string>
+    
+    <!-- General -->
+    <string name="new_label">НОВОЕ</string>
+    
+    <!-- Main Screen -->
+    <string name="app_title">Таймер сна Fade</string>
+    <string name="supporter_badge">Поддержавший</string>
+    <string name="pocket_mode_active">Режим в кармане активен</string>
+    <string name="pocket_mode_unlock_instruction">Дважды коснитесь для разблокировки</string>
+    <string name="pocket_mode_unlocked_toast">Режим в кармане разблокирован</string>
+    <string name="timer_started_minimizing_toast">Таймер запущен. Сворачивание...</string>
+    
+    <!-- Dialogs -->
+    <string name="shake_dialog_title">Встряхнуть для продления</string>
+    <string name="shake_dialog_message">Вы встряхнули! Оставить это включенным?</string>
+    <string name="keep_on_button">Оставить</string>
+    <string name="turn_off_button">Выключить</string>
+    <string name="shake_disabled_toast">Встряхнуть для продления отключено.</string>
+    
+    <!-- Spotlight Tour -->
+    <string name="spotlight_presets_title">Выберите время ⏱️</string>
+    <string name="spotlight_presets_desc">Когда тишина? Музыка будет медленно затухать.</string>
+    <string name="spotlight_media_title">Быстрый доступ к медиа 🎵</string>
+    <string name="spotlight_media_desc">Нажмите «Настроить», чтобы добавить приложения (Spotify, YouTube и т.д.).</string>
+    <string name="spotlight_settings_title">Узнайте больше ⚙️</string>
+    <string name="spotlight_settings_desc">В настройках есть дыхательные упражнения, молитвы и другое.</string>
+    
+    <!-- Morning Check -->
+    <string name="morning_check_yes_toast">Совет: Попробуйте дольше сегодня.</string>
+    <string name="morning_check_no_toast">Отлично! Мы сохраним ваши предпочтения.</string>
+    
+    <!-- Content Descriptions -->
+    <string name="breathing_guide_cd">Гид по дыханию</string>
+    <string name="view_note_cd">Посмотреть заметку</string>
+
+    <!-- Pre-Timer Screen -->
+    <string name="optimal_wake_time_label">Лучшее время пробуждения</string>
+    <string name="sleep_cycles_suffix"> (5 циклов)</string>
+    <string name="set_alarm_button">УСТАНОВИТЬ БУДИЛЬНИК</string>
+    <string name="pre_timer_settings_hint">Совет: Настройте в Настройки > Красивые функции</string>
+    <string name="ready_to_sleep_title">Готовы ко сну?</string>
+    <string name="pre_timer_instruction">Проверьте перед запуском.</string>
+    <string name="fade_wake_up_alarm_message">Fade Подъем</string>
+    <string name="alarm_set_toast">Будильник установлен на %s</string>
+    <string name="alarm_error_toast">Ошибка будильника: %s</string>
+    <string name="airplane_mode_title">Режим полета</string>
+    <string name="airplane_mode_desc">Без отвлечений и излучения</string>
+    <string name="settings_button_caps">НАСТРОЙКИ</string>
+    <string name="start_timer_button">СТАРТ</string>
+    <string name="cancel_cd">Отмена</string>
+    <string name="illuminating_wisdom_loading">Иллюминация...</string>
+    <string name="understanding_quote_title">Понимание цитаты</string>
+    <string name="close_button">Закрыть</string>
+    <string name="explanation_error_title">Не могу объяснить сейчас</string>
+
+    <!-- Permissions Screen -->
+    <string name="permissions_needed_title">Нужны разрешения</string>
+    <string name="permissions_needed_desc">Для работы в фоне и затухания аудио.</string>
+    <string name="privacy_promise_cd">Конфиденциальность</string>
+    <string name="privacy_promise_title">Конфиденциальность - ноль данных</string>
+    <string name="privacy_promise_body">Ваши данные - ваши. Я не могу получить к ним доступ, и ничего не отправляется в облако.</string>
+    <string name="open_source_cd">Открытый исходный код</string>
+    <string name="open_source_title">Доверие зарабатывается</string>
+    <string name="open_source_body">Fade имеет открытый код. Любой может проверить код.</string>
+    <string name="view_source_code_button">Посмотреть исходный код</string>
+    <string name="notifications_permission_title">Уведомления</string>
+    <string name="notifications_enabled_desc">Включено - показать статус</string>
+    <string name="notifications_required_desc">Требуется для уведомлений.</string>
+    <string name="allowed_button">Разрешено</string>
+    <string name="allow_button">Разрешить</string>
+    <string name="enabled_button">Включено</string>
+    <string name="fix_button">Исправить</string>
+    <string name="unrestricted_battery_title">Неограниченная батарея</string>
+    <string name="battery_enabled_desc">Включено - работает надежно</string>
+    <string name="battery_critical_desc">Важно: Предотвращает остановку таймера при выкл. экрана.</string>
+    <string name="accessibility_dialog_title">Включить авто-откл. экрана</string>
+    <string name="accessibility_step_intro">Включить службу доступности вручную:</string>
+    <string name="accessibility_step_1">1. Нажмите «В настройки».</string>
+    <string name="accessibility_step_2">2. Найдите «Установленные приложения».</string>
+    <string name="accessibility_step_3">3. Нажмите «Fade Sleep Timer».</string>
+    <string name="accessibility_step_4">4. Включите переключатель.</string>
+    <string name="go_to_settings_button">В настройки</string>
+
+    <string name="auto_screen_off_title">Авто-откл. экрана</string>
+    <string name="auto_screen_off_enabled_desc">Включено - выкл. через 3 мин</string>
+    <string name="auto_screen_off_optional_desc">Опционально - блок. при простое</string>
+    <string name="enable_button">Включить</string>
+    <string name="continue_button">Продолжить</string>
+
+    <!-- Support Prompts (Arrays) -->
+    <string-array name="review_prompts">
+        <item>Наслаждаетесь тишиной? 5 звезд помогут.</item>
+        <item>Засыпаете быстрее? Расскажите миру (тихо).</item>
+        <item>Если приложение работает, отзыв работает на нас.</item>
+        <item>Не хотим будить, но оцените нас.</item>
+        <item>Все еще не спите? Может, напишете отзыв.</item>
+        <item>Нравится Fade? Не дайте нашим звездам угаснуть.</item>
+        <item>Писать отзывы расслабляет, вы знали?</item>
+        <item>Помогите нам бороться с кошмарами. Поставьте 5 звезд.</item>
+        <item>Ноль рекламы, ноль затрат. Маленький отзыв?</item>
+        <item>Будьте героем. Спасите разработчика от бессонницы.</item>
+        <item>Если вы читаете это, вы должны нам отзыв. Шутим...?</item>
+        <item>Финальное предложение: отзыв и виртуальная "пять".</item>
+    </string-array>
+    
+    <string-array name="support_prompts">
+        <item>У меня есть дети. Они много едят. Поддержать разработчика?</item>
+        <item>Мои обезьянки-кодеры хотят бананы. Чаевые?</item>
+        <item>Я кодирую в пижаме, но это работа. Кофе?</item>
+        <item>Любите тишину? Оцените моих шумных детей, которых я игнорирую.</item>
+        <item>Пытался платить аренду «хорошими вибрациями», не вышло.</item>
+        <item>Помогите мне доказать жене, что это настоящая работа.</item>
+        <item>9 из 10 врачей рекомендуют поддерживать инди-разработчиков.</item>
+        <item>Коплю на робота-дворецкого. Каждая копейка важна.</item>
+        <item>Говорят, поддержка улучшает качество сна на 10%.</item>
+        <item>Обещаю потратить с умом (Кофе).</item>
+        <item>Кодинг использует на 500% больше кофеина.</item>
+        <item>Сделайте разработчика счастливым. Хорошо для кармы.</item>
+    </string-array>
+
+    <!-- Notifications & Dialogs -->
+    <string name="bedtime_reminder_title_notif">Время сна</string>
+    <string name="bedtime_reminder_desc_notif">Напоминание о времени сна</string>
+    <string name="bedtime_reminder_text">Пора спать.</string>
+    <string name="extend_15m_button">Продлить 15 мин</string>
+    <string name="dismiss_button">Закрыть</string>
+    
+    <string name="brain_dump_channel_name">Напоминание идей</string>
+    <string name="brain_dump_channel_desc">Предупреждение перед удалением заметки</string>
+    <string name="brain_dump_title_notif">Заметка скоро исчезнет</string>
+    <string name="brain_dump_text_format">Заметка удалится через %s. Нажмите для просмотра.</string>
+    
+    <string name="support_prompt_title">Сообщение разработчика</string>
+    <string name="support_prompt_nah">Нет</string>
+    <string name="support_prompt_check_it_out">Посмотреть</string>
+    
+    <string name="support_banner_text">Нажмите здесь, чтобы поддержать разработчика!</string>
+    <string name="support_banner_button">Поддержка</string>
+    
+    <string name="spotlight_got_it">Понятно!</string>
+    <string name="spotlight_next">Далее</string>
+
+    <!-- Setup Screen -->
+    <string name="setup_source_system">Системное аудио</string>
+    <string name="setup_source_info">Информация о сне</string>
+    <string name="setup_resume_music">Возобновить музыку</string>
+    <string name="setup_configure">НАСТРОИТЬ</string>
+    <string name="setup_configure_toast">Совет: Настройте кнопки в Настройки -> Здоровье</string>
+    <string name="setup_facts">Факты</string>
+    <string name="setup_bios">Биос</string>
+    <string name="setup_history">История</string>
+    <string name="setup_volume_header">ГРОМКОСТЬ</string>
+    <string name="setup_volume_limit">Предел вкл</string>
+    <string name="setup_volume_capped_cd">Громкость ограничена</string>
+    <string name="setup_safety_cap_toast">Безопасный предел: Масштабировано в 40%.</string>
+    <string name="setup_duration_header">ВЫБРАТЬ ВРЕМЯ</string>
+    <string name="setup_default_label">(по умолчанию)</string>
+    <string name="setup_voice_female_cd">Женский голос</string>
+    <string name="setup_voice_male_cd">Мужской голос</string>
+    <string name="play_cd">Играть</string>
+    <string name="pause_cd">Пауза</string>
+    <string name="stop_cd">Стоп</string>
+</resources>

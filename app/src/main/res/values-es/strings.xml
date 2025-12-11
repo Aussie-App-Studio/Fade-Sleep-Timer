@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Fade Sleep Timer</string>
+    <string name="accessibility_service_description">Permite que la aplicación apague automáticamente la pantalla tras un periodo de inactividad para ahorrar batería. Este servicio solo usa la función de bloqueo de pantalla y no lee ni interactúa con el contenido.</string>
+    
+    <!-- Settings Screen -->
+    <string name="settings_title">Ajustes</string>
+    <string name="settings_back_content_description">Atrás</string>
+    
+    <!-- Support Button -->
+    <string name="support_development_title">Apoyar Desarrollo</string>
+    <string name="support_development_subtitle">Desbloquear funciones y QUITAR anuncios</string>
+    
+    <!-- Premium Features Button -->
+    <string name="premium_features_title">Funciones Premium</string>
+    <string name="premium_features_subtitle">Administrar recompensas</string>
+
+    <!-- Audio Settings -->
+    <string name="fade_out_duration_title">Duración del desvanecimiento</string>
+    <string name="fade_out_duration_desc">Tiempo para silenciar el audio</string>
+    <string name="unit_minutes_value">%1$dm</string>
+    <string name="volume_safety_cap_title">Límite de seguridad de volumen</string>
+    <string name="volume_safety_cap_desc">Limitar al 40% para seguridad auditiva</string>
+    <string name="play_on_start_title">Reproducir al iniciar</string>
+    <string name="play_on_start_desc">Reanudar medios al iniciar el temporizador</string>
+    <string name="play_on_start_toast">Activado. Los medios se reanudarán al iniciar.</string>
+    <string name="smart_wait_title">Espera inteligente</string>
+    <string name="smart_wait_desc">Esperar a que termine la pista antes de parar</string>
+    <string name="smart_wait_toast">Activado. El temporizador esperará al fin de pista.</string>
+
+    <!-- Visuals Settings -->
+    <string name="wedge_clock_title">Reloj de cuña</string>
+    <string name="wedge_clock_desc">Visualizar tiempo como una cuña menguante</string>
+    <string name="super_dim_title">Superposicón Super Oscura</string>
+    <string name="super_dim_desc">Capa extra oscura para uso nocturno</string>
+    <string name="super_dim_toast">Activado. Una capa oscura cubrirá la pantalla al iniciar.</string>
+    <string name="grayscale_mode_title">Modo Escala de Grises</string>
+    <string name="grayscale_mode_desc">Pone la pantalla en gris (modo aburrido)</string>
+    <string name="red_night_light_toast">Luz Nocturna Roja se activará al iniciar</string>
+    <string name="grayscale_options_title">Opciones de Escala de Grises</string>
+    <string name="grayscale_mode_timer">Solo Temporizador</string>
+    <string name="grayscale_desc_timer">Gris solo mientras el temporizador está activo</string>
+    <string name="grayscale_mode_always">Siempre Encendido</string>
+    <string name="grayscale_desc_always">La app siempre está en gris</string>
+    <string name="grayscale_mode_night">Luz Nocturna Roja</string>
+    <string name="grayscale_desc_night">Capa roja para bloquear luz azul</string>
+    <string name="change_icon_title">¿Cambiar Icono?</string>
+    <string name="change_icon_message">¿Cambiar icono a \'%1$s\'? La app podría cerrarse para aplicar cambios.</string>
+    <string name="change_icon_button">Cambiar Icono</string>
+    <string name="premium_icons_title">Iconos Premium</string>
+    <string name="premium_icons_subtitle">(para patrocinadores)</string>
+    <string name="overlay_permission_desc">Para usar la Luz Nocturna Roja, Fade necesita permiso para mostrarse sobre otras apps.</string>
+    <string name="overlay_step_1">1. Toca \'Abrir Ajustes\' abajo.</string>
+    <string name="overlay_step_2">2. Busca \'Fade Sleep Timer\' en la lista.</string>
+    <string name="overlay_step_3">3. Activa \'Mostrar sobre otras apps\'.</string>
+    <string name="open_settings_button">Abrir Ajustes</string>
+    
+    <!-- Open On Charge Dialog -->
+    <string name="open_on_charge_dialog_title">Seleccionar Horario</string>
+    <string name="open_on_charge_dialog_desc">¿Cuándo autoiniciar al cargar?</string>
+    <string name="open_on_charge_always">Siempre</string>
+    <string name="open_on_charge_always_desc">Cada vez que se conecte</string>
+    <string name="open_on_charge_strict">8pm - 4am</string>
+    <string name="open_on_charge_strict_desc">Noche (20:00 - 04:00)</string>
+    <string name="open_on_charge_late">1am - 5am</string>
+    <string name="open_on_charge_late_desc">Madrugada (01:00 - 05:00)</string>
+    <string name="open_on_charge_morning">5am - 10am</string>
+    <string name="open_on_charge_morning_desc">Mañana (05:00 - 10:00)</string>
+
+    <!-- Personalization Settings -->
+    <string name="airplane_mode_reminder_title">Recordatorio Modo Avión</string>
+    <string name="airplane_mode_reminder_desc">Recordar activar Modo Avión al iniciar</string>
+    <string name="adjust_default_timer_title">Ajustar Temporizador Predet.</string>
+    <string name="adjust_default_timer_desc">Personalizar duración inicial y chequeos</string>
+    <string name="default_duration_label_format">Duración Predet.: %1$s</string>
+    <string name="timer_check_in_title">Chequeo del Temporizador</string>
+    <string name="timer_check_in_desc">Preguntar si ajustar al extender mucho</string>
+    <string name="smart_extend_title">Extensión Inteligente</string>
+    <string name="smart_extend_desc">Añadir 10m si se detecta movimiento</string>
+    <string name="sensitivity_header">SENSIBILIDAD</string>
+    <string name="sensitivity_low">Baja</string>
+    <string name="sensitivity_med">Med</string>
+    <string name="sensitivity_high">Alta</string>
+    <string name="sensitivity_low_desc">Requiere mucho movimiento (g.j. darse vuelta)</string>
+    <string name="sensitivity_med_desc">Detección balanceada (Recomendado)</string>
+    <string name="sensitivity_high_desc">Detecta movimientos sutiles</string>
+    <string name="configure_buttons_title">Configurar Botones</string>
+    <string name="configure_buttons_desc">Elegir qué apps mostrar</string>
+    <string name="smart_extend_help_title">Usando Extensión Inteligente</string>
+    <string name="smart_extend_help_text">Para mejores resultados, coloca el teléfono en tu colchón cerca de tu almohada.\n\nEl acelerómetro detectará movimiento en el colchón para saber si sigues despierto.</string>
+    <string name="got_it_button">Entendido</string>
+
+    <!-- Support Screen -->
+    <string name="beta_unlock_toast">Compras no disponibles en Beta. Toca el regalo 3 veces para desbloquear.</string>
+    <string name="beta_unlock_click_2">2 más...</string>
+    <string name="beta_unlock_click_1">1 más...</string>
+    <string name="beta_unlock_success_toast">¡Modo Premium Desbloqueado!</string>
+    <string name="support_title">Apoyar al Desarrollador</string>
+    <string name="support_subtitle_unlocked">Accede a Funciones Premium arriba en Ajustes</string>
+    <string name="support_subtitle_locked">Toca el regalo para una sorpresa</string>
+    <string name="support_close_button">Cerrar</string>
+    <string name="support_rate_title">Calificar la App</string>
+    <string name="support_rate_subtitle_locked">Desbloquea la insignia de \'Patrocinador\'</string>
+    <string name="support_rate_subtitle_unlocked">¡Eres un Patrocinador oficial!</string>
+    <string name="price_free">Gratis</string>
+    <string name="support_rate_active_text">Patrocinador</string>
+    <string name="support_share_title">Compartir la App</string>
+    <string name="support_share_subtitle">Cuéntale a amigos y desbloquea insignia</string>
+    <string name="support_share_active_text">Compartido</string>
+    <string name="support_other_apps_title">Ver mis otras apps</string>
+    <string name="support_other_apps_subtitle">¡Creo que son GENIALES!</string>
+    <string name="support_other_apps_active_text">Visto</string>
+    <string name="support_other_apps_error">No se pudo abrir página del desarrollador</string>
+    <string name="support_visuals_title">Pack Visual</string>
+    <string name="support_visuals_desc">Desbloquea 30+ Temas incl. Neón, OLED</string>
+    <string name="support_visuals_desc_unlocked">Desbloquea 30+ Temas ($0.99 - Apoyo Opcional)</string>
+    <string name="support_visuals_select_cd">Seleccionar Tema</string>
+    <string name="status_unlocked">Desbloqueado</string>
+    <string name="support_hof_title">Salón de la Fama e Iconos</string>
+    <string name="support_hof_view_cd">Ver Salón de la Fama</string>
+
+    <!-- System Settings -->
+    <string name="dnd_title">No Molestar</string>
+    <string name="dnd_desc">Silenciar notificaciones durante temportizador</string>
+    <string name="dnd_mode_priority">Estándar (Prioridad)</string>
+    <string name="dnd_mode_alarms">Estricto (Solo Alarmas)</string>
+    <string name="battery_guard_title">Guardián de Batería</string>
+    <string name="battery_guard_desc_format">Parar si batería &lt; %1$d%%</string>
+    <string name="stop_threshold_label">Umbral de parada</string>
+    <string name="go_home_title">Ir a Inicio al empezar</string>
+    <string name="go_home_desc">Minimizar app al iniciar temporizador</string>
+    <string name="open_on_charge_title">Abrir al cargar</string>
+    <string name="open_on_charge_desc">Autoiniciar cuando se enchufa</string>
+
+    <!-- Controls Settings -->
+    <string name="face_down_title">Boca abajo para empezar</string>
+    <string name="face_down_desc">Autoiniciar y apagar pantalla (5s)</string>
+    <string name="face_down_toast">Activado. Pon el dispositivo boca abajo para iniciar.</string>
+    <string name="shake_extend_title">Agitar para extender</string>
+    <string name="shake_extend_desc">Añadir 15m agitando dispositivo</string>
+    <string name="shake_extend_toast">Activado. Agita para añadir 15m.</string>
+    <string name="pocket_mode_title">Modo Bolsillo</string>
+    <string name="pocket_mode_desc">Bloquear toques accidentales</string>
+    <string name="pocket_mode_toast">Activado. Interacciones bloqueadas.</string>
+    <string name="widgets_title">Widgets de Inicio</string>
+    <string name="widgets_desc">Mantén pulsado en inicio para añadir widgets.</string>
+
+    <!-- Info Settings -->
+    <string name="sleep_journey_title">Viaje de Sueño</string>
+    <string name="sleep_journey_desc">Insignias, Rachas y Estadísticas</string>
+    <string name="hall_of_fame_title">Salón de la Fama</string>
+    <string name="hall_of_fame_desc">Nuestros patrocinadores legendarios</string>
+    <string name="battery_data_saved_title">BATERÍA Y DATOS AHORRADOS</string>
+    <string name="battery_data_saved_desc">Estimado basado en tiempo medio</string>
+    <string name="saved_minutes_format">%1$d m</string>
+    <string name="saved_hours_format">%.1f h</string>
+
+    <!-- Settings Titles -->
+    <string name="settings_category_system">Avanzado y Sistema</string>
+    <string name="settings_category_controls">Control e Interacción</string>
+    <string name="settings_category_info">Info</string>
+    <string name="settings_category_audio">Audio y Reproducción</string>
+    <string name="settings_category_visuals">Visuales y Pantalla</string>
+    <string name="settings_category_wellness">Bienestar y Personalización</string>
+    <string name="settings_category_control">Control e Interacción</string>
+    <string name="settings_category_advanced">Avanzado y Sistema</string>
+    <string name="settings_category_awesome">Funciones Geniales</string>
+    <string name="settings_category_personalization">Personalización</string>
+
+    <!-- Settings Components -->
+    <string name="unit_minutes_short">%1$dm</string>
+    <string name="unit_hours_short">%1$dh</string>
+    <string name="unit_hours_decimal_short">%1$sh</string>
+    <string name="add_timer_preset_title">Añadir Preajuste</string>
+    <string name="minutes_label_caps">Minutos</string>
+    <string name="add_button_caps">Añadir</string>
+    <string name="remove_cd">Quitar</string>
+    <string name="topic_header">TEMA</string>
+    <string name="change_timer_buttons_title">Cambiar botones</string>
+    <string name="change_timer_buttons_subtitle">Personalizar duraciones</string>
+    <string name="reset_default_button_text">Restaurar defecto</string>
+    <string name="new_badge">NUEVO</string>
+    <string name="expand_cd">Expandir</string>
+    <string name="collapse_cd">Colapsar</string>
+
+    <!-- Awesome Features Settings -->
+    <string name="bedtime_reminder_title">Recordatorio de Dormir</string>
+    <string name="bedtime_reminder_desc">Notificar cuando sea hora de dormir</string>
+    <string name="reminder_time_label">Hora del recordatorio</string>
+    <string name="prayer_reminder_title">Recordatorio de Oración</string>
+    <string name="prayer_reminder_desc">Pausa y reza antes de dormir</string>
+    <string name="brain_dump_title">Vaciado Mental</string>
+    <string name="brain_dump_desc">Escribe pensamientos antes de dormir</string>
+    <string name="scripture_mode_title">Modo Escritura</string>
+    <string name="scripture_mode_desc">Muestra un verso calmante</string>
+    <string name="scripture_topic_random">¡Sorpréndeme! (Aleatorio)</string>
+    <string name="wisdom_quotes_title">Citas de Sabiduría</string>
+    <string name="wisdom_quotes_desc">Muestra sabiduría teológica profunda</string>
+    <string name="wisdom_category_peace">Paz y Confort</string>
+    <string name="wisdom_desc_peace">Ansiedad, descanso y confianza</string>
+    <string name="wisdom_category_glory">Gloria y Soberanía de Dios</string>
+    <string name="wisdom_desc_glory">Quién es Dios y su control</string>
+    <string name="wisdom_category_gospel">El Evangelio y Gracia</string>
+    <string name="wisdom_desc_gospel">Perdón y salvación</string>
+    <string name="wisdom_category_living">Sabiduría y Vida</string>
+    <string name="wisdom_desc_living">Oración y fe práctica</string>
+    <string name="sleep_calc_title">Calculadora de Sueño</string>
+    <string name="sleep_calc_desc">Mostrar hora óptima de despertar</string>
+    <string name="alarm_button_setting_title">Botón de Alarma</string>
+    <string name="alarm_button_setting_desc">Mostrar "Poner Alarma" en tarjeta</string>
+    <string name="breathing_guide_title">Guía de Respiración</string>
+    <string name="breathing_guide_desc">Respiración guiada por vibración</string>
+    <string name="haptic_vibration_title">Vibración Háptica</string>
+    <string name="haptic_vibration_desc">Habilitar respuesta táctil</string>
+    <string name="breathing_auto_start_title">Auto-inicio antes del temporizador</string>
+    <string name="breathing_auto_start_desc">Iniciar guía automáticamente</string>
+    <string name="breathing_duration_label">Duración: %1$d min</string>
+    <string name="doomscroll_title">Bloqueo Anti-Doomscroll</string>
+    <string name="doomscroll_desc">Bloquear apps adictivas durante temporizador</string>
+    <string name="grace_period_label">Periodo de Gracia: %1$d min</string>
+    <string name="grace_period_desc">Permitir uso breve antes de bloquear</string>
+    <string name="blocked_apps_label">Apps Bloqueadas (%1$d)</string>
+    <string name="add_app_to_block_button">Añadir App a Bloquear</string>
+    <string name="permission_required_title">Permiso Requerido</string>
+    <string name="accessibility_explanation_doomscroll">Para bloquear apps, Fade necesita permiso de \'Accesibilidad\'.</string>
+    <string name="instructions_label">Instrucciones:</string>
+    <string name="accessibility_step_2_doomscroll">2. Busca \'Fade Sleep Timer\'.</string>
+    <string name="accessibility_step_3_doomscroll">3. Actívalo.</string>
+    <string name="accessibility_step_4_doomscroll">4. Toca \'Permitir\'.</string>
+    
+    <!-- Timer Capsule -->
+    <string name="stop_timer_content_description">Parar Temporizador</string>
+    
+    <!-- Presets Editor -->
+    <string name="timer_presets_title">Preajustes</string>
+    <string name="timer_presets_subtitle">Personalizar botones</string>
+    <string name="add_button">Añadir</string>
+    <string name="reset_default_button">Restaurar</string>
+    <string name="add_preset_dialog_title">Añadir Preajuste</string>
+    <string name="minutes_label">Minutos</string>
+    <string name="cancel_button">Cancelar</string>
+    
+    <!-- Settings Section -->
+    <string name="expand_content_description">Expandir</string>
+    <string name="collapse_content_description">Colapsar</string>
+    
+    <!-- General -->
+    <string name="new_label">NUEVO</string>
+    
+    <!-- Main Screen -->
+    <string name="app_title">Temporizador</string>
+    <string name="supporter_badge">Patrocinador</string>
+    <string name="pocket_mode_active">Modo Bolsillo Activo</string>
+    <string name="pocket_mode_unlock_instruction">Doble toque para desbloquear</string>
+    <string name="pocket_mode_unlocked_toast">Modo Bolsillo Desbloqueado</string>
+    <string name="timer_started_minimizing_toast">Temporizador iniciado. Minimizando...</string>
+    
+    <!-- Dialogs -->
+    <string name="shake_dialog_title">Agitar para Extender</string>
+    <string name="shake_dialog_message">¡Acabas de usar Agitar para Extender! ¿Quieres mantenerlo activado?</string>
+    <string name="keep_on_button">Mantener</string>
+    <string name="turn_off_button">Desactivar</string>
+    <string name="shake_disabled_toast">Agitar para Extender desactivado.</string>
+    
+    <!-- Spotlight Tour -->
+    <string name="spotlight_presets_title">Elige duración ⏱️</string>
+    <string name="spotlight_presets_desc">Elige cuánto tiempo quieres desvanecer. Tu música bajará lentamente los últimos 5 minutos.</string>
+    <string name="spotlight_media_title">Acceso Rápido a Medios 🎵</string>
+    <string name="spotlight_media_desc">Toca \'Configurar\' para añadir tus apps favoritas (Spotify, YouTube, etc).</string>
+    <string name="spotlight_settings_title">Descubre Más ⚙️</string>
+    <string name="spotlight_settings_desc">Toca Ajustes para ejercicios de respiración, recordatorios y más.</string>
+    
+    <!-- Morning Check -->
+    <string name="morning_check_yes_toast">Consejo: Intenta una duración mayor esta noche.</string>
+    <string name="morning_check_no_toast">¡Genial! Mantendremos tus preferencias.</string>
+    
+    <!-- Content Descriptions -->
+    <string name="breathing_guide_cd">Guía de Respiración</string>
+    <string name="view_note_cd">Ver Nota</string>
+
+    <!-- Pre-Timer Screen -->
+    <string name="optimal_wake_time_label">HORA ÓPTIMA DESPERTAR</string>
+    <string name="sleep_cycles_suffix"> (5 Ciclos)</string>
+    <string name="set_alarm_button">PONER ALARMA</string>
+    <string name="pre_timer_settings_hint">Consejo: Personaliza esto en Ajustes > Funciones Geniales</string>
+    <string name="ready_to_sleep_title">¿Listo para dormir?</string>
+    <string name="pre_timer_instruction">Revisa lo siguiente antes de empezar.</string>
+    <string name="fade_wake_up_alarm_message">Fade Despertar</string>
+    <string name="alarm_set_toast">Alarma puesta para %s</string>
+    <string name="alarm_error_toast">No se pudo poner alarma: %s</string>
+    <string name="airplane_mode_title">Modo Avión</string>
+    <string name="airplane_mode_desc">Sin distracciones ni radiación</string>
+    <string name="settings_button_caps">AJUSTES</string>
+    <string name="start_timer_button">INICIAR</string>
+    <string name="cancel_cd">Cancelar</string>
+    <string name="illuminating_wisdom_loading">Iluminando sabiduría...</string>
+    <string name="understanding_quote_title">Entendiendo esta cita</string>
+    <string name="close_button">Cerrar</string>
+    <string name="explanation_error_title">No se pudo iluminar esta cita</string>
+
+    <!-- Permissions Screen -->
+    <string name="permissions_needed_title">Permisos Necesarios</string>
+    <string name="permissions_needed_desc">Para funcionar en segundo plano y atenuar el audio, necesitamos permisos.</string>
+    <string name="privacy_promise_cd">Promesa de Privacidad</string>
+    <string name="privacy_promise_title">Privacidad - Cero Recolección de Datos</string>
+    <string name="privacy_promise_body">Tú controlas tus datos. No tengo acceso a tus registros ni notas. No envío nada a la nube.</string>
+    <string name="open_source_cd">Código Abierto</string>
+    <string name="open_source_title">La confianza se gana</string>
+    <string name="open_source_body">Fade Sleep Timer es Código Abierto. Publiqué todo el código para que cualquiera pueda auditarlo.</string>
+    <string name="view_source_code_button">Ver Código Fuente</string>
+    <string name="notifications_permission_title">Notificaciones</string>
+    <string name="notifications_enabled_desc">Activado - El temporizador muestra estado</string>
+    <string name="notifications_required_desc">Requerido para mostrar notificación.</string>
+    <string name="allowed_button">Permitido</string>
+    <string name="allow_button">Permitir</string>
+    <string name="enabled_button">Activado</string>
+    <string name="fix_button">Arreglar</string>
+    <string name="unrestricted_battery_title">Batería sin restricciones</string>
+    <string name="battery_enabled_desc">Activado - Funcionará en segundo plano</string>
+    <string name="battery_critical_desc">Crítico: Evita que el temporizador se pare.</string>
+    <string name="accessibility_dialog_title">Activar Auto-Apagado de Pantalla</string>
+    <string name="accessibility_step_intro">Para apagar la pantalla, activa el Servicio de Accesibilidad:</string>
+    <string name="accessibility_step_1">1. Toca \'Ir a Ajustes\' abajo.</string>
+    <string name="accessibility_step_2">2. Busca \'Aplicaciones Instaladas\'.</string>
+    <string name="accessibility_step_3">3. Toca \'Fade Sleep Timer\'.</string>
+    <string name="accessibility_step_4">4. Activa el interruptor.</string>
+    <string name="go_to_settings_button">Ir a Ajustes</string>
+
+    <string name="auto_screen_off_title">Auto-Apagado Pantalla</string>
+    <string name="auto_screen_off_enabled_desc">Activado - Se apaga tras 3m de inactividad</string>
+    <string name="auto_screen_off_optional_desc">Opcional - Activar para bloquear pantalla</string>
+    <string name="enable_button">Activar</string>
+    <string name="continue_button">Continuar</string>
+
+    <!-- Support Prompts (Arrays) -->
+    <string-array name="review_prompts">
+        <item>¿Disfrutas del silencio? Danos 5 estrellas.</item>
+        <item>¿Te duermes más rápido? Díselo al mundo (en voz baja).</item>
+        <item>Si esta app te ayuda a dormir, una reseña nos ayuda a nosotros.</item>
+        <item>No queremos despertarte, pero una reseña sería genial.</item>
+        <item>¿Aún despierto? Podrías escribir una reseña.</item>
+        <item>¿Te gusta el desvanecimiento? No dejes que las estrellas se desvanezcan.</item>
+        <item>¿Soy yo o escribir reseñas relaja?</item>
+        <item>Ayúdanos contra las pesadillas. Deja 5 estrellas.</item>
+        <item>Cero anuncios, cero coste, un favor: ¿Una reseña?</item>
+        <item>Sé un héroe. Salva a un desarrollador del insomnio.</item>
+        <item>Si lees esto, nos debes una reseña. Broma... ¿o no?</item>
+        <item>Oferta final: Deja reseña y choca esos cinco virtualmente.</item>
+    </string-array>
+    
+    <string-array name="support_prompts">
+        <item>Tengo hijos. Comen mucho. ¿Apoyas al desarrollador?</item>
+        <item>Mis monos programadores piden bananas. Una propina ayuda.</item>
+        <item>No digo que programe en pijama, pero lo hago. ¿Un café?</item>
+        <item>Si disfrutas el silencio, agradece a mis hijos ruidosos que ignoro.</item>
+        <item>Intenté pagar la renta con "buenas vibras". No funcionó.</item>
+        <item>Ayúdame a probarle a mi esposa que esto es un trabajo real.</item>
+        <item>9 de 10 doctores recomiendan apoyar indies. El 10mo es dentista.</item>
+        <item>Ahorro para un robot mayordomo. Cada poco ayuda.</item>
+        <item>La leyenda dice que apoyar mejora tu sueño un 10%.</item>
+        <item>Prometo gastar tu dinero responsablemente. (Probablemente café).</item>
+        <item>Programar requiere 500% más cafeína. ¿Llenas el tanque?</item>
+        <item>Haz sonreír a un desarrollador. Es deducible de karma.</item>
+    </string-array>
+
+    <!-- Notifications & Dialogs -->
+    <string name="bedtime_reminder_title_notif">Recordatorio de Dormir</string>
+    <string name="bedtime_reminder_desc_notif">Te recuerda cuando es hora de dormir</string>
+    <string name="bedtime_reminder_text">Es hora de dormir.</string>
+    <string name="extend_15m_button">Extender 15m</string>
+    <string name="dismiss_button">Descartar</string>
+    
+    <string name="brain_dump_channel_name">Recordatorios Vaciado Mental</string>
+    <string name="brain_dump_channel_desc">Aviso antes de que desaparezcan notas</string>
+    <string name="brain_dump_title_notif">Nota desapareciendo pronto</string>
+    <string name="brain_dump_text_format">Tu nota se borrará en %s. Toca para ver.</string>
+    
+    <string name="support_prompt_title">Mensaje del Desarrollador</string>
+    <string name="support_prompt_nah">Nop</string>
+    <string name="support_prompt_check_it_out">Ver</string>
+    
+    <string name="support_banner_text">¡Toca aquí para apoyar al dev!</string>
+    <string name="support_banner_button">Apoyar</string>
+    
+    <string name="spotlight_got_it">¡Entendido!</string>
+    <string name="spotlight_next">Siguiente</string>
+
+    <!-- Setup Screen -->
+    <string name="setup_source_system">Audio Sistema</string>
+    <string name="setup_source_info">Info Sueño</string>
+    <string name="setup_resume_music">Reanudar música al iniciar</string>
+    <string name="setup_configure">CONFIGURAR</string>
+    <string name="setup_configure_toast">Consejo: Configura botones en Ajustes -> Bienestar</string>
+    <string name="setup_facts">Hechos</string>
+    <string name="setup_bios">Bios</string>
+    <string name="setup_history">Historia</string>
+    <string name="setup_volume_header">VOLUMEN</string>
+    <string name="setup_volume_limit">Límite Activo</string>
+    <string name="setup_volume_capped_cd">Volumen Limitado</string>
+    <string name="setup_safety_cap_toast">Límite de Seguridad: Zoom al rango del 40%.</string>
+    <string name="setup_duration_header">SELECCIONAR DURACIÓN</string>
+    <string name="setup_default_label">(defecto)</string>
+    <string name="setup_voice_female_cd">Voz Femenina</string>
+    <string name="setup_voice_male_cd">Voz Masculina</string>
+    <string name="play_cd">Reproducir</string>
+    <string name="pause_cd">Pausar</string>
+    <string name="stop_cd">Parar</string>
+</resources>

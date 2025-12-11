@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Fade Sleep Timer</string>
+    <string name="accessibility_service_description">Mengizinkan aplikasi mematikan layar secara otomatis setelah tidak ada aktivitas untuk menghemat baterai. Layanan ini hanya menggunakan fungsi kunci layar dan tidak memantau konten apa pun.</string>
+    
+    <!-- Settings Screen -->
+    <string name="settings_title">Pengaturan</string>
+    <string name="settings_back_content_description">Kembali</string>
+    
+    <!-- Support Button -->
+    <string name="support_development_title">Dukung Pengembangan</string>
+    <string name="support_development_subtitle">Buka fitur &amp; HAPUS iklan</string>
+    
+    <!-- Premium Features Button -->
+    <string name="premium_features_title">Fitur Premium</string>
+    <string name="premium_features_subtitle">Kelola hadiah</string>
+
+    <!-- Audio Settings -->
+    <string name="fade_out_duration_title">Durasi Fade Out</string>
+    <string name="fade_out_duration_desc">Waktu untuk mematikan audio</string>
+    <string name="unit_minutes_value">%1$dm</string>
+    <string name="volume_safety_cap_title">Batas Keamanan Volume</string>
+    <string name="volume_safety_cap_desc">Batasi 40% untuk keamanan telinga</string>
+    <string name="play_on_start_title">Putar Saat Mulai</string>
+    <string name="play_on_start_desc">Lanjutkan media saat timer mulai</string>
+    <string name="play_on_start_toast">Aktif. Media akan dilanjutkan saat mulai.</string>
+    <string name="smart_wait_title">Tunggu Pintar</string>
+    <string name="smart_wait_desc">Tunggu lagu selesai sebelum berhenti</string>
+    <string name="smart_wait_toast">Aktif. Timer menunggu lagu selesai.</string>
+
+    <!-- Visuals Settings -->
+    <string name="wedge_clock_title">Jam Wedge</string>
+    <string name="wedge_clock_desc">Visualisasi waktu menyusut</string>
+    <string name="super_dim_title">Overlay Super Redup</string>
+    <string name="super_dim_desc">Lapisan ekstra gelap untuk malam</string>
+    <string name="super_dim_toast">Aktif. Layar akan sangat redup saat mulai.</string>
+    <string name="grayscale_mode_title">Mode Abu-abu</string>
+    <string name="grayscale_mode_desc">Layar jadi abu-abu (mode membosankan)</string>
+    <string name="red_night_light_toast">Lampu Malam Merah aktif saat mulai</string>
+    <string name="grayscale_options_title">Opsi Abu-abu</string>
+    <string name="grayscale_mode_timer">Hanya Timer</string>
+    <string name="grayscale_desc_timer">Abu-abu hanya saat timer aktif</string>
+    <string name="grayscale_mode_always">Selalu Nyala</string>
+    <string name="grayscale_desc_always">Aplikasi selalu abu-abu</string>
+    <string name="grayscale_mode_night">Lampu Malam Merah</string>
+    <string name="grayscale_desc_night">Lapisan merah memblokir cahaya biru</string>
+    <string name="change_icon_title">Ganti Ikon?</string>
+    <string name="change_icon_message">Ganti ikon ke \'%1$s\'? Aplikasi mungkin tertutup.</string>
+    <string name="change_icon_button">Ganti Ikon</string>
+    <string name="premium_icons_title">Ikon Premium</string>
+    <string name="premium_icons_subtitle">(untuk pendukung)</string>
+    <string name="overlay_permission_desc">Untuk Lampu Merah, Fade butuh izin tampil di atas aplikasi lain.</string>
+    <string name="overlay_step_1">1. Ketuk \'Buka Pengaturan\' di bawah.</string>
+    <string name="overlay_step_2">2. Cari \'Fade Sleep Timer\'.</string>
+    <string name="overlay_step_3">3. Aktifkan \'Izinkan ditampilkan di atas aplikasi lain\'.</string>
+    <string name="open_settings_button">Buka Pengaturan</string>
+    
+    <!-- Open On Charge Dialog -->
+    <string name="open_on_charge_dialog_title">Pilih Waktu</string>
+    <string name="open_on_charge_dialog_desc">Kapan mulai otomatis saat cas?</string>
+    <string name="open_on_charge_always">Selalu</string>
+    <string name="open_on_charge_always_desc">Setiap kali dicolok</string>
+    <string name="open_on_charge_strict">20.00 - 04.00</string>
+    <string name="open_on_charge_strict_desc">Malam (20:00 - 04:00)</string>
+    <string name="open_on_charge_late">01.00 - 05.00</string>
+    <string name="open_on_charge_late_desc">Dini Hari (01:00 - 05:00)</string>
+    <string name="open_on_charge_morning">05.00 - 10.00</string>
+    <string name="open_on_charge_morning_desc">Pagi (05:00 - 10:00)</string>
+
+    <!-- Personalization Settings -->
+    <string name="airplane_mode_reminder_title">Pengingat Mode Pesawat</string>
+    <string name="airplane_mode_reminder_desc">Ingatkan aktifkan Mode Pesawat</string>
+    <string name="adjust_default_timer_title">Atur Timer Default</string>
+    <string name="adjust_default_timer_desc">Durasi awal &amp; cek pagi</string>
+    <string name="default_duration_label_format">Durasi Default: %1$s</string>
+    <string name="timer_check_in_title">Cek Timer</string>
+    <string name="timer_check_in_desc">Tanya penyesuaian jika sering diperpanjang</string>
+    <string name="smart_extend_title">Perpanjangan Pintar</string>
+    <string name="smart_extend_desc">Tambah 10m jika gerakan terdeteksi</string>
+    <string name="sensitivity_header">SENSITIVITAS</string>
+    <string name="sensitivity_low">Rendah</string>
+    <string name="sensitivity_med">Sedang</string>
+    <string name="sensitivity_high">Tinggi</string>
+    <string name="sensitivity_low_desc">Butuh gerakan signifikan</string>
+    <string name="sensitivity_med_desc">Seimbang (Disarankan)</string>
+    <string name="sensitivity_high_desc">Deteksi gerakan halus</string>
+    <string name="configure_buttons_title">Konfigurasi Tombol Media</string>
+    <string name="configure_buttons_desc">Pilih aplikasi yang ditampilkan</string>
+    <string name="smart_extend_help_title">Menggunakan Perpanjangan Pintar</string>
+    <string name="smart_extend_help_text">Letakkan ponsel di kasur dekat bantal.\n\nAkselerometer akan mendeteksi getaran di kasur untuk mengetahui jika kamu masih bangun.</string>
+    <string name="got_it_button">Mengerti</string>
+
+    <!-- Support Screen -->
+    <string name="beta_unlock_toast">Pembelian tidak tersedia di Beta. Ketuk hadiah 3x.</string>
+    <string name="beta_unlock_click_2">2 lagi...</string>
+    <string name="beta_unlock_click_1">1 lagi...</string>
+    <string name="beta_unlock_success_toast">Mode Premium Terbuka!</string>
+    <string name="support_title">Dukung Pengembang</string>
+    <string name="support_subtitle_unlocked">Semua fitur terbuka di Pengaturan</string>
+    <string name="support_subtitle_locked">Ketuk hadiah untuk kejutan</string>
+    <string name="support_close_button">Tutup</string>
+    <string name="support_rate_title">Nilai Aplikasi</string>
+    <string name="support_rate_subtitle_locked">Dapatkan lencana \'Pendukung\'</string>
+    <string name="support_rate_subtitle_unlocked">Kamu Pendukung resmi!</string>
+    <string name="price_free">Gratis</string>
+    <string name="support_rate_active_text">Pendukung</string>
+    <string name="support_share_title">Bagikan Aplikasi</string>
+    <string name="support_share_subtitle">Beritahu teman</string>
+    <string name="support_share_active_text">Dibagikan</string>
+    <string name="support_other_apps_title">Aplikasi saya lainnya</string>
+    <string name="support_other_apps_subtitle">Mereka KEREN lho!</string>
+    <string name="support_other_apps_active_text">Dilihat</string>
+    <string name="support_other_apps_error">Gagal membuka halaman dev</string>
+    <string name="support_visuals_title">Visual Pack</string>
+    <string name="support_visuals_desc">30+ Tema termasuk Neon, OLED</string>
+    <string name="support_visuals_desc_unlocked">30+ Tema ($0.99 - Opsional)</string>
+    <string name="support_visuals_select_cd">Pilih Tema</string>
+    <string name="status_unlocked">Terbuka</string>
+    <string name="support_hof_title">Hall of Fame &amp; Ikon</string>
+    <string name="support_hof_view_cd">Lihat Hall of Fame</string>
+
+    <!-- System Settings -->
+    <string name="dnd_title">Jangan Ganggu</string>
+    <string name="dnd_desc">Bisukan notifikasi saat timer jalan</string>
+    <string name="dnd_mode_priority">Standar (Prioritas)</string>
+    <string name="dnd_mode_alarms">Ketat (Hanya Alarm)</string>
+    <string name="battery_guard_title">Penjaga Baterai</string>
+    <string name="battery_guard_desc_format">Berhenti jika baterai &lt; %1$d%%</string>
+    <string name="stop_threshold_label">Batas Berhenti</string>
+    <string name="go_home_title">Ke Beranda Saat Mulai</string>
+    <string name="go_home_desc">Minimalkan aplikasi saat mulai</string>
+    <string name="open_on_charge_title">Buka Saat Cas</string>
+    <string name="open_on_charge_desc">Mulai otomatis saat dicolok</string>
+
+    <!-- Controls Settings -->
+    <string name="face_down_title">Balik untuk Mulai</string>
+    <string name="face_down_desc">Mulai &amp; mati layar (5d)</string>
+    <string name="face_down_toast">Aktif. Balik perangkat untuk mulai.</string>
+    <string name="shake_extend_title">Goyangkan untuk Tambah</string>
+    <string name="shake_extend_desc">Tambah 15m dengan goyangkan HP</string>
+    <string name="shake_extend_toast">Aktif. Goyangkan tambah 15m.</string>
+    <string name="pocket_mode_title">Mode Saku</string>
+    <string name="pocket_mode_desc">Cegah sentuhan tak sengaja</string>
+    <string name="pocket_mode_toast">Aktif. Layar terkunci interaksi.</string>
+    <string name="widgets_title">Widget Beranda</string>
+    <string name="widgets_desc">Tekan lama beranda untuk tambah widget.</string>
+
+    <!-- Info Settings -->
+    <string name="sleep_journey_title">Perjalanan Tidur</string>
+    <string name="sleep_journey_desc">Lencana, Rentetan &amp; Statistik</string>
+    <string name="hall_of_fame_title">Hall of Fame</string>
+    <string name="hall_of_fame_desc">Pendukung legendaris kami</string>
+    <string name="battery_data_saved_title">BATERAI &amp; DATA HEMAT</string>
+    <string name="battery_data_saved_desc">Estimasi berdasarkan rata-rata</string>
+    <string name="saved_minutes_format">%1$d m</string>
+    <string name="saved_hours_format">%.1f j</string>
+
+    <!-- Settings Titles -->
+    <string name="settings_category_system">Lanjutan &amp; Sistem</string>
+    <string name="settings_category_controls">Kontrol &amp; Interaksi</string>
+    <string name="settings_category_info">Info</string>
+    <string name="settings_category_audio">Audio &amp; Pemutaran</string>
+    <string name="settings_category_visuals">Visual &amp; Tampilan</string>
+    <string name="settings_category_wellness">Kesehatan &amp; Personal</string>
+    <string name="settings_category_control">Kontrol &amp; Interaksi</string>
+    <string name="settings_category_advanced">Lanjutan &amp; Sistem</string>
+    <string name="settings_category_awesome">Fitur Keren</string>
+    <string name="settings_category_personalization">Personalisasi</string>
+
+    <!-- Settings Components -->
+    <string name="unit_minutes_short">%1$dm</string>
+    <string name="unit_hours_short">%1$dj</string>
+    <string name="unit_hours_decimal_short">%1$sj</string>
+    <string name="add_timer_preset_title">Tambah Preset</string>
+    <string name="minutes_label_caps">Menit</string>
+    <string name="add_button_caps">Tambah</string>
+    <string name="remove_cd">Hapus</string>
+    <string name="topic_header">TOPIK</string>
+    <string name="change_timer_buttons_title">Ubah Tombol</string>
+    <string name="change_timer_buttons_subtitle">Sesuaikan durasi</string>
+    <string name="reset_default_button_text">Reset ke default</string>
+    <string name="new_badge">BARU</string>
+    <string name="expand_cd">Buka</string>
+    <string name="collapse_cd">Tutup</string>
+
+    <!-- Awesome Features Settings -->
+    <string name="bedtime_reminder_title">Pengingat Tidur</string>
+    <string name="bedtime_reminder_desc">Notifikasi waktunya tidur</string>
+    <string name="reminder_time_label">Waktu Pengingat</string>
+    <string name="prayer_reminder_title">Pengingat Doa</string>
+    <string name="prayer_reminder_desc">Jeda &amp; Berdoa sebelum tidur</string>
+    <string name="brain_dump_title">Brain Dump</string>
+    <string name="brain_dump_desc">Tulis pikiran sebelum tidur</string>
+    <string name="scripture_mode_title">Mode Kitab Suci</string>
+    <string name="scripture_mode_desc">Tampilkan ayat penenang</string>
+    <string name="scripture_topic_random">Kejutkan Saya! (Acak)</string>
+    <string name="wisdom_quotes_title">Kutipan Bijak</string>
+    <string name="wisdom_quotes_desc">Tampilkan kebijaksanaan teologi</string>
+    <string name="wisdom_category_peace">Damai &amp; Kenyamanan</string>
+    <string name="wisdom_desc_peace">Kecemasan, istirahat dan kepercayaan</string>
+    <string name="wisdom_category_glory">Kemuliaan Tuhan</string>
+    <string name="wisdom_desc_glory">Siapa Tuhan dan kendali-Nya</string>
+    <string name="wisdom_category_gospel">Injil &amp; Kasih Karunia</string>
+    <string name="wisdom_desc_gospel">Pengampunan dan keselamatan</string>
+    <string name="wisdom_category_living">Kebijaksanaan &amp; Hidup</string>
+    <string name="wisdom_desc_living">Doa dan iman praktis</string>
+    <string name="sleep_calc_title">Kalkulator Tidur</string>
+    <string name="sleep_calc_desc">Waktu bangun optimal</string>
+    <string name="alarm_button_setting_title">Tombol Alarm</string>
+    <string name="alarm_button_setting_desc">Tampilkan "Atur Alarm"</string>
+    <string name="breathing_guide_title">Panduan Napas Haptik</string>
+    <string name="breathing_guide_desc">Latihan napas dengan getaran</string>
+    <string name="haptic_vibration_title">Getaran Haptik</string>
+    <string name="haptic_vibration_desc">Aktifkan umpan balik sentuhan</string>
+    <string name="breathing_auto_start_title">Mulai Otomatis</string>
+    <string name="breathing_auto_start_desc">Mulai panduan otomatis</string>
+    <string name="breathing_duration_label">Durasi: %1$d mnt</string>
+    <string name="doomscroll_title">Kunci Anti-Kecanduan</string>
+    <string name="doomscroll_desc">blokir aplikasi candu</string>
+    <string name="grace_period_label">Masa Tenggang: %1$d mnt</string>
+    <string name="grace_period_desc">Boleh pakai sebentar sebelum blokir</string>
+    <string name="blocked_apps_label">Aplikasi Terblokir (%1$d)</string>
+    <string name="add_app_to_block_button">Blokir Aplikasi</string>
+    <string name="permission_required_title">Izin Diperlukan</string>
+    <string name="accessibility_explanation_doomscroll">Untuk memblokir, Fade butuh izin \'Aksesibilitas\'.</string>
+    <string name="instructions_label">Instruksi:</string>
+    <string name="accessibility_step_2_doomscroll">2. Cari \'Fade Sleep Timer\'.</string>
+    <string name="accessibility_step_3_doomscroll">3. Aktifkan.</string>
+    <string name="accessibility_step_4_doomscroll">4. Ketuk \'Izinkan\'.</string>
+    
+    <!-- Timer Capsule -->
+    <string name="stop_timer_content_description">Stop Timer</string>
+    
+    <!-- Presets Editor -->
+    <string name="timer_presets_title">Preset</string>
+    <string name="timer_presets_subtitle">Kustomisasi tombol</string>
+    <string name="add_button">Tambah</string>
+    <string name="reset_default_button">Reset</string>
+    <string name="add_preset_dialog_title">Tambah Preset</string>
+    <string name="minutes_label">Menit</string>
+    <string name="cancel_button">Batal</string>
+    
+    <!-- Settings Section -->
+    <string name="expand_content_description">Buka</string>
+    <string name="collapse_content_description">Tutup</string>
+    
+    <!-- General -->
+    <string name="new_label">BARU</string>
+    
+    <!-- Main Screen -->
+    <string name="app_title">Pengatur Waktu Tidur</string>
+    <string name="supporter_badge">Pendukung</string>
+    <string name="pocket_mode_active">Mode Saku Aktif</string>
+    <string name="pocket_mode_unlock_instruction">Ketuk dua kali untuk buka</string>
+    <string name="pocket_mode_unlocked_toast">Mode Saku Terbuka</string>
+    <string name="timer_started_minimizing_toast">Timer mulai. Meminimalkan...</string>
+    
+    <!-- Dialogs -->
+    <string name="shake_dialog_title">Goyangkan untuk Tambah</string>
+    <string name="shake_dialog_message">Kamu baru saja menggoyangkan! Tetap aktifkan fitur ini?</string>
+    <string name="keep_on_button">Biarkan</string>
+    <string name="turn_off_button">Matikan</string>
+    <string name="shake_disabled_toast">Fitur Goyangkan dinonaktifkan.</string>
+    
+    <!-- Spotlight Tour -->
+    <string name="spotlight_presets_title">Pilih Durasi ⏱️</string>
+    <string name="spotlight_presets_desc">Berapa lama sampai senyap? Musik akan mengecil perlahan.</string>
+    <string name="spotlight_media_title">Akses Media Cepat 🎵</string>
+    <string name="spotlight_media_desc">Ketuk \'Konfigurasi\' untuk tambah aplikasi (Spotify, YouTube, dll).</string>
+    <string name="spotlight_settings_title">Temukan Lebih Banyak ⚙️</string>
+    <string name="spotlight_settings_desc">Pengaturan punya latihan napas, doa, dan lainnya.</string>
+    
+    <!-- Morning Check -->
+    <string name="morning_check_yes_toast">Saran: Coba durasi lebih lama nanti malam.</string>
+    <string name="morning_check_no_toast">Bagus! Kami simpan preferensimu.</string>
+    
+    <!-- Content Descriptions -->
+    <string name="breathing_guide_cd">Panduan Pernapasan</string>
+    <string name="view_note_cd">Lihat Catatan</string>
+
+    <!-- Pre-Timer Screen -->
+    <string name="optimal_wake_time_label">WAKTU BANGUN OPTIMAL</string>
+    <string name="sleep_cycles_suffix"> (5 Siklus)</string>
+    <string name="set_alarm_button">SETEL ALARM</string>
+    <string name="pre_timer_settings_hint">Tips: Ubah di Pengaturan > Fitur Keren</string>
+    <string name="ready_to_sleep_title">Siap tidur?</string>
+    <string name="pre_timer_instruction">Cek ini sebelum mulai.</string>
+    <string name="fade_wake_up_alarm_message">Fade Bangun</string>
+    <string name="alarm_set_toast">Alarm disetel jam %s</string>
+    <string name="alarm_error_toast">Gagal setel alarm: %s</string>
+    <string name="airplane_mode_title">Mode Pesawat</string>
+    <string name="airplane_mode_desc">Tanpa gangguan radiasi</string>
+    <string name="settings_button_caps">PENGATURAN</string>
+    <string name="start_timer_button">MULAI</string>
+    <string name="cancel_cd">Batal</string>
+    <string name="illuminating_wisdom_loading">Menerangi...</string>
+    <string name="understanding_quote_title">Memahami Kutipan</string>
+    <string name="close_button">Tutup</string>
+    <string name="explanation_error_title">Tidak bisa jelaskan sekarang</string>
+
+    <!-- Permissions Screen -->
+    <string name="permissions_needed_title">Izin Diperlukan</string>
+    <string name="permissions_needed_desc">Untuk berjalan di latar belakang dan memudarkan audio.</string>
+    <string name="privacy_promise_cd">Privasi</string>
+    <string name="privacy_promise_title">Privasi - Tanpa Koleksi Data</string>
+    <string name="privacy_promise_body">Datamu milikmu. Saya tidak punya akses dan tidak ada yang dikirim ke cloud.</string>
+    <string name="open_source_cd">Open Source</string>
+    <string name="open_source_title">Kepercayaan itu didapat</string>
+    <string name="open_source_body">Fade itu Open Source. Siapapun bisa cek kodenya.</string>
+    <string name="view_source_code_button">Lihat Kode Sumber</string>
+    <string name="notifications_permission_title">Notifikasi</string>
+    <string name="notifications_enabled_desc">Aktif - Tampilkan status timer</string>
+    <string name="notifications_required_desc">Diperlukan untuk notifikasi.</string>
+    <string name="allowed_button">Diizinkan</string>
+    <string name="allow_button">Izinkan</string>
+    <string name="enabled_button">Aktif</string>
+    <string name="fix_button">Perbaiki</string>
+    <string name="unrestricted_battery_title">Baterai Tak Terbatas</string>
+    <string name="battery_enabled_desc">Aktif - Berjalan andal</string>
+    <string name="battery_critical_desc">Penting: Mencegah timer mati saat layar mati.</string>
+    <string name="accessibility_dialog_title">Aktifkan Mati Layar Otomatis</string>
+    <string name="accessibility_step_intro">Aktifkan Layanan Aksesibilitas manual:</string>
+    <string name="accessibility_step_1">1. Ketuk \'Ke Pengaturan\'.</string>
+    <string name="accessibility_step_2">2. Temukan \'Aplikasi Terinstal\'.</string>
+    <string name="accessibility_step_3">3. Ketuk \'Fade Sleep Timer\'.</string>
+    <string name="accessibility_step_4">4. Nyalakan tombolnya.</string>
+    <string name="go_to_settings_button">Ke Pengaturan</string>
+
+    <string name="auto_screen_off_title">Mati Layar Otomatis</string>
+    <string name="auto_screen_off_enabled_desc">Aktif - Mati setelah 3 mnt</string>
+    <string name="auto_screen_off_optional_desc">Opsional - Kunci jika tidak aktif</string>
+    <string name="enable_button">Aktifkan</string>
+    <string name="continue_button">Lanjut</string>
+
+    <!-- Support Prompts (Arrays) -->
+    <string-array name="review_prompts">
+        <item>Menikmati hening? 5 bintang membantu.</item>
+        <item>Tidur lebih cepat? Beritahu dunia (pelan-pelan).</item>
+        <item>Jika aplikasi membantu, ulasan membantu kami.</item>
+        <item>Tak ingin membangunkanmu, tapi ulasanmu berarti.</item>
+        <item>Masih bangun? Mungkin tulis ulasan.</item>
+        <item>Suka fade-nya? Jangan biarkan rating kami pudar.</item>
+        <item>Menulis ulasan itu menenangkan lho.</item>
+        <item>Bantu kami kalahkan mimpi buruk. Beri 5 bintang.</item>
+        <item>Nol iklan, nol biaya. Ulasan kecil?</item>
+        <item>Jadilah pahlawan. Selamatkan dev dari insomnia.</item>
+        <item>Kalau baca ini, kamu hutang ulasan. Bercanda...?</item>
+        <item>Tawaran terakhir: Ulas dan dapat tos virtual.</item>
+    </string-array>
+    
+    <string-array name="support_prompts">
+        <item>Saya punya anak. Mereka makan banyak. Dukung dev?</item>
+        <item>Monyet kode saya minta pisang. Tip kecil membantu.</item>
+        <item>Saya ngoding pakai piyama, tapi ini kerjaan. Belikan kopi?</item>
+        <item>Nikmati heningnya? Berkatilah anak-anak berisik yang saya abaikan.</item>
+        <item>Bayar sewa pakai "doa restu" tidak berhasil. Dukung?</item>
+        <item>Bantu buktikan ke istri kalau ini pekerjaan nyata.</item>
+        <item>9 dari 10 dokter sarankan dukung indie.</item>
+        <item>Menabung buat robot pelayan. Setiap sen membantu.</item>
+        <item>Konon mendukung dev meningkatkan kualitas tidur 10%.</item>
+        <item>Janji uangnya dipakai bijak (Kopi).</item>
+        <item>Ngoding butuh 500% lebih banyak kafein.</item>
+        <item>Buat dev tersenyum. Bagus buat karma.</item>
+    </string-array>
+
+    <!-- Notifications & Dialogs -->
+    <string name="bedtime_reminder_title_notif">Pengingat Tidur</string>
+    <string name="bedtime_reminder_desc_notif">Ingatkan waktunya tidur</string>
+    <string name="bedtime_reminder_text">Sudah waktunya tidur.</string>
+    <string name="extend_15m_button">Tambah 15m</string>
+    <string name="dismiss_button">Tutup</string>
+    
+    <string name="brain_dump_channel_name">Pengingat Ide</string>
+    <string name="brain_dump_channel_desc">Peringatan sebelum catatan hilang</string>
+    <string name="brain_dump_title_notif">Catatan segera hilang</string>
+    <string name="brain_dump_text_format">Catatan dihapus dalam %s. Ketuk untuk lihat.</string>
+    
+    <string name="support_prompt_title">Pesan dari Dev</string>
+    <string name="support_prompt_nah">Nggak</string>
+    <string name="support_prompt_check_it_out">Lihat</string>
+    
+    <string name="support_banner_text">Klik di sini untuk dukung dev!</string>
+    <string name="support_banner_button">Dukung</string>
+    
+    <string name="spotlight_got_it">Mengerti!</string>
+    <string name="spotlight_next">Lanjut</string>
+
+    <!-- Setup Screen -->
+    <string name="setup_source_system">Audio Sistem</string>
+    <string name="setup_source_info">Info Tidur</string>
+    <string name="setup_resume_music">Lanjut Musik</string>
+    <string name="setup_configure">KONFIGURASI</string>
+    <string name="setup_configure_toast">Tips: Konfigurasi tombol di Pengaturan -> Kesehatan</string>
+    <string name="setup_facts">Fakta</string>
+    <string name="setup_bios">Bios</string>
+    <string name="setup_history">Sejarah</string>
+    <string name="setup_volume_header">VOLUME</string>
+    <string name="setup_volume_limit">Batas Aktif</string>
+    <string name="setup_volume_capped_cd">Volume Dibatasi</string>
+    <string name="setup_safety_cap_toast">Batas Aman: Digeser ke rentang 40%.</string>
+    <string name="setup_duration_header">PILIH DURASI</string>
+    <string name="setup_default_label">(default)</string>
+    <string name="setup_voice_female_cd">Suara Wanita</string>
+    <string name="setup_voice_male_cd">Suara Pria</string>
+    <string name="play_cd">Putar</string>
+    <string name="pause_cd">Jeda</string>
+    <string name="stop_cd">Stop</string>
+</resources>

@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Fade Sleep Timer</string>
+    <string name="accessibility_service_description">อนุญาตให้แอปปิดหน้าจอโดยอัตโนมัติหลังจากไม่มีการใช้งานเป็นระยะเวลาหนึ่งเพื่อประหยัดแบตเตอรี่ บริการนี้ใช้ฟีเจอร์ล็อคหน้าจอเท่านั้นและไม่ได้สอดแนมเนื้อหาใดๆ</string>
+    
+    <!-- Settings Screen -->
+    <string name="settings_title">การตั้งค่า</string>
+    <string name="settings_back_content_description">กลับ</string>
+    
+    <!-- Support Button -->
+    <string name="support_development_title">สนับสนุนนักพัฒนา</string>
+    <string name="support_development_subtitle">ปลดล็อคฟีเจอร์ &amp; ลบโฆษณา</string>
+    
+    <!-- Premium Features Button -->
+    <string name="premium_features_title">ฟีเจอร์พรีเมียม</string>
+    <string name="premium_features_subtitle">จัดการรางวัล</string>
+
+    <!-- Audio Settings -->
+    <string name="fade_out_duration_title">ระยะเวลาเฟดออก</string>
+    <string name="fade_out_duration_desc">ใช้เวลาลดเสียงนานแค่ไหน</string>
+    <string name="unit_minutes_value">%1$d นาที</string>
+    <string name="volume_safety_cap_title">ขีดจำกัดความปลอดภัยของเสียง</string>
+    <string name="volume_safety_cap_desc">จำกัดที่ 40% เพื่อการได้ยินที่ปลอดภัย</string>
+    <string name="play_on_start_title">เล่นเมื่อเริ่ม</string>
+    <string name="play_on_start_desc">เล่นสื่อต่อเมื่อตัวจับเวลาเริ่ม</string>
+    <string name="play_on_start_toast">เปิดใช้งาน. สื่อจะเล่นต่อเมื่อเริ่ม.</string>
+    <string name="smart_wait_title">รออย่างชาญฉลาด</string>
+    <string name="smart_wait_desc">รอจนจบเพลง</string>
+    <string name="smart_wait_toast">เปิดใช้งาน. ตัวจับเวลาจะรอให้เพลงจบ.</string>
+
+    <!-- Visuals Settings -->
+    <string name="wedge_clock_title">นาฬิกาแบบลิ่ม</string>
+    <string name="wedge_clock_desc">แสดงเวลาเป็นรูปลิ่มที่หดเล็กลง</string>
+    <string name="super_dim_title">โอเวอร์เลย์หรี่แสงพิเศษ</string>
+    <string name="super_dim_desc">ฟิลเตอร์มืดพิเศษสำหรับกลางคืน</string>
+    <string name="super_dim_toast">เปิดใช้งาน. หน้าจอจะมืดลงเมื่อเริ่ม.</string>
+    <string name="grayscale_mode_title">โหมดสีเทา</string>
+    <string name="grayscale_mode_desc">ทำให้หน้าจอเป็นสีเทา (โหมดน่าเบื่อ)</string>
+    <string name="red_night_light_toast">แสงกลางคืนสีแดงจะทำงานเมื่อเริ่ม</string>
+    <string name="grayscale_options_title">ตัวเลือกสีเทา</string>
+    <string name="grayscale_mode_timer">เฉพาะตัวจับเวลา</string>
+    <string name="grayscale_desc_timer">สีเทาเฉพาะตอนตัวจับเวลาเดิน</string>
+    <string name="grayscale_mode_always">เปิดตลอดเวลา</string>
+    <string name="grayscale_desc_always">แอปเป็นสีเทาเสมอ</string>
+    <string name="grayscale_mode_night">แสงกลางคืนสีแดง</string>
+    <string name="grayscale_desc_night">ฟิลเตอร์สีแดงบล็อกแสงสีฟ้า</string>
+    <string name="change_icon_title">เปลี่ยนไอคอน?</string>
+    <string name="change_icon_message">เปลี่ยนไอคอนเป็น \'%1$s\'? แอปอาจรีสตาร์ท.</string>
+    <string name="change_icon_button">เปลี่ยนไอคอน</string>
+    <string name="premium_icons_title">ไอคอนพรีเมียม</string>
+    <string name="premium_icons_subtitle">(สำหรับผู้สนับสนุน)</string>
+    <string name="overlay_permission_desc">เพื่อใช้แสงสีแดง, Fade จำเป็นต้องแสดงทับแอปอื่น.</string>
+    <string name="overlay_step_1">1. แตะ \'เปิดการตั้งค่า\' ด้านล่าง.</string>
+    <string name="overlay_step_2">2. ค้นหา \'Fade Sleep Timer\'.</string>
+    <string name="overlay_step_3">3. เปิด \'อนุญาตให้แสดงทับแอปอื่น\'.</string>
+    <string name="open_settings_button">เปิดการตั้งค่า</string>
+    
+    <!-- Open On Charge Dialog -->
+    <string name="open_on_charge_dialog_title">เลือกเวลา</string>
+    <string name="open_on_charge_dialog_desc">เริ่มอัตโนมัติเมื่อชาร์จตอนไหน?</string>
+    <string name="open_on_charge_always">ตลอดเวลา</string>
+    <string name="open_on_charge_always_desc">ทุกครั้งที่เสียบชาร์จ</string>
+    <string name="open_on_charge_strict">20:00 - 04:00</string>
+    <string name="open_on_charge_strict_desc">ตอนเย็น (20:00 - 04:00)</string>
+    <string name="open_on_charge_late">01:00 - 05:00</string>
+    <string name="open_on_charge_late_desc">ดึกดื่น (01:00 - 05:00)</string>
+    <string name="open_on_charge_morning">05:00 - 10:00</string>
+    <string name="open_on_charge_morning_desc">ตอนเช้า (05:00 - 10:00)</string>
+
+    <!-- Personalization Settings -->
+    <string name="airplane_mode_reminder_title">เตือนโหมดเครื่องบิน</string>
+    <string name="airplane_mode_reminder_desc">เตือนให้เปิดโหมดเครื่องบิน</string>
+    <string name="adjust_default_timer_title">ปรับตัวจับเวลาเริ่มต้น</string>
+    <string name="adjust_default_timer_desc">เวลาเริ่มต้นและการเช็คอิน</string>
+    <string name="default_duration_label_format">เวลาเริ่มต้น: %1$s</string>
+    <string name="timer_check_in_title">เช็คอินตัวจับเวลา</string>
+    <string name="timer_check_in_desc">แนะนำให้ปรับหากขยายเวลาบ่อย</string>
+    <string name="smart_extend_title">ขยายเวลาอัจฉริยะ</string>
+    <string name="smart_extend_desc">เพิ่ม 10 นาทีหากตรวจพบการเคลื่อนไหว</string>
+    <string name="sensitivity_header">ความไว</string>
+    <string name="sensitivity_low">ต่ำ</string>
+    <string name="sensitivity_med">กลาง</string>
+    <string name="sensitivity_high">สูง</string>
+    <string name="sensitivity_low_desc">ต้องขยับแรง</string>
+    <string name="sensitivity_med_desc">สมดุล (แนะนำ)</string>
+    <string name="sensitivity_high_desc">ตรวจจับการขยับเล็กน้อย</string>
+    <string name="configure_buttons_title">ปุ่มสื่อ</string>
+    <string name="configure_buttons_desc">เลือกแอปที่จะแสดง</string>
+    <string name="smart_extend_help_title">การใช้ขยายเวลาอัจฉริยะ</string>
+    <string name="smart_extend_help_text">วางโทรศัพท์บนที่นอนข้างหมอน.\n\nเซ็นเซอร์ความเร่งจะตรวจจับการสั่นสะเทือนของที่นอนเพื่อดูว่าคุณตื่นอยู่หรือไม่.</string>
+    <string name="got_it_button">เข้าใจแล้ว</string>
+
+    <!-- Support Screen -->
+    <string name="beta_unlock_toast">ไม่มีการซื้อใน Beta. แตะไอคอนของขวัญ 3 ครั้ง.</string>
+    <string name="beta_unlock_click_2">อีก 2 ครั้ง...</string>
+    <string name="beta_unlock_click_1">อีก 1 ครั้ง...</string>
+    <string name="beta_unlock_success_toast">ปลดล็อคโหมดพรีเมียม!</string>
+    <string name="support_title">สนับสนุนนักพัฒนา</string>
+    <string name="support_subtitle_unlocked">ปลดล็อคทุกอย่างในการตั้งค่าแล้ว</string>
+    <string name="support_subtitle_locked">แตะของขวัญเพื่อดูเซอร์ไพรส์</string>
+    <string name="support_close_button">ปิด</string>
+    <string name="support_rate_title">ให้คะแนนแอป</string>
+    <string name="support_rate_subtitle_locked">ปลดล็อคตรา \'ผู้สนับสนุน\'</string>
+    <string name="support_rate_subtitle_unlocked">คุณคือผู้สนับสนุนอย่างเป็นทางการ!</string>
+    <string name="price_free">ฟรี</string>
+    <string name="support_rate_active_text">ผู้สนับสนุน</string>
+    <string name="support_share_title">แชร์แอป</string>
+    <string name="support_share_subtitle">บอกต่อเพื่อนๆ</string>
+    <string name="support_share_active_text">แชร์แล้ว</string>
+    <string name="support_other_apps_title">แอปอื่นของฉัน</string>
+    <string name="support_other_apps_subtitle">ฉันคิดว่ามันเจ๋งมาก!</string>
+    <string name="support_other_apps_active_text">ดูแล้ว</string>
+    <string name="support_other_apps_error">เปิดหน้านักพัฒนาไม่ได้</string>
+    <string name="support_visuals_title">แพ็คภาพ</string>
+    <string name="support_visuals_desc">30+ ธีมรวมถึง Neon, OLED</string>
+    <string name="support_visuals_desc_unlocked">30+ ธีม ($0.99 - ทางเลือก)</string>
+    <string name="support_visuals_select_cd">เลือกธีม</string>
+    <string name="status_unlocked">ปลดล็อคแล้ว</string>
+    <string name="support_hof_title">หอเกียรติยศ &amp; ไอคอน</string>
+    <string name="support_hof_view_cd">ดูหอเกียรติยศ</string>
+
+    <!-- System Settings -->
+    <string name="dnd_title">ห้ามรบกวน (DND)</string>
+    <string name="dnd_desc">ปิดเสียงการแจ้งเตือนขณะจับเวลา</string>
+    <string name="dnd_mode_priority">มาตรฐาน (ลำดับความสำคัญ)</string>
+    <string name="dnd_mode_alarms">เข้มงวด (เฉพาะนาฬิกาปลุก)</string>
+    <string name="battery_guard_title">ตัวป้องกันแบตเตอรี่</string>
+    <string name="battery_guard_desc_format">หยุดเมื่อแบต &lt; %1$d%%</string>
+    <string name="stop_threshold_label">เกณฑ์การหยุด</string>
+    <string name="go_home_title">ไปหน้าโฮมเมื่อเริ่ม</string>
+    <string name="go_home_desc">ย่อแอปเมื่อเริ่ม</string>
+    <string name="open_on_charge_title">เปิดเมื่อชาร์จ</string>
+    <string name="open_on_charge_desc">เริ่มอัตโนมัติเมื่อเสียบปลั๊ก</string>
+
+    <!-- Controls Settings -->
+    <string name="face_down_title">คว่ำเพื่อเริ่ม</string>
+    <string name="face_down_desc">เริ่ม &amp; ปิดหน้าจอ (5 วิ)</string>
+    <string name="face_down_toast">เปิดใช้งาน. คว่ำเครื่องเพื่อเริ่ม.</string>
+    <string name="shake_extend_title">เขย่าเพื่อขยาย</string>
+    <string name="shake_extend_desc">เขย่าเพื่อเพิ่ม 15 นาที</string>
+    <string name="shake_extend_toast">เปิดใช้งาน. เขย่าเพื่อ +15 นาที.</string>
+    <string name="pocket_mode_title">โหมดกระเป๋า</string>
+    <string name="pocket_mode_desc">ป้องกันการแตะโดยไม่ตั้งใจ</string>
+    <string name="pocket_mode_toast">เปิดใช้งาน. สัมผัสถูกบล็อค.</string>
+    <string name="widgets_title">วิดเจ็ตหน้าจอหลัก</string>
+    <string name="widgets_desc">กดค้างที่หน้าจอหลักเพื่อเพิ่มวิดเจ็ต.</string>
+
+    <!-- Info Settings -->
+    <string name="sleep_journey_title">การเดินทางแห่งการนอนหลับ</string>
+    <string name="sleep_journey_desc">ตรา, ลำดับความต่อเนื่อง &amp; สถิติ</string>
+    <string name="hall_of_fame_title">หอเกียรติยศ</string>
+    <string name="hall_of_fame_desc">ผู้สนับสนุนระดับตำนานของเรา</string>
+    <string name="battery_data_saved_title">ประหยัดแบต &amp; ข้อมูล</string>
+    <string name="battery_data_saved_desc">ประมาณจากค่าเฉลี่ย</string>
+    <string name="saved_minutes_format">%1$d นาที</string>
+    <string name="saved_hours_format">%.1f ชม.</string>
+
+    <!-- Settings Titles -->
+    <string name="settings_category_system">ขั้นสูง &amp; ระบบ</string>
+    <string name="settings_category_controls">การควบคุม &amp; การโต้ตอบ</string>
+    <string name="settings_category_info">ข้อมูล</string>
+    <string name="settings_category_audio">เสียง &amp; การเล่น</string>
+    <string name="settings_category_visuals">ภาพ &amp; การแสดงผล</string>
+    <string name="settings_category_wellness">สุขภาพ &amp; ส่วนตัว</string>
+    <string name="settings_category_control">การควบคุม &amp; การโต้ตอบ</string>
+    <string name="settings_category_advanced">ขั้นสูง &amp; ระบบ</string>
+    <string name="settings_category_awesome">ฟีเจอร์เจ๋งๆ</string>
+    <string name="settings_category_personalization">ความเป็นส่วนตัว</string>
+
+    <!-- Settings Components -->
+    <string name="unit_minutes_short">%1$d นาที</string>
+    <string name="unit_hours_short">%1$d ชม.</string>
+    <string name="unit_hours_decimal_short">%1$s ชม.</string>
+    <string name="add_timer_preset_title">เพิ่มพรีเซ็ต</string>
+    <string name="minutes_label_caps">นาที</string>
+    <string name="add_button_caps">เพิ่ม</string>
+    <string name="remove_cd">ลบ</string>
+    <string name="topic_header">หัวข้อ</string>
+    <string name="change_timer_buttons_title">เปลี่ยนปุ่ม</string>
+    <string name="change_timer_buttons_subtitle">ปรับแต่งเวลา</string>
+    <string name="reset_default_button_text">คืนค่าเริ่มต้น</string>
+    <string name="new_badge">ใหม่</string>
+    <string name="expand_cd">ขยาย</string>
+    <string name="collapse_cd">ย่อ</string>
+
+    <!-- Awesome Features Settings -->
+    <string name="bedtime_reminder_title">เตือนเวลาเข้านอน</string>
+    <string name="bedtime_reminder_desc">แจ้งเตือนเวลาที่จะนอน</string>
+    <string name="reminder_time_label">เวลา</string>
+    <string name="prayer_reminder_title">เตือนให้อธิษฐาน</string>
+    <string name="prayer_reminder_desc">หยุดและอธิษฐานก่อนนอน</string>
+    <string name="brain_dump_title">ระบายสมอง</string>
+    <string name="brain_dump_desc">จดความคิดก่อนนอน</string>
+    <string name="scripture_mode_title">โหมดพระคัมภีร์</string>
+    <string name="scripture_mode_desc">แสดงข้อพระคัมภีร์ที่ผ่อนคลาย</string>
+    <string name="scripture_topic_random">เซอร์ไพรส์ฉัน! (สุ่ม)</string>
+    <string name="wisdom_quotes_title">คำคมภูมิปัญญา</string>
+    <string name="wisdom_quotes_desc">ภูมิปัญญาทางเทววิทยาที่ลึกซึ้ง</string>
+    <string name="wisdom_category_peace">สันติสุข &amp; การปลอบโยน</string>
+    <string name="wisdom_desc_peace">ความกังวล, การพักผ่อน และความวางใจ</string>
+    <string name="wisdom_category_glory">พระสิริของพระเจ้า</string>
+    <string name="wisdom_desc_glory">พระเจ้าคือใครและอำนาจอธิปไตยของพระองค์</string>
+    <string name="wisdom_category_gospel">ข่าวประเสริฐ &amp; พระคุณ</string>
+    <string name="wisdom_desc_gospel">การให้อภัยและความรอด</string>
+    <string name="wisdom_category_living">การใช้ชีวิต &amp; ปัญญา</string>
+    <string name="wisdom_desc_living">การอธิษฐานและความเชื่อที่ปฏิบัติจริง</string>
+    <string name="sleep_calc_title">เครื่องคำนวณการนอน</string>
+    <string name="sleep_calc_desc">เวลาตื่นนอนที่ดีที่สุด</string>
+    <string name="alarm_button_setting_title">ปุ่มนาฬิกาปลุก</string>
+    <string name="alarm_button_setting_desc">แสดง "ตั้งนาฬิกาปลุก"</string>
+    <string name="breathing_guide_title">คู่มือการหายใจแบบสัมผัส</string>
+    <string name="breathing_guide_desc">หายใจตามการสั่นสะเทือน</string>
+    <string name="haptic_vibration_title">การสั่นแบบสัมผัส</string>
+    <string name="haptic_vibration_desc">เปิดการตอบสนองด้วยการสัมผัส</string>
+    <string name="breathing_auto_start_title">เริ่มอัตโนมัติ</string>
+    <string name="breathing_auto_start_desc">เริ่มคู่มืออัตโนมัติ</string>
+    <string name="breathing_duration_label">ระยะเวลา: %1$d นาที</string>
+    <string name="doomscroll_title">ล็อคการเสพติด</string>
+    <string name="doomscroll_desc">บล็อคแอปที่ทำให้ติด</string>
+    <string name="grace_period_label">ระยะผ่อนผัน: %1$d นาที</string>
+    <string name="grace_period_desc">การใช้งานสั้นๆ ก่อนบล็อค</string>
+    <string name="blocked_apps_label">บล็อคแล้ว (%1$d)</string>
+    <string name="add_app_to_block_button">บล็อคแอป</string>
+    <string name="permission_required_title">ต้องการสิทธิ์</string>
+    <string name="accessibility_explanation_doomscroll">เพื่อบล็อค, Fade ต้องการสิทธิ์ \'การช่วยเหลือพิเศษ\'.</string>
+    <string name="instructions_label">คำแนะนำ:</string>
+    <string name="accessibility_step_2_doomscroll">2. ค้นหา \'Fade Sleep Timer\'.</string>
+    <string name="accessibility_step_3_doomscroll">3. เปิดใช้งาน.</string>
+    <string name="accessibility_step_4_doomscroll">4. แตะ \'อนุญาต\'.</string>
+    
+    <!-- Timer Capsule -->
+    <string name="stop_timer_content_description">หยุดตัวจับเวลา</string>
+    
+    <!-- Presets Editor -->
+    <string name="timer_presets_title">พรีเซ็ต</string>
+    <string name="timer_presets_subtitle">ปรับแต่งปุ่ม</string>
+    <string name="add_button">เพิ่ม</string>
+    <string name="reset_default_button">รีเซ็ต</string>
+    <string name="add_preset_dialog_title">เพิ่มพรีเซ็ต</string>
+    <string name="minutes_label">นาที</string>
+    <string name="cancel_button">ยกเลิก</string>
+    
+    <!-- Settings Section -->
+    <string name="expand_content_description">ขยาย</string>
+    <string name="collapse_content_description">ย่อ</string>
+    
+    <!-- General -->
+    <string name="new_label">ใหม่</string>
+    
+    <!-- Main Screen -->
+    <string name="app_title">ตั้งเวลาปิด</string>
+    <string name="supporter_badge">ผู้สนับสนุน</string>
+    <string name="pocket_mode_active">โหมดกระเป๋าทำงาน</string>
+    <string name="pocket_mode_unlock_instruction">แตะสองครั้งเพื่อตปลดล็อค</string>
+    <string name="pocket_mode_unlocked_toast">ปลดล็อคโหมดกระเป๋าแล้ว</string>
+    <string name="timer_started_minimizing_toast">เริ่มจับเวลา. กำลังย่อ...</string>
+    
+    <!-- Dialogs -->
+    <string name="shake_dialog_title">เขย่าเพื่อขยาย</string>
+    <string name="shake_dialog_message">คุณเขย่า! จะเปิดฟีเจอร์นี้ไว้ไหม?</string>
+    <string name="keep_on_button">เปิดไว้</string>
+    <string name="turn_off_button">ปิด</string>
+    <string name="shake_disabled_toast">เขย่าเพื่อขยายถูกปิดใช้งาน.</string>
+    
+    <!-- Spotlight Tour -->
+    <string name="spotlight_presets_title">เลือกเวลา ⏱️</string>
+    <string name="spotlight_presets_desc">เงียบเมื่อไหร่? เพลงจะค่อยๆ เบาลง.</string>
+    <string name="spotlight_media_title">เข้าถึงสื่อด่วน 🎵</string>
+    <string name="spotlight_media_desc">แตะ \'กำหนดค่า\' เพื่อเพิ่มแอปของคุณ (Spotify, YouTube ฯลฯ).</string>
+    <string name="spotlight_settings_title">ค้นพบเพิ่มเติม ⚙️</string>
+    <string name="spotlight_settings_desc">การตั้งค่ามีแบบฝึกหัดการหายใจ, การอธิษฐาน และอื่นๆ.</string>
+    
+    <!-- Morning Check -->
+    <string name="morning_check_yes_toast">คำแนะนำ: ลองเวลานานขึ้นคืนนี้.</string>
+    <string name="morning_check_no_toast">เยี่ยม! เราจะเก็บการตั้งค่าของคุณไว้.</string>
+    
+    <!-- Content Descriptions -->
+    <string name="breathing_guide_cd">คู่มือการหายใจ</string>
+    <string name="view_note_cd">ดูโน้ต</string>
+
+    <!-- Pre-Timer Screen -->
+    <string name="optimal_wake_time_label">เวลาตื่นที่ดีที่สุด</string>
+    <string name="sleep_cycles_suffix"> (5 รอบ)</string>
+    <string name="set_alarm_button">ตั้งนาฬิกาปลุก</string>
+    <string name="pre_timer_settings_hint">คำแนะนำ: ปรับแต่งใน การตั้งค่า > ฟีเจอร์เจ๋งๆ</string>
+    <string name="ready_to_sleep_title">พร้อมจะนอนหรือยัง?</string>
+    <string name="pre_timer_instruction">ตรวจสอบก่อนเริ่ม.</string>
+    <string name="fade_wake_up_alarm_message">Fade ปลุก</string>
+    <string name="alarm_set_toast">ตั้งปลุกสำหรับ %s</string>
+    <string name="alarm_error_toast">ข้อผิดพลาดปลุก: %s</string>
+    <string name="airplane_mode_title">โหมดเครื่องบิน</string>
+    <string name="airplane_mode_desc">ไม่มีสิ่งรบกวน &amp; ไม่มีรังสี</string>
+    <string name="settings_button_caps">การตั้งค่า</string>
+    <string name="start_timer_button">เริ่ม</string>
+    <string name="cancel_cd">ยกเลิก</string>
+    <string name="illuminating_wisdom_loading">กำลังส่องสว่าง...</string>
+    <string name="understanding_quote_title">ทำความเข้าใจคำคม</string>
+    <string name="close_button">ปิด</string>
+    <string name="explanation_error_title">อธิบายไม่ได้ตอนนี้</string>
+
+    <!-- Permissions Screen -->
+    <string name="permissions_needed_title">ต้องการสิทธิ์</string>
+    <string name="permissions_needed_desc">เพื่อทำงานในพื้นหลังและลดเสียง.</string>
+    <string name="privacy_promise_cd">ความเป็นส่วนตัว</string>
+    <string name="privacy_promise_title">ความเป็นส่วนตัว - ข้อมูลศูนย์</string>
+    <string name="privacy_promise_body">ข้อมูลของคุณเป็นของคุณ ฉันเข้าถึงไม่ได้และไม่มีอะไรส่งไปที่คลาวด์.</string>
+    <string name="open_source_cd">โอเพ่นซอร์ส</string>
+    <string name="open_source_title">ความไว้วางใจมาจากการกระทำ</string>
+    <string name="open_source_body">Fade เป็นโอเพ่นซอร์ส ใครๆ ก็ตรวจสอบโค้ดได้.</string>
+    <string name="view_source_code_button">ดูซอร์สโค้ด</string>
+    <string name="notifications_permission_title">การแจ้งเตือน</string>
+    <string name="notifications_enabled_desc">เปิดใช้งาน - แสดงสถานะ</string>
+    <string name="notifications_required_desc">จำเป็นสำหรับการแจ้งเตือน.</string>
+    <string name="allowed_button">อนุญาตแล้ว</string>
+    <string name="allow_button">อนุญาต</string>
+    <string name="enabled_button">เปิดใช้งาน</string>
+    <string name="fix_button">แก้ไข</string>
+    <string name="unrestricted_battery_title">แบตเตอรี่ไม่จำกัด</string>
+    <string name="battery_enabled_desc">เปิดใช้งาน - ทำงานอย่างน่าเชื่อถือ</string>
+    <string name="battery_critical_desc">สำคัญ: ป้องกันตัวจับเวลาหยุดทำงานเมื่อปิดหน้าจอ.</string>
+    <string name="accessibility_dialog_title">เปิดใช้งานการปิดหน้าจออัตโนมัติ</string>
+    <string name="accessibility_step_intro">เปิดบริการช่วยเหลือพิเศษด้วยตนเอง:</string>
+    <string name="accessibility_step_1">1. แตะ \'ไปที่การตั้งค่า\'.</string>
+    <string name="accessibility_step_2">2. ค้นหา \'แอปที่ติดตั้ง\'.</string>
+    <string name="accessibility_step_3">3. แตะ \'Fade Sleep Timer\'.</string>
+    <string name="accessibility_step_4">4. เปิดสวิตช์.</string>
+    <string name="go_to_settings_button">ไปที่การตั้งค่า</string>
+
+    <string name="auto_screen_off_title">ปิดหน้าจออัตโนมัติ</string>
+    <string name="auto_screen_off_enabled_desc">เปิดใช้งาน - ปิดหลัง 3 นาที</string>
+    <string name="auto_screen_off_optional_desc">ทางเลือก - ล็อคเมื่อไม่ได้ใช้งาน</string>
+    <string name="enable_button">เปิดใช้งาน</string>
+    <string name="continue_button">ดำเนินการต่อ</string>
+
+    <!-- Support Prompts (Arrays) -->
+    <string-array name="review_prompts">
+        <item>เพลิดเพลินกับความเงียบ? 5 ดาวช่วยได้.</item>
+        <item>หลับเร็วขึ้น? บอกโลก (อย่างเงียบๆ).</item>
+        <item>ถ้าแอปใช้งานได้ดี รีวิวก็มีค่าสำหรับเรา.</item>
+        <item>ไม่อยากปลุกคุณ แต่ให้คะแนนเราหน่อย.</item>
+        <item>ยังไม่หลับ? อาจจะเขียนรีวิว.</item>
+        <item>ชอบ Fade? อย่าให้ดาวของเราจางหายไป.</item>
+        <item>การเขียนรีวิวนั้นผ่อนคลาย คุณรู้ไหม?</item>
+        <item>ช่วยเราต่อสู้กับฝันร้าย ให้ 5 ดาว.</item>
+        <item>ไม่มีโฆษณา ไม่มีค่าใช้จ่าย รีวิวเล็กๆ น้อยๆ?</item>
+        <item>เป็นฮีโร่ ช่วยนักพัฒนาจากการนอนไม่หลับ.</item>
+        <item>ถ้าคุณกำลังอ่านสิ่งนี้ คุณติดรีวิวเราอยู่ ล้อเล่น...?</item>
+        <item>ข้อเสนอสุดท้าย: รีวิวแล้วรับไฮไฟว์เสมือนจริง.</item>
+    </string-array>
+    
+    <string-array name="support_prompts">
+        <item>ฉันมีลูก พวกเขากินเยอะ สนับสนุนนักพัฒนา?</item>
+        <item>ลิงโค้ดของฉันอยากได้กล้วย ทิปไหม?</item>
+        <item>ฉันเขียนโค้ดในชุดนอน แต่นี่ก็เป็นงาน กาแฟสักแก้ว?</item>
+        <item>ชอบความเงียบ? ชื่นชมลูกๆ ที่เสียงดังของฉันที่ฉันกำลังเมินอยู่.</item>
+        <item>พยายามจ่ายค่าเช่าด้วย "ความรู้สึกดีๆ" แล้ว ไม่เวิร์ค.</item>
+        <item>ช่วยพิสูจน์ให้ภรรยาเห็นว่านี่คืองานจริงๆ.</item>
+        <item>หมอ 9 ใน 10 คนแนะนำให้สนับสนุนนักพัฒนาอินดี้.</item>
+        <item>กำลังเก็บเงินซื้อหุ่นยนต์พ่อบ้าน ทุกสตางค์มีค่า.</item>
+        <item>มีข่าวลือว่าการสนับสนุนช่วยปรับปรุงคุณภาพการนอนหลับ 10%.</item>
+        <item>สัญญาว่าจะใช้จ่ายอย่างชาญฉลาด (กาแฟ).</item>
+        <item>การเขียนโค้ดใช้คาเฟอีนมากกว่า 500%.</item>
+        <item>ทำให้นักพัฒนายิ้ม ดีต่อกรรม.</item>
+    </string-array>
+
+    <!-- Notifications & Dialogs -->
+    <string name="bedtime_reminder_title_notif">เวลานอน</string>
+    <string name="bedtime_reminder_desc_notif">เตือนความจำเวลานอน</string>
+    <string name="bedtime_reminder_text">ได้เวลานอนแล้ว.</string>
+    <string name="extend_15m_button">ต่อเวลา 15 นาที</string>
+    <string name="dismiss_button">ปิด</string>
+    
+    <string name="brain_dump_channel_name">เตือนความคิด</string>
+    <string name="brain_dump_channel_desc">คำเตือนก่อนลบโน้ต</string>
+    <string name="brain_dump_title_notif">โน้ตจะหายไปในไม่ช้า</string>
+    <string name="brain_dump_text_format">โน้ตจะถูกลบใน %s แตะเพื่อดู.</string>
+    
+    <string name="support_prompt_title">ข้อความจากนักพัฒนา</string>
+    <string name="support_prompt_nah">ไม่</string>
+    <string name="support_prompt_check_it_out">ดูเลย</string>
+    
+    <string name="support_banner_text">คลิกที่นี่เพื่อสนับสนุนนักพัฒนา!</string>
+    <string name="support_banner_button">สนับสนุน</string>
+    
+    <string name="spotlight_got_it">เข้าใจแล้ว!</string>
+    <string name="spotlight_next">ถัดไป</string>
+
+    <!-- Setup Screen -->
+    <string name="setup_source_system">เสียงระบบ</string>
+    <string name="setup_source_info">ข้อมูลการนอนหลับ</string>
+    <string name="setup_resume_music">เล่นเพลงต่อ</string>
+    <string name="setup_configure">กำหนดค่า</string>
+    <string name="setup_configure_toast">คำแนะนำ: กำหนดค่าปุ่มใน การตั้งค่า -> สุขภาพ</string>
+    <string name="setup_facts">ความจริง</string>
+    <string name="setup_bios">ประวัติ</string>
+    <string name="setup_history">ประวัติ</string>
+    <string name="setup_volume_header">เสียง</string>
+    <string name="setup_volume_limit">เปิดขีดจำกัด</string>
+    <string name="setup_volume_capped_cd">จำกัดเสียงแล้ว</string>
+    <string name="setup_safety_cap_toast">ขีดจำกัดความปลอดภัย: ปรับขนาดเป็นช่วง 40%.</string>
+    <string name="setup_duration_header">เลือกเวลา</string>
+    <string name="setup_default_label">(ค่าเริ่มต้น)</string>
+    <string name="setup_voice_female_cd">เสียงผู้หญิง</string>
+    <string name="setup_voice_male_cd">เสียงผู้ชาย</string>
+    <string name="play_cd">เล่น</string>
+    <string name="pause_cd">หยุดชั่วคราว</string>
+    <string name="stop_cd">หยุด</string>
+</resources>
