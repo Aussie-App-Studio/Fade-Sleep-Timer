@@ -46,8 +46,21 @@ class TimerService : Service() {
     private var batteryGuardThreshold: Int = 15
     private var isWaitingForTrackEnd: Boolean = false
     private var extensionsCount: Int = 0
+    private var shakeExtensionCount: Int = 0
+    private var smartExtendCount: Int = 0
     private var batteryReceiver: android.content.BroadcastReceiver? = null
     private val serviceScope = CoroutineScope(Dispatchers.Main + Job())
+    
+    // Extension Limits
+    private val MAX_SHAKE_EXTENSIONS = 6   // 6 x 15 min = 90 min max
+    private val MAX_SMART_EXTENSIONS = 3   // 3 x 10 min = 30 min max
+    
+    // Gradual Screen Dimming
+    private var gradualDimEnabled: Boolean = false
+    private var initialBrightness: Int = -1
+    private var initialBrightnessMode: Int = -1
+    private var lastSetBrightness: Int = -1
+    private var brightnessUserOverridden: Boolean = false
 
     private val CHANNEL_ID = "SleepTimerChannel"
     private val NOTIFICATION_ID = 1
@@ -77,6 +90,9 @@ class TimerService : Service() {
         const val EXTRA_SMART_EXTEND = "SMART_EXTEND"
         const val EXTRA_SMART_EXTEND_SENSITIVITY = "SMART_EXTEND_SENSITIVITY"
         
+        // Gradual Screen Dimming
+        const val EXTRA_GRADUAL_DIM = "GRADUAL_DIM"
+        
         // Anti-Doomscroll Extras
         const val EXTRA_DOOMSCROLL_ENABLED = "DOOMSCROLL_ENABLED"
         const val EXTRA_DOOMSCROLL_APPS = "DOOMSCROLL_APPS" // Arraylist of strings
@@ -103,7 +119,11 @@ class TimerService : Service() {
         createNotificationChannel()
         
         sensorHelper = com.gollan.fadesleeptimer.util.SensorHelper(this, onShake = {
-            extendTimer()
+            // Check limit before extending
+            if (shakeExtensionCount < MAX_SHAKE_EXTENSIONS) {
+                extendTimer(15, "Shake")
+                shakeExtensionCount++
+            }
             // Track usage for onboarding
             val prefs = getSharedPreferences("controls_prefs", Context.MODE_PRIVATE)
             val usage = prefs.getInt("shake_usage", 0) + 1
@@ -139,7 +159,7 @@ class TimerService : Service() {
                 stopPlayback(fadeOut = false)
             }
             ACTION_EXTEND -> {
-                extendTimer()
+                extendTimer(15, "Manual")
             }
             ACTION_TOGGLE_AUDIO -> {
                 if (TimerRepository.isAudioPlaying.value) {
@@ -171,6 +191,9 @@ class TimerService : Service() {
                 // Read Smart Extend Config
                 smartExtendEnabled = intent?.getBooleanExtra(EXTRA_SMART_EXTEND, false) ?: false
                 smartExtendSensitivity = intent?.getStringExtra(EXTRA_SMART_EXTEND_SENSITIVITY) ?: "MEDIUM"
+                
+                // Read Gradual Dim Config
+                gradualDimEnabled = intent?.getBooleanExtra(EXTRA_GRADUAL_DIM, false) ?: false
 
                 sensorHelper?.updateConfig(
                     faceDown = false, 
@@ -206,7 +229,11 @@ class TimerService : Service() {
              TimerRepository.setRunningState(false)
         }
         
+        // Reset extension counters for new session
         extensionsCount = 0
+        shakeExtensionCount = 0
+        smartExtendCount = 0
+        TimerRepository.resetExtensions()
         
         // 2. Start Foreground
         val notificationText = if (onlyAudio) "Sleepy Info Playing" else "Timer Running: $durationMinutes min"
@@ -214,6 +241,21 @@ class TimerService : Service() {
 
         // 3. Save initial volume
         initialVolume = audioManager?.getStreamVolume(AudioManager.STREAM_MUSIC) ?: 0
+        
+        // 4. Save initial brightness (if gradual dim enabled)
+        if (gradualDimEnabled && Settings.System.canWrite(this)) {
+            try {
+                initialBrightness = Settings.System.getInt(contentResolver, Settings.System.SCREEN_BRIGHTNESS)
+                initialBrightnessMode = Settings.System.getInt(contentResolver, Settings.System.SCREEN_BRIGHTNESS_MODE)
+                // Set to manual mode for control
+                Settings.System.putInt(contentResolver, Settings.System.SCREEN_BRIGHTNESS_MODE, Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL)
+                lastSetBrightness = initialBrightness
+                brightnessUserOverridden = false
+            } catch (e: Exception) {
+                e.printStackTrace()
+                gradualDimEnabled = false // Disable if we can't read
+            }
+        }
 
         // 5. Play Audio logic
         // If "Built-in Noise" is selected (NOT SYSTEM)
@@ -293,23 +335,25 @@ class TimerService : Service() {
         }
     }
 
-    private fun extendTimer(minutes: Int = 15) {
+    private fun extendTimer(minutes: Int = 15, source: String = "Manual") {
         extensionsCount++
         // Add minutes
         val addMillis = minutes * 60 * 1000L
         currentTimeLeftMillis += addMillis
         currentTotalDurationMillis += addMillis // Extend total too so progress bar doesn't break
 
-        // Update Repository with new total
+        // Update Repository with new total and extension info
         TimerRepository.setTotalDuration(currentTotalDurationMillis / 1000 / 60)
+        TimerRepository.addExtension(minutes, source)
         
         // Restart timer with new time
         startFadeTimer(currentTimeLeftMillis)
         updateWidgets()
         
-        // Update notification
+        // Update notification with extension info
         val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-        val reason = if (minutes == 10) "Timer Auto-Extended (Movement)" else "Timer Extended"
+        val totalExtended = TimerRepository.extensionMinutes.value
+        val reason = "Extended +${totalExtended}m ($source)"
         notificationManager.notify(NOTIFICATION_ID, createNotification(reason))
     }
 
@@ -370,21 +414,48 @@ class TimerService : Service() {
                         fadeAnchorStartVol = currentSysVol.toFloat()
                     }
 
-                    // 3. Calculate Target Volume
+                    // 3. Calculate Target Volume using EXPONENTIAL curve for natural perception
                     val fadeDuration = fadeAnchorDuration ?: FADE_WINDOW_MILLIS
                     val startVol = fadeAnchorStartVol ?: internalVolumeTracker!!
                     
                     // Ensure we don't divide by zero
                     if (fadeDuration > 0) {
-                        val progress = millisUntilFinished / fadeDuration.toFloat() // 1.0 -> 0.0
+                        val linearProgress = millisUntilFinished / fadeDuration.toFloat() // 1.0 -> 0.0
                         // Clamp progress to 1.0 just in case
-                        val safeProgress = progress.coerceIn(0f, 1f)
+                        val safeProgress = linearProgress.coerceIn(0f, 1f)
                         
-                        val targetVolFloat = startVol * safeProgress
+                        // Apply exponential ease-out curve for more natural volume perception
+                        // This keeps volume higher longer, then drops more gradually at the end
+                        val easedProgress = safeProgress * safeProgress // Quadratic ease
+                        
+                        val targetVolFloat = startVol * easedProgress
                         val targetVol = targetVolFloat.toInt()
                         
                         audioManager?.setStreamVolume(AudioManager.STREAM_MUSIC, targetVol, 0)
                         lastSetTargetVol = targetVol
+                        
+                        // BRIGHTNESS DIMMING (same curve as volume)
+                        if (gradualDimEnabled && !brightnessUserOverridden && initialBrightness > 0) {
+                            try {
+                                val currentBrightness = Settings.System.getInt(contentResolver, Settings.System.SCREEN_BRIGHTNESS)
+                                
+                                // Detect user override: if brightness moved UP at all (user increased it)
+                                // Even 1 tick upward means user wants control - stop dimming immediately
+                                if (lastSetBrightness > 0 && currentBrightness > lastSetBrightness) {
+                                    // User increased brightness - stop and leave it alone
+                                    brightnessUserOverridden = true
+                                } else {
+                                    // Calculate target brightness (minimum 10 so screen doesn't go totally black)
+                                    val targetBrightnessFloat = initialBrightness * easedProgress
+                                    val targetBrightness = maxOf(10, targetBrightnessFloat.toInt())
+                                    
+                                    Settings.System.putInt(contentResolver, Settings.System.SCREEN_BRIGHTNESS, targetBrightness)
+                                    lastSetBrightness = targetBrightness
+                                }
+                            } catch (e: Exception) {
+                                e.printStackTrace()
+                            }
+                        }
                     }
                 } else {
                     // Outside fade window, ensure state is clean
@@ -400,9 +471,10 @@ class TimerService : Service() {
             private var lastSetTargetVol: Int = -1
 
             override fun onFinish() {
-                // Smart Extend Check
-                if (smartExtendEnabled && sensorHelper?.hasMovedRecently(30000) == true) {
-                     extendTimer(10)
+                // Smart Extend Check with limit
+                if (smartExtendEnabled && smartExtendCount < MAX_SMART_EXTENSIONS && sensorHelper?.hasMovedRecently(30000) == true) {
+                     smartExtendCount++
+                     extendTimer(10, "Movement")
                      return
                 }
 
@@ -464,6 +536,20 @@ class TimerService : Service() {
                     notificationManager.setInterruptionFilter(previousInterruptionFilter!!)
                 }
                 previousInterruptionFilter = null
+            }
+            
+            // Restore Brightness
+            if (initialBrightness > 0 && Settings.System.canWrite(this)) {
+                try {
+                    Settings.System.putInt(contentResolver, Settings.System.SCREEN_BRIGHTNESS, initialBrightness)
+                    if (initialBrightnessMode >= 0) {
+                        Settings.System.putInt(contentResolver, Settings.System.SCREEN_BRIGHTNESS_MODE, initialBrightnessMode)
+                    }
+                    initialBrightness = -1
+                    initialBrightnessMode = -1
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                }
             }
             
             stopNightFilter()
@@ -691,9 +777,9 @@ class TimerService : Service() {
             e.printStackTrace()
         }
 
-        // Mute
-        audioManager?.setStreamVolume(AudioManager.STREAM_MUSIC, 0, 0)
-
+        // Send PAUSE key FIRST before changing volume
+        simulateMediaKey(KeyEvent.KEYCODE_MEDIA_PAUSE)
+        
         // Request Focus to Pause (Abandon Focus)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
              val focusRequest = AudioFocusRequest.Builder(AudioManager.AUDIOFOCUS_GAIN)
@@ -705,11 +791,12 @@ class TimerService : Service() {
             audioManager?.abandonAudioFocus(audioFocusChangeListener)
         }
         
-        // Also send PAUSE key for good measure
-        simulateMediaKey(KeyEvent.KEYCODE_MEDIA_PAUSE)
-        
-        // Restore initial volume after pausing
-        audioManager?.setStreamVolume(AudioManager.STREAM_MUSIC, initialVolume, 0)
+        // Small delay to let media apps respond to pause before restoring volume
+        // This prevents the brief audio pop at full volume
+        serviceScope.launch {
+            delay(300) // Wait for media to pause
+            audioManager?.setStreamVolume(AudioManager.STREAM_MUSIC, initialVolume, 0)
+        }
     }
 
     private fun simulateMediaKey(keyCode: Int) {

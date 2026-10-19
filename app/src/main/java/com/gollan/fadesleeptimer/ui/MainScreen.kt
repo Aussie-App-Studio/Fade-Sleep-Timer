@@ -200,6 +200,16 @@ fun MainScreen(
             settingsViewModel.consumeOpenSupport()
         }
     }
+    
+    // Listen for Hall of Fame Welcome (after purchase)
+    var showHallOfFameWelcomeDialog by remember { mutableStateOf(false) }
+    val hallOfFameWelcomeEvent by settingsViewModel.showHallOfFameWelcome.collectAsState()
+    LaunchedEffect(hallOfFameWelcomeEvent) {
+        if (hallOfFameWelcomeEvent) {
+            showHallOfFameWelcomeDialog = true
+            settingsViewModel.consumeHallOfFameWelcome()
+        }
+    }
 
     // Spotlight Tour State
     var showSpotlightTour by remember { mutableStateOf(false) }
@@ -271,7 +281,7 @@ fun MainScreen(
                     val activity = context as? android.app.Activity
                     
                     when (tier) {
-                        "visual_pack" -> {
+                        "visual_pack", "visuals" -> {
                             if (activity != null) settingsViewModel.purchaseProduct(activity, "visual_pack")
                             else Toast.makeText(context, "Error: Cannot start purchase", Toast.LENGTH_SHORT).show()
                         }
@@ -634,6 +644,9 @@ fun MainScreen(
 
         // Pre-Timer Overlay
         if (showPreFlight) {
+            BackHandler {
+                showPreFlight = false
+            }
             PreTimerScreen(
                 settings = settings,
                 durationMinutes = pendingDuration,
@@ -684,6 +697,9 @@ fun MainScreen(
         
         // Brain Dump Viewer (Read-Only)
         if (showBrainDumpViewer && savedBrainDumpContent != null) {
+            BackHandler {
+                showBrainDumpViewer = false
+            }
             BrainDumpViewer(
                 content = savedBrainDumpContent!!,
                 onDismiss = { showBrainDumpViewer = false },
@@ -728,7 +744,22 @@ fun MainScreen(
                 onConfirm = { name ->
                     settingsViewModel.setImmortalized(name)
                     showHallOfFameJoinDialog = false
-                }
+                },
+                showFormLink = !settings.hallOfFameFormOpened,
+                onOpenForm = { settingsViewModel.setHallOfFameFormOpened() }
+            )
+        }
+        
+        // Hall of Fame Welcome Dialog (after purchase)
+        if (showHallOfFameWelcomeDialog) {
+            HallOfFameWelcomeDialog(
+                onDismiss = { showHallOfFameWelcomeDialog = false },
+                onConfirm = { name ->
+                    settingsViewModel.setImmortalized(name)
+                    showHallOfFameWelcomeDialog = false
+                },
+                showFormLink = !settings.hallOfFameFormOpened,
+                onOpenForm = { settingsViewModel.setHallOfFameFormOpened() }
             )
         }
         
@@ -773,6 +804,10 @@ fun MainScreen(
 
         // Spotlight Tour Overlay
         if (showSpotlightTour) {
+            BackHandler {
+                settingsViewModel.markOnboardingSeen()
+                showSpotlightTour = false
+            }
             val timerPresetsTitle = stringResource(R.string.spotlight_presets_title)
             val timerPresetsDesc = stringResource(R.string.spotlight_presets_desc)
             val mediaButtonsTitle = stringResource(R.string.spotlight_media_title)

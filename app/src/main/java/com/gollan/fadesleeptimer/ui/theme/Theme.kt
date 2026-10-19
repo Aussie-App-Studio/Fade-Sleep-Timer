@@ -145,7 +145,7 @@ private val GirlyPinkScheme = darkColorScheme(
     tertiary = Color(0xFFE11D48)
 )
 
-// 7. Manly Blue
+// 7. Boyish Blue
 private val ManlyBlueScheme = darkColorScheme(
     primary = Color(0xFF3B82F6),
     onPrimary = Color.White,

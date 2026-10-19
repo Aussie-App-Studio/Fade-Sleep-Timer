@@ -7,4 +7,5 @@
     android:canPerformGestures="false"
     android:canRequestFilterKeyEvents="false"
     android:canRetrieveWindowContent="false"
+    android:isAccessibilityTool="false"
     android:notificationTimeout="0" />

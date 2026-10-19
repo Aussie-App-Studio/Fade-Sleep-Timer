@@ -76,6 +76,7 @@ data class AppSettings(
     // Hall of Fame
     val isImmortalized: Boolean = false,
     val hallOfFameName: String? = null,
+    val hallOfFameFormOpened: Boolean = false,
     // Support Tiers
     val isRated: Boolean = false,
     val isShared: Boolean = false, // New
@@ -130,7 +131,9 @@ data class AppSettings(
     val unlockedBadges: Set<String> = emptySet(),
     // Smart Extend (Movement Detection)
     val smartExtendEnabled: Boolean = false,
-    val smartExtendSensitivity: SmartExtendSensitivity = SmartExtendSensitivity.MEDIUM
+    val smartExtendSensitivity: SmartExtendSensitivity = SmartExtendSensitivity.MEDIUM,
+    // Gradual Screen Dimming
+    val gradualDimEnabled: Boolean = false
 )
 
 enum class SmartExtendSensitivity {

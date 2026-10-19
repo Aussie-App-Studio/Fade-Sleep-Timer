@@ -61,8 +61,6 @@ fun SetupScreen(
     Column(verticalArrangement = Arrangement.spacedBy(24.dp)) {
 
         // 1. SOURCE TOGGLE
-        // 1. SOURCE SELECTION SCROLL
-        // 1. SOURCE TOGGLE
         Card(
             shape = RoundedCornerShape(16.dp),
             colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
@@ -147,7 +145,8 @@ fun SetupScreen(
                     if (settings.spotifyButtonVisible) {
                         item {
                             AppShortcutButton(
-                                text = "Spotify",
+                                text = stringResource(R.string.button_spotify),
+                                contentDescription = stringResource(R.string.cd_open_spotify),
                                 icon = Icons.Rounded.MusicNote,
                                 brandColor = spotifyGreen,
                                 packageName = "com.spotify.music",
@@ -158,7 +157,8 @@ fun SetupScreen(
                     if (settings.ytMusicButtonVisible) {
                         item {
                             AppShortcutButton(
-                                text = "YT Music",
+                                text = stringResource(R.string.button_youtube_music),
+                                contentDescription = stringResource(R.string.cd_open_youtube_music),
                                 icon = Icons.Rounded.PlayCircle,
                                 brandColor = youtubeRed,
                                 packageName = "com.google.android.apps.youtube.music",
@@ -169,7 +169,8 @@ fun SetupScreen(
                     if (settings.audibleButtonVisible) {
                         item {
                             AppShortcutButton(
-                                text = "Audible",
+                                text = stringResource(R.string.button_audible),
+                                contentDescription = stringResource(R.string.cd_open_audible),
                                 icon = Icons.AutoMirrored.Rounded.MenuBook,
                                 brandColor = audibleOrange,
                                 packageName = "com.audible.application",
@@ -180,7 +181,8 @@ fun SetupScreen(
                     if (settings.youtubeButtonVisible) {
                         item {
                             AppShortcutButton(
-                                text = "YouTube",
+                                text = stringResource(R.string.button_youtube),
+                                contentDescription = stringResource(R.string.cd_open_youtube),
                                 icon = Icons.Rounded.SmartDisplay,
                                 brandColor = youtubeRed,
                                 packageName = "com.google.android.youtube",
@@ -191,7 +193,8 @@ fun SetupScreen(
                     if (settings.youversionButtonVisible) {
                         item {
                             AppShortcutButton(
-                                text = "Bible",
+                                text = stringResource(R.string.button_bible),
+                                contentDescription = stringResource(R.string.cd_open_bible),
                                 icon = Icons.AutoMirrored.Rounded.MenuBook,
                                 brandColor = Color(0xFF8B4513), // Brown/Rust
                                 packageName = "com.sjo.yourversion",
@@ -202,7 +205,8 @@ fun SetupScreen(
                     if (settings.appleMusicButtonVisible) {
                         item {
                             AppShortcutButton(
-                                text = "Apple Music",
+                                text = stringResource(R.string.button_apple_music),
+                                contentDescription = stringResource(R.string.cd_open_apple_music),
                                 icon = Icons.Rounded.MusicNote,
                                 brandColor = Color(0xFFFFFFFF), // White
                                 packageName = "com.apple.android.music",
@@ -213,7 +217,8 @@ fun SetupScreen(
                     if (settings.podcastsButtonVisible) {
                         item {
                             AppShortcutButton(
-                                text = "Podcasts",
+                                text = stringResource(R.string.button_podcasts),
+                                contentDescription = stringResource(R.string.cd_open_podcasts),
                                 icon = Icons.Rounded.Mic,
                                 brandColor = Color(0xFF892CA0), // Purple
                                 packageName = "com.google.android.apps.podcasts",
@@ -224,7 +229,8 @@ fun SetupScreen(
                     if (settings.amazonMusicButtonVisible) {
                         item {
                             AppShortcutButton(
-                                text = "Amazon Music",
+                                text = stringResource(R.string.button_amazon_music),
+                                contentDescription = stringResource(R.string.cd_open_amazon_music),
                                 icon = Icons.Rounded.MusicNote,
                                 brandColor = Color(0xFF1DB0C4), // Teal
                                 packageName = "com.amazon.mp3",
@@ -235,7 +241,8 @@ fun SetupScreen(
                     if (settings.streamingButtonVisible) {
                         item {
                             AppShortcutButton(
-                                text = "Streaming",
+                                text = stringResource(R.string.button_streaming),
+                                contentDescription = stringResource(R.string.cd_open_streaming),
                                 icon = Icons.Rounded.Tv,
                                 brandColor = Color(0xFF4A90E2), // Blue
                                 packageName = "com.netflix.mediaclient",
@@ -246,7 +253,8 @@ fun SetupScreen(
                     if (settings.calmButtonVisible) {
                         item {
                             AppShortcutButton(
-                                text = "Calm",
+                                text = stringResource(R.string.button_calm),
+                                contentDescription = stringResource(R.string.cd_open_calm),
                                 icon = Icons.Rounded.Spa,
                                 brandColor = Color(0xFF169BDB), // Calm blue
                                 packageName = "com.calm.android",
@@ -257,7 +265,8 @@ fun SetupScreen(
                     if (settings.headspaceButtonVisible) {
                         item {
                             AppShortcutButton(
-                                text = "Headspace",
+                                text = stringResource(R.string.button_headspace),
+                                contentDescription = stringResource(R.string.cd_open_headspace),
                                 icon = Icons.Rounded.SelfImprovement,
                                 brandColor = Color(0xFFF4794E), // Headspace orange
                                 packageName = "com.getsomeheadspace.android",
@@ -428,14 +437,11 @@ fun SetupScreen(
         }
 
         // 3. VOLUME SLIDER
-        if (settings.volumeSafetyCap) {
-            val context = LocalContext.current
-            LaunchedEffect(Unit) {
-                val prefs = context.getSharedPreferences("app_prefs", android.content.Context.MODE_PRIVATE)
-                if (!prefs.getBoolean("safety_cap_explained", false)) {
-                     android.widget.Toast.makeText(context, context.getString(R.string.setup_safety_cap_toast), android.widget.Toast.LENGTH_LONG).show()
-                     prefs.edit().putBoolean("safety_cap_explained", true).apply()
-                }
+        // Show toast each time safety cap becomes active
+        val toastContext = LocalContext.current
+        LaunchedEffect(settings.volumeSafetyCap) {
+            if (settings.volumeSafetyCap) {
+                android.widget.Toast.makeText(toastContext, toastContext.getString(R.string.setup_safety_cap_toast), android.widget.Toast.LENGTH_LONG).show()
             }
         }
 
@@ -512,6 +518,7 @@ fun SetupScreen(
                         minutes = min,
                         shouldGlow = shouldGlowPresets,
                         isDefault = (min == settings.defaultDuration),
+                        modifier = Modifier.fillMaxWidth(),
                         onClick = { 
                             if (onStartRequest != null) {
                                 onStartRequest(min.toLong())
@@ -542,6 +549,7 @@ fun SetupScreen(
 @Composable
 fun AppShortcutButton(
     text: String,
+    contentDescription: String,
     icon: ImageVector,
     brandColor: Color,
     packageName: String,
@@ -550,11 +558,23 @@ fun AppShortcutButton(
     val context = LocalContext.current
     val interactionSource = remember { MutableInteractionSource() }
     val isPressed by interactionSource.collectIsPressedAsState()
+    
+    // Track launching state for brief visual feedback
+    var isLaunching by remember { mutableStateOf(false) }
+    
+    // Reset launching state after a short delay
+    LaunchedEffect(isLaunching) {
+        if (isLaunching) {
+            kotlinx.coroutines.delay(500)
+            isLaunching = false
+        }
+    }
 
-    // COLORS: Gray by default. Brand color when pressed.
-    val borderColor = if (isPressed) brandColor else MaterialTheme.colorScheme.surfaceVariant
-    val containerColor = if (isPressed) brandColor.copy(alpha = 0.15f) else MaterialTheme.colorScheme.surface
-    val contentColor = if (isPressed) brandColor else MaterialTheme.colorScheme.onSurfaceVariant
+    // COLORS: Gray by default. Brand color when pressed or launching.
+    val showActive = isPressed || isLaunching
+    val borderColor = if (showActive) brandColor else MaterialTheme.colorScheme.surfaceVariant
+    val containerColor = if (showActive) brandColor.copy(alpha = 0.15f) else MaterialTheme.colorScheme.surface
+    val contentColor = if (showActive) brandColor else MaterialTheme.colorScheme.onSurfaceVariant
 
     Card(
         shape = RoundedCornerShape(16.dp),
@@ -566,6 +586,7 @@ fun AppShortcutButton(
                 interactionSource = interactionSource,
                 indication = null, // Disable default ripple to allow pure color shift
                 onClick = {
+                    isLaunching = true
                     viewModel.openApp(context, packageName)
                 }
             )
@@ -577,7 +598,7 @@ fun AppShortcutButton(
         ) {
             Icon(
                 icon,
-                contentDescription = null,
+                contentDescription = contentDescription,
                 tint = contentColor,
                 modifier = Modifier.size(28.dp)
             )
@@ -736,7 +757,7 @@ fun SourceButton(text: String, isActive: Boolean, modifier: Modifier = Modifier,
 }
 
 @Composable
-fun PresetCard(minutes: Int, shouldGlow: Boolean = false, isDefault: Boolean = false, onClick: () -> Unit) {
+fun PresetCard(minutes: Int, shouldGlow: Boolean = false, isDefault: Boolean = false, modifier: Modifier = Modifier, onClick: () -> Unit) {
     val interactionSource = remember { MutableInteractionSource() }
     val isPressed by interactionSource.collectIsPressedAsState()
     
@@ -747,7 +768,7 @@ fun PresetCard(minutes: Int, shouldGlow: Boolean = false, isDefault: Boolean = f
         shape = RoundedCornerShape(16.dp),
         colors = CardDefaults.cardColors(containerColor = containerColor),
         border = BorderStroke(1.dp, borderColor),
-        modifier = Modifier
+        modifier = modifier
             .height(60.dp)
             .pulsingGlow(
                 enabled = shouldGlow,

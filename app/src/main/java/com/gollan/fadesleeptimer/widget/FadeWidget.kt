@@ -58,140 +58,201 @@ class FadeWidget : GlanceAppWidget() {
         val size = androidx.glance.LocalSize.current
         val isSmall = size.height < 100.dp || size.width < 150.dp
         
-        // Brand Colors
-        // val surfaceColor = Color(0xFF1C1B1F) // Unused
-        val primaryColor = Color(0xFFD0BCFF)
-        val onSurfaceColor = Color(0xFFE6E1E5)
-        val surfaceVariant = Color(0xFF49454F) 
+        // Premium Color Palette
+        val accentPurple = Color(0xFFA78BFA)     // Soft violet
+        val accentBlue = Color(0xFF818CF8)       // Indigo
+        val textPrimary = Color(0xFFF1F5F9)      // Almost white
+        val textSecondary = Color(0xFF94A3B8)    // Muted gray
+        val surfaceLight = Color(0xFF334155)     // Slate for buttons
+        val dangerRed = Color(0xFFF87171)        // Soft red
+        val dangerBg = Color(0xFF7F1D1D)         // Dark red bg
+        
         Box(
             modifier = GlanceModifier
                 .fillMaxSize()
                 .background(androidx.glance.ImageProvider(com.gollan.fadesleeptimer.R.drawable.widget_background_gradient))
-                .padding(8.dp),
+                .padding(12.dp),
             contentAlignment = Alignment.Center
         ) {
-            // Background Watermark (Subtle Texture)
-            if (!isSmall) {
-                androidx.glance.Image(
-                    provider = androidx.glance.ImageProvider(com.gollan.fadesleeptimer.R.mipmap.ic_launcher), // Using app icon or valid drawable
-                    contentDescription = null,
-                    modifier = GlanceModifier
-                        .size(80.dp)
-                        .padding(bottom = 30.dp),
-                     colorFilter = androidx.glance.ColorFilter.tint(ColorProvider(Color.White.copy(alpha = 0.1f)))
-                )
-            }
             if (isSmall) {
-                // COMPACT MODE (Row Layout)
-                 if (isRunning) {
-                     Row(verticalAlignment = Alignment.CenterVertically) {
-                         Text(
-                            text = timeLeft,
-                            style = TextStyle(
-                                color = ColorProvider(primaryColor),
-                                fontSize = 16.sp,
-                                fontWeight = FontWeight.Bold
+                // ═══════════════════════════════════════════
+                // COMPACT MODE - Minimal elegant design
+                // ═══════════════════════════════════════════
+                if (isRunning) {
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        modifier = GlanceModifier.fillMaxWidth()
+                    ) {
+                        // Time display with glow effect simulation
+                        Column(modifier = GlanceModifier.defaultWeight()) {
+                            Text(
+                                text = timeLeft,
+                                style = TextStyle(
+                                    color = ColorProvider(accentPurple),
+                                    fontSize = 20.sp,
+                                    fontWeight = FontWeight.Bold
+                                )
                             )
-                        )
-                        Spacer(modifier = GlanceModifier.width(8.dp))
-                        // Stop Icon Button (Text for now, keep it simple)
+                        }
+                        
+                        // Stop button - Compact pill
                         Button(
-                            text = "Stop",
+                            text = "✕",
                             onClick = androidx.glance.appwidget.action.actionStartService(
-                                android.content.Intent(androidx.glance.LocalContext.current, TimerService::class.java).setAction(TimerService.ACTION_STOP)
+                                android.content.Intent(androidx.glance.LocalContext.current, TimerService::class.java)
+                                    .setAction(TimerService.ACTION_STOP)
                             ),
                             colors = ButtonDefaults.buttonColors(
-                                backgroundColor = ColorProvider(Color(0xFF8B0000)),
-                                contentColor = ColorProvider(Color.White)
-                            )
+                                backgroundColor = ColorProvider(dangerBg),
+                                contentColor = ColorProvider(dangerRed)
+                            ),
+                            modifier = GlanceModifier.size(36.dp)
                         )
-                     }
-                 } else {
-                     Button(
-                        text = "Start",
+                    }
+                } else {
+                    // Idle state - Single beautiful button
+                    Button(
+                        text = "💤 Sleep",
                         onClick = androidx.glance.appwidget.action.actionStartService(
-                            android.content.Intent(androidx.glance.LocalContext.current, TimerService::class.java).setAction(TimerService.ACTION_START)
+                            android.content.Intent(androidx.glance.LocalContext.current, TimerService::class.java)
+                                .setAction(TimerService.ACTION_START)
                         ),
                         colors = ButtonDefaults.buttonColors(
-                            backgroundColor = ColorProvider(primaryColor),
-                            contentColor = ColorProvider(Color(0xFF381E72))
-                        )
+                            backgroundColor = ColorProvider(accentPurple),
+                            contentColor = ColorProvider(Color(0xFF1e1b4b))
+                        ),
+                        modifier = GlanceModifier.fillMaxWidth()
                     )
-                 }
+                }
             } else {
-                // EXPANDED MODE (Column Layout - Original)
+                // ═══════════════════════════════════════════
+                // EXPANDED MODE - Premium dashboard feel
+                // ═══════════════════════════════════════════
                 Column(
                     horizontalAlignment = Alignment.CenterHorizontally,
-                    verticalAlignment = Alignment.CenterVertically
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = GlanceModifier.fillMaxSize()
                 ) {
                     if (isRunning) {
+                        // ── Active Timer State ──
+                        
+                        // Small label
+                        Text(
+                            text = "SLEEPING IN",
+                            style = TextStyle(
+                                color = ColorProvider(textSecondary),
+                                fontSize = 10.sp,
+                                fontWeight = FontWeight.Medium
+                            )
+                        )
+                        
+                        Spacer(modifier = GlanceModifier.height(4.dp))
+                        
+                        // Large time display
                         Text(
                             text = timeLeft,
                             style = TextStyle(
-                                color = ColorProvider(primaryColor),
-                                fontSize = 32.sp,
+                                color = ColorProvider(textPrimary),
+                                fontSize = 40.sp,
                                 fontWeight = FontWeight.Bold
                             )
                         )
+                        
+                        // Subtle underline text
                         Text(
-                            text = "REMAINING",
+                            text = "minutes",
                             style = TextStyle(
-                                color = ColorProvider(onSurfaceColor.copy(alpha = 0.6f)),
-                                fontSize = 10.sp
+                                color = ColorProvider(accentPurple.copy(alpha = 0.7f)),
+                                fontSize = 12.sp,
+                                fontWeight = FontWeight.Normal
                             )
                         )
-                        Spacer(modifier = GlanceModifier.height(12.dp))
+                        
+                        Spacer(modifier = GlanceModifier.height(16.dp))
+                        
+                        // Action buttons row
                         Row(
-                            horizontalAlignment = Alignment.CenterHorizontally
+                            horizontalAlignment = Alignment.CenterHorizontally,
+                            modifier = GlanceModifier.fillMaxWidth()
                         ) {
                             val context = androidx.glance.LocalContext.current
-                            // +15m Button
+                            
+                            // Extend button - Soft style
                             Button(
-                                text = "+15m",
+                                text = "+15",
                                 onClick = androidx.glance.appwidget.action.actionStartService(
-                                    android.content.Intent(context, TimerService::class.java).setAction(TimerService.ACTION_EXTEND)
+                                    android.content.Intent(context, TimerService::class.java)
+                                        .setAction(TimerService.ACTION_EXTEND)
                                 ),
                                 colors = ButtonDefaults.buttonColors(
-                                    backgroundColor = ColorProvider(surfaceVariant),
-                                    contentColor = ColorProvider(onSurfaceColor)
+                                    backgroundColor = ColorProvider(surfaceLight),
+                                    contentColor = ColorProvider(textPrimary)
                                 ),
-                                modifier = GlanceModifier.height(48.dp)
+                                modifier = GlanceModifier.defaultWeight().height(44.dp)
                             )
-                            Spacer(modifier = GlanceModifier.width(12.dp))
-                            // Stop Button
+                            
+                            Spacer(modifier = GlanceModifier.width(8.dp))
+                            
+                            // Stop button - Danger style
                             Button(
                                 text = "Stop",
                                 onClick = androidx.glance.appwidget.action.actionStartService(
-                                    android.content.Intent(context, TimerService::class.java).setAction(TimerService.ACTION_STOP)
+                                    android.content.Intent(context, TimerService::class.java)
+                                        .setAction(TimerService.ACTION_STOP)
                                 ),
                                 colors = ButtonDefaults.buttonColors(
-                                    backgroundColor = ColorProvider(Color(0xFF8B0000)), 
-                                    contentColor = ColorProvider(Color.White)
+                                    backgroundColor = ColorProvider(dangerBg),
+                                    contentColor = ColorProvider(dangerRed)
                                 ),
-                                modifier = GlanceModifier.height(48.dp)
+                                modifier = GlanceModifier.defaultWeight().height(44.dp)
                             )
                         }
                     } else {
+                        // ── Idle State ──
                         val context = androidx.glance.LocalContext.current
+                        
+                        // Moon icon (emoji as text)
                         Text(
-                            text = "Ready to Sleep?",
+                            text = "🌙",
                             style = TextStyle(
-                                color = ColorProvider(onSurfaceColor),
+                                fontSize = 32.sp
+                            )
+                        )
+                        
+                        Spacer(modifier = GlanceModifier.height(8.dp))
+                        
+                        // Greeting text
+                        Text(
+                            text = "Ready to rest?",
+                            style = TextStyle(
+                                color = ColorProvider(textPrimary),
                                 fontSize = 16.sp,
                                 fontWeight = FontWeight.Medium
                             )
                         )
-                        Spacer(modifier = GlanceModifier.height(12.dp))
+                        
+                        Text(
+                            text = "Start your sleep timer",
+                            style = TextStyle(
+                                color = ColorProvider(textSecondary),
+                                fontSize = 12.sp
+                            )
+                        )
+                        
+                        Spacer(modifier = GlanceModifier.height(16.dp))
+                        
+                        // Start button - Premium gradient simulation
                         Button(
                             text = "Start Timer",
                             onClick = androidx.glance.appwidget.action.actionStartService(
-                                android.content.Intent(context, TimerService::class.java).setAction(TimerService.ACTION_START)
+                                android.content.Intent(context, TimerService::class.java)
+                                    .setAction(TimerService.ACTION_START)
                             ),
                             colors = ButtonDefaults.buttonColors(
-                                backgroundColor = ColorProvider(primaryColor),
-                                contentColor = ColorProvider(Color(0xFF381E72)) // OnPrimary
+                                backgroundColor = ColorProvider(accentPurple),
+                                contentColor = ColorProvider(Color(0xFF1e1b4b))
                             ),
-                             modifier = GlanceModifier.fillMaxWidth().height(48.dp)
+                            modifier = GlanceModifier.fillMaxWidth().height(48.dp)
                         )
                     }
                 }

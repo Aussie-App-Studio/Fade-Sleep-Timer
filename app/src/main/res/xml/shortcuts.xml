@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!-- App Action 1: Start Sleep Timer -->
+    <!-- App Action 1: Start Sleep Timer (Google Assistant) -->
     <!-- Voice: "Hey Google, start sleep timer" or "Start sleep timer for 30 minutes" -->
     <capability android:name="actions.intent.START_EXERCISE">
         <intent
@@ -17,7 +17,7 @@
         </intent>
     </capability>
 
-    <!-- App Action 2: Stop Sleep Timer -->
+    <!-- App Action 2: Stop Sleep Timer (Google Assistant) -->
     <!-- Voice: "Hey Google, stop sleep timer" -->
     <capability android:name="actions.intent.STOP_EXERCISE">
         <intent
@@ -30,13 +30,13 @@
         </intent>
     </capability>
 
-    <!-- Static shortcut: Quick start timer -->
+    <!-- Static Shortcut 1: Quick Start (uses default duration) -->
     <shortcut
-        android:shortcutId="start_timer"
+        android:shortcutId="quick_start"
         android:enabled="true"
-        android:icon="@mipmap/ic_launcher"
-        android:shortcutShortLabel="@string/app_name"
-        android:shortcutLongLabel="@string/app_name">
+        android:icon="@drawable/ic_shortcut_play"
+        android:shortcutShortLabel="@string/shortcut_quick_start"
+        android:shortcutLongLabel="@string/shortcut_quick_start_long">
         <intent
             android:action="android.intent.action.VIEW"
             android:targetPackage="com.gollan.fadesleeptimer"
@@ -47,18 +47,51 @@
         <capability-binding android:key="actions.intent.START_EXERCISE" />
     </shortcut>
 
-    <!-- Static shortcut: Extend timer (long-press shortcut only) -->
+    <!-- Static Shortcut 2: Start 30 Minute Timer -->
+    <shortcut
+        android:shortcutId="start_30m"
+        android:enabled="true"
+        android:icon="@drawable/ic_shortcut_timer"
+        android:shortcutShortLabel="@string/shortcut_30m"
+        android:shortcutLongLabel="@string/shortcut_30m_long">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.gollan.fadesleeptimer"
+            android:targetClass="com.gollan.fadesleeptimer.MainActivity">
+            <extra android:name="app_action_type" android:value="start_timer" />
+            <extra android:name="timer_duration" android:value="30" />
+        </intent>
+        <categories android:name="android.shortcut.conversation" />
+    </shortcut>
+
+    <!-- Static Shortcut 3: Extend Timer by 15 minutes -->
     <shortcut
         android:shortcutId="extend_timer"
         android:enabled="true"
-        android:icon="@mipmap/ic_launcher"
-        android:shortcutShortLabel="@string/extend_15m_button"
-        android:shortcutLongLabel="@string/extend_15m_button">
+        android:icon="@drawable/ic_shortcut_add"
+        android:shortcutShortLabel="@string/shortcut_extend"
+        android:shortcutLongLabel="@string/shortcut_extend_long">
         <intent
             android:action="android.intent.action.VIEW"
             android:targetPackage="com.gollan.fadesleeptimer"
             android:targetClass="com.gollan.fadesleeptimer.MainActivity">
             <extra android:name="app_action_type" android:value="extend_timer" />
+        </intent>
+        <categories android:name="android.shortcut.conversation" />
+    </shortcut>
+
+    <!-- Static Shortcut 4: Open Settings -->
+    <shortcut
+        android:shortcutId="open_settings"
+        android:enabled="true"
+        android:icon="@drawable/ic_shortcut_settings"
+        android:shortcutShortLabel="@string/shortcut_settings"
+        android:shortcutLongLabel="@string/shortcut_settings_long">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.gollan.fadesleeptimer"
+            android:targetClass="com.gollan.fadesleeptimer.MainActivity">
+            <extra android:name="app_action_type" android:value="open_settings" />
         </intent>
         <categories android:name="android.shortcut.conversation" />
     </shortcut>

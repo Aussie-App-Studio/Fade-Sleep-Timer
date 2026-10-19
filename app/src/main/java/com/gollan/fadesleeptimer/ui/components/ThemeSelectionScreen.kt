@@ -57,7 +57,7 @@ fun ThemeSelectionScreen(
             ThemeOption("wild_crazy", "Wild & Crazy", Color(0xFF00FFFF), Color(0xFFFFFF00), Color(0xFFFF00FF)),
             ThemeOption("calming_green", "Calming Green", Color(0xFF10b981), Color(0xFF052e16), Color(0xFF064e3b)),
             ThemeOption("girly_pink", "Girly Pink", Color(0xFFFB7185), Color(0xFFFFF1F2), Color(0xFFFFE4E6)),
-            ThemeOption("manly_blue", "Manly Blue", Color(0xFF3B82F6), Color(0xFF0B1120), Color(0xFF1E293B)),
+            ThemeOption("manly_blue", "Boyish Blue", Color(0xFF3B82F6), Color(0xFF0B1120), Color(0xFF1E293B)),
             ThemeOption("ukrainian", "Ukrainian", Color(0xFFFFDD00), Color(0xFF0057B7), Color(0xFF004494)),
             ThemeOption("crca_maroon", "CRCA Maroon", Color(0xFF800000), Color(0xFF2D0000), Color(0xFF4A0000)),
             

@@ -3,17 +3,66 @@
     package="com.gollan.fadesleeptimer">
 
 
+    <!-- ==================== PERMISSIONS ====================
+         All permissions are justified below for Google Play compliance.
+         Sensitive permissions are marked with [SENSITIVE] tag.
+    ========================================================== -->
+
+    <!-- FOREGROUND_SERVICE: Required to run the sleep timer as a foreground service.
+         The timer must continue running while the app is in the background to fade audio. -->
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    
+    <!-- FOREGROUND_SERVICE_MEDIA_PLAYBACK: Required for Android 14+ to control media playback.
+         The timer adjusts system volume to fade audio over time. -->
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+    
+    <!-- POST_NOTIFICATIONS: Shows timer status and controls in the notification shade.
+         Users can extend/stop the timer from the notification. Runtime permission on Android 13+. -->
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    
+    <!-- WAKE_LOCK: Keeps the CPU awake to ensure accurate timer countdown.
+         Without this, the timer may drift or stop when the device sleeps. -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    
+    <!-- MODIFY_AUDIO_SETTINGS: Adjusts system media volume to fade audio gradually.
+         Core functionality - the timer gradually reduces volume to zero over time. -->
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    
+    <!-- [SENSITIVE] SYSTEM_ALERT_WINDOW: Displays "Red Night Light" overlay.
+         Feature: Red-tinted screen overlay to block blue light and help users fall asleep.
+         Why needed: Overlay must appear over all apps including video players.
+         User control: Optional feature, enabled only in Settings > Visuals > Red Night Light. -->
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    
+    <!-- RECEIVE_BOOT_COMPLETED: Supports "Open on Charge" feature.
+         When enabled, auto-launches the app when the device is plugged in at bedtime. -->
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    
+    <!-- VIBRATE: Haptic feedback for "Haptic Breathing Guide" feature.
+         Provides tactile cues (inhale/exhale) during breathing exercises to help relaxation. -->
     <uses-permission android:name="android.permission.VIBRATE" />
+    
+    <!-- SCHEDULE_EXACT_ALARM: Powers "Bedtime Reminder" notifications.
+         Sends reminders at the exact user-configured time (e.g., 10:00 PM). -->
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    
+    <!-- SET_ALARM: Sets wake-up alarms via "Sleep Cycle Calculator" feature.
+         Calculates optimal wake time based on sleep cycles and offers to set an alarm. -->
     <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
+    
+    <!-- [SENSITIVE] REQUEST_IGNORE_BATTERY_OPTIMIZATIONS: Ensures reliable timer operation.
+         Feature: Core timer functionality.
+         Why needed: Android may kill the timer service, causing audio to play indefinitely overnight.
+         User control: Requested during onboarding with clear explanation. User can deny. -->
     <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+    
+    <!-- [SENSITIVE] WRITE_SETTINGS: Powers "Gradual Screen Dim" feature.
+         Feature: Gradually reduces screen brightness alongside audio fade.
+         Why needed: Must modify system brightness setting to dim the screen.
+         User control: Optional feature in Settings > Visuals > Gradual Screen Dim. -->
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" tools:ignore="ProtectedPermissions" />
+    
+    <!-- BILLING: In-app purchases for optional premium features (Visual Pack, Hall of Fame, etc.) -->
     <uses-permission android:name="com.android.vending.BILLING" />
 
     <!-- Query only media/music apps instead of all packages (Play Store compliant) -->
@@ -251,6 +300,11 @@
             </intent-filter>
         </activity-alias>
 
+        <!-- [SENSITIVE] ACCESSIBILITY SERVICE: Powers "Auto Screen-Off" feature.
+             Feature: Automatically locks/turns off the screen after inactivity while timer runs.
+             Why needed: Prevents screen burn-in and saves battery when user falls asleep.
+             User control: Completely optional. User must manually enable in Android Accessibility Settings.
+             The app guides users but never forces enablement. -->
         <service
             android:name=".service.ScreenLockService"
             android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
@@ -286,7 +340,7 @@
 
         <receiver
             android:name=".service.BootReceiver"
-            android:enabled="true"
+            android:enabled="false"
             android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />

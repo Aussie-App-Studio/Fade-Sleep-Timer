@@ -31,4 +31,26 @@ object TimerRepository {
     fun setAudioPlayingState(playing: Boolean) {
         _isAudioPlaying.value = playing
     }
+    
+    // Extension Tracking
+    private val _extensionMinutes = MutableStateFlow(0)
+    val extensionMinutes = _extensionMinutes.asStateFlow()
+    
+    private val _extensionCount = MutableStateFlow(0)
+    val extensionCount = _extensionCount.asStateFlow()
+    
+    private val _lastExtensionSource = MutableStateFlow("")
+    val lastExtensionSource = _lastExtensionSource.asStateFlow()
+    
+    fun addExtension(minutes: Int, source: String) {
+        _extensionMinutes.value += minutes
+        _extensionCount.value += 1
+        _lastExtensionSource.value = source
+    }
+    
+    fun resetExtensions() {
+        _extensionMinutes.value = 0
+        _extensionCount.value = 0
+        _lastExtensionSource.value = ""
+    }
 }

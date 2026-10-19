@@ -29,6 +29,7 @@ class BillingManager(
                 .enableOneTimeProducts()
                 .build()
         )
+        .enableAutoServiceReconnection()
         .build()
 
     // Define your Product IDs here
@@ -52,9 +53,7 @@ class BillingManager(
             }
 
             override fun onBillingServiceDisconnected() {
-                Log.e("BillingManager", "Billing Service Disconnected. Retrying...")
-                // Retry connection logic could go here (e.g., exponential backoff)
-                // For simplicity, we won't loop infinitely immediately
+                Log.e("BillingManager", "Billing Service Disconnected. Auto-reconnection enabled.")
             }
         })
     }
@@ -71,9 +70,9 @@ class BillingManager(
             )
             .build()
 
-        billingClient.queryProductDetailsAsync(params) { billingResult, productDetailsList ->
+        billingClient.queryProductDetailsAsync(params) { billingResult, queryProductDetailsResult ->
             if (billingResult.responseCode == BillingClient.BillingResponseCode.OK) {
-                val newMap = productDetailsList.associateBy { it.productId }
+                val newMap = queryProductDetailsResult.productDetailsList.associateBy { it.productId }
                 _productDetailsMap.value = newMap
                 Log.d("BillingManager", "Product Details Fetched: ${newMap.keys}")
             } else {

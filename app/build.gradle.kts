@@ -14,9 +14,9 @@ android {
     defaultConfig {
         applicationId = "com.gollan.fadesleeptimer"
         minSdk = 26
-        targetSdk = 35
-        versionCode = 7
-        versionName = "1.0"
+        targetSdk = 36
+        versionCode = 18
+        versionName = "1.0.4"
         
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -111,8 +111,8 @@ dependencies {
     implementation("com.google.android.play:review-ktx:2.0.1")
     implementation("androidx.glance:glance-material3:1.1.0")
     
-    // Payments (Google Play Billing 7.1.1)
-    implementation("com.android.billingclient:billing:7.1.1")
+    // Payments (Google Play Billing 8.3.0)
+    implementation("com.android.billingclient:billing:8.3.0")
 
 
 }

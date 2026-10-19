@@ -137,11 +137,11 @@ class SensorHelper(
                     faceDownStartTimestamp = null
                 }
 
-                // Shake Logic (Debounced)
+                // Shake Logic (Debounced - 10 second cooldown)
                 if (isShakeEnabled) {
                     val gForce = sqrt(x*x + y*y + z*z) / SensorManager.GRAVITY_EARTH
                     if (gForce > 2.5) {
-                        if (currentTime - lastShakeTimestamp > 2000) {
+                        if (currentTime - lastShakeTimestamp > 10000) {
                             triggerHapticFeedback() 
                             onShake?.invoke()
                             lastShakeTimestamp = currentTime

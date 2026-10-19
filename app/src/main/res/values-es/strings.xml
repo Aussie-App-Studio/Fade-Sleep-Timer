@@ -113,7 +113,7 @@
     <string name="support_other_apps_error">No se pudo abrir página del desarrollador</string>
     <string name="support_visuals_title">Pack Visual</string>
     <string name="support_visuals_desc">Desbloquea 30+ Temas incl. Neón, OLED</string>
-    <string name="support_visuals_desc_unlocked">Desbloquea 30+ Temas ($0.99 - Apoyo Opcional)</string>
+    <string name="support_visuals_desc_unlocked">Desbloquea 30+ Temas ($1.99 - Apoyo Opcional)</string>
     <string name="support_visuals_select_cd">Seleccionar Tema</string>
     <string name="status_unlocked">Desbloqueado</string>
     <string name="support_hof_title">Salón de la Fama e Iconos</string>

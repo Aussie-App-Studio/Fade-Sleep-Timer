@@ -191,7 +191,7 @@ fun PermissionsScreen(onAllGranted: () -> Unit) {
                 Spacer(modifier = Modifier.height(12.dp))
                 Button(
                     onClick = {
-                        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/"))
+                        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/Aussie-App-Studio/Fade-Sleep-Timer"))
                         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                         try {
                             context.startActivity(intent)

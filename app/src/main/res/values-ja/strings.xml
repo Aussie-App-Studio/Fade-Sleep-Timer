@@ -113,7 +113,7 @@
     <string name="support_other_apps_error">開発者ページを開けませんでした</string>
     <string name="support_visuals_title">ビジュアルパック</string>
     <string name="support_visuals_desc">ネオンやOLEDなど30以上のテーマ</string>
-    <string name="support_visuals_desc_unlocked">30以上のテーマ ($0.99 - 任意)</string>
+    <string name="support_visuals_desc_unlocked">30以上のテーマ ($1.99 - 任意)</string>
     <string name="support_visuals_select_cd">テーマを選択</string>
     <string name="status_unlocked">アンロック済み</string>
     <string name="support_hof_title">殿堂入り &amp; アイコン</string>

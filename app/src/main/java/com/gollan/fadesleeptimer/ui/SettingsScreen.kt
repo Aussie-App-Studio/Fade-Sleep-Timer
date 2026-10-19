@@ -225,7 +225,8 @@ fun SettingsScreen(
                 ) {
                     TimerCapsule(
                         timeLeft = timeLeft,
-                        onStop = onStopTimer
+                        onStop = onStopTimer,
+                        onClick = onBack
                     )
                 }
             }
@@ -293,7 +294,8 @@ fun SettingsScreen(
 @Composable
 fun TimerCapsule(
     timeLeft: Long,
-    onStop: () -> Unit
+    onStop: () -> Unit,
+    onClick: () -> Unit = {}
 ) {
     // Pulsing animation for countdown text
     val infiniteTransition = rememberInfiniteTransition(label = "pulse")
@@ -318,13 +320,14 @@ fun TimerCapsule(
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.spacedBy(8.dp)
         ) {
-            // Countdown Text
+            // Countdown Text (Clickable to navigate to timer)
             Text(
                 text = "${timeLeft / 60}:${(timeLeft % 60).toString().padStart(2, '0')}",
                 fontFamily = FontFamily.Monospace,
                 fontSize = 12.sp,
                 fontWeight = FontWeight.Bold,
-                color = MaterialTheme.colorScheme.primary.copy(alpha = alpha)
+                color = MaterialTheme.colorScheme.primary.copy(alpha = alpha),
+                modifier = Modifier.clickable { onClick() }
             )
 
             // Vertical Divider

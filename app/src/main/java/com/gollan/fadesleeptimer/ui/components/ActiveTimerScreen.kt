@@ -22,6 +22,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.gollan.fadesleeptimer.data.TimerRepository
 import com.gollan.fadesleeptimer.ui.AppSettings
+import androidx.compose.ui.res.stringResource
+import com.gollan.fadesleeptimer.R
 
 @Composable
 fun ActiveTimerScreen(
@@ -95,12 +97,25 @@ fun ActiveTimerScreen(
                         letterSpacing = (-2).sp
                     )
                     Text(
-                        "REMAINING",
+                        stringResource(R.string.timer_remaining),
                         color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f),
                         fontSize = 12.sp,
                         fontWeight = FontWeight.Bold,
                         letterSpacing = 2.sp
                     )
+                    
+                    // Extension indicator
+                    val extensionMinutes by TimerRepository.extensionMinutes.collectAsState()
+                    val lastSource by TimerRepository.lastExtensionSource.collectAsState()
+                    if (extensionMinutes > 0) {
+                        Spacer(modifier = Modifier.height(8.dp))
+                        Text(
+                            stringResource(R.string.timer_extension_format, extensionMinutes, lastSource),
+                            color = MaterialTheme.colorScheme.tertiary,
+                            fontSize = 12.sp,
+                            fontWeight = FontWeight.Medium
+                        )
+                    }
                 }
             }
         }
@@ -124,7 +139,7 @@ fun ActiveTimerScreen(
             ) {
                 Icon(
                     if (isAudioPlaying) Icons.Rounded.VolumeUp else Icons.Rounded.VolumeOff,
-                    contentDescription = "Toggle Audio",
+                    contentDescription = stringResource(R.string.timer_toggle_audio),
                     tint = MaterialTheme.colorScheme.onSurfaceVariant
                 )
             }
@@ -145,9 +160,9 @@ fun ActiveTimerScreen(
                     .height(56.dp)
                     .weight(1f)
             ) {
-                Icon(Icons.Rounded.Add, contentDescription = null, modifier = Modifier.size(18.dp))
+                Icon(Icons.Rounded.Add, contentDescription = stringResource(R.string.timer_extend_button_cd), modifier = Modifier.size(18.dp))
                 Spacer(modifier = Modifier.width(8.dp))
-                Text("15m")
+                Text(stringResource(R.string.timer_extend_15m))
             }
             Button(
                 onClick = onStop,
@@ -161,9 +176,9 @@ fun ActiveTimerScreen(
                     .height(56.dp)
                     .weight(1f)
             ) {
-                Icon(Icons.Rounded.Stop, contentDescription = null, modifier = Modifier.size(18.dp))
+                Icon(Icons.Rounded.Stop, contentDescription = stringResource(R.string.timer_stop_button_cd), modifier = Modifier.size(18.dp))
                 Spacer(modifier = Modifier.width(8.dp))
-                Text("Stop")
+                Text(stringResource(R.string.timer_stop))
             }
         }
     }

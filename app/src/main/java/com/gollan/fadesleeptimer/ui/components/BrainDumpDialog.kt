@@ -65,7 +65,7 @@ fun BrainDumpDialog(
                 }
                 
                 Text(
-                    "Unload your mind before sleep. Notes clear automatically.", 
+                    "Unload your mind before sleep. You'll get 2 reminders before notes auto-clear.", 
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant, // Dynamic OnSurfaceVariant
                     modifier = Modifier.padding(vertical = 8.dp)

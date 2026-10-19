@@ -113,7 +113,7 @@
     <string name="support_other_apps_error">개발자 페이지를 열 수 없습니다</string>
     <string name="support_visuals_title">비주얼 팩</string>
     <string name="support_visuals_desc">네온, OLED 등 30+ 테마</string>
-    <string name="support_visuals_desc_unlocked">30+ 테마 ($0.99 - 선택)</string>
+    <string name="support_visuals_desc_unlocked">30+ 테마 ($1.99 - 선택)</string>
     <string name="support_visuals_select_cd">테마 선택</string>
     <string name="status_unlocked">잠금 해제됨</string>
     <string name="support_hof_title">명예의 전당 &amp; 아이콘</string>

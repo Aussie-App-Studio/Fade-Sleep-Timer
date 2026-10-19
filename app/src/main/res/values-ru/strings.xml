@@ -113,7 +113,7 @@
     <string name="support_other_apps_error">Не удалось открыть страницу разработчика</string>
     <string name="support_visuals_title">Визуальный пакет</string>
     <string name="support_visuals_desc">30+ тем, включая Неон, OLED</string>
-    <string name="support_visuals_desc_unlocked">30+ тем ($0.99 - Необязательно)</string>
+    <string name="support_visuals_desc_unlocked">30+ тем ($1.99 - Необязательно)</string>
     <string name="support_visuals_select_cd">Выбрать тему</string>
     <string name="status_unlocked">Разблок.</string>
     <string name="support_hof_title">Зал славы и иконки</string>

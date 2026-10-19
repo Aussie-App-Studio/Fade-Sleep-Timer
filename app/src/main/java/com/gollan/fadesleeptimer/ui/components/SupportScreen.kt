@@ -43,6 +43,7 @@ fun SupportScreen(
 ) {
     var betaUnlockClicks by remember { mutableIntStateOf(0) }
     var showCelebration by remember { mutableStateOf(false) }
+    var isLegoCelebration by remember { mutableStateOf(false) }
 
     
     val context = androidx.compose.ui.platform.LocalContext.current
@@ -120,13 +121,24 @@ fun SupportScreen(
                         .clickable {
                             if (!settings.isPremiumUnlocked) {
                                 betaUnlockClicks++
+                                // Haptic feedback - short for taps, long for unlock
+                                val vibrator = context.getSystemService(android.content.Context.VIBRATOR_SERVICE) as? android.os.Vibrator
                                 when (betaUnlockClicks) {
-                                    1 -> clickFeedback = context.getString(R.string.beta_unlock_click_2)
-                                    2 -> clickFeedback = context.getString(R.string.beta_unlock_click_1)
+                                    1 -> {
+                                        vibrator?.vibrate(android.os.VibrationEffect.createOneShot(30, android.os.VibrationEffect.DEFAULT_AMPLITUDE))
+                                        clickFeedback = context.getString(R.string.beta_unlock_click_2)
+                                    }
+                                    2 -> {
+                                        vibrator?.vibrate(android.os.VibrationEffect.createOneShot(30, android.os.VibrationEffect.DEFAULT_AMPLITUDE))
+                                        clickFeedback = context.getString(R.string.beta_unlock_click_1)
+                                    }
                                     3 -> {
+                                        // Celebratory longer vibration pattern
+                                        vibrator?.vibrate(android.os.VibrationEffect.createWaveform(longArrayOf(0, 100, 50, 100, 50, 200), -1))
                                         onBetaUnlock()
-                                        clickFeedback = null // Clear immediate feedback as UI updates
-                                        android.widget.Toast.makeText(context, context.getString(R.string.beta_unlock_success_toast), android.widget.Toast.LENGTH_LONG).show()
+                                        clickFeedback = null
+                                        isLegoCelebration = false
+                                        showCelebration = true
                                     }
                                 }
                             }
@@ -171,7 +183,7 @@ fun SupportScreen(
                     )
                 }
 
-                Column {
+                Column(modifier = Modifier.padding(end = 48.dp)) {
                     Text(
                         stringResource(R.string.support_title),
                         color = Color.White,
@@ -258,12 +270,12 @@ fun SupportScreen(
                     onClick = { 
                         onUnlock("other_apps")
                         try {
-                            val intent = android.content.Intent(android.content.Intent.ACTION_VIEW, android.net.Uri.parse("market://search?q=pub:Gollan"))
+                            val intent = android.content.Intent(android.content.Intent.ACTION_VIEW, android.net.Uri.parse("market://search?q=pub:Australian%20Apps%20Studio"))
                             intent.addFlags(android.content.Intent.FLAG_ACTIVITY_NEW_TASK)
                             context.startActivity(intent)
                         } catch (_: Exception) {
                             try {
-                                val intent = android.content.Intent(android.content.Intent.ACTION_VIEW, android.net.Uri.parse("https://play.google.com/store/search?q=pub:Gollan&c=apps"))
+                                val intent = android.content.Intent(android.content.Intent.ACTION_VIEW, android.net.Uri.parse("https://play.google.com/store/search?q=pub:Australian%20Apps%20Studio&c=apps"))
                                 intent.addFlags(android.content.Intent.FLAG_ACTIVITY_NEW_TASK)
                                 context.startActivity(intent)
                             } catch (_: Exception) {
@@ -335,10 +347,8 @@ fun SupportScreen(
                             onClick = {
                                 if (settings.isVisualPackPurchased) {
                                     // Already purchased
-                                } else if (settings.isPremiumUnlocked) {
-                                    onUnlock("visuals") // Allow voluntary purchase even if unlocked
                                 } else {
-                                    handleTrap()
+                                    onUnlock("visuals")
                                 }
                             },
                             colors = ButtonDefaults.buttonColors(
@@ -351,7 +361,7 @@ fun SupportScreen(
                             enabled = true
                         ) {
                             Text(
-                                text = if (settings.isVisualPackPurchased) stringResource(R.string.status_unlocked) else if (settings.isPremiumUnlocked) "$0.99" else "$0.99",
+                                text = if (settings.isVisualPackPurchased) stringResource(R.string.status_unlocked) else if (settings.isPremiumUnlocked) "$1.99" else "$1.99",
                                 fontSize = 13.sp,
                                 fontWeight = FontWeight.Medium
                             )
@@ -410,10 +420,8 @@ fun SupportScreen(
                             onClick = {
                                 if (settings.isHallOfFamePurchased) {
                                     // Already purchased
-                                } else if (settings.isPremiumUnlocked) {
-                                    onJoinHallOfFame() // Allow voluntary purchase
                                 } else {
-                                    handleTrap()
+                                    onJoinHallOfFame()
                                 }
                             },
                             colors = ButtonDefaults.buttonColors(
@@ -450,10 +458,8 @@ fun SupportScreen(
                     onClick = {
                         if (settings.isSponsorPurchased) {
                             // Already sponsored
-                        } else if (settings.isPremiumUnlocked) {
-                            onUnlock("sponsor")
                         } else {
-                            handleTrap()
+                            onUnlock("sponsor")
                         }
                     }
                 )
@@ -473,6 +479,7 @@ fun SupportScreen(
                     isActive = settings.isLegoPurchased, 
                     onClick = { 
                         onUnlock("lego")
+                        isLegoCelebration = true
                         showCelebration = true 
                     }
                 )
@@ -484,7 +491,10 @@ fun SupportScreen(
         
         // Celebration Overlay
         if (showCelebration) {
-            CelebrationOverlay(onDismiss = { showCelebration = false })
+            CelebrationOverlay(
+                onDismiss = { showCelebration = false },
+                isLegoUnlock = isLegoCelebration
+            )
         }
     }
 }
@@ -559,39 +569,126 @@ fun SupportTierItem(
 }
 
 @Composable
-fun CelebrationOverlay(onDismiss: () -> Unit) {
+fun CelebrationOverlay(
+    onDismiss: () -> Unit,
+    isLegoUnlock: Boolean = false
+) {
     LaunchedEffect(Unit) {
         delay(4000)
         onDismiss()
     }
 
+    // Confetti animation state
+    val confettiParticles = remember {
+        List(50) {
+            ConfettiParticle(
+                x = (0..100).random().toFloat(),
+                y = (-20..(0)).random().toFloat(),
+                color = listOf(
+                    Color(0xFFFF6B6B), Color(0xFF4ECDC4), Color(0xFFFFE66D),
+                    Color(0xFF95E1D3), Color(0xFFF38181), Color(0xFFAA96DA),
+                    Color(0xFF72EFDD), Color(0xFFFF9FF3)
+                ).random(),
+                size = (4..12).random().toFloat(),
+                speed = (2..6).random().toFloat(),
+                rotation = (0..360).random().toFloat()
+            )
+        }
+    }
+
+    var animationProgress by remember { mutableFloatStateOf(0f) }
+    
+    LaunchedEffect(Unit) {
+        while (true) {
+            delay(16) // ~60fps
+            animationProgress += 1f
+        }
+    }
+
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color.Black.copy(alpha = 0.8f))
+            .background(Color.Black.copy(alpha = 0.85f))
             .clickable { onDismiss() },
         contentAlignment = Alignment.Center
     ) {
-        Column(horizontalAlignment = Alignment.CenterHorizontally) {
-            Text(
-                "🎉🧱🎉",
-                fontSize = 64.sp
+        // Confetti Canvas
+        androidx.compose.foundation.Canvas(
+            modifier = Modifier.fillMaxSize()
+        ) {
+            confettiParticles.forEach { particle ->
+                val yPos = ((particle.y + animationProgress * particle.speed) % 120f) / 100f * size.height
+                val xPos = (particle.x / 100f) * size.width + 
+                    kotlin.math.sin((animationProgress + particle.x) * 0.05f).toFloat() * 30f
+                
+                drawCircle(
+                    color = particle.color,
+                    radius = particle.size,
+                    center = androidx.compose.ui.geometry.Offset(xPos, yPos)
+                )
+            }
+        }
+
+        // Celebration Content
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier.padding(32.dp)
+        ) {
+            val infiniteTransition = rememberInfiniteTransition(label = "celebrate")
+            val bounceScale by infiniteTransition.animateFloat(
+                initialValue = 1f,
+                targetValue = 1.15f,
+                animationSpec = infiniteRepeatable(
+                    animation = tween(500, easing = FastOutSlowInEasing),
+                    repeatMode = RepeatMode.Reverse
+                ),
+                label = "bounce"
             )
-            Spacer(modifier = Modifier.height(16.dp))
+
             Text(
-                "YAY LEGO!",
+                if (isLegoUnlock) "🎉🧱🎉" else "🎁✨🎉",
+                fontSize = 64.sp,
+                modifier = Modifier.scale(bounceScale)
+            )
+            
+            Spacer(modifier = Modifier.height(24.dp))
+            
+            Text(
+                if (isLegoUnlock) "YAY LEGO!" else stringResource(R.string.celebration_unlocked_title),
                 color = Color.White,
-                fontSize = 32.sp,
+                fontSize = 28.sp,
                 fontWeight = FontWeight.Bold
             )
-            Spacer(modifier = Modifier.height(8.dp))
+            
+            Spacer(modifier = Modifier.height(12.dp))
+            
             Text(
-                "I genuinely will shop on Facebook marketplace for Secondhand Lego for my kids now. Thanks a ton!",
+                if (isLegoUnlock) 
+                    "I genuinely will shop on Facebook marketplace for Secondhand Lego for my kids now. Thanks a ton!"
+                else 
+                    stringResource(R.string.celebration_unlocked_message),
                 color = Color(0xFFCBD5E1),
                 fontSize = 16.sp,
                 textAlign = androidx.compose.ui.text.style.TextAlign.Center,
-                modifier = Modifier.padding(horizontal = 32.dp)
+                lineHeight = 24.sp
+            )
+            
+            Spacer(modifier = Modifier.height(24.dp))
+            
+            Text(
+                stringResource(R.string.celebration_tap_to_close),
+                color = Color(0xFF64748B),
+                fontSize = 12.sp
             )
         }
     }
 }
+
+private data class ConfettiParticle(
+    val x: Float,
+    val y: Float,
+    val color: Color,
+    val size: Float,
+    val speed: Float,
+    val rotation: Float
+)

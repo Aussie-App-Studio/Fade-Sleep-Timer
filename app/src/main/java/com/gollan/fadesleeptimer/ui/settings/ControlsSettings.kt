@@ -67,6 +67,28 @@ fun ControlsSettings(
             featureId = "pocket_mode",
             breadcrumbSuggestion = breadcrumbSuggestion
         )
+        
+        // Gradual Screen Dim Toggle (requires WRITE_SETTINGS permission)
+        val hasWriteSettingsPermission = android.provider.Settings.System.canWrite(context)
+        SettingsToggle(
+            title = stringResource(R.string.gradual_dim_title),
+            desc = if (hasWriteSettingsPermission) stringResource(R.string.gradual_dim_desc) else stringResource(R.string.gradual_dim_permission_required),
+            icon = Icons.Rounded.Brightness4,
+            checked = settings.gradualDimEnabled && hasWriteSettingsPermission,
+            onCheckedChange = { enabled ->
+                if (!hasWriteSettingsPermission) {
+                    // Open system settings to grant permission
+                    val intent = android.content.Intent(android.provider.Settings.ACTION_MANAGE_WRITE_SETTINGS).apply {
+                        data = android.net.Uri.parse("package:" + context.packageName)
+                    }
+                    context.startActivity(intent)
+                } else {
+                    onSettingsChanged(settings.copy(gradualDimEnabled = enabled))
+                }
+            },
+            featureId = "gradual_dim",
+            breadcrumbSuggestion = breadcrumbSuggestion
+        )
 
         Spacer(modifier = Modifier.height(24.dp))
 

@@ -287,6 +287,9 @@ class TimerViewModel : ViewModel() {
         intent.putStringArrayListExtra(TimerService.EXTRA_DOOMSCROLL_APPS, java.util.ArrayList(settings.doomscrollBlockedApps.toList()))
         intent.putExtra(TimerService.EXTRA_DOOMSCROLL_GRACE, settings.doomscrollGraceMinutes)
         
+        // Gradual Screen Dimming
+        intent.putExtra(TimerService.EXTRA_GRADUAL_DIM, settings.gradualDimEnabled)
+        
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             context.startForegroundService(intent)
         } else {

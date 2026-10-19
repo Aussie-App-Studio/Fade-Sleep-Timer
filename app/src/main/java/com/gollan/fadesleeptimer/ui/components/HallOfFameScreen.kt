@@ -28,6 +28,13 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
+import androidx.compose.foundation.clickable
+import androidx.compose.ui.platform.LocalContext
+import android.content.Intent
+import android.net.Uri
+import androidx.compose.material.icons.rounded.Warning
+import androidx.compose.ui.res.stringResource
+import com.gollan.fadesleeptimer.R
 
 @Composable
 fun HallOfFameScreen(
@@ -133,118 +140,129 @@ fun HallOfFameScreen(
             }
 
             // BODY
+            val permanentLegends = listOf(
+                "Dreamy Record",
+                "Crash S."
+            )
+            val allLegends = buildList {
+                addAll(permanentLegends)
+                if (!name.isNullOrBlank() && permanentLegends.none { it.equals(name.trim(), ignoreCase = true) }) {
+                    add(name.trim())
+                }
+            }
+
             Box(
-                modifier = Modifier.weight(1f).fillMaxWidth(),
+                modifier = Modifier
+                    .weight(1f)
+                    .fillMaxWidth(),
                 contentAlignment = Alignment.Center
             ) {
-                if (name != null) {
-                    // POPULATED STATE (Immortalized)
-                    // Animation: ZoomIn + FadeIn
-                    var visible by remember { mutableStateOf(false) }
-                    LaunchedEffect(Unit) { visible = true }
-                    
-                    androidx.compose.animation.AnimatedVisibility(
-                        visible = visible,
-                        enter = scaleIn(initialScale = 0.8f) + fadeIn(tween(500))
+                var visible by remember { mutableStateOf(false) }
+                LaunchedEffect(Unit) { visible = true }
+
+                androidx.compose.animation.AnimatedVisibility(
+                    visible = visible,
+                    enter = scaleIn(initialScale = 0.8f) + fadeIn(tween(500))
+                ) {
+                    Column(
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(horizontal = 24.dp, vertical = 16.dp)
                     ) {
-                        Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                            // Crown Avatar with Glow
-                            Box(
-                                modifier = Modifier
-                                    .size(100.dp)
-                                    .shadow(30.dp, spotColor = Color(0xFFF59E0B)) // Amber Glow
-                                    .background(Color(0xFFF59E0B).copy(alpha = 0.2f), CircleShape)
-                                    .border(2.dp, Color(0xFFF59E0B).copy(alpha = 0.5f), CircleShape),
-                                contentAlignment = Alignment.Center
-                            ) {
-                                Icon(
-                                    imageVector = Icons.Rounded.Stars, // Crown/Star
-                                    contentDescription = null,
-                                    modifier = Modifier.size(48.dp),
-                                    tint = Color(0xFFFBBF24)
-                                )
-                            }
-                            
-                            Spacer(Modifier.height(24.dp))
-                            
-                            Text(name, color = Color.White, fontWeight = FontWeight.Bold, fontSize = 28.sp)
+                        // Crown Avatar with Glow
+                        Box(
+                            modifier = Modifier
+                                .size(100.dp)
+                                .shadow(30.dp, spotColor = Color(0xFFF59E0B)) // Amber Glow
+                                .background(Color(0xFFF59E0B).copy(alpha = 0.2f), CircleShape)
+                                .border(2.dp, Color(0xFFF59E0B).copy(alpha = 0.5f), CircleShape),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Icon(
+                                imageVector = Icons.Rounded.Stars, // Crown/Star
+                                contentDescription = null,
+                                modifier = Modifier.size(48.dp),
+                                tint = Color(0xFFFBBF24)
+                            )
+                        }
+
+                        Spacer(Modifier.height(20.dp))
+
+                        Text(
+                            "SLEEP TIMER LEGENDS",
+                            color = Color(0xFFFBBF24).copy(alpha = 0.9f),
+                            fontWeight = FontWeight.Bold,
+                            letterSpacing = 2.sp,
+                            fontSize = 12.sp
+                        )
+
+                        Spacer(Modifier.height(16.dp))
+
+                        allLegends.forEach { legendName ->
                             Text(
-                                "SLEEP TIMER LEGEND", 
-                                color = Color(0xFFFBBF24).copy(alpha = 0.9f), // More opaque
+                                text = legendName,
+                                color = Color.White,
                                 fontWeight = FontWeight.Bold,
-                                letterSpacing = 2.sp,
+                                fontSize = 26.sp,
+                                textAlign = TextAlign.Center,
+                                modifier = Modifier.padding(vertical = 6.dp)
+                            )
+                        }
+
+                        Spacer(Modifier.height(28.dp))
+
+                        // Thank you note
+                        Card(
+                            colors = CardDefaults.cardColors(containerColor = Color(0xFF0F172A).copy(alpha = 0.7f)),
+                            border = BorderStroke(1.dp, Color(0xFF1E293B)),
+                            modifier = Modifier.padding(horizontal = 8.dp)
+                        ) {
+                            Text(
+                                "\"Thank you for supporting independent developers. You're the reason we can keep building calm, ad-free experiences.\"",
+                                color = Color(0xFFE2E8F0),
+                                fontStyle = FontStyle.Italic,
+                                textAlign = TextAlign.Center,
+                                modifier = Modifier.padding(20.dp),
                                 fontSize = 12.sp
                             )
+                        }
 
-                            Spacer(Modifier.height(48.dp))
+                        Spacer(Modifier.height(24.dp))
 
-                            // Thank you note
-                            Card(
-                                colors = CardDefaults.cardColors(containerColor = Color(0xFF0F172A).copy(alpha = 0.7f)), // Darker bg
-                                border = BorderStroke(1.dp, Color(0xFF1E293B)),
-                                modifier = Modifier.padding(32.dp)
-                            ) {
+                        if (name == null) {
+                            if (hasAccess) {
+                                OutlinedButton(
+                                    onClick = onJoinClick,
+                                    border = BorderStroke(1.dp, Color(0xFFF59E0B).copy(alpha = 0.5f)),
+                                    colors = ButtonDefaults.outlinedButtonColors(
+                                        containerColor = Color(0xFFF59E0B).copy(alpha = 0.1f)
+                                    )
+                                ) {
+                                    Text("Join the Hall of Fame", color = Color(0xFFFBBF24))
+                                }
+                            } else {
+                                Button(
+                                    onClick = onSupportClick,
+                                    colors = ButtonDefaults.buttonColors(
+                                        containerColor = Color(0xFFF59E0B),
+                                        contentColor = Color(0xFF451A03)
+                                    )
+                                ) {
+                                    Text("Immortalize Yourself", fontWeight = FontWeight.Bold)
+                                }
+                                Spacer(Modifier.height(8.dp))
                                 Text(
-                                    "\"Thank you for supporting independent developers. You're the reason we can keep building calm, ad-free experiences.\"",
-                                    color = Color(0xFFE2E8F0), // Light slate text
-                                    fontStyle = FontStyle.Italic,
-                                    textAlign = TextAlign.Center,
-                                    modifier = Modifier.padding(24.dp),
-                                    fontSize = 12.sp
+                                    "Unlock via Support Developer",
+                                    color = Color(0xFFFBBF24).copy(alpha = 0.7f),
+                                    fontSize = 11.sp
                                 )
                             }
-                            
+                        } else {
                             // Reset Button (Hidden/Subtle)
                             TextButton(onClick = onReset) {
                                 Text("Reset (Debug)", color = Color.Gray, fontSize = 10.sp)
                             }
-                        }
-                    }
-                } else {
-                    // EMPTY STATE
-                    Column(
-                        horizontalAlignment = Alignment.CenterHorizontally,
-                        modifier = Modifier.padding(32.dp)
-                    ) {
-                        Icon(
-                            imageVector = Icons.Rounded.Air, // Wind
-                            contentDescription = null,
-                            modifier = Modifier.size(48.dp).padding(bottom = 16.dp),
-                            tint = Color.White.copy(alpha = 0.7f) // Lighter icon
-                        )
-                        Text("It's eerily silent in here...", color = Color.White.copy(alpha = 0.9f), fontStyle = FontStyle.Italic)
-                        Text("Be the first legend to etch your name here forever.", color = Color.White.copy(alpha = 0.7f), fontSize = 12.sp, modifier = Modifier.padding(top = 8.dp))
-                        
-                        Spacer(Modifier.height(32.dp))
-                        
-                        if (hasAccess) {
-                            // Unlocked: Show Join Button
-                            OutlinedButton(
-                                onClick = onJoinClick,
-                                border = BorderStroke(1.dp, Color(0xFFF59E0B).copy(alpha = 0.5f)),
-                                colors = ButtonDefaults.outlinedButtonColors(
-                                    containerColor = Color(0xFFF59E0B).copy(alpha = 0.1f)
-                                )
-                            ) {
-                                Text("Join the Hall of Fame", color = Color(0xFFFBBF24))
-                            }
-                        } else {
-                            // Locked: Show Invitation to Support
-                            Button(
-                                onClick = onSupportClick,
-                                colors = ButtonDefaults.buttonColors(
-                                    containerColor = Color(0xFFF59E0B),
-                                    contentColor = Color(0xFF451A03)
-                                )
-                            ) {
-                                Text("Immortalize Yourself", fontWeight = FontWeight.Bold)
-                            }
-                            Spacer(Modifier.height(8.dp))
-                            Text(
-                                "Unlock via Support Developer",
-                                color = Color(0xFFFBBF24).copy(alpha = 0.7f),
-                                fontSize = 11.sp
-                            )
                         }
                     }
                 }
@@ -255,14 +273,142 @@ fun HallOfFameScreen(
 }
 
 @Composable
+fun HallOfFameLinkWarningDialog(
+    onDismiss: () -> Unit,
+    onConfirm: () -> Unit
+) {
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        title = { 
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Icon(Icons.Rounded.Warning, contentDescription = null, tint = Color(0xFFF59E0B))
+                Spacer(modifier = Modifier.width(8.dp))
+                Text("One-Time Access") 
+            }
+        },
+        text = { 
+            Column {
+                Text("This Google Form link can only be opened ONCE.")
+                Spacer(modifier = Modifier.height(8.dp))
+                Text("Please be ready to fill it out immediately (takes ~2 minutes).")
+                Spacer(modifier = Modifier.height(8.dp))
+                Text("Once you open it, this link will disappear from the app forever to prevent spam.", fontSize = 12.sp, color = Color.Gray)
+            }
+        },
+        confirmButton = {
+            Button(
+                onClick = onConfirm,
+                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFF59E0B), contentColor = Color.Black)
+            ) {
+                Text("I'm Ready, Open Form")
+            }
+        },
+        dismissButton = {
+            TextButton(onClick = onDismiss) {
+                Text("Cancel")
+            }
+        },
+        containerColor = Color(0xFF1E293B),
+        titleContentColor = Color.White,
+        textContentColor = Color(0xFFCBD5E1)
+    )
+}
+
+@Composable
 fun HallOfFameJoinDialog(
     onDismiss: () -> Unit,
-    onConfirm: (String) -> Unit
+    onConfirm: (String) -> Unit,
+    showFormLink: Boolean,
+    onOpenForm: () -> Unit
 ) {
     var name by remember { mutableStateOf("") }
+    var showWarning by remember { mutableStateOf(false) }
+    val context = LocalContext.current
+    
+    if (showWarning) {
+        HallOfFameLinkWarningDialog(
+            onDismiss = { showWarning = false },
+            onConfirm = {
+                showWarning = false
+                onOpenForm()
+                val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://forms.gle/KrcRXvBSSUmBFJi28"))
+                context.startActivity(intent)
+            }
+        )
+    }
+
+    Dialog(onDismissRequest = onDismiss) {
+        Surface(
+            shape = RoundedCornerShape(16.dp),
+            color = MaterialTheme.colorScheme.surface
+        ) {
+            Column(modifier = Modifier.padding(24.dp)) {
+                Text(
+                    stringResource(R.string.hall_of_fame_join_title),
+                    style = MaterialTheme.typography.titleLarge
+                )
+                Spacer(Modifier.height(16.dp))
+                Text(
+                    stringResource(R.string.hall_of_fame_join_desc),
+                    style = MaterialTheme.typography.bodyMedium
+                )
+                Spacer(Modifier.height(16.dp))
+                OutlinedTextField(
+                    value = name,
+                    onValueChange = { if (it.length <= 20) name = it },
+                    label = { Text(stringResource(R.string.hall_of_fame_name_hint)) },
+                    singleLine = true,
+                    modifier = Modifier.fillMaxWidth()
+                )
+                
+                if (showFormLink) {
+                    Spacer(Modifier.height(16.dp))
+                    
+                    // Google Form Link for permanent submission
+                    Text(
+                        "Submit permanently via form →",
+                        color = Color(0xFFFBBF24).copy(alpha = 0.8f),
+                        fontSize = 12.sp,
+                        modifier = Modifier.clickable {
+                            showWarning = true
+                        }
+                    )
+                }
+                
+                Spacer(Modifier.height(16.dp))
+                
+                Row(
+                    horizontalArrangement = Arrangement.spacedBy(12.dp),
+                    modifier = Modifier.align(Alignment.End)
+                ) {
+                    TextButton(onClick = onDismiss) {
+                        Text(stringResource(R.string.cancel))
+                    }
+                    Button(
+                        onClick = { onConfirm(name) },
+                        enabled = name.isNotBlank()
+                    ) {
+                        Text(stringResource(R.string.join_button))
+                    }
+                }
+            }
+        }
+    }
+}
+
+@Composable
+fun HallOfFameWelcomeDialog(
+    onDismiss: () -> Unit,
+    onConfirm: (String) -> Unit,
+    showFormLink: Boolean,
+    onOpenForm: () -> Unit
+) {
+    var name by remember { mutableStateOf("") }
+    var showWarning by remember { mutableStateOf(false) }
+    val context = LocalContext.current
     
     // Gold glow animation
-    val infiniteTransition = rememberInfiniteTransition(label = "glow")
+    val infiniteTransition = rememberInfiniteTransition(label = "welcome_glow")
     val glowAlpha by infiniteTransition.animateFloat(
         initialValue = 0.3f,
         targetValue = 0.7f,
@@ -272,6 +418,18 @@ fun HallOfFameJoinDialog(
         ),
         label = "glow"
     )
+    
+    if (showWarning) {
+        HallOfFameLinkWarningDialog(
+            onDismiss = { showWarning = false },
+            onConfirm = {
+                showWarning = false
+                onOpenForm()
+                val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://forms.gle/KrcRXvBSSUmBFJi28"))
+                context.startActivity(intent)
+            }
+        )
+    }
     
     Dialog(onDismissRequest = onDismiss) {
         Box(
@@ -363,7 +521,21 @@ fun HallOfFameJoinDialog(
                         modifier = Modifier.fillMaxWidth()
                     )
                     
-                    Spacer(Modifier.height(32.dp))
+                    Spacer(Modifier.height(16.dp))
+                    
+                    // Google Form Link for permanent submission
+                    val context = LocalContext.current
+                    Text(
+                        "Submit permanently via form →",
+                        color = Color(0xFFFBBF24).copy(alpha = 0.8f),
+                        fontSize = 12.sp,
+                        modifier = Modifier.clickable {
+                            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://forms.gle/KrcRXvBSSUmBFJi28"))
+                            context.startActivity(intent)
+                        }
+                    )
+                    
+                    Spacer(Modifier.height(16.dp))
                     
                     Row(
                         horizontalArrangement = Arrangement.spacedBy(12.dp),
@@ -407,3 +579,5 @@ fun HallOfFameJoinDialog(
         }
     }
 }
+
+

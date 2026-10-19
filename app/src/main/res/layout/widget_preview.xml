@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Widget preview shown in widget picker -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/widget_background_gradient"
+    android:padding="16dp">
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🌙"
+            android:textSize="28sp" />
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ready to rest?"
+            android:textColor="#F1F5F9"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginTop="4dp" />
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start your sleep timer"
+            android:textColor="#94A3B8"
+            android:textSize="10sp"
+            android:layout_marginTop="2dp" />
+        
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="Start Timer"
+            android:textColor="#1e1b4b"
+            android:backgroundTint="#A78BFA"
+            android:layout_marginTop="12dp"
+            android:textSize="12sp" />
+        
+    </LinearLayout>
+    
+</FrameLayout>

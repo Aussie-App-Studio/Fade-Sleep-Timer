@@ -16,6 +16,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
+import androidx.compose.ui.res.stringResource
+import com.gollan.fadesleeptimer.R
 import com.gollan.fadesleeptimer.ui.AppSettings
 import com.gollan.fadesleeptimer.ui.theme.Slate800
 import com.gollan.fadesleeptimer.ui.theme.Slate900
@@ -57,14 +59,14 @@ fun ButtonVisibilityDialog(
             ) {
                 // Title
                 Text(
-                    text = "Configure Media Buttons",
+                    text = stringResource(R.string.button_config_title),
                     fontSize = 20.sp,
                     fontWeight = FontWeight.Bold,
                     color = Color.White
                 )
                 
                 Text(
-                    text = "Select which buttons to display (or none)",
+                    text = stringResource(R.string.button_config_desc),
                     fontSize = 14.sp,
                     color = Color.Gray
                 )
@@ -81,7 +83,7 @@ fun ButtonVisibilityDialog(
                     item {
                         // Configure button (toggleable)
                         ButtonCheckbox(
-                            label = "Configure",
+                            label = stringResource(R.string.button_configure),
                             checked = configureVisible,
                             onCheckedChange = { configureVisible = it },
                             color = MaterialTheme.colorScheme.primary
@@ -99,7 +101,7 @@ fun ButtonVisibilityDialog(
                     // Checkboxes for each button
                     item {
                         ButtonCheckbox(
-                            label = "Spotify",
+                            label = stringResource(R.string.button_spotify),
                             checked = spotifyVisible,
                             onCheckedChange = { spotifyVisible = it },
                             color = Color(0xFF4ADE80) // Spotify green
@@ -108,7 +110,7 @@ fun ButtonVisibilityDialog(
                     
                     item {
                         ButtonCheckbox(
-                            label = "YouTube Music",
+                            label = stringResource(R.string.button_youtube_music),
                             checked = ytMusicVisible,
                             onCheckedChange = { ytMusicVisible = it },
                             color = Color(0xFFF87171) // YouTube red
@@ -117,7 +119,7 @@ fun ButtonVisibilityDialog(
                     
                     item {
                         ButtonCheckbox(
-                            label = "Audible",
+                            label = stringResource(R.string.button_audible),
                             checked = audibleVisible,
                             onCheckedChange = { audibleVisible = it },
                             color = Color(0xFFFB923C) // Audible orange
@@ -126,7 +128,7 @@ fun ButtonVisibilityDialog(
                     
                     item {
                         ButtonCheckbox(
-                            label = "YouTube",
+                            label = stringResource(R.string.button_youtube),
                             checked = youtubeVisible,
                             onCheckedChange = { youtubeVisible = it },
                             color = Color(0xFFF87171) // YouTube red
@@ -135,7 +137,7 @@ fun ButtonVisibilityDialog(
                     
                     item {
                         ButtonCheckbox(
-                            label = "Bible",
+                            label = stringResource(R.string.button_bible),
                             checked = youversionVisible,
                             onCheckedChange = { youversionVisible = it },
                             color = Color(0xFF8B4513) // Brown/Rust
@@ -144,7 +146,7 @@ fun ButtonVisibilityDialog(
                     
                     item {
                         ButtonCheckbox(
-                            label = "Apple Music",
+                            label = stringResource(R.string.button_apple_music),
                             checked = appleMusicVisible,
                             onCheckedChange = { appleMusicVisible = it },
                             color = Color(0xFFFFFFFF) // White
@@ -153,7 +155,7 @@ fun ButtonVisibilityDialog(
                     
                     item {
                         ButtonCheckbox(
-                            label = "Podcasts",
+                            label = stringResource(R.string.button_podcasts),
                             checked = podcastsVisible,
                             onCheckedChange = { podcastsVisible = it },
                             color = Color(0xFF892CA0) // Purple
@@ -162,7 +164,7 @@ fun ButtonVisibilityDialog(
                     
                     item {
                         ButtonCheckbox(
-                            label = "Amazon Music",
+                            label = stringResource(R.string.button_amazon_music),
                             checked = amazonMusicVisible,
                             onCheckedChange = { amazonMusicVisible = it },
                             color = Color(0xFF1DB0C4) // Teal
@@ -171,7 +173,7 @@ fun ButtonVisibilityDialog(
                     
                     item {
                         ButtonCheckbox(
-                            label = "Streaming",
+                            label = stringResource(R.string.button_streaming),
                             checked = streamingVisible,
                             onCheckedChange = { streamingVisible = it },
                             color = Color(0xFF4A90E2) // Blue
@@ -180,7 +182,7 @@ fun ButtonVisibilityDialog(
                     
                     item {
                         ButtonCheckbox(
-                            label = "Calm",
+                            label = stringResource(R.string.button_calm),
                             checked = calmVisible,
                             onCheckedChange = { calmVisible = it },
                             color = Color(0xFF169BDB) // Calm blue
@@ -189,7 +191,7 @@ fun ButtonVisibilityDialog(
                     
                     item {
                         ButtonCheckbox(
-                            label = "Headspace",
+                            label = stringResource(R.string.button_headspace),
                             checked = headspaceVisible,
                             onCheckedChange = { headspaceVisible = it },
                             color = Color(0xFFF4794E) // Headspace orange
@@ -212,7 +214,7 @@ fun ButtonVisibilityDialog(
                         ),
                         border = BorderStroke(1.dp, Slate800)
                     ) {
-                        Text("Cancel")
+                        Text(stringResource(R.string.cancel_button))
                     }
                     
                     Button(
@@ -239,7 +241,7 @@ fun ButtonVisibilityDialog(
                             containerColor = Color(0xFF6366F1) // Indigo
                         )
                     ) {
-                        Text("Save")
+                        Text(stringResource(R.string.button_save))
                     }
                 }
             }

@@ -113,7 +113,7 @@
     <string name="support_other_apps_error">Nelze otevřít stránku vývojáře</string>
     <string name="support_visuals_title">Vizuální balíček</string>
     <string name="support_visuals_desc">30+ témat včetně Neon, OLED</string>
-    <string name="support_visuals_desc_unlocked">30+ témat ($0.99 - Volitelné)</string>
+    <string name="support_visuals_desc_unlocked">30+ témat ($1.99 - Volitelné)</string>
     <string name="support_visuals_select_cd">Vybrat téma</string>
     <string name="status_unlocked">Odemčeno</string>
     <string name="support_hof_title">Síň slávy a ikony</string>
